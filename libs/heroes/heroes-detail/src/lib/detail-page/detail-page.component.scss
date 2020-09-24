@@ -1,0 +1,56 @@
+.hero-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.hero-name {
+    font-size: 34px;
+}
+
+.hero-icon {
+    display: inline;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 60px;
+}
+
+.flare {
+    background: url(/assets/images/flare.png);
+    height: 90px;
+    width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: scaleY(-1);
+    bottom: 0;
+}
+
+.wrapper {
+    margin: 40px auto 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs {
+    display: FLEX;
+}
+.tab {
+    padding: 0 20px;
+    font-size: 20px;
+
+    .active {
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-bottom: 1px #8999b7 solid;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

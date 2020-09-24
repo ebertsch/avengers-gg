@@ -1,0 +1,52 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@avengers-game-guide/heroes/heroes-index": [
+        "libs/heroes/heroes-index/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/shell": ["libs/shared/shell/src/index.ts"],
+      "@avengers-game-guide/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@avengers-game-guide/shared/heroes/data-access": [
+        "libs/shared/heroes/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/heroes/heroes-detail": [
+        "libs/heroes/heroes-detail/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/router": ["libs/shared/router/src/index.ts"],
+      "@avengers-game-guide/shared/environments": [
+        "libs/shared/environments/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/notes/data-access": [
+        "libs/shared/notes/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/guides/data-access": [
+        "libs/shared/guides/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/builds/data-access": [
+        "libs/shared/builds/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/perks/data-access": [
+        "libs/shared/perks/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/gear/data-access": [
+        "libs/shared/gear/data-access/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

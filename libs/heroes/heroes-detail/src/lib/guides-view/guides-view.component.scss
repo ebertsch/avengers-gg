@@ -1,0 +1,8 @@
+:host {
+    margin: 60px;
+    display: block;
+
+    ::ng-deep .content {
+        text-align: center;
+    }
+}

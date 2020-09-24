@@ -1,0 +1,5 @@
+<h2 class="fancy-text">Heroes</h2>
+<ol class="hero-menu">
+    <li *ngFor="let hero of heroes"><a [routerLink]="['/heroes', hero.id]"><img src="/assets/images/{{hero.id}}-logo.png"></a></li>
+</ol>
+

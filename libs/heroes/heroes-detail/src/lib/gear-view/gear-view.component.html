@@ -1,0 +1,23 @@
+<ng-container *ngFor="let gearSet of gear$ | async | keyvalue">
+    <agg-panel>
+        <agg-panel-header style="text-transform: capitalize;">{{gearSet.key}}</agg-panel-header>
+        <table>
+            <thead>
+                <tr class="header-row">
+                    <th class="fancy-text">Slot</th>
+                    <th class="fancy-text">Name</th>
+                    <th class="fancy-text">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row" *ngFor="let gear of gearSet.value">
+                    <td>{{gear.gearType}}</td>
+                    <td>{{gear.name}}</td>
+                    <td>
+                        <div *ngFor="let source of gear.sources">{{source.type}}: {{source.from}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </agg-panel>
+</ng-container>

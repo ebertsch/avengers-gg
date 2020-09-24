@@ -1,0 +1,74 @@
+{
+  "npmScope": "avengers-game-guide",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "heroes": {
+      "tags": []
+    },
+    "heroes-heroes-index": {
+      "tags": []
+    },
+    "shared-shell": {
+      "tags": []
+    },
+    "shared-styles": {
+      "tags": []
+    },
+    "shared-assets": {
+      "tags": []
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-heroes-data-access": {
+      "tags": []
+    },
+    "heroes-heroes-detail": {
+      "tags": []
+    },
+    "shared-router": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "shared-environments": {
+      "tags": []
+    },
+    "shared-notes-data-access": {
+      "tags": []
+    },
+    "shared-guides-data-access": {
+      "tags": []
+    },
+    "shared-builds-data-access": {
+      "tags": []
+    },
+    "shared-perks-data-access": {
+      "tags": []
+    },
+    "shared-gear-data-access": {
+      "tags": []
+    }
+  }
+}

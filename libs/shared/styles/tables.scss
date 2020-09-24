@@ -1,0 +1,21 @@
+
+table {
+    width: 100%;
+    border-spacing: 0;
+  }
+  
+  th {
+    text-align: left;
+  }
+
+  .row:nth-child(even){
+    background-color: #131a2970
+  }
+
+  .cdk-cell {
+    padding: 10px 0;
+}
+
+.header-row th{
+    border-bottom: 1px #8999b7 solid;
+  }

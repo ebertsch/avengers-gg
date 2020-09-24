@@ -1,0 +1,12 @@
+<ng-container *ngFor="let guide of guides$ | async">
+    <agg-panel>
+        <agg-panel-header>{{guide.title}}</agg-panel-header>
+        <div *ngIf="!guide.isYouTube; else youtubePlayer">
+            <a target="_blank" [href]="guide.UrlLink">{{guide.UrlLink}}</a>
+        </div>
+    </agg-panel>
+
+    <ng-template #youtubePlayer>
+        <youtube-player [videoId]="guide.UrlLink"></youtube-player>
+    </ng-template>
+</ng-container>

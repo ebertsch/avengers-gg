@@ -1,0 +1,12 @@
+<ng-container *ngFor="let build of builds$ | async">
+    <agg-panel>
+        <agg-panel-header>{{build.title}}</agg-panel-header>
+        <div *ngIf="!build.isYouTube; else youtubePlayer">
+            <a target="_blank" [href]="build.UrlLink">{{build.UrlLink}}</a>
+        </div>
+    </agg-panel>
+
+    <ng-template #youtubePlayer>
+        <youtube-player [videoId]="build.UrlLink"></youtube-player>
+    </ng-template>
+</ng-container>
