@@ -550,6 +550,36 @@
           "style": "scss"
         }
       }
+    },
+    "shared-root-state": {
+      "projectType": "library",
+      "root": "libs/shared/root-state",
+      "sourceRoot": "libs/shared/root-state/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/root-state/tsconfig.lib.json",
+              "libs/shared/root-state/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/root-state/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/root-state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

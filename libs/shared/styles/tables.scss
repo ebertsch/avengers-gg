@@ -8,7 +8,7 @@ table {
     text-align: left;
   }
 
-  .row:nth-child(even){
+  .row:nth-of-type(2n){
     background-color: #131a2970
   }
 

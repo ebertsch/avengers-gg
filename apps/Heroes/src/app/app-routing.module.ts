@@ -11,15 +11,16 @@ const routes: Routes = [
   {
     path: 'heroes',
     loadChildren: () =>
-      import('@avengers-game-guide/heroes/heroes-index')
-        .then(esModule => esModule.HeroesIndexModule),
+      import('@avengers-game-guide/heroes/heroes-index').then(
+        (module) => module.HeroesIndexModule
+      ),
   },
-  {path: '404', component: NotFoundPageComponent},
-  {path: '**', redirectTo: '/404'}
+  { path: '404', component: NotFoundPageComponent },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

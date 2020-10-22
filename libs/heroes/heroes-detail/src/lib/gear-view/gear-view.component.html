@@ -10,13 +10,44 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="row" *ngFor="let gear of gearSet.value">
+                <ng-container *ngFor="let gear of gearSet.value">
+                <tr class="row" [ngClass]="{'selected': selectedGear == gear.id}" (click)="showGearRow(gear.id)">
                     <td>{{gear.gearType}}</td>
                     <td>{{gear.name}}</td>
                     <td>
                         <div *ngFor="let source of gear.sources">{{source.type}}: {{source.from}}</div>
                     </td>
                 </tr>
+                <tr class="detail-row" *ngIf="selectedGear == gear.id">
+                    <td colspan="3">
+
+                        <div class="gear-detail">
+                            <h3>{{ gear.name }}</h3>
+                            <div class="rarity">{{ gear.rarity }}</div>
+                            <div class="split">
+                                <div class="power-container">
+                                    <strong>130</strong>
+                                    <span>POWER</span>
+                                </div>
+                                <div class="attribute-container">
+                                    <div class="attribute" *ngFor="let attribute of gear.stats">
+                                        <span>{{attribute}}</span><strong>55</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="perk-container">
+                                <h4>Gear Perks</h4>
+                                <div class="perk" *ngFor="let perk of gear.perks">
+                                    <strong>{{ ((getPerk(perk) | async)?.id)  }}</strong>
+                                    <p>{{ ((getPerk(perk) | async)?.perk)  }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </td>
+                </tr>
+            </ng-container>
             </tbody>
         </table>
     </agg-panel>

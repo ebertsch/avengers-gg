@@ -38,3 +38,14 @@
         width: 100%;
     }
 }
+
+.flare {
+    background: url(/assets/images/flare.png);
+    height: 90px;
+    width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: scaleY(-1);
+    bottom: 0;
+}

@@ -3,12 +3,12 @@ import { groupBy, prop } from 'ramda';
 import { Observable } from 'rxjs';
 import { switchMap, tap, map } from 'rxjs/operators';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
+import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { Gear, GearService } from '@avengers-game-guide/shared/gear/data-access'
 
 export interface GroupedGear {
   [id: string]: Gear[];
 }
-
 
 @Component({
   templateUrl: './gear-view.component.html',
@@ -16,16 +16,30 @@ export interface GroupedGear {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearViewComponent implements OnInit {
-  gear$: Observable<GroupedGear>
+  gear$: Observable<GroupedGear>;
+  selectedGear: string;
 
-  constructor(gearService: GearService, private heroes: HeroService) {
+  constructor(private gearService: GearService, private perks: PerkService, private heroes: HeroService) {
     this.gear$ = this.heroes.selected$.pipe(
-      tap(hero => gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
-      switchMap(() => gearService.entities$),
+      tap(hero => this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
+      tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
+      switchMap(() => this.gearService.entities$),
       map(data => groupBy(prop('set'), data) )
     )
   }
 
   ngOnInit(): void {
+  }
+
+  showGearRow(id: string) {
+    if(this.selectedGear ===  id)
+      this.selectedGear = null
+    else
+      this.selectedGear =  id;
+  }
+
+  getPerk(id: string) {
+    const val = this.perks.getPerk(id);
+    return val;
   }
 }
