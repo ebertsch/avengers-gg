@@ -69,6 +69,9 @@
     },
     "shared-gear-data-access": {
       "tags": []
+    },
+    "shared-root-state": {
+      "tags": []
     }
   }
 }

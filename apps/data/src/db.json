@@ -24,7 +24,9 @@
         { "id": "perk-1","name": "Perk 1", "perk": "Perk Text", "gearType": "melee", "heroId": "*"},
         { "id": "perk-2", "name": "Perk 2", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
         { "id": "perk-3", "name": "Perk 3", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
-        { "id": "perk-4", "name": "Perk 4", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"}
+        { "id": "perk-4", "name": "Perk 4", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-5,", "name": "Perk 5", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-6", "name": "Perk 6", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"}
     ],
     "gearSets": [
         { "id": "1", "name": "of Ages", "heroId": "hulk"},
@@ -32,6 +34,9 @@
     ],
     "gear": [
         { "id": "1", "name": "gear 1", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
-        { "id": "2", "name": "gear 1", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" }
+        { "id": "2", "name": "gear 2", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might", "intensity"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
+        { "id": "3", "name": "gear 3", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
+        { "id": "4", "name": "gear 4", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
+        { "id": "5", "name": "gear 5", "set":"of Ages", "gearType":"melee", "perks":["perk-1", "perk-2"], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" }
     ]
 }

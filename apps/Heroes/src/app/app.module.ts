@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http"
 
 import { ShellModule } from '@avengers-game-guide/shared/shell';
+import { HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-access';
+import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-access';
-import { AppStateModule } from './app-state.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,8 +14,8 @@ import { AppStateModule } from './app-state.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    RootStateModule,
     ShellModule,
-    AppStateModule,
     HeroesDataAccessModule,
   ],
   providers: [],

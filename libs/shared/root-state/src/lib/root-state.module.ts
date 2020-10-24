@@ -29,4 +29,4 @@ import { entityConfig } from './app-entity-metadata';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
 })
-export class AppStateModule {}
+export class RootStateModule {}
