@@ -1,0 +1,10 @@
+{
+    "heroes": [
+        {"id": "blackwidow", "name": "Black Widow" },
+        {"id": "captain", "name": "Captain America"},
+        {"id": "thor", "name": "Thor"},
+        {"id": "hulk", "name": "Hulk"},
+        {"id": "ironman", "name": "Ironman"},
+        {"id": "kamala", "name": "Ms. Marvel"}
+    ]
+}

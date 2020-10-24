@@ -1,0 +1,10 @@
+{
+    "perks": [
+        { "id": "perk-1","name": "Perk 1", "perk": "Perk Text", "gearType": "melee", "heroId": "*"},
+        { "id": "perk-2", "name": "Perk 2", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-3", "name": "Perk 3", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-4", "name": "Perk 4", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-5,", "name": "Perk 5", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"},
+        { "id": "perk-6", "name": "Perk 6", "perk": "Perk Text", "gearType": "ranged", "heroId": "hulk"}
+    ]
+}

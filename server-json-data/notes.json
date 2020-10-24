@@ -1,0 +1,6 @@
+{
+    "notes": [
+        { "id": "1", "title": "Thor note title", "note": "A note about thor", "heroId": "thor" },
+        { "id": "2", "title": "Hulk note title", "note": "A note about hulk", "heroId": "hulk" }
+    ]
+}

@@ -23,9 +23,9 @@
             "aot": true,
             "assets": [
               {
-                "input": "libs/shared/assets",
+                "input": "libs/shared/data",
                 "glob": "**/*",
-                "output": "assets"
+                "output": "data"
               },
               {
                 "input": "libs/shared/assets",
@@ -330,7 +330,13 @@
             "outputPath": "dist/apps/data",
             "main": "apps/data/src/main.ts",
             "tsConfig": "apps/data/tsconfig.app.json",
-            "assets": ["apps/data/src/db.json"]
+            "assets": [
+              {
+                "input": "server-json-data",
+                "glob": "**/*",
+                "output": "data"
+              }
+            ]
           },
           "configurations": {
             "production": {
