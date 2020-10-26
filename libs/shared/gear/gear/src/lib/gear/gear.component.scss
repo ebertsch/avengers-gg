@@ -1,3 +1,19 @@
+@mixin rarity-theme($color) {
+    background-image: linear-gradient(180deg, $color 0%, rgba(0, 0, 0, 0) 10%);
+    .split {
+        border-image-source: linear-gradient(90deg,  rgba(0, 0, 0, 0), $color, rgba(0, 0, 0, 0));
+    }
+    .power-container,
+    .attribute-container {
+        border-image-source: linear-gradient(180deg,  rgba(0, 0, 0, 0), $color, rgba(0, 0, 0, 0));
+        border-image-slice: 1;
+    }
+    ::ng-deep .swiper-button-next,
+    ::ng-deep .swiper-button-prev {
+        color: $color;
+    }
+}
+
 :host {
   display: flex;
   flex-direction: column;
@@ -7,6 +23,19 @@
   background-color: #010101;
   width: 350px;
   position: relative;
+  
+  &.legendary {
+    @include rarity-theme(#7B7C39);
+}
+&.exotic {
+    @include rarity-theme(#7D4F35);
+  }
+  &.epic {
+      @include rarity-theme(#61398E);
+  }
+  &.rare {
+      @include rarity-theme(#304F8E);
+  }
 
   h3 {
       font-size: 24px;
@@ -28,6 +57,7 @@
       align-items: flex-start;
       border-top: 2px solid #899ab6;
       border-bottom: 2px solid #899ab6;
+      border-image-slice: 1;
 
       strong {
           margin: 0 10px;
@@ -51,6 +81,12 @@
           top: -20px;
       }
   }
+  .available-attributes-container {
+    margin-bottom: 10px;
+    > * {
+        margin-bottom: 10px;
+    }
+  }
   .attribute-container {
       height: 80px;
       width: 50%;
@@ -59,6 +95,7 @@
       padding: 10px;
       text-align: right;
   }
+
 
   .perk-container {
       margin-top: 10px;
@@ -69,5 +106,42 @@
   }
   agg-perk {
       margin-bottom: 10px;
+  }
+
+  ::ng-deep .swiper-wrapper {
+    margin-bottom: 10px;
+  }
+
+    ::ng-deep .swiper-button-next,
+    ::ng-deep .swiper-button-prev {
+        display: none !important;
+    }
+
+    ::ng-deep .swiper-container:hover .swiper-button-next,
+    ::ng-deep .swiper-container:hover .swiper-button-prev {
+        display: flex !important;
+    }
+    ::ng-deep .swiper-container:hover .swiper-button-disabled {
+        display: none !important;
+    }
+
+    ::ng-deep .swiper-button-prev {
+        left: 0;
+        right: auto;
+    }
+    ::ng-deep .swiper-button-next {
+        left: auto;
+        right: 0;
+    }
+    ::ng-deep .swiper-button-next,
+  ::ng-deep .swiper-button-prev {
+    background: #000000a1;
+    color: #899ab6;
+    top: 20px;
+    width: 40px;
+    height: 100%;
+  }
+  ::ng-deep .swiper-button-disabled {
+    display: none;
   }
 }

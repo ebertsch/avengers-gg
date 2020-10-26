@@ -1,2 +1,2 @@
 <strong> {{ perk.id  }}</strong>
-<p> {{ perk.perk  }}</p>
+<p [innerHTML]="perk.perk | highlight"></p>

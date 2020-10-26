@@ -14,6 +14,8 @@ import { NotesViewComponent } from './notes-view/notes-view.component';
 import { HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
+import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
+import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { GearModule } from '@avengers-game-guide/shared/gear/gear';
     GearModule,
     HeroesDataAccessModule,
     NotesDataAccessModule,
+    SkillsDataAccessModule,
+    SwiperModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'gear' },

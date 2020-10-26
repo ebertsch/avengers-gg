@@ -61,6 +61,7 @@
     "ramda": "^0.27.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
+    "swiper": "^6.3.4",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {

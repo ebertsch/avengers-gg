@@ -1,8 +1,33 @@
 :host {
     margin: 60px;
-    display: block;
+    display: flex;
 }
 
-:host ::ng-deep .content {
-    text-align: center;
+.skill-options-container {
+    width: 600px;
+    flex: 0 0 50%;
+
+    ::ng-deep .swiper-container {
+        // padding: 0 60px;
+    }
+}
+
+.skill-container {
+    margin-left: 50px;
+    margin-right: 50px;
+
+    > p {
+        margin-bottom: 20px;
+    }
+}
+
+.skill-option {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    &.selected {
+        border: solid 1px #8999b7;
+        border-radius: 6px;
+    }
 }

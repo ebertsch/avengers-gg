@@ -1,4 +1,31 @@
-<ng-container *ngFor="let build of builds$ | async">
+<div class="skill-options-container">
+    <agg-panel>
+        <agg-panel-header style="text-transform: capitalize;">Skill Options</agg-panel-header>
+
+    <swiper [config]="{navigation: true, pagination: true, slidesPerView: 2}">
+        <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
+            <div class="skill-container">
+                <h3 class="fancy-text">{{ skill.name }}</h3>
+                <p [innerHTML]="skill.skill | highlight">
+                <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: bySkillId">
+                    <h3 class="fancy-text">{{ option.name }}</h3>
+                    <p [innerHTML]="option.skill | highlight">
+                </div>
+            </div>
+        </div>
+    </swiper>
+    </agg-panel>    
+</div>
+<div>
+    <h2 class="fancy-text">Selected Skills</h2>
+    <div *ngFor="let selSkill of selectedSkills | keyvalue">
+        <ng-container *ngIf="!!(skillService.getSkill(selSkill.key) | async)">
+            <h3 class="fancy-text">{{ findChild((skillService.getSkill(selSkill.key) | async), selSkill.value).name }}</h3>
+            <p>{{ findChild((skillService.getSkill(selSkill.key) | async), selSkill.value).skill }}</p>
+        </ng-container>
+    </div>
+</div>
+<!-- <ng-container *ngFor="let build of builds$ | async">
     <agg-panel>
         <agg-panel-header>{{build.title}}</agg-panel-header>
         <div *ngIf="!build.isYouTube; else youtubePlayer">
@@ -9,4 +36,4 @@
     <ng-template #youtubePlayer>
         <youtube-player [videoId]="build.UrlLink"></youtube-player>
     </ng-template>
-</ng-container>
+</ng-container> -->

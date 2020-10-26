@@ -1,5 +1,9 @@
 <h3>{{ gear.name }}</h3>
 <div class="rarity">{{ gear.rarity }}</div>
+<div class="available-attributes-container">
+    <h4>Available Attributes</h4>
+    <strong class="attribute" *ngFor="let attribute of gear.stats" [innerHTML]="attribute"></strong>
+</div>
 <div class="split">
     <div class="power-container">
         <strong>130</strong>
@@ -12,8 +16,8 @@
     </div>
 </div>
 <div class="perk-container">
-    <h4>Gear Perks</h4>
-    <div *ngFor="let perks of gear.perks">
+    <h4>Available Gear Perks</h4>
+    <swiper [config]="{navigation: true}"  *ngFor="let perks of gear.perks">
         <agg-perk [perk]="getPerk$(perk) | async" *ngFor="let perk of perks"></agg-perk>
-    </div>
+    </swiper>
 </div>

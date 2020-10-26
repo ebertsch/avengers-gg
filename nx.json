@@ -78,6 +78,9 @@
     },
     "shared-perks-perk": {
       "tags": []
+    },
+    "shared-skills-data-access": {
+      "tags": []
     }
   }
 }

@@ -605,10 +605,7 @@
               "libs/shared/gear/gear/tsconfig.lib.json",
               "libs/shared/gear/gear/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/gear/gear/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/gear/gear/**/*"]
           }
         },
         "test": {
@@ -645,6 +642,39 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/perks/perk/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-skills-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/skills/data-access",
+      "sourceRoot": "libs/shared/skills/data-access/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/skills/data-access/tsconfig.lib.json",
+              "libs/shared/skills/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/skills/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/skills/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

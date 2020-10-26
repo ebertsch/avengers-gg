@@ -49,3 +49,12 @@
     transform: scaleY(-1);
     bottom: 0;
 }
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-variant-ligatures: common-ligatures !important;
+}
+
+p .attribute {
+    color: #CDC884;
+}

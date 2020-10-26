@@ -7,7 +7,17 @@ import { HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-
 import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  freeMode: true,
+  // spaceBetween: 100,
+  pagination: {
+    clickable: true
+  }
+};
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,9 +26,15 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     RootStateModule,
     ShellModule,
+    SwiperModule,
     HeroesDataAccessModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

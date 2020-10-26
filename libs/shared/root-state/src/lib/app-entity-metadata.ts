@@ -6,7 +6,8 @@ const entityMetadata: EntityMetadataMap = {
   Perk: {},
   Build: {},
   Guide: {},
-  Note: {}
+  Note: {},
+  Skill: {}
 };
  
 const pluralNames = {

@@ -54,6 +54,9 @@
       ],
       "@avengers-game-guide/shared/perks/perk": [
         "libs/shared/perks/perk/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/skills/data-access": [
+        "libs/shared/skills/data-access/src/index.ts"
       ]
     }
   },
