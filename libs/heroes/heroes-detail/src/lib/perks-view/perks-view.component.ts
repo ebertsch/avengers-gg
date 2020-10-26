@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { groupBy, prop } from 'ramda';
+import { pluck, flatten, uniq, contains, filter, mergeAll, map as rMap } from 'ramda';
 import { Observable } from 'rxjs';
 import { switchMap, tap, map } from 'rxjs/operators';
 
@@ -9,6 +9,15 @@ export interface GroupedPerks {
   [id: string]: Perk[];
 }
 
+const groupPerks = (data: Perk[]) => {
+  const keys = uniq(flatten(pluck('gear', data)))
+
+  return mergeAll(
+    rMap((key: string) => ({
+      [key]: filter(p => contains(key, p.gear), data)
+    }), keys)
+  )
+}
 
 @Component({
   templateUrl: './perks-view.component.html',
@@ -22,7 +31,7 @@ export class PerksViewComponent implements OnInit {
     this.perks$ = this.heroes.selected$.pipe(
       tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
       switchMap(() => this.perks.entities$),
-      map(data => groupBy(prop('gearType'), data) )
+      map(data => groupPerks(data))
     )
   }
 

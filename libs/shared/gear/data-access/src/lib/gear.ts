@@ -3,7 +3,7 @@ export interface Gear {
     name: string;
     set: string;
     gearType: string;
-    perks: string[];
+    perks: [string[], string[], string[]];
     stats: string[];
     rarity: string;
     sources: ItemSource[];

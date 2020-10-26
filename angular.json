@@ -23,6 +23,11 @@
             "aot": true,
             "assets": [
               {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              },
+              {
                 "input": "libs/shared/data",
                 "glob": "**/*",
                 "output": "data"
@@ -577,6 +582,69 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/root-state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-gear-gear": {
+      "projectType": "library",
+      "root": "libs/shared/gear/gear",
+      "sourceRoot": "libs/shared/gear/gear/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/gear/gear/tsconfig.lib.json",
+              "libs/shared/gear/gear/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/gear/gear/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/gear/gear/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-perks-perk": {
+      "projectType": "library",
+      "root": "libs/shared/perks/perk",
+      "sourceRoot": "libs/shared/perks/perk/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/perks/perk/tsconfig.lib.json",
+              "libs/shared/perks/perk/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/perks/perk/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/perks/perk/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -37,9 +37,4 @@ export class GearViewComponent implements OnInit {
     else
       this.selectedGear =  id;
   }
-
-  getPerk(id: string) {
-    const val = this.perks.getPerk(id);
-    return val;
-  }
 }

@@ -1,0 +1,19 @@
+<h3>{{ gear.name }}</h3>
+<div class="rarity">{{ gear.rarity }}</div>
+<div class="split">
+    <div class="power-container">
+        <strong>130</strong>
+        <span>POWER</span>
+    </div>
+    <div class="attribute-container">
+        <div class="attribute" *ngFor="let attribute of gear.stats">
+            <span>{{attribute}}</span><strong>55</strong>
+        </div>
+    </div>
+</div>
+<div class="perk-container">
+    <h4>Gear Perks</h4>
+    <div *ngFor="let perks of gear.perks">
+        <agg-perk [perk]="getPerk$(perk) | async" *ngFor="let perk of perks"></agg-perk>
+    </div>
+</div>

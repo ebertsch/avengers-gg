@@ -11402,6 +11402,13 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-swiper-wrapper@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-swiper-wrapper/-/ngx-swiper-wrapper-10.0.0.tgz#afca849a17d64f00d5b16e5040f4bdae0549e06d"
+  integrity sha512-cP7yCV1j9fyPkaEu4muec+4ChwpYq1zn62qR6HcZttZgPcqaSEd8yLB7fp61ASAWR31iKUycVhqNtmsYstMXpA==
+  dependencies:
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

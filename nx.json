@@ -72,6 +72,12 @@
     },
     "shared-root-state": {
       "tags": []
+    },
+    "shared-gear-gear": {
+      "tags": []
+    },
+    "shared-perks-perk": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px #899ab6;
+  background-color: #010101;
+  width: 350px;
+  position: relative;
+
+  h3 {
+      font-size: 24px;
+  }
+  .rarity {
+      position: relative;
+      top: -10px;
+      margin-bottom: 10px;
+  }
+
+  h3,h4,strong {
+      font-family: CrystalWide;
+      text-transform: uppercase;
+  }
+
+  .split {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-top: 2px solid #899ab6;
+      border-bottom: 2px solid #899ab6;
+
+      strong {
+          margin: 0 10px;
+      }
+  }
+
+  .power-container {
+      height: 80px;
+      width: 50%;
+      border-right: 1px solid #899ab6;
+      text-transform: capitalize;
+      position: relative;
+
+      strong {
+          display: block;
+          font-size: 48px;
+          margin: 0;
+      }
+      span {
+          position: relative;
+          top: -20px;
+      }
+  }
+  .attribute-container {
+      height: 80px;
+      width: 50%;
+      border-left: 1px solid #899ab6;
+      text-transform: capitalize;
+      padding: 10px;
+      text-align: right;
+  }
+
+  .perk-container {
+      margin-top: 10px;
+
+      h4 {
+          margin-bottom: 10px;
+      }
+  }
+  agg-perk {
+      margin-bottom: 10px;
+  }
+}

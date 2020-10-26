@@ -13,6 +13,7 @@ import { GuidesViewComponent } from './guides-view/guides-view.component';
 import { NotesViewComponent } from './notes-view/notes-view.component';
 import { HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
+import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-ac
     CdkTableModule,
     YouTubePlayerModule,
     SharedUiModule,
+    GearModule,
     HeroesDataAccessModule,
     NotesDataAccessModule,
     RouterModule.forChild([
