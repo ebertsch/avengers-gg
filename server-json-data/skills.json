@@ -18,7 +18,18 @@
         {"id":"h13", "title":"Stranglehold Specialization II", "category": "Assault Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
             {"id":"h14", "title":"Destructive Health", "category":"Assault Heroic Specialization", "description": "[50%] chance defeating an enemy will generate a Regen Pack."},
             {"id":"h15", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "STRANGLEHOLD [taunts] nearby enemies and instantly Overcharges the intrinsic RAGE ability."},
-            {"id":"h6", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "Grants an additional charge of the STRANGLEHOLD Heroic ability."}
+            {"id":"h16", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "Grants an additional charge of the STRANGLEHOLD Heroic ability."}
+        ]},
+        {"id":"h17", "title":"Thunderclap Specialization I", "category": "Ultimate Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h18", "title":"Epicenter", "category":"Ultimate Heroic Specialization", "description": "The distance of the THUNDERCLAP shockwave is increased by [30%]."},
+            {"id":"h19", "title":"Ground Zero", "category":"Ultimate Heroic Specialization", "description": "THUNDERCLAP creates a brief vacuum that draws in nearby enemies before launching them upwards with the attack. The attack creates a [Gamma] radiation zone that inflicts [Gamma] damage to affected enemies but regenerates [2%] Willpower every second for teammates within the area."},
+            {"id":"h20", "title":"Fault Line", "category":"Ultimate Heroic Specialization", "description": "Focus the THUNDERCLAP shockwave into a narrower area of effect but increases both damage and [Stun] damage by [25%], demolishing enemies caught in the blast."}
+        ]},
+        {"id":"21", "title":"Thunderclap Specialization II", "category": "Ultimate Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h22", "title":"Thunderclap Regeneration", "category":"Ultimate Heroic Specialization", "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Regen Packs."},
+            {"id":"h23", "title":"Thunderclap Heroic Recovery", "category":"Ultimate Heroic Specialization", "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Heroic Orbs."},
+            {"id":"h24", "title":"Thunderclap Taunt", "category":"Ultimate Heroic Specialization", "description": "Enemies who survive THUNDERCLAP become [TAUNTED]."}
         ]}
+
     ]
 }
