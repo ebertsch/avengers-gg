@@ -18,6 +18,6 @@
 <div class="perk-container">
     <h4>Available Gear Perks</h4>
     <swiper [config]="{navigation: true}"  *ngFor="let perks of gear.perks">
-        <agg-perk [perk]="getPerk$(perk) | async" *ngFor="let perk of perks"></agg-perk>
+        <agg-name-description [namedItem]="getPerk$(perkId) | async" *ngFor="let perkId of perks"></agg-name-description>
     </swiper>
 </div>

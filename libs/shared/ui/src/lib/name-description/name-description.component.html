@@ -1,0 +1,4 @@
+<ng-container *ngIf="!!namedItem">
+    <strong class="fancy-text" [ngClass]="{'underline': underline}">{{ namedItem.title  }}</strong>
+    <p [innerHTML]="namedItem.description | highlight"></p>
+</ng-container>

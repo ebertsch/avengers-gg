@@ -1,10 +1,10 @@
 {
     "perks": [
-        { "id": "perk-1","name": "Perk 1", "perk": "Perk Text", "gear": ["melee", "ranged"], "heroId": "*"},
-        { "id": "perk-2", "name": "Perk 2", "perk": "Perk Text that has super duper long text. And should wrap and not have the navigation buttons overlap. And also show 3 lines", "gear": ["ranged"], "heroId": "hulk"},
-        { "id": "perk-3", "name": "Perk 3", "perk": "Perk [%] Text", "gear": ["ranged"], "heroId": "hulk"},
-        { "id": "perk-4", "name": "Perk 4", "perk": "Perk [cryo] Text", "gear": ["ranged"], "heroId": "hulk"},
-        { "id": "perk-5,", "name": "Perk 5", "perk": "Perk Text", "gear": ["ranged"], "heroId": "hulk"},
-        { "id": "perk-6", "name": "Perk 6", "perk": "Perk Text", "gear": ["ranged"], "heroId": "hulk"}
+        { "id": "perk-1","title": "Perk 1", "description": "Perk Text", "gear": ["melee", "ranged"], "heroId": "*"},
+        { "id": "perk-2", "title": "Perk 2", "description": "Perk Text that has super duper long text. And should wrap and not have the navigation buttons overlap. And also show 3 lines", "gear": ["ranged"], "heroId": "hulk"},
+        { "id": "perk-3", "title": "Perk 3", "description": "Perk [%] Text", "gear": ["ranged"], "heroId": "hulk"},
+        { "id": "perk-4", "title": "Perk 4", "description": "Perk [cryo] Text", "gear": ["ranged"], "heroId": "hulk"},
+        { "id": "perk-5,", "title": "Perk 5", "description": "Perk Text", "gear": ["ranged"], "heroId": "hulk"},
+        { "id": "perk-6", "title": "Perk 6", "description": "Perk Text", "gear": ["ranged"], "heroId": "hulk"}
     ]
 }

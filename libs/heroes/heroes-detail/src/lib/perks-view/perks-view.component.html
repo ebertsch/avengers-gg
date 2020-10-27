@@ -10,8 +10,8 @@
             </thead>
             <tbody>
                 <tr class="row" *ngFor="let perk of gearType.value">
-                    <td>{{perk.name}}</td>
-                    <td>{{perk.perk}}</td>
+                    <td>{{perk.title}}</td>
+                    <td [innerHTML]="perk.description | highlight"></td>
                 </tr>
             </tbody>
         </table>

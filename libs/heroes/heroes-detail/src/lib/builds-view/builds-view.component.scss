@@ -1,15 +1,19 @@
 :host {
     margin: 60px;
     display: flex;
+
+    ::ng-deep agg-panel-header {
+        margin-bottom: 20px;
+    }
 }
 
 .skill-options-container {
     width: 600px;
     flex: 0 0 50%;
-
-    ::ng-deep .swiper-container {
-        // padding: 0 60px;
-    }
+    margin-right: 20px;
+}
+.current-build-container {
+    margin-left: 20px;
 }
 
 .skill-container {

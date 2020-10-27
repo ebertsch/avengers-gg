@@ -81,6 +81,9 @@
     },
     "shared-skills-data-access": {
       "tags": []
+    },
+    "shared-data": {
+      "tags": []
     }
   }
 }

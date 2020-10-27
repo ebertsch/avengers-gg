@@ -1,7 +1,7 @@
 export interface Perk {
     id: string;
-    name: string;
-    perk: string;
+    title: string;
+    description: string;
     gear: string[];
     heroId: string;
 }

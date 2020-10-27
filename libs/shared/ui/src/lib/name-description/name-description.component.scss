@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  margin-bottom: 20px;
+}
+
+strong {
+  display: block;
+  font-family: CrystalWide;
+  text-transform: uppercase;
+
+  &.underline {
+    border-bottom: solid 1px #899ab6;
+    margin-bottom: 10px;
+  }
+}
+

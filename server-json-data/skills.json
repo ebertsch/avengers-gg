@@ -1,24 +1,24 @@
 {
     "skills": [
-        {"id":"h01", "name":"Boneshaker Specialization I", "category": "Support Heroic Specialization", "skill": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h02", "name":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "skill": "Defeat [five] enemies while BONESHAKER is active to extend its duration by [5] seconds."},
-            {"id":"h03", "name":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "skill": "Defeat [five] enemies while BONESHAKER is active in order to restore all Willpower."},
-            {"id":"h04", "name":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "skill": "Defeat [five] enemies while BONESHAKER is active to instantly refill all intrinsic RAGE energy."}
+        {"id":"h01", "title":"Boneshaker Specialization I", "category": "Support Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h02", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active to extend its duration by [5] seconds."},
+            {"id":"h03", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active in order to restore all Willpower."},
+            {"id":"h04", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active to instantly refill all intrinsic RAGE energy."}
         ]},
-        {"id":"h05", "name":"Boneshaker Specialization II", "category": "Support Heroic Specialization", "skill": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h06", "name":"Savage Regeneration", "category":"Support Heroic Specialization", "skill": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Regen Packs."},
-            {"id":"h07", "name":"Savage Heroism", "category":"Support Heroic Specialization", "skill": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Heroic Orbs."},
-            {"id":"h08", "name":"Savage Intimidation", "category":"Support Heroic Specialization", "skill": "Attacks from [TAUNTED] enemies have reduced impact."}
+        {"id":"h05", "title":"Boneshaker Specialization II", "category": "Support Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h06", "title":"Savage Regeneration", "category":"Support Heroic Specialization", "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Regen Packs."},
+            {"id":"h07", "title":"Savage Heroism", "category":"Support Heroic Specialization", "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Heroic Orbs."},
+            {"id":"h08", "title":"Savage Intimidation", "category":"Support Heroic Specialization", "description": "Attacks from [TAUNTED] enemies have reduced impact."}
         ]},
-        {"id":"h09", "name":"Stranglehold Specialization I", "category": "Assault Heroic Specialization", "skill": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h10", "name":"Heroic Destruction", "category":"Assault Heroic Specialization", "skill": "[50%] chance defeating an enemy will generate a Heroic Orb."},
-            {"id":"h11", "name":"Devastating Charge", "category":"Assault Heroic Specialization", "skill": "Deal [200%] more [stun] damage at the end of the STRANGLEHOLD Heroic ability."},
-            {"id":"h12", "name":"Irradiant Destruction", "category":"Assault Heroic Specialization", "skill": "On the final slam, the impact causes a massive radial hazard of material of irradiated [Gamma] particles. As long as enemies are inside of the hazardous area, they will take a small amount of additional damage, as well as [Gamma] damage."}
+        {"id":"h09", "title":"Stranglehold Specialization I", "category": "Assault Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h10", "title":"Heroic Destruction", "category":"Assault Heroic Specialization", "description": "[50%] chance defeating an enemy will generate a Heroic Orb."},
+            {"id":"h11", "title":"Devastating Charge", "category":"Assault Heroic Specialization", "description": "Deal [200%] more [stun] damage at the end of the STRANGLEHOLD Heroic ability."},
+            {"id":"h12", "title":"Irradiant Destruction", "category":"Assault Heroic Specialization", "description": "On the final slam, the impact causes a massive radial hazard of material of irradiated [Gamma] particles. As long as enemies are inside of the hazardous area, they will take a small amount of additional damage, as well as [Gamma] damage."}
         ]},
-        {"id":"h13", "name":"Stranglehold Specialization II", "category": "Assault Heroic Specialization", "skill": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h14", "name":"Destructive Health", "category":"Assault Heroic Specialization", "skill": "[50%] chance defeating an enemy will generate a Regen Pack."},
-            {"id":"h15", "name":"Barbaric Charge", "category":"Assault Heroic Specialization", "skill": "STRANGLEHOLD [taunts] nearby enemies and instantly Overcharges the intrinsic RAGE ability."},
-            {"id":"h6", "name":"Barbaric Charge", "category":"Assault Heroic Specialization", "skill": "Grants an additional charge of the STRANGLEHOLD Heroic ability."}
+        {"id":"h13", "title":"Stranglehold Specialization II", "category": "Assault Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
+            {"id":"h14", "title":"Destructive Health", "category":"Assault Heroic Specialization", "description": "[50%] chance defeating an enemy will generate a Regen Pack."},
+            {"id":"h15", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "STRANGLEHOLD [taunts] nearby enemies and instantly Overcharges the intrinsic RAGE ability."},
+            {"id":"h6", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "Grants an additional charge of the STRANGLEHOLD Heroic ability."}
         ]}
     ]
 }

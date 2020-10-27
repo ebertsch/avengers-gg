@@ -57,7 +57,8 @@
       ],
       "@avengers-game-guide/shared/skills/data-access": [
         "libs/shared/skills/data-access/src/index.ts"
-      ]
+      ],
+      "@avengers-game-guide/shared/data": ["libs/shared/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

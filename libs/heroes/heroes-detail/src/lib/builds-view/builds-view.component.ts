@@ -49,8 +49,6 @@ export class BuildsViewComponent implements OnInit {
         const values = kvp.split(':')
         return { [values[0]]: values[1] }
       }))
-
-      console.log('selectedSkills', this.selectedSkills)
     })
 
     this.skills$ = this.heroes.selected$.pipe(
@@ -63,8 +61,7 @@ export class BuildsViewComponent implements OnInit {
             rMap(child => assoc("selected", includes(child.id, selectedSkillsString || ""), child), skill.children)
           ,skill)
         , skills)
-      ),
-      tap(v => console.log("items", v))
+      )
     )
   }
 

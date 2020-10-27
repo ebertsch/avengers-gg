@@ -1,8 +1,8 @@
 export interface Skill {
     id: string;
     heroId: string;
-    name: string;
+    title: string;
     category: string;
-    skill: string;
+    description: string;
     children: Skill[];
 }

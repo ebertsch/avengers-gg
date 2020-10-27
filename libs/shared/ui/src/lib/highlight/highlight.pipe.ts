@@ -8,6 +8,8 @@ export class HighlightPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer){}
 
   transform(value: any, args: any): any {
+    if(!value) return;
+    
     const re = new RegExp(/\[.*?\]/, 'gi');
     const match = value.match(re);
 

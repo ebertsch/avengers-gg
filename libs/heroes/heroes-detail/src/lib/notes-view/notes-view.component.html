@@ -1,6 +1,5 @@
 <ng-container *ngFor="let note of notes$ | async">
     <agg-panel>
-        <agg-panel-header>{{note.title}}</agg-panel-header>
-        <p>{{note.note}}</p>
+        <agg-name-description [namedItem]="note" [underline]="true"></agg-name-description>
     </agg-panel>
 </ng-container>
