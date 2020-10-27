@@ -30,7 +30,7 @@ import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-w
     SwiperModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
-        { path: '', pathMatch:'full', redirectTo: 'gear' },
+        { path: '', pathMatch:'full', redirectTo: 'builds' },
         { path: 'gear', component: GearViewComponent },
         { path: 'perks', component: PerksViewComponent },
         { path: 'builds', component: BuildsViewComponent },

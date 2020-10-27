@@ -1,6 +1,6 @@
 {
     "guides": [
-        { "id": "1", "title": "Hulk tank guide", "UrlLink": "http://www.google.com", "isYouTube": false, "heroId": "hulk" },
-        { "id": "2", "title": "Hulk DPS guide", "UrlLink": "rjeVoPhVi3g", "isYouTube": true, "heroId": "hulk" }
+        { "id": "1", "title": "Hulk Elite Guide", "UrlLink": "rjeVoPhVi3g", "isYouTube": true, "heroId": "hulk" },
+        { "id": "2", "title": "Hulk Tank Build", "UrlLink": "z07twKdqEQ4", "isYouTube": true, "heroId": "hulk" }
     ]
 }

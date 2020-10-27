@@ -1,6 +1,5 @@
 {
     "notes": [
-        { "id": "1", "title": "Thor note title", "description": "A note about thor", "heroId": "thor" },
-        { "id": "2", "title": "Hulk note title", "description": "A note about hulk", "heroId": "hulk" }
+        { "id": "1", "title": "Attacking with held debris", "description": "Attacking with held debris applies status effects and triggers ranged perks", "heroId": "hulk" }
     ]
 }
