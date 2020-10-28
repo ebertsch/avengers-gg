@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall_disabled": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
@@ -25,8 +25,7 @@
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "mock-api": "apimocker -c mock-api/config.json"
+    "help": "nx help"
   },
   "private": true,
   "dependencies": {
@@ -70,7 +69,6 @@
     "@nrwl/workspace": "10.2.1",
     "@types/jest": "26.0.8",
     "@types/node": "^14.14.2",
-    "apimocker": "^1.1.4",
     "codelyzer": "~5.0.1",
     "cypress": "^4.1.0",
     "dotenv": "6.2.0",
