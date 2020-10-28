@@ -28,13 +28,13 @@
                 "output": "assets"
               },
               {
-                "input": "libs/shared/data",
-                "glob": "**/*",
-                "output": "data"
-              },
-              {
                 "input": "libs/shared/assets",
                 "glob": "favicon.ico",
+                "output": "."
+              },
+              {
+                "input": "apps/heroes/src",
+                "glob": "routes.json",
                 "output": "."
               }
             ],
@@ -340,6 +340,11 @@
                 "input": "server-json-data",
                 "glob": "**/*",
                 "output": "data"
+              },
+              {
+                "input": "apps/data/src",
+                "glob": "package.json",
+                "output": "."
               }
             ]
           },

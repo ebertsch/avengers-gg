@@ -15,5 +15,5 @@ import {mergeJsonFiles} from './merge-extension';
   server.use(rewriter);
   server.use(middleware)
   server.use(router)
-  server.listen(environment.apiPort, () => console.log('JSON Server is running'))
+  server.listen(process.env.PORT || environment.apiPort, () => console.log('JSON Server is running'))
 })();

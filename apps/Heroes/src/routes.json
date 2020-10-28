@@ -1,0 +1,16 @@
+{
+    "routes": [
+    {
+        "route": "/heroes/*",
+        "serve": "/index.html"
+    },
+    {
+        "route": "/heroes",
+        "serve": "/index.html"
+    },
+    {
+        "route": "/404",
+        "serve": "/index.html"
+    }
+    ]
+}
