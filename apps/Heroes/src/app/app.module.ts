@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http"
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
+import { environment } from '@avengers-game-guide/shared/environments'
 import { ShellModule } from '@avengers-game-guide/shared/shell';
 import { HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-access';
 import { RootStateModule } from '@avengers-game-guide/shared/root-state';
@@ -22,6 +24,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    environment.production ? NgxGoogleAnalyticsModule.forRoot('G-VHNGDT7XX3') : [],
+    environment.production ? NgxGoogleAnalyticsRouterModule : [],
     HttpClientModule,
     AppRoutingModule,
     RootStateModule,
