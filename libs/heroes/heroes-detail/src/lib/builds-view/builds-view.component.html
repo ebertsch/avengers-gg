@@ -2,16 +2,18 @@
 <agg-panel class="skill-options-container">
     <agg-panel-header>Build Options</agg-panel-header>
 
-    <swiper [config]="{navigation: true, pagination: true, slidesPerView: 2}">
-        <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
-            <div class="skill-container">
-                <agg-name-description [namedItem]="skill"></agg-name-description>
-                <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: bySkillId">
-                    <agg-name-description [namedItem]="option"></agg-name-description>
+    <div>
+        <swiper [config]="{navigation: true, pagination: true, slidesPerView: 2}">
+            <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
+                <div class="skill-container">
+                    <agg-name-description [namedItem]="skill"></agg-name-description>
+                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: bySkillId">
+                        <agg-name-description [namedItem]="option"></agg-name-description>
+                    </div>
                 </div>
             </div>
-        </div>
-    </swiper>
+        </swiper>
+    </div>
 </agg-panel>    
 
 <agg-panel class="current-build-container">

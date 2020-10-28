@@ -14,8 +14,7 @@ import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-w
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 1,
-  freeMode: true,
-  // spaceBetween: 100,
+  // freeMode: true,
   pagination: {
     clickable: true
   }
