@@ -1,35 +1,1156 @@
 {
     "skills": [
-        {"id":"h01", "title":"Boneshaker Specialization I", "category": "Support Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h02", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active to extend its duration by [5] seconds."},
-            {"id":"h03", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active in order to restore all Willpower."},
-            {"id":"h04", "title":"Rampaging Boneshaker", "category":"Support Heroic Specialization", "description": "Defeat [five] enemies while BONESHAKER is active to instantly refill all intrinsic RAGE energy."}
-        ]},
-        {"id":"h05", "title":"Boneshaker Specialization II", "category": "Support Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h06", "title":"Savage Regeneration", "category":"Support Heroic Specialization", "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Regen Packs."},
-            {"id":"h07", "title":"Savage Heroism", "category":"Support Heroic Specialization", "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Heroic Orbs."},
-            {"id":"h08", "title":"Savage Intimidation", "category":"Support Heroic Specialization", "description": "Attacks from [TAUNTED] enemies have reduced impact."}
-        ]},
-        {"id":"h09", "title":"Stranglehold Specialization I", "category": "Assault Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h10", "title":"Heroic Destruction", "category":"Assault Heroic Specialization", "description": "[50%] chance defeating an enemy will generate a Heroic Orb."},
-            {"id":"h11", "title":"Devastating Charge", "category":"Assault Heroic Specialization", "description": "Deal [200%] more [stun] damage at the end of the STRANGLEHOLD Heroic ability."},
-            {"id":"h12", "title":"Irradiant Destruction", "category":"Assault Heroic Specialization", "description": "On the final slam, the impact causes a massive radial hazard of material of irradiated [Gamma] particles. As long as enemies are inside of the hazardous area, they will take a small amount of additional damage, as well as [Gamma] damage."}
-        ]},
-        {"id":"h13", "title":"Stranglehold Specialization II", "category": "Assault Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h14", "title":"Destructive Health", "category":"Assault Heroic Specialization", "description": "[50%] chance defeating an enemy will generate a Regen Pack."},
-            {"id":"h15", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "STRANGLEHOLD [taunts] nearby enemies and instantly Overcharges the intrinsic RAGE ability."},
-            {"id":"h16", "title":"Barbaric Charge", "category":"Assault Heroic Specialization", "description": "Grants an additional charge of the STRANGLEHOLD Heroic ability."}
-        ]},
-        {"id":"h17", "title":"Thunderclap Specialization I", "category": "Ultimate Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h18", "title":"Epicenter", "category":"Ultimate Heroic Specialization", "description": "The distance of the THUNDERCLAP shockwave is increased by [30%]."},
-            {"id":"h19", "title":"Ground Zero", "category":"Ultimate Heroic Specialization", "description": "THUNDERCLAP creates a brief vacuum that draws in nearby enemies before launching them upwards with the attack. The attack creates a [Gamma] radiation zone that inflicts [Gamma] damage to affected enemies but regenerates [2%] Willpower every second for teammates within the area."},
-            {"id":"h20", "title":"Fault Line", "category":"Ultimate Heroic Specialization", "description": "Focus the THUNDERCLAP shockwave into a narrower area of effect but increases both damage and [Stun] damage by [25%], demolishing enemies caught in the blast."}
-        ]},
-        {"id":"h21", "title":"Thunderclap Specialization II", "category": "Ultimate Heroic Specialization", "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.", "heroId": "hulk", "children": [
-            {"id":"h22", "title":"Thunderclap Regeneration", "category":"Ultimate Heroic Specialization", "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Regen Packs."},
-            {"id":"h23", "title":"Thunderclap Heroic Recovery", "category":"Ultimate Heroic Specialization", "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Heroic Orbs."},
-            {"id":"h24", "title":"Thunderclap Taunt", "category":"Ultimate Heroic Specialization", "description": "Enemies who survive THUNDERCLAP become [TAUNTED]."}
-        ]}
-
+        {
+            "id": "b1",
+            "title": "Veil of Shadows Specialization I",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between three choices at any time",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b2",
+                    "title": "Dark Thorn",
+                    "description": "20% increased damage to nearby enemies when activating VEIL OF SHADOWS.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b3",
+                    "title": "Night Terror",
+                    "description": "Increases the duration of Veil of Shadows by 3 seconds and increases Critical Attack Chance by 25%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b4",
+                    "title": "Shadow Gifts",
+                    "description": "Enemies Defeated while Veil of Shadows is active have a 35% chance to drop Heroic Orbs.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b5",
+            "title": "Veil of Shadows Specialization II",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b6",
+                    "title": "Eclipse",
+                    "description": "Increases range of Veil of Shadows by 30%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b7",
+                    "title": "Visus Obscuram",
+                    "description": "Increases the duration that teammates remain invisible after being cloaked by Veil of Shadows by 5 seconds.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b8",
+                    "title": "Mortal Cloak",
+                    "description": "Increases Critical Attack Chance for teammates cloaked by Veil of Shadows by 30",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b9",
+            "title": "Widow's Bite Specialization I",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b10",
+                    "title": "Superstatic Dart",
+                    "description": "Increases the range of the electric field generated by Widow’s Bite by 35%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b11",
+                    "title": "Taser Dart",
+                    "description": "Widow’s Bite projectile attaches to the target instead of exploding and deals Shock damage.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b12",
+                    "title": "Lightning Fist",
+                    "description": "Channels Widow’s Bite energy back into the gauntlet and turns the Heroic ability into a lightning fast melee attack that sends nearby enemies flying. Increases the charge of the Assault Heroic meter.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b13",
+            "title": "Widow's Bite Specialization II",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b14",
+                    "title": "Paralyzing Bite",
+                    "description": "Widow’s Bite inflicts 40% more Stun damage increasing the chance to Stun enemies",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b15",
+                    "title": "Invigorating Bite",
+                    "description": "Defeating at least one enemy with Widow’s Bite will recharge 20% of the Heroic energy for that ability",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b16",
+                    "title": "Lethal Bite",
+                    "description": "Hold an additional Widow’s Bite charge. Extra charges appear as small circles near the Assault heroic ability meter.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b17",
+            "title": "Power Surge Specialization I",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b18",
+                    "title": "Galvanic Bite",
+                    "description": "Increases damage of Widow’s Bite while Power Surge is active by 20%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b19",
+                    "title": "Power Staff",
+                    "description": "35% increased damage for staff attacks while Overcharged while Power Surge ability is active.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b20",
+                    "title": "Vanquishing Surge",
+                    "description": "Defeating enemies while Power Surge is active has a 15% chance to drop Regen Packs for all team members",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b21",
+            "title": "Power Surge Specialization II",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b22",
+                    "title": "Kilowatt",
+                    "description": "Increases Stun damage while Power Surge is active by 30%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b23",
+                    "title": "Power Grid",
+                    "description": "Extends the duration of Power Surge by 4 seconds.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b24",
+                    "title": "Indomitable Force",
+                    "description": "Increase the damage resistance to 30%, and reduce the severity of hit reactions for some enemy attacks when Power Surge is active.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b25",
+            "title": "Intrinsic Charge Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Intrinsic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b26",
+                    "title": "Intrinsic Charge",
+                    "description": "All attacks increase the charge rate of the intrinsic Shadow Ops meter by 15%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b27",
+                    "title": "Headshot Charge",
+                    "description": "Headshot boost intrinsic Shadow Ops energy by 25 points",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b28",
+                    "title": "Takedown Charge",
+                    "description": "Takedowns boost an increased amount of intrinsic Shadow Ops energy by 20 points",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b29",
+            "title": "Overcharge Damage Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Intrinsic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b30",
+                    "title": "Overcharge Damage",
+                    "description": "Increases all damage while Overcharged by 5%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b31",
+                    "title": "Overcharge Ranged",
+                    "description": "Increases Ranged Attack damage while Overcharged by 10%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b32",
+                    "title": "Overcharge Critical",
+                    "description": "Increases Critical Attack damage while Overcharged by 15%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b33",
+            "title": "Overcharge Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b34",
+                    "title": "Willpower Overcharge",
+                    "description": "Recover 1 point of Willpower when dealing damage when Overcharged.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b35",
+                    "title": "Efficient Overcharge",
+                    "description": "Increases the delay by 1 second before intrinsic Shadow Ops energy begins to deplete when not attacking enemies.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b36",
+                    "title": "Heroic Overcharge",
+                    "description": "Increases the rate at which Heroic energy recharges while Overcharged by 15%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b37",
+            "title": "Grenade Type Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Heroic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b38",
+                    "title": "Hazard Grenade",
+                    "description": "All grenades leave a lingering hazard zone around their detonation location that inflict increased Status damage.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b39",
+                    "title": "Proximity Grenade",
+                    "description": "Grenades have a delayed detonation, exploding when enemies are nearby.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b40",
+                    "title": "Cluster Grenade",
+                    "description": "Throws a spread of three grenades that inflict damage over a wider area.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b41",
+            "title": "Grenade Status Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b42",
+                    "title": "Thermite Grenade",
+                    "description": "Adds significant Plasma damage to grenades.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b43",
+                    "title": "Flash Freeze Grenade",
+                    "description": "Adds significant Cryo damage to grenades.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b44",
+                    "title": "Voltaic Grenade",
+                    "description": "Adds significant Shock damage to grenades.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b45",
+            "title": "Pistol Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b46",
+                    "title": "Fast Reload",
+                    "description": "Increases reload speed by 15%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b47",
+                    "title": "Recoil Compensator",
+                    "description": "Reduces shot recoil by 15%, allowing for a steadier aim.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b48",
+                    "title": "Extended Magazine",
+                    "description": "Increases the magazine size of all pistol variants decreasing reload frequency.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b49",
+            "title": "Stealth Attack Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Defensive abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b50",
+                    "title": "Invisible Stun",
+                    "description": "Increases Stun damage while invisible 15%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b51",
+                    "title": "Invisible Ranged",
+                    "description": "Increases Ranged Attack damage while invisible by 12%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b52",
+                    "title": "Invisible Status",
+                    "description": "Increases all Status damage while invisible by 20%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b53",
+            "title": "Invisibility Specializtion",
+            "description": "Once unlocked, choose one of three specialization options to modify Defensive abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b54",
+                    "title": "Extended Invisibility",
+                    "description": "Extends Invisibility granted from Veil of Shadows by 2 seconds.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b55",
+                    "title": "Invisible Recharge",
+                    "description": "Heroic energy recharges 15% faster while invisible.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b56",
+                    "title": "Invisible Willpower",
+                    "description": "Willpower regenerates at 1% per second while invisible.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b57",
+            "title": "Stealth Tactics Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Defensive abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b58",
+                    "title": "Critical Damage",
+                    "description": "Increases Critical Attack damage while invisible by 15%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b59",
+                    "title": "Critical Ranged",
+                    "description": "Increases Critical Attack Chance 7% for Ranged Attacks while invisible.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b60",
+                    "title": "Critical Melee",
+                    "description": "Increases Critical Attack Chance by 20% for Melee Attacks while invisible.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b61",
+            "title": "Takedown Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Takedown abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b62",
+                    "title": "Intrinsic Takedown Mastery",
+                    "description": "Performing a Takedown spawns and Intrinsic Orb",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b63",
+                    "title": "Heroic Takedown Mastery",
+                    "description": "Performing a Takedown spawns a Heroic Orb",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b64",
+                    "title": "Willpower Takedown Mastery",
+                    "description": "Performing a Takedown spawns a Regen Pack.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b65",
+            "title": "Ranged Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b66",
+                    "title": "Critical Headshots",
+                    "description": "Increases Critical attack damage from headshots by 20%.",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b67",
+                    "title": "Stun Damage",
+                    "description": "Increases Stun damage by 15%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b68",
+                    "title": "Ranged Damage",
+                    "description": "Increases Ranged Attack damage by 10%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "b69",
+            "title": "Melee Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Melee abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": null,
+            "JA_children": [
+                {
+                    "id": "b70",
+                    "title": "Combo Finishers",
+                    "description": "Increases damage from Light Combo Finishers or Heavy Combo Finishers by 25%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b71",
+                    "title": "Critical Juggler",
+                    "description": "Increases Critical Attack damage while air juggling enemies by 15%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                },
+                {
+                    "id": "b72",
+                    "title": "Melee Charge",
+                    "description": "Light and heavy Attacks boost the energy of all heroic meters by 5%",
+                    "category": null,
+                    "heroId": null,
+                    "JA_children": null
+                }
+            ]
+        },
+        {
+            "id": "h01",
+            "title": "Boneshaker Specialization I",
+            "category": "Support Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h02",
+                    "title": "Rampaging Boneshaker",
+                    "category": "Support Heroic Specialization",
+                    "description": "Defeat [five] enemies while BONESHAKER is active to extend its duration by [5] seconds."
+                },
+                {
+                    "id": "h03",
+                    "title": "Rampaging Boneshaker",
+                    "category": "Support Heroic Specialization",
+                    "description": "Defeat [five] enemies while BONESHAKER is active in order to restore all Willpower."
+                },
+                {
+                    "id": "h04",
+                    "title": "Rampaging Boneshaker",
+                    "category": "Support Heroic Specialization",
+                    "description": "Defeat [five] enemies while BONESHAKER is active to instantly refill all intrinsic RAGE energy."
+                }
+            ]
+        },
+        {
+            "id": "h05",
+            "title": "Boneshaker Specialization II",
+            "category": "Support Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h06",
+                    "title": "Savage Regeneration",
+                    "category": "Support Heroic Specialization",
+                    "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Regen Packs."
+                },
+                {
+                    "id": "h07",
+                    "title": "Savage Heroism",
+                    "category": "Support Heroic Specialization",
+                    "description": "Defeating enemies who are [TAUNTED] by BONESHAKER causes them to drop Heroic Orbs."
+                },
+                {
+                    "id": "h08",
+                    "title": "Savage Intimidation",
+                    "category": "Support Heroic Specialization",
+                    "description": "Attacks from [TAUNTED] enemies have reduced impact."
+                }
+            ]
+        },
+        {
+            "id": "h09",
+            "title": "Stranglehold Specialization I",
+            "category": "Assault Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h10",
+                    "title": "Heroic Destruction",
+                    "category": "Assault Heroic Specialization",
+                    "description": "[50%] chance defeating an enemy will generate a Heroic Orb."
+                },
+                {
+                    "id": "h11",
+                    "title": "Devastating Charge",
+                    "category": "Assault Heroic Specialization",
+                    "description": "Deal [200%] more [stun] damage at the end of the STRANGLEHOLD Heroic ability."
+                },
+                {
+                    "id": "h12",
+                    "title": "Irradiant Destruction",
+                    "category": "Assault Heroic Specialization",
+                    "description": "On the final slam, the impact causes a massive radial hazard of material of irradiated [Gamma] particles. As long as enemies are inside of the hazardous area, they will take a small amount of additional damage, as well as [Gamma] damage."
+                }
+            ]
+        },
+        {
+            "id": "h13",
+            "title": "Stranglehold Specialization II",
+            "category": "Assault Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h14",
+                    "title": "Destructive Health",
+                    "category": "Assault Heroic Specialization",
+                    "description": "[50%] chance defeating an enemy will generate a Regen Pack."
+                },
+                {
+                    "id": "h15",
+                    "title": "Barbaric Charge",
+                    "category": "Assault Heroic Specialization",
+                    "description": "STRANGLEHOLD [taunts] nearby enemies and instantly Overcharges the intrinsic RAGE ability."
+                },
+                {
+                    "id": "h16",
+                    "title": "Barbaric Charge",
+                    "category": "Assault Heroic Specialization",
+                    "description": "Grants an additional charge of the STRANGLEHOLD Heroic ability."
+                }
+            ]
+        },
+        {
+            "id": "h17",
+            "title": "Thunderclap Specialization I",
+            "category": "Ultimate Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h18",
+                    "title": "Epicenter",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "The distance of the THUNDERCLAP shockwave is increased by [30%]."
+                },
+                {
+                    "id": "h19",
+                    "title": "Ground Zero",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "THUNDERCLAP creates a brief vacuum that draws in nearby enemies before launching them upwards with the attack. The attack creates a [Gamma] radiation zone that inflicts [Gamma] damage to affected enemies but regenerates [2%] Willpower every second for teammates within the area."
+                },
+                {
+                    "id": "h20",
+                    "title": "Fault Line",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "Focus the THUNDERCLAP shockwave into a narrower area of effect but increases both damage and [Stun] damage by [25%], demolishing enemies caught in the blast."
+                }
+            ]
+        },
+        {
+            "id": "h21",
+            "title": "Thunderclap Specialization II",
+            "category": "Ultimate Heroic Specialization",
+            "description": "Once unlocked, choose [one of three] specialization options to modify Heroic abilities. Swap between [three choices] at any time.",
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h22",
+                    "title": "Thunderclap Regeneration",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Regen Packs."
+                },
+                {
+                    "id": "h23",
+                    "title": "Thunderclap Heroic Recovery",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "There is a [50%] chance defeating enemies with THUNDERCLAP will cause them to drop Heroic Orbs."
+                },
+                {
+                    "id": "h24",
+                    "title": "Thunderclap Taunt",
+                    "category": "Ultimate Heroic Specialization",
+                    "description": "Enemies who survive THUNDERCLAP become [TAUNTED]."
+                }
+            ]
+        },
+        {
+            "id": "h25",
+            "title": "Grab Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Melee abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h26",
+                    "title": "Vice Grip",
+                    "description": "Attacks with held enemies are now protected from interruption from enemy attacks. However, the damage will still be applied.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h27",
+                    "title": "Durable Bludgeon",
+                    "description": "Held enemies take 30% less damage on hit with Light Grab Combos.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h28",
+                    "title": "Combatant Shield",
+                    "description": "Hold R2 while holding a grabbed enemy to absorb incoming damage. Forces dropping of enemies when successful.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h29",
+            "title": "Grab Specialization II",
+            "description": "Once unlocked, choose one of three specialization options to modify Melee abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h30",
+                    "title": "Hard Swings",
+                    "description": "Increases damage and impact of held enemies by 20%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h31",
+                    "title": "Enhanced Grab",
+                    "description": "15% improved chance grab attempts will succeed against evasive enemies.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h32",
+                    "title": "Regen Slams",
+                    "description": "Slamming held enemies with Heavy Attacks has a 15% chance to generate Regen Packs.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h33",
+            "title": "Takedown Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Melee abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h34",
+                    "title": "Willpower Takedown Mastery",
+                    "description": "Performing a Takedown spawns a Regen Pack.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h35",
+                    "title": "Heroic Takedown Mastery",
+                    "description": "Performing a Takedown spawns a Heroic Orb.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h36",
+                    "title": "Willpower Recovery",
+                    "description": "Recovers 35 points of Willpower after performing a Takedown.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h37",
+            "title": "Projectile Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h38",
+                    "title": "Rubble",
+                    "description": "Thrown debris of any size explodes on impact, inflicting normal and Stun damage over a wide area.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h39",
+                    "title": "Bedrock",
+                    "description": "Increases damage from thrown small debris by 15% and allows small debris chunks to pin enemies hit by the attack.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h40",
+                    "title": "Wrecking Ball",
+                    "description": "Large debris does not break apart when thrown, instead rolling on the ground inflicting damage to every enemy hit by the attack. Multiple combatants can be pinned by the projectile when thrown.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h41",
+            "title": "Damage Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h42",
+                    "title": "Ranged Damage",
+                    "description": "Increases Ranged Attack damage by 15%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h43",
+                    "title": "Fastball",
+                    "description": "Thrown enemies travel faster and inflict 15% more damage against combatants they hit.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h44",
+                    "title": "Meteor Damage",
+                    "description": "Increases damage by 15% when using large debris as a thrown projectile.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h45",
+            "title": "Efficiency Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify Ranged abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h46",
+                    "title": "Hand Cannon",
+                    "description": "Increases Light and Heavy Attack damage by 33.3% when using small debris as a melee weapon.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h47",
+                    "title": "Excavator",
+                    "description": "Increases speed of picking up both large and small debris chunks by 15%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h48",
+                    "title": "Meteoric",
+                    "description": "Increases the durability and damage of large debris chunks by 33.3% when using the melee Light and Heavy Attack.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h49",
+            "title": "Defense Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify intrinsic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h50",
+                    "title": "Raging Heroics",
+                    "description": "Increases charge rate of all Heroic meters by 15% while RAGE is active.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h51",
+                    "title": "Raging Recovery",
+                    "description": "Recovers Willpower by 10% while RAGE is active and while dealing damage.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h52",
+                    "title": "Raging Defense",
+                    "description": "Increases defensive strength by 15% while RAGE is active.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h53",
+            "title": "Damage Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify intrinsic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h54",
+                    "title": "Enhanced Damage",
+                    "description": "Increases all damage by 15% while RAGE is active.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h55",
+                    "title": "Enhanced Combo Finishers",
+                    "description": "Increases damage of Light and Heavy Combo Finishers by 25% while RAGE is active.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h56",
+                    "title": "Enhanced Bludgeon",
+                    "description": "Increases damage by 15% when using held enemies as a melee weapon while RAGE is active.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h57",
+            "title": "Efficiency Specialization",
+            "description": "Once unlocked, choose one of three specialization options to modify intrinsic abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h58",
+                    "title": "Berserker Rage",
+                    "description": "Increases the intrinsic energy gained by 15% when defeating combatants with held enemies.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h59",
+                    "title": "Controlled Rage",
+                    "description": "Reduces the initial cost of triggering RAGE by 15%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h60",
+                    "title": "Maximum Rage",
+                    "description": "Increases the maximum amount of intrinsic RAGE energy by 15%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h61",
+            "title": "Overcharge Specialization",
+            "description": "Once unlocked, choose one of three Specialization options to modify intrinsic Overcharge abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h62",
+                    "title": "Impact Boost",
+                    "description": "Increases impact while Overcharged by 25% decreasing the chance enemies will be able to interrupt attacks.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h63",
+                    "title": "Chance Boost",
+                    "description": "Increases Critical Attack Chance by 15% while Overcharged.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h64",
+                    "title": "Defense Boost",
+                    "description": "Increases Defensive Strength by 15% while Overcharged.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h65",
+            "title": "Damage Specialization",
+            "description": "Once unlocked, choose one of three Specialization options to modify intrinsic Overcharge abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h66",
+                    "title": "Damage Boost",
+                    "description": "Increases all damage by 20% while Overcharged.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h67",
+                    "title": "Stun Boost",
+                    "description": "Increases Stun damage while Overcharged by 30%, accelerating the rate at which enemy Stun meters fill.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h68",
+                    "title": "Status Boost",
+                    "description": "Increases Status damage while Overcharged by 30%, accelerating the rate at which all Status meters fill.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": "h69",
+            "title": "Efficiency Specialization",
+            "description": "Once unlocked, choose one of three Specialization options to modify intrinsic Overcharge abilities. Swap between the three choices at any time.",
+            "category": null,
+            "heroId": "hulk",
+            "children": [
+                {
+                    "id": "h70",
+                    "title": "Hot Head",
+                    "description": "Increases the amount of Overcharged intrinsic RAGE meter energy gained for all attacks by 20%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h71",
+                    "title": "Pancake",
+                    "description": "Increases Overcharge energy gained from Takedowns by 50%.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                },
+                {
+                    "id": "h72",
+                    "title": "Temper",
+                    "description": "Reduces the rate at which Overcharged energy drains allowing you to stay Overcharged longer.",
+                    "category": null,
+                    "heroId": "hulk",
+                    "children": null
+                }
+            ]
+        }
     ]
 }
