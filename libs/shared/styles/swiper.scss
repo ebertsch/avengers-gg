@@ -1,3 +1,7 @@
-swiper > .swiper.s-wrapper {
-    width: 700px !important;
+.swiper-pagination-bullet {
+    background: #899ab6 !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    background: #007afe !important;
 }

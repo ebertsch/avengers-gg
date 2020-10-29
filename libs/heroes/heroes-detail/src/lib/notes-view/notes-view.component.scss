@@ -1,4 +1,10 @@
+@import "../../../../../shared/styles/responsive.scss";
+
 :host {
-    margin: 60px;
     display: block;
+    margin: 10px;
+    
+    @include bp(laptop) {
+        margin: 60px;
+    }
 }

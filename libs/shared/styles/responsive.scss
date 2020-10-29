@@ -1,0 +1,19 @@
+@import './variables';
+
+@mixin bp($point) {
+    @if $point == tv {
+      @media (min-width: $breakpoint-tv) { @content; }
+    }
+    @else if $point == desktop {
+      @media (min-width: $breakpoint-desktop) { @content; }
+    }
+    @else if $point == laptop {
+      @media (min-width: $breakpoint-laptop)  { @content; }
+    }
+    @else if $point == tablet {
+      @media (min-width: $breakpoint-table)  { @content; }
+    }
+    @else if $point == mobile {
+      @media (min-width: $breakpoint-mobile)  { @content; }
+    }
+  }
