@@ -7,7 +7,7 @@ import { SkillService, Skill } from '@avengers-game-guide/shared/skills/data-acc
 
 import { Observable } from 'rxjs';
 import { tap, switchMap, map, withLatestFrom } from 'rxjs/operators';
-import { assoc, map as rMap, includes, mergeAll, toPairs, keys, reduce, concat, find } from 'ramda';
+import { assoc, map as rMap, includes, mergeAll, keys, reduce, concat, find, propEq, dissoc } from 'ramda';
 import { Dictionary } from '@ngrx/entity';
  
 type SelectableSkill = Skill & {selected?: boolean; children?: SelectableSkill[]};
@@ -67,7 +67,12 @@ export class BuildsViewComponent implements OnInit {
 
   selectSkill(skill: Skill, option: Skill) {
 
-    this.selectedSkills = assoc(skill.id, option.id, this.selectedSkills);
+    if(propEq(skill.id, option.id, this.selectedSkills)) {
+      this.selectedSkills = dissoc(skill.id, this.selectedSkills);
+    } else {
+      this.selectedSkills = assoc(skill.id, option.id, this.selectedSkills);
+    }
+
     const skills = reduce(
       (acc, val) => {
         if(val === '') return acc;
