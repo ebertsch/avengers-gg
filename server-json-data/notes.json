@@ -1,5 +1,5 @@
 {
     "notes": [
-        { "id": "1", "title": "Attacking with held debris", "description": "Attacking with held debris applies status effects and triggers ranged perks", "heroId": "hulk" }
+        { "id": "1", "category": "Core Mechanics - Debris", "description": "Attacking with held debris applies status effects and triggers ranged perks", "heroId": "hulk" }
     ]
 }

@@ -1,6 +1,6 @@
-<ng-container *ngFor="let note of notes$ | async">
+<ng-container *ngFor="let noteGroup of notes$ | async | keyvalue">
     <agg-panel>
-        <agg-panel-header>{{note.title}}</agg-panel-header>
-        <p [innerHTML]="note.description | highlight"></p>
+        <agg-panel-header>{{noteGroup.key}}</agg-panel-header>
+        <p [innerHTML]="note.description | highlight" *ngFor="let note of noteGroup.value"></p>
     </agg-panel>
 </ng-container>

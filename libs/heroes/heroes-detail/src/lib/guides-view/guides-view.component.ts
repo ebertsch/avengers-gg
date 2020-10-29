@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
 import { GuideService, Guide } from '@avengers-game-guide/shared/guides/data-access';
@@ -16,14 +17,15 @@ export class GuidesViewComponent implements OnInit {
   
   guides$: Observable<Guide[]>;
 
-  constructor(private guides: GuideService, private heroes: HeroService) {
-  }
-
-  ngOnInit(): void {
+  constructor(private guides: GuideService, private heroes: HeroService, private titleService: Title) {
     this.guides$ = this.heroes.selected$.pipe(
+      tap(hero => this.titleService.setTitle(`Avengers GG | Guides | ${hero.name}`)),
       tap(hero => this.guides.getWithQuery({heroId: hero.id})),
       switchMap(() => this.guides.entities$)
     )
+  }
+
+  ngOnInit(): void {
   }
 
 }

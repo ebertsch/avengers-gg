@@ -1,9 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
 import { NoteService, Note } from '@avengers-game-guide/shared/notes/data-access';
+import { groupBy, prop } from 'ramda';
 import { Observable } from 'rxjs';
-import { tap, switchMap} from 'rxjs/operators';
+import { tap, switchMap, map} from 'rxjs/operators';
 
 @Component({
   templateUrl: './notes-view.component.html',
@@ -12,16 +14,18 @@ import { tap, switchMap} from 'rxjs/operators';
 })
 export class NotesViewComponent implements OnInit {
 
-  notes$: Observable<Note[]>;
+  notes$: Observable<Record<string, Note[]>>;
 
-  constructor(private notes: NoteService, private heroes: HeroService) {
+  constructor(private notesService: NoteService, private heroes: HeroService, private titleService: Title) {
+    this.notes$ = this.heroes.selected$.pipe(
+      tap(hero => this.titleService.setTitle(`Avengers GG | Notes | ${hero.name}`)),
+      tap(hero => this.notesService.getWithQuery({heroId: hero.id})),
+      switchMap(() => this.notesService.entities$),
+      map(notes => groupBy(prop('category'), notes))
+    )
   }
 
   ngOnInit(): void {
-    this.notes$ = this.heroes.selected$.pipe(
-      tap(hero => this.notes.getWithQuery({heroId: hero.id})),
-      switchMap(() => this.notes.entities$)
-    )
   }
 
 }
