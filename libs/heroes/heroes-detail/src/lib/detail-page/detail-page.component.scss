@@ -1,3 +1,5 @@
+@import "../../../../../shared/styles/responsive.scss";
+
 .hero-header {
     display: flex;
     justify-content: center;
@@ -5,7 +7,6 @@
     flex-direction: column;
     position: relative;
 }
-
 
 .hero-name {
     font-size: 34px;
@@ -15,7 +16,13 @@
     display: inline;
     width: 60px;
     height: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    
+    @include bp(laptop) {
+        margin-bottom: 20px;
+        margin-top: 100px;
+      }
+
 }
 
 .wrapper {

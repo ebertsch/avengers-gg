@@ -3,7 +3,7 @@
     <agg-panel-header>Build Options</agg-panel-header>
 
     <div>
-        <swiper [config]="{navigation: true, pagination: true, slidesPerView: 2}">
+        <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
             <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
                 <div class="skill-container">
                     <agg-name-description [namedItem]="skill"></agg-name-description>
