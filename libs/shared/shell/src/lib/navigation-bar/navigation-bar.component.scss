@@ -1,3 +1,4 @@
+@import "../../../../../shared/styles/responsive.scss";
 
 :host {
   display: flex;
@@ -10,14 +11,24 @@
 
 .logo img {
       height: 100px;
+      display: none;
+
+      @include bp(laptop) {
+        display: block;
+      }
   }
 
 .navigation {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  align-items: center;
-  margin-right: 150px;
+  align-items: flex-end;
+  flex-direction: column;
+  
+  @include bp(laptop) {
+    align-items: center;
+    flex-direction: row;
+  }
 
   li {
     text-align: left;
@@ -43,6 +54,11 @@
     display: none;
     float: left;
     position: absolute;
+    right: 0;
+
+    li {
+      text-align: right;
+    }
 
     .navigation-item > a {
       font-size: 16px;

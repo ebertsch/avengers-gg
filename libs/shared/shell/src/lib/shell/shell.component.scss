@@ -1,3 +1,5 @@
+@import "../../../../../shared/styles/responsive.scss";
+
 :host {
     display: block;
     position: absolute;
@@ -11,6 +13,10 @@
 
   .main {
     position: relative;
-    margin-top: 46px;
+    margin-top: 28px;
+    
+    @include bp(laptop) {
+      margin-top: 46px;
+    }
   }
 
