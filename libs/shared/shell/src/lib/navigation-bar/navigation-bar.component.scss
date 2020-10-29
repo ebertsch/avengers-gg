@@ -28,6 +28,7 @@
     text-align: left;
   }
 
+  span,
   a {
     text-decoration: none;
     font-size: 20px;
@@ -50,5 +51,9 @@
 
   .navigation-item:hover .subnavigation {
     display: block;
+
+    li {
+      padding: 5px 5px 5px 15px;
+    }
   }
 }
