@@ -1,6 +1,6 @@
 {
     "guides": [
-        { "id": "1", "title": "Hulk Elite Guide", "UrlLink": "rjeVoPhVi3g", "isYouTube": true, "heroId": "hulk" },
-        { "id": "2", "title": "Hulk Tank Build", "UrlLink": "z07twKdqEQ4", "isYouTube": true, "heroId": "hulk" }
+        { "id": "1", "title": "Hulk Elite Guide", "youtubeId": "rjeVoPhVi3g", "heroId": "hulk" },
+        { "id": "2", "title": "Hulk Tank Build", "youtubeId": "z07twKdqEQ4", "heroId": "hulk" }
     ]
 }

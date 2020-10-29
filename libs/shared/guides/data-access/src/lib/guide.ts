@@ -1,7 +1,7 @@
 export interface Guide {
     id: string;
     title: string;
-    UrlLink: string;
-    isYouTube: boolean;
+    urlLink: string;
+    youtubeId: string;
     heroes: string[];
 }
