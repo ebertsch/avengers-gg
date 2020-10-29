@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
 import { groupBy, prop } from 'ramda';
 import { Observable } from 'rxjs';
 import { switchMap, tap, map } from 'rxjs/operators';
@@ -19,8 +21,9 @@ export class GearViewComponent implements OnInit {
   gear$: Observable<GroupedGear>;
   selectedGear: string;
 
-  constructor(private gearService: GearService, private perks: PerkService, private heroes: HeroService) {
+  constructor(private gearService: GearService, private perks: PerkService, private heroes: HeroService, private titleService: Title) {
     this.gear$ = this.heroes.selected$.pipe(
+      tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
       tap(hero => this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
       tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
       switchMap(() => this.gearService.entities$),
