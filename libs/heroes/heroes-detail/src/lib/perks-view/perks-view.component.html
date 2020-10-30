@@ -1,19 +1,6 @@
 <ng-container *ngFor="let gearType of perks$ | async | keyvalue">
     <agg-panel>
-        <agg-panel-header style="text-transform: capitalize;">{{gearType.key}} Perks</agg-panel-header>
-        <table>
-            <thead>
-                <tr class="header-row">
-                    <th class="fancy-text">Name</th>
-                    <th class="fancy-text">Perk</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="row" *ngFor="let perk of gearType.value">
-                    <td>{{perk.title}}</td>
-                    <td [innerHTML]="perk.description | highlight"></td>
-                </tr>
-            </tbody>
-        </table>
+        <agg-panel-header>{{gearType.key}} Perks</agg-panel-header>
+        <agg-name-description [namedItem]="perk" *ngFor="let perk of gearType.value"></agg-name-description>
     </agg-panel>
 </ng-container>

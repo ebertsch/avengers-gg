@@ -36,7 +36,7 @@ export class BuildsViewComponent implements OnInit {
   setupSkillsObservable() {
     this.builds.selectedSkills$.pipe(
       withLatestFrom(this.heroes.selected$),
-      tap(([skillString, selectedHero]) => this.titleService.setTitle(`Avengers GG | Builds | ${selectedHero.name}`)),
+      tap(([skillString, selectedHero]) => this.titleService.setTitle(`Avengers GG | Builder | ${selectedHero.name}`)),
     ).subscribe(([skillString, selectedHero]) => {
       this.skillService.getWithQuery({ heroId: selectedHero.id })
       this.selectedSkills = mergeAll((skillString || '').split(',').map((kvp) => {

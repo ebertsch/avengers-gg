@@ -58,7 +58,7 @@ function fixHeroNames(value) {
     try {
         const perks = await got("https://api.assemblers.world/perks").json();
         let x = 1
-        const newPerks = R.map((p) => {
+        const newPerks = R.sortBy(R.prop('title'), R.map((p) => {
             return {
                 id: `p${x++}`,
                 title: R.prop('name', p),
@@ -66,12 +66,11 @@ function fixHeroNames(value) {
                 gear: R.map(i => R.toLower(i), R.path(['content', 'gearCategories'], p) || []),
                 heroId: fixHeroNames(R.toLower(R.path(['content', 'character'], p) || '*'))
             }
-        }, perks.results)
-
+        }, perks.results))
         
         await fs.writeFile(
             path.join(__dirname, 'server-json-data', 'perks.json'),
-            JSON.stringify(newPerks)
+            JSON.stringify({ "perks": newPerks })
         )
     } catch (error) { 
         console.log('error', error)
