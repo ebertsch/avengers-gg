@@ -32,7 +32,7 @@ export class PerksViewComponent implements OnInit {
   constructor(private perks: PerkService, private heroes: HeroService, private titleService: Title) {
     this.perks$ = this.heroes.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Perks | ${hero.name}`)),
-      tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
+      tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}`)),
       switchMap(() => this.perks.entities$),
       map(data => groupPerks(data))
     )

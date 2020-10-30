@@ -1,10 +1,10 @@
-:host {
-    margin: 60px;
-    display: block;
-}
+@import "../../../../../shared/styles/responsive.scss";
 
-agg-panel-header {
-    border: none;
-    font-size: 34px;
-    text-align: center;
+:host {
+    display: block;
+    margin: 10px;
+    
+    @include bp(laptop) {
+        margin: 60px;
+    }
 }
