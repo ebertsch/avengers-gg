@@ -10,6 +10,7 @@ import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -31,6 +32,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ShellModule,
     SwiperModule,
     HeroesDataAccessModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     {
