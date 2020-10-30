@@ -5,34 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch keystone",
-            "program": "${workspaceFolder}/node_modules/.bin/keystone",
-            "args": [
-                "dev",
-                "--entry",
-                "dist/apps/cms/main.js"
-            ],
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
             "type": "node",
             "request": "launch",
-            "name": "Mocha All",
-            "program": "${workspaceFolder}/node_modules/@angular/cli/bin/ng",
-            "args": [
-                "run",
-                "cms:serve2"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "skipFiles": [
-                "<node_internals>/(!@bertsch)/*.js"
-            ],
-            "type": "pwa-node"
-        },
+            "name": "Launch Perks Downloader",
+            "program": "${workspaceFolder}/perks-downloader.js"
+          },
     ]
 }
