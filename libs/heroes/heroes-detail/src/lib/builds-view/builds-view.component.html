@@ -1,4 +1,3 @@
-
 <agg-panel class="skill-options-container">
     <agg-panel-header>Build Options</agg-panel-header>
 
@@ -18,11 +17,7 @@
 
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
-
-
-    <ng-container *ngFor="let selSkill of selectedSkills | keyvalue">
-        <ng-container *ngIf="!!selSkill.value && !!(skillService.getSkill(selSkill.key) | async)">
-            <agg-name-description [namedItem]="findChild((skillService.getSkill(selSkill.key) | async), selSkill.value)"></agg-name-description>
-        </ng-container>
+    <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: bySkillId">
+        <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>
 </agg-panel>

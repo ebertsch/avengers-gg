@@ -3,12 +3,12 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
-import { BuildService, Build } from '@avengers-game-guide/shared/builds/data-access';
+import { BuildService } from '@avengers-game-guide/shared/builds/data-access';
 import { SkillService, Skill } from '@avengers-game-guide/shared/skills/data-access';
 
-import { Observable } from 'rxjs';
-import { tap, switchMap, map, withLatestFrom } from 'rxjs/operators';
-import { assoc, map as rMap, includes, mergeAll, keys, reduce, concat, find, propEq, dissoc } from 'ramda';
+import { Observable, combineLatest } from 'rxjs';
+import { tap, map, take } from 'rxjs/operators';
+import { assoc, map as rMap, includes, keys, reduce, concat, find, propEq, dissoc, append } from 'ramda';
 import { Dictionary } from '@ngrx/entity';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
@@ -20,8 +20,10 @@ type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[
 })
 export class BuildsViewComponent implements OnInit {
 
-  builds$: Observable<Build[]>;
+  hero$: Observable<any>
   skills$: Observable<SelectableSkill[]>;
+  selectedSkills$: Observable<Skill[]>;
+
   selectedSkills: Dictionary<string> = {}
 
   constructor(
@@ -30,40 +32,47 @@ export class BuildsViewComponent implements OnInit {
     private skillService: SkillService,
     private router: Router,
     private titleService: Title) {
-      this.setupSkillsObservable()
   }
 
-  setupSkillsObservable() {
-    this.builds.selectedSkills$.pipe(
-      withLatestFrom(this.heroes.selected$),
-      tap(([skillString, selectedHero]) => this.titleService.setTitle(`Avengers GG | Builder | ${selectedHero.name}`)),
-    ).subscribe(([skillString, selectedHero]) => {
-      this.skillService.getWithQuery({ heroId: selectedHero.id })
-      this.selectedSkills = mergeAll((skillString || '').split(',').map((kvp) => {
-        const values = kvp.split(':')
-        return { [values[0]]: values[1] }
-      }))
-    })
+  ngOnInit(): void {
+    this.setupSkills();
+  }
 
-    this.skills$ = this.heroes.selected$.pipe(
+  setupSkills() {
+    this.hero$ = this.heroes.selected$.pipe(
+      tap((hero) => this.titleService.setTitle(`Avengers GG | Builder | ${hero.name}`)),
       tap(hero => this.skillService.getWithQuery({ heroId: hero.id })),
-      switchMap(() => this.skillService.entities$),
-      withLatestFrom(this.builds.selectedSkills$),
-      map(([skills, selectedSkillsString]) =>
-        rMap((skill: Skill) =>
-          assoc('children',
-            rMap(child => assoc("selected", includes(child.id, selectedSkillsString || ""), child), skill.children)
-            , skill)
-          , skills)
+      tap(x => console.log('query hre')),
+      take(1),
+    )
+
+    this.skills$ = combineLatest([this.builds.selectedSkills$, this.hero$, this.skillService.entities$])
+      .pipe(
+        map(([selectedSkills, hero, skills]) => {
+          return rMap((skill: Skill) =>
+            assoc('children',
+              rMap(child => assoc("selected", includes(child.id, selectedSkills || ""), child), skill.children)
+              , skill)
+            , skills)
+        })
+      )
+
+    this.selectedSkills$ = this.skills$.pipe(
+      map(skills => reduce((acc, cur) => {
+        const selectedChild = find((x => x.selected), cur.children)
+        if (!!selectedChild) {
+          this.selectedSkills[cur.id] = selectedChild.id;
+          return append(selectedChild, acc)
+        }
+        return acc;
+
+      }, [] as Skill[], skills as SelectableSkill[])
       )
     )
   }
 
   bySkillId(index: number, skill: Skill) {
     return skill.id
-  }
-
-  ngOnInit(): void {
   }
 
   selectSkill(skill: Skill, option: Skill) {
@@ -86,10 +95,6 @@ export class BuildsViewComponent implements OnInit {
         queryParams: { skills: skills.join(",") },
         queryParamsHandling: 'merge'
       });
-  }
-
-  findChild(skill: Skill, childId: string) {
-    return find(child => child.id === childId, skill.children)
   }
 
 }
