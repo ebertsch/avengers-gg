@@ -7,6 +7,7 @@ import { select, createSelector } from '@ngrx/store';
 import { RouteSelectors } from '@avengers-game-guide/shared/router'
 
 import { Hero } from './hero';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 
 @Injectable({
