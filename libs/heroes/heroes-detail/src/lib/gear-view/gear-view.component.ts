@@ -24,8 +24,8 @@ export class GearViewComponent implements OnInit {
   constructor(private gearService: GearService, private perks: PerkService, private heroes: HeroService, private titleService: Title) {
     this.gear$ = this.heroes.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
-      tap(hero => this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
-      tap(hero => this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)),
+      tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
+      tap(hero => {this.perks.clearCache(); this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
       switchMap(() => this.gearService.entities$),
       map(data => groupBy(prop('set'), data) )
     )

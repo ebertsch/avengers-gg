@@ -41,7 +41,7 @@ export class BuildsViewComponent implements OnInit {
   setupSkills() {
     this.hero$ = this.heroes.selected$.pipe(
       tap((hero) => this.titleService.setTitle(`Avengers GG | Builder | ${hero.name}`)),
-      tap(hero => this.skillService.getWithQuery({ heroId: hero.id })),
+      tap(hero => {this.skillService.clearCache(); this.skillService.getWithQuery({ heroId: hero.id })}),
       take(1),
     )
 
