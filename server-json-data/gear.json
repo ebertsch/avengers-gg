@@ -1,9 +1,3792 @@
 {
     "gear": [
-        { "id": "1", "name": "gear 1", "set":"of Ages", "gearType":"melee", "perks":[["perk-1"], ["perk-4", "perk-2", "perk-3"], ["perk-4"]], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "priority mission" }], "heroId": "hulk" },
-        { "id": "2", "name": "gear 2", "set":"of Ages", "gearType":"melee", "perks":[["perk-1"], ["perk-2", "perk-3"], ["perk-4"]], "stats": ["valor", "might", "intensity"], "rarity": "exotic", "sources": [{ "type":"mission reward", "from": "priority mission" }], "heroId": "hulk" },
-        { "id": "3", "name": "gear 3", "set":"of Ages", "gearType":"melee", "perks":[["perk-1"], ["perk-2", "perk-3"], ["perk-4"]], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
-        { "id": "4", "name": "gear 4", "set":"of Ages", "gearType":"melee", "perks":[["perk-1"], ["perk-2", "perk-3"], ["perk-4"]], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" },
-        { "id": "5", "name": "gear 5", "set":"of Ages", "gearType":"melee", "perks":[["perk-1"], ["perk-2", "perk-3"], ["perk-4"]], "stats": ["valor", "might"], "rarity": "legendary", "sources": [{ "type":"mission reward", "from": "source" }], "heroId": "hulk" }
+        {
+            "id": "g115",
+            "name": "Adept Buff Resonator",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p1"
+                ],
+                [
+                    "p393"
+                ],
+                [
+                    "p143"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g121",
+            "name": "Adept Graviton Explosion",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p2"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g137",
+            "name": "Adept Protection Repulsor",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p399"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g131",
+            "name": "Adept Protection Resonator",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p399"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Revisit Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g117",
+            "name": "Aerial Berserker Blitz Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p371"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g141",
+            "name": "Aerial Quake Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p11"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g86",
+            "name": "Amplifier of the First Avenger",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p379"
+                ],
+                [
+                    "p380"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "The First Avenger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g132",
+            "name": "Apex Blessing Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p16"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Revisit Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g123",
+            "name": "Apex Blitz Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p252"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g118",
+            "name": "Apex Quake Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p20"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g81",
+            "name": "Armlet of Ages",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p362"
+                ],
+                [
+                    "p363"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g94",
+            "name": "Armlets of the Storm",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p357"
+                ],
+                [
+                    "p351"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g91",
+            "name": "Armor of the Nomad",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p384"
+                ],
+                [
+                    "p386"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Nomad",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g80",
+            "name": "Band of Ages",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p337"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g19",
+            "name": "Belt of the Storm",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p258"
+                ],
+                [
+                    "p259"
+                ],
+                [
+                    "p113"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g105",
+            "name": "Biokinetic Polymer Padding",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p368"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p198"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g68",
+            "name": "Bracers of the Saffa",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p332"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p122"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Saffa",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g145",
+            "name": "Centurion's Mark VIII Armaments",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p82"
+                ],
+                [
+                    "p413"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g143",
+            "name": "Centurion's Mark XIII Muon Gloves",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p158"
+                ],
+                [
+                    "p157"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Centurion's Mark XIII",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g70",
+            "name": "Chestpiece of the Saffa",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p346"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Saffa",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g85",
+            "name": "Chestplate of the First Avenger",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p377"
+                ],
+                [
+                    "p378"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "The First Avenger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g49",
+            "name": "Component of Ages",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p179"
+                ],
+                [
+                    "p206"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g53",
+            "name": "Component of the Storm",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p177"
+                ],
+                [
+                    "p322"
+                ],
+                [
+                    "p323"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g116",
+            "name": "Dauntless Blessing Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p57"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g25",
+            "name": "Edgewalker's Cord",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p242"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Global Drop",
+                    "from": "Any"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g101",
+            "name": "Emblem of Perseverance",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p145"
+                ],
+                [
+                    "p120"
+                ],
+                [
+                    "p34"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g71",
+            "name": "Emblem of the Saffa",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p348"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Saffa",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g48",
+            "name": "Enhancer of Ages",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p309"
+                ],
+                [
+                    "p310"
+                ],
+                [
+                    "p318"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g52",
+            "name": "Enhancer of the Storm",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p309"
+                ],
+                [
+                    "p310"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g125",
+            "name": "Faultless Invulnerability Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    null
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g57",
+            "name": "Faultless Invulnerability Nanites",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p84"
+                ],
+                [
+                    "p325"
+                ],
+                [
+                    "p276"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Global Drop",
+                    "from": "Any"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g17",
+            "name": "Gloves of the Storm",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p91"
+                ],
+                [
+                    "p95"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g26",
+            "name": "Gunslinger's Armaments",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p266"
+                ],
+                [
+                    "p267"
+                ],
+                [
+                    "p268"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g88",
+            "name": "Haymaker of the Super Soldier",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p383"
+                ],
+                [
+                    "p53"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Super Soldier",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g89",
+            "name": "Haymakers of the First Avenger",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p384"
+                ],
+                [
+                    "p381"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g139",
+            "name": "Heavyweight Buff Gauntlets",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p105"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g119",
+            "name": "Heavyweight Buff Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p105"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g122",
+            "name": "Heavyweight Buff Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p105"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g138",
+            "name": "Heavyweight Spark Gauntlets",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p111"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g140",
+            "name": "Heavyweight Spark Gauntlets",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p111"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g130",
+            "name": "Heavyweight Spark Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p111"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Revisit Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g98",
+            "name": "Hivemind Armlets",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p362"
+                ],
+                [
+                    "p363"
+                ],
+                [
+                    "p322"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g97",
+            "name": "Hivemind Bands",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p335"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p322"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g84",
+            "name": "Hivemind Chestguard",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p326"
+                ],
+                [
+                    "p82"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g56",
+            "name": "Hivemind Component",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p326"
+                ],
+                [
+                    "p82"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g20",
+            "name": "Hivemind Gloves",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p235"
+                ],
+                [
+                    "p236"
+                ],
+                [
+                    "p256"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g100",
+            "name": "Hivemind Insignia",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p112"
+                ],
+                [
+                    "p113"
+                ],
+                [
+                    "p119"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g55",
+            "name": "Hivemind Nanites",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p324"
+                ],
+                [
+                    "p325"
+                ],
+                [
+                    "p259"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g151",
+            "name": "Hivemind Plating",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p264"
+                ],
+                [
+                    "p263"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g144",
+            "name": "Hivemind Reactor",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p114"
+                ],
+                [
+                    "p137"
+                ],
+                [
+                    "p327"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g149",
+            "name": "Hivemind Resonator",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p167"
+                ],
+                [
+                    "p165"
+                ],
+                [
+                    "p121"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g21",
+            "name": "Hivemind Rounds",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    null
+                ],
+                [
+                    null
+                ],
+                [
+                    "p121"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g58",
+            "name": "Hivemind Stimulator",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p112"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p114"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g99",
+            "name": "Hivemind Tunic",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p206"
+                ],
+                [
+                    "p263"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g22",
+            "name": "Hivemind Vest",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p206"
+                ],
+                [
+                    "p263"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Hivemind",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g61",
+            "name": "Immutable Alloy",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p112"
+                ],
+                [
+                    "p305"
+                ],
+                [
+                    "p172"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Immutable",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g59",
+            "name": "Immutable Myofibril",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p275"
+                ],
+                [
+                    "p295"
+                ],
+                [
+                    "p294"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Immutable",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g4",
+            "name": "Infiltrator's Belt",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p234"
+                ],
+                [
+                    "p113"
+                ],
+                [
+                    "p196"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Infiltrator",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g1",
+            "name": "Infiltrator's Gloves",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p227"
+                ],
+                [
+                    "p95"
+                ],
+                [
+                    "p228"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Infiltrator",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g2",
+            "name": "Infiltrator's Rounds",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p229"
+                ],
+                [
+                    null
+                ],
+                [
+                    "p230"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Infiltrator",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g3",
+            "name": "Infiltrator's Suit",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p227"
+                ],
+                [
+                    "p232"
+                ],
+                [
+                    "p233"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Infiltrator",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g83",
+            "name": "Insignia of Ages",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p20"
+                ],
+                [
+                    "p253"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g96",
+            "name": "Insignia of the Storm",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p258"
+                ],
+                [
+                    "p256"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g87",
+            "name": "Iron Gloves of the Nomad",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p381"
+                ],
+                [
+                    "p382"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Nomad",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g92",
+            "name": "Iron Gloves of the Nomad",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p383"
+                ],
+                [
+                    "p53"
+                ],
+                [
+                    "p37"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Nomad",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g60",
+            "name": "Irradiated Sheath",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p305"
+                ],
+                [
+                    "p218"
+                ],
+                [
+                    "p207"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Immutable",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g113",
+            "name": "Lightweight Buff Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p126"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g120",
+            "name": "Lightweight Pulse Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p131"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g134",
+            "name": "Lightweight Quake Reactor",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p132"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g114",
+            "name": "Lightweight Spark Inserts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p133"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g153",
+            "name": "Mark II Prototype Plating",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p441"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Mark III",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g73",
+            "name": "Marvelous Adornments",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p4"
+                ],
+                [
+                    "p351"
+                ],
+                [
+                    "p78"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Marvelous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g74",
+            "name": "Marvelous Armaments",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p352"
+                ],
+                [
+                    "p113"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Marvelous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g108",
+            "name": "Marvelous Body Armor",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p352"
+                ],
+                [
+                    "p113"
+                ],
+                [
+                    "p404"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Marvelous (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g72",
+            "name": "Marvelous Clasps",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p83"
+                ],
+                [
+                    "p225"
+                ],
+                [
+                    "p123"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Marvelous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g75",
+            "name": "Marvelous Crest",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p145"
+                ],
+                [
+                    "p163"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Marvelous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g106",
+            "name": "Marvelous Nega Bands",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p224"
+                ],
+                [
+                    "p225"
+                ],
+                [
+                    null
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Marvelous (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g107",
+            "name": "Marvelous Regalia",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p340"
+                ],
+                [
+                    "p344"
+                ],
+                [
+                    "p403"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Marvelous (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g129",
+            "name": "Mighty Blessing Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p369"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g142",
+            "name": "Mighty Quake Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p144"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g133",
+            "name": "Modular Mark VII EMF Generator",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p415"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Modular Mark VII",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g36",
+            "name": "Monsterous Biocells",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p304"
+                ],
+                [
+                    "p296"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Monsterous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g35",
+            "name": "Monsterous Coagulator",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p278"
+                ],
+                [
+                    "p281"
+                ],
+                [
+                    "p127"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Monsterous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g37",
+            "name": "Monsterous Composite",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p305"
+                ],
+                [
+                    "p306"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Monsterous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g38",
+            "name": "Monsterous Synapses",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p275"
+                ],
+                [
+                    "p274"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Monsterous",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g103",
+            "name": "Morphogenetic Chestpiece",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p352"
+                ],
+                [
+                    "p96"
+                ],
+                [
+                    "p98"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Morphogenetic",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g102",
+            "name": "Morphogenetic Ornaments",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p401"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Morphogenetic",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g47",
+            "name": "Nanites of Ages",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p307"
+                ],
+                [
+                    "p308"
+                ],
+                [
+                    "p318"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g51",
+            "name": "Nanites of the Storm",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p319"
+                ],
+                [
+                    "p320"
+                ],
+                [
+                    "p321"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g33",
+            "name": "Natalia's Cloak",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p121"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Aliases (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g11",
+            "name": "Natalia's Embrace",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p121"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Aliases",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g34",
+            "name": "Natasha's Coil",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p242"
+                ],
+                [
+                    "p112"
+                ],
+                [
+                    "p214"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Aliases (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g12",
+            "name": "Natasha's Ribbon",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p242"
+                ],
+                [
+                    "p112"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Aliases",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g135",
+            "name": "Nimble Pulse Plating",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p148"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g31",
+            "name": "Oktober's Grasp",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p68"
+                ],
+                [
+                    "p193"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Aliases (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g9",
+            "name": "Oktober's Touch",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p235"
+                ],
+                [
+                    "p236"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Aliases",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g69",
+            "name": "Ornaments of the Saffa",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p401"
+                ],
+                [
+                    "p340"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Saffa",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g45",
+            "name": "Planet Cracker Alloy",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p314"
+                ],
+                [
+                    "p315"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Planet Cracker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g67",
+            "name": "Planet Cracker Dendrites",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p316"
+                ],
+                [
+                    "p113"
+                ],
+                [
+                    "p316"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Planet Cracker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g43",
+            "name": "Planet Cracker Infusion",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p312"
+                ],
+                [
+                    "p313"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Planet Cracker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g44",
+            "name": "Planet Cracker Myofibril",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p309"
+                ],
+                [
+                    "p310"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Planet Cracker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g46",
+            "name": "Planet Cracker Neuronics",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p316"
+                ],
+                [
+                    "p113"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Planet Cracker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g111",
+            "name": "Powerful Blitz Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p467"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g126",
+            "name": "Proficient Protection Resonator",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p162"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g127",
+            "name": "Reactive Buff Chestplate",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p177"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g112",
+            "name": "Reactive Explosion Chestplate",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p178"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g6",
+            "name": "Red Room Armaments",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p231"
+                ],
+                [
+                    null
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Red Room",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g28",
+            "name": "Red Room Arsenal",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p269"
+                ],
+                [
+                    "p267"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Red Room (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g30",
+            "name": "Red Room Coil",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p197"
+                ],
+                [
+                    "p201"
+                ],
+                [
+                    "p196"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Red Room (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g8",
+            "name": "Red Room Cord",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p197"
+                ],
+                [
+                    "p201"
+                ],
+                [
+                    "p196"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Red Room",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g7",
+            "name": "Red Room Corset",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p202"
+                ],
+                [
+                    "p238"
+                ],
+                [
+                    "p239"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Red Room",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g5",
+            "name": "Red Room Gauntlets",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p235"
+                ],
+                [
+                    "p236"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Red Room",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g27",
+            "name": "Red Room Grasps",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p91"
+                ],
+                [
+                    "p95"
+                ],
+                [
+                    "p37"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Red Room (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g29",
+            "name": "Red Room Uniform",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p202"
+                ],
+                [
+                    "p206"
+                ],
+                [
+                    "p82"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Red Room (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g128",
+            "name": "Reflexive Inspiration Chestplate",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p184"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g136",
+            "name": "Reflexive Spark Plating",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p188"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Rare",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g90",
+            "name": "Safeguard of the First Avenger",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p385"
+                ],
+                [
+                    "p214"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "The First Avenger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Hive"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g124",
+            "name": "Safeguard of the Super Soldier",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p414"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Super Soldier",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g62",
+            "name": "Seething Impulse Nodes",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p328"
+                ],
+                [
+                    "p134"
+                ],
+                [
+                    "p34"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g24",
+            "name": "Sharpshooter's Rig",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p265"
+                ],
+                [
+                    "p261"
+                ],
+                [
+                    "p100"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g93",
+            "name": "Stabilizer of the Super Soldier",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p393"
+                ],
+                [
+                    "p56"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Super Soldier (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g50",
+            "name": "Stimulator of Ages",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p132"
+                ],
+                [
+                    "p259"
+                ],
+                [
+                    "p317"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g54",
+            "name": "Stimulator of the Storm",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p258"
+                ],
+                [
+                    "p253"
+                ],
+                [
+                    "p113"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g77",
+            "name": "Stormranger's Adornments",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p356"
+                ],
+                [
+                    "p143"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Stormranger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g78",
+            "name": "Stormranger's Armaments",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p215"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Stormranger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g76",
+            "name": "Stormranger's Clasps",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p128"
+                ],
+                [
+                    "p353"
+                ],
+                [
+                    "p336"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Stormranger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g110",
+            "name": "Stormranger's Coat Of Arms",
+            "perks": [
+                [
+                    "p358"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g79",
+            "name": "Stormranger's Crest",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p358"
+                ],
+                [
+                    "p214"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Stormranger",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g109",
+            "name": "Stormranger's Regalia",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p357"
+                ],
+                [
+                    "p351"
+                ],
+                [
+                    "p405"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Stormranger (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g146",
+            "name": "Strongarm Dampener",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p379"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "Brooklyn",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g147",
+            "name": "Superior Mark XIII Armaments",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p311"
+                ],
+                [
+                    "p136"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Vault"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g104",
+            "name": "Trooper's Mitts",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p402"
+                ],
+                [
+                    "p225"
+                ],
+                [
+                    "p301"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g32",
+            "name": "Tsarina's Fury",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p270"
+                ],
+                [
+                    "p271"
+                ],
+                [
+                    "p268"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "Aliases (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Mega Hive"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g10",
+            "name": "Tsarina's Scorn",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    null
+                ],
+                [
+                    "p241"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Aliases",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Villain Sector"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g95",
+            "name": "Tunic of the Storm",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p178"
+                ],
+                [
+                    "p121"
+                ],
+                [
+                    "p323"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g16",
+            "name": "Ultimate Belt",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p252"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g152",
+            "name": "Ultimate Gauntlets",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p158"
+                ],
+                [
+                    "p157"
+                ],
+                [
+                    "p318"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g13",
+            "name": "Ultimate Gloves",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p235"
+                ],
+                [
+                    "p236"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g150",
+            "name": "Ultimate Protector",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p100"
+                ],
+                [
+                    "p113"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "captain"
+        },
+        {
+            "id": "g14",
+            "name": "Ultimate Rounds",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p245"
+                ],
+                [
+                    null
+                ],
+                [
+                    "p246"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g15",
+            "name": "Ultimate Vest",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p183"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ultimate",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g82",
+            "name": "Vest of Ages",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p147"
+                ],
+                [
+                    "p206"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Ages",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "kamala"
+        },
+        {
+            "id": "g18",
+            "name": "Vest of the Storm",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p255"
+                ],
+                [
+                    "p256"
+                ],
+                [
+                    "p257"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "Storm",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Priority Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        },
+        {
+            "id": "g64",
+            "name": "Worlbreaker's Myofibril",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p292"
+                ],
+                [
+                    "p291"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "*TDB*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g65",
+            "name": "Worldbreaker's Alloy",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p311"
+                ],
+                [
+                    "p259"
+                ],
+                [
+                    "p305"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "World Breaker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g40",
+            "name": "Worldbreaker's Biocells",
+            "gearType": "Ranged",
+            "perks": [
+                [
+                    "p309"
+                ],
+                [
+                    "p310"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "World Breaker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g39",
+            "name": "Worldbreaker's Coagulator",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p307"
+                ],
+                [
+                    "p308"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "World Breaker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g41",
+            "name": "Worldbreaker's Composite",
+            "gearType": "Defense",
+            "perks": [
+                [
+                    "p311"
+                ],
+                [
+                    "p259"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "World Breaker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g63",
+            "name": "Worldbreaker's Infusion",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p312"
+                ],
+                [
+                    "p281"
+                ],
+                [
+                    "p330"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "World Breaker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g66",
+            "name": "Worldbreaker's Neuronics",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p214"
+                ],
+                [
+                    "p465"
+                ],
+                [
+                    "p112"
+                ]
+            ],
+            "rarity": "Exotic",
+            "stats": [],
+            "set": "World Breaker (exotic)",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Heroic Hive"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g42",
+            "name": "Worldbreaker's Synapses",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p214"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Legendary",
+            "stats": [],
+            "set": "World Breaker",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Elite Vault"
+                }
+            ],
+            "heroId": "hulk"
+        },
+        {
+            "id": "g148",
+            "name": "YT1 Overcharged Arc Accelerator",
+            "gearType": "Heroic",
+            "perks": [
+                [
+                    "p200"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "YT1",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "ironman"
+        },
+        {
+            "id": "g23",
+            "name": "Yelena's Gloves",
+            "gearType": "Melee",
+            "perks": [
+                [
+                    "p197"
+                ],
+                [
+                    "p68"
+                ],
+                [
+                    "p465"
+                ]
+            ],
+            "rarity": "Epic",
+            "stats": [],
+            "set": "*TBD*",
+            "sources": [
+                {
+                    "type": "Mission Reward",
+                    "from": "Daily Faction Mission"
+                }
+            ],
+            "heroId": "blackwidow"
+        }
     ]
 }

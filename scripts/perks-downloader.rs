@@ -45,7 +45,7 @@ function fixHighlights(value) {
 }
 
 const heroes = [
-    [/iron man/, 'iron man'],
+    [/iron man/, 'ironman'],
     [/captain america/, 'captain'],
     [/ms. marvel/, 'kamala'],
     [/black widow/, 'blackwidow']
