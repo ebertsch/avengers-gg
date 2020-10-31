@@ -7,15 +7,15 @@ import { Gear } from '../libs/shared/gear/data-access/src'
 import { Perk } from '../libs/shared/perks/data-access/src'
 import { Dictionary } from '@ngrx/entity'
 import { ItemSetResponse } from './named-item-set.type'
-import { ContentChild } from '@angular/core'
-
 export type DataFile<T> = Dictionary<T[]>
 
 const heroes = [
     [/iron man/, 'ironman'],
     [/captain america/, 'captain'],
     [/ms. marvel/, 'kamala'],
-    [/black widow/, 'blackwidow']
+    [/black widow/, 'blackwidow'],
+    [/thor/, 'thor'],
+    [/hulk/, 'hulk'],
 ]
 function fixHeroNames(value: any) {
     return reduce((acc, cur) => acc.replace(cur[0], cur[1]), value, heroes)
@@ -52,11 +52,11 @@ async function loadNamedSets() {
             return {
                 id: `g${x++}`,
                 name: item.name,
-                gearType: item.content.gearCategory,
+                gearType: (item.content.gearCategory||'').toLowerCase(),
                 perks: map(p => [ perks[p.name]], item.content.perks),
-                rarity: item.content.rarity,
+                rarity: (item.content.rarity||'').toLowerCase(),
                 stats: [],
-                set: (namedSets[item.name] || "*TDB*").replace('*Name TBD*', '*TBD*'),
+                set: (namedSets[item.name] || "*TBD*").replace('*Name TBD*', '*TBD*'),
                 sources: map(s => ({ type: 'Mission Reward', from: s }), item.content.sources || []), 
                 heroId: fixHeroNames(toLower(path(['content', 'character'], item) || '*'))
             } as Gear

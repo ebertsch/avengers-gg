@@ -1,22 +1,21 @@
 <ng-container *ngFor="let gearSet of gear$ | async | keyvalue">
     <agg-panel>
-        <agg-panel-header style="text-transform: capitalize;">{{gearSet.key}}</agg-panel-header>
+        <agg-panel-header style="text-transform: capitalize;">
+            {{gearSet.key}}
+            <span class="location">{{gearSet.value[0].sources[0].type}}: {{gearSet.value[0].sources[0].from}}</span>
+        </agg-panel-header>
         <table>
             <thead>
                 <tr class="header-row">
-                    <th class="fancy-text">Slot</th>
-                    <th class="fancy-text">Name</th>
-                    <th class="fancy-text">Source</th>
+                    <th class="fancy-text col-name">Name</th>
+                    <th class="fancy-text col-slot">Slot</th>
                 </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let gear of gearSet.value">
                 <tr class="row" [ngClass]="{'selected': selectedGear == gear.id}" (click)="showGearRow(gear.id)">
-                    <td>{{gear.gearType}}</td>
-                    <td>{{gear.name}}</td>
-                    <td>
-                        <div *ngFor="let source of gear.sources">{{source.type}}: {{source.from}}</div>
-                    </td>
+                    <td class="column col-name">{{gear.name}}</td>
+                    <td class="column col-slot">{{gear.gearType}}</td>
                 </tr>
                 <tr class="detail-row" *ngIf="selectedGear == gear.id">
                     <td colspan="3">

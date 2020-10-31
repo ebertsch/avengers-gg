@@ -42,7 +42,6 @@ export class BuildsViewComponent implements OnInit {
     this.hero$ = this.heroes.selected$.pipe(
       tap((hero) => this.titleService.setTitle(`Avengers GG | Builder | ${hero.name}`)),
       tap(hero => this.skillService.getWithQuery({ heroId: hero.id })),
-      tap(x => console.log('query hre')),
       take(1),
     )
 

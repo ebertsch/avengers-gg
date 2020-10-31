@@ -1,3 +1,5 @@
+@import "../../../../../shared/styles/responsive.scss";
+
 :host {
   display: flex;
   justify-content: center;
@@ -16,7 +18,10 @@
     list-style: none;
 
     img {
-      height: 80px;
+      height: 45px;
+      @include bp(laptop) {
+        height: 80px;
+      }
     }
   }
 }

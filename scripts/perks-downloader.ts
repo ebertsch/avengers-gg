@@ -48,7 +48,9 @@ const heroes = [
     [/iron man/, 'ironman'],
     [/captain america/, 'captain'],
     [/ms. marvel/, 'kamala'],
-    [/black widow/, 'blackwidow']
+    [/black widow/, 'blackwidow'],
+    [/thor/, 'thor'],
+    [/hulk/, 'hulk'],
 ]
 function fixHeroNames(value) {
     return R.reduce((acc, cur) => acc.replace(cur[0], cur[1]), value, heroes)
@@ -69,7 +71,7 @@ function fixHeroNames(value) {
         }, perks.results))
         
         await fs.writeFile(
-            path.join(__dirname, 'server-json-data', 'perks.json'),
+            path.join(__dirname, '../server-json-data', 'perks.json'),
             JSON.stringify({ "perks": newPerks })
         )
     } catch (error) { 

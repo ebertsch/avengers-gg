@@ -35,8 +35,13 @@
     display: FLEX;
 }
 .tab {
-    padding: 0 20px;
+    padding: 0 10px;
     font-size: 20px;
+
+    @include bp(laptop) {
+        padding: 0 20px;
+        font-size: 20px;
+    }
 
     .active {
 

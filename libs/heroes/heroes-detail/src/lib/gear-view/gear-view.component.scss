@@ -1,10 +1,41 @@
+@import "../../../../../shared/styles/responsive.scss";
+
 :host {
-    margin: 60px;
     display: block;
+    margin: 10px;
+    
+    @include bp(laptop) {
+        margin: 60px;
+    }
 }
 
-agg-panel-header {
-    border: none;
-    font-size: 34px;
-    text-align: center;
+.location {
+    float: right;
+    font-size: 14px;
+    line-height: 34px;
+}
+
+.gear-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-column-gap: 10px;
+    justify-items: center;
+}
+
+.column {
+    padding: 10px 0;
+}
+
+.col-name {
+    width: 400px;
+}
+.col-slot {
+    text-align: right;
+    @include bp(laptop) {
+        text-align: left;
+    }
+}
+
+.row {
+    cursor: pointer;
 }
