@@ -13,7 +13,7 @@ import { HeroesDataAccessModule, EnsureHeroesGuard } from '@avengers-game-guide/
     HeroesDataAccessModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full',
-      canActivate: [EnsureHeroesGuard], //todo: Move into Heroes module
+      canActivate: [EnsureHeroesGuard],
       component: IndexPageComponent},
       {
         path: '',

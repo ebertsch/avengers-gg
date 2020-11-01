@@ -771,6 +771,66 @@
           "style": "scss"
         }
       }
+    },
+    "gear-gear-index": {
+      "projectType": "library",
+      "root": "libs/gear/gear-index",
+      "sourceRoot": "libs/gear/gear-index/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gear/gear-index/tsconfig.lib.json",
+              "libs/gear/gear-index/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gear/gear-index/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gear/gear-index/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "gear-gear-editor": {
+      "projectType": "library",
+      "root": "libs/gear/gear-editor",
+      "sourceRoot": "libs/gear/gear-editor/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gear/gear-editor/tsconfig.lib.json",
+              "libs/gear/gear-editor/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gear/gear-editor/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gear/gear-editor/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

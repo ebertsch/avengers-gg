@@ -58,7 +58,13 @@
       "@avengers-game-guide/shared/skills/data-access": [
         "libs/shared/skills/data-access/src/index.ts"
       ],
-      "@avengers-game-guide/shared/data": ["libs/shared/data/src/index.ts"]
+      "@avengers-game-guide/shared/data": ["libs/shared/data/src/index.ts"],
+      "@avengers-game-guide/gear/gear-index": [
+        "libs/gear/gear-index/src/index.ts"
+      ],
+      "@avengers-game-guide/gear/gear-editor": [
+        "libs/gear/gear-editor/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

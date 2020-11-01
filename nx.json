@@ -84,6 +84,12 @@
     },
     "shared-data": {
       "tags": []
+    },
+    "gear-gear-index": {
+      "tags": []
+    },
+    "gear-gear-editor": {
+      "tags": []
     }
   }
 }
