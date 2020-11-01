@@ -12,9 +12,7 @@ import { HeroesDataAccessModule, EnsureHeroesGuard } from '@avengers-game-guide/
     SharedUiModule,
     HeroesDataAccessModule,
     RouterModule.forChild([
-      { path: '', pathMatch: 'full',
-      canActivate: [EnsureHeroesGuard],
-      component: IndexPageComponent},
+      { path: '', pathMatch: 'full', canActivate: [EnsureHeroesGuard], component: IndexPageComponent},
       {
         path: '',
         loadChildren: () =>

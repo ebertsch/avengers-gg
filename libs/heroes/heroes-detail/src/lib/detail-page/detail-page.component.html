@@ -1,17 +1,16 @@
 <div class="hero-header">
     <img class="hero-icon" src="/assets/images/{{(hero$ | async).id}}-logo.png">
-    <span class="hero-name fancy-text">{{ (hero$ | async).name }}</span>
-    <div class="flare"></div>
+    <agg-flared-title>{{ (hero$ | async).name }}</agg-flared-title>
 </div>
 
 <div class="wrapper">
-    <div class="tabs">
-        <div class="tab fancy-text"><a [routerLink]="['gear']" routerLinkActive="active">Gear</a></div>
-        <div class="tab fancy-text"><a [routerLink]="['perks']" routerLinkActive="active">Perks</a></div>
-        <div class="tab fancy-text"><a [routerLink]="['builder']" routerLinkActive="active">Builder</a></div>
-        <div class="tab fancy-text"><a [routerLink]="['guides']" routerLinkActive="active">Guides</a></div>
-        <div class="tab fancy-text"><a [routerLink]="['notes']" routerLinkActive="active">Notes</a></div>
-    </div>
+    <agg-navigation-tabs>
+        <agg-navigation-tab [link]="['gear']">Gear</agg-navigation-tab>
+        <agg-navigation-tab [link]="['perks']">Perks</agg-navigation-tab>
+        <agg-navigation-tab [link]="['builder']">Builder</agg-navigation-tab>
+        <agg-navigation-tab [link]="['guides']">Guides</agg-navigation-tab>
+        <agg-navigation-tab [link]="['notes']">Notes</agg-navigation-tab>
+    </agg-navigation-tabs>
 </div>
 
 <router-outlet></router-outlet>

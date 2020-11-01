@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './gear-editor-page.component.html',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GearEditorPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('Avengers GG | Gear | Editor')
+  }
 
   ngOnInit(): void {
   }

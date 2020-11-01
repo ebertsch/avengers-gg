@@ -1,0 +1,15 @@
+@import "../../../../../shared/styles/responsive.scss";
+
+:host {
+    display: block;
+    margin: 0 10px;
+    
+    @include bp(laptop) {
+        margin: 150px 20px;
+    }
+
+    p {
+        text-align: center;
+        margin: 10px 0 0;
+    }
+}

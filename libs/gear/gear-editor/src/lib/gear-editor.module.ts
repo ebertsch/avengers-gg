@@ -8,9 +8,11 @@ export const gearGearEditorRoutes: Route[] = [];
 @NgModule({
   imports: [CommonModule,
     RouterModule.forChild([
-      { path: '', component: GearEditorPageComponent }
+      { path: '', pathMatch: 'full', redirectTo: 'editor' },
+      { path: 'editor', pathMatch: 'full', component: GearEditorPageComponent }
     ])
   ],
   declarations: [GearEditorPageComponent],
+  exports: [RouterModule]
 })
 export class GearEditorModule {}
