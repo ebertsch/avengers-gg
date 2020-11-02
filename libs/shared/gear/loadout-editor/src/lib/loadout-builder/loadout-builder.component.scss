@@ -1,0 +1,25 @@
+@import "~libs/shared/styles/responsive.scss";
+
+:host {
+    display: grid;
+    gap: 0px 0px;
+
+      @include bp(laptop) {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "melee editor major-artifact"
+          "ranged editor ."
+          "defense editor minor-artifact-1"
+          "heroic editor minor-artifact-2";
+    }
+
+}
+.editor { grid-area: editor; }
+.melee { grid-area: melee; }
+.ranged { grid-area: ranged; }
+.defense { grid-area: defense; }
+.heroic { grid-area: heroic; }
+.major-artifact { grid-area: major-artifact; }
+.minor-artifact-1 { grid-area: minor-artifact-1; }
+.minor-artifact-2 { grid-area: minor-artifact-2; }

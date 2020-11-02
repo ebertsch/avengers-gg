@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  templateUrl: './gear-editor-page.component.html',
-  styleUrls: ['./gear-editor-page.component.scss']
+  templateUrl: './gear-builder-page.component.html',
+  styleUrls: ['./gear-builder-page.component.scss']
 })
-export class GearEditorPageComponent implements OnInit {
+export class GearBuilderPageComponent implements OnInit {
 
   constructor(title: Title) {
     title.setTitle('Avengers GG | Gear | Editor')

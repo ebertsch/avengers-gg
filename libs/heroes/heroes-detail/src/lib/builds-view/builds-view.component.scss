@@ -5,17 +5,18 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: row;
-    gap: 60px 20px;
-    grid-template-areas:
-      ". .";
+    grid-template-areas: ".";
+    gap: 0 20px;
 
     position: absolute;
     margin: 0 10px;
     
     @include bp(laptop) {
         margin: 0 20px;
+        grid-template-areas: ". .";
     }
 }
+
 ::ng-deep .content {
     height: inherit;
 }
@@ -27,29 +28,58 @@
     }
 }
 
+.gear-builder-container {
+    display: block;
+    grid-row: 1;
+    
+    @include bp(laptop) {
+        grid-row: 1;
+        margin-bottom: 0;
+    }
+
+    .gear-builder {
+        display: grid;
+        gap: 0px 0px;
+
+          @include bp(laptop) {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+              "melee editor major-artifact"
+              "ranged editor ."
+              "defense editor minor-artifact-1"
+              "heroic editor minor-artifact-2";
+        }
+
+
+    }
+}
 
 .skill-options-container {
     display: block;
     width: 100vw;
-    grid-row: 1;
+    grid-row: 2;
     max-width: calc(100vw - 20px);
 
     @include bp(laptop) {
-        width: 50vw
+        width: 50vw;
+        grid-row: 2;
     }
 }
 .current-build-container {
-    grid-row: 2;
+    grid-row: 3;
 
     @include bp(laptop) {
-        grid-row: 1;
+        grid-row: 2;
         width: calc(50vw - 60px);
+        grid-row: 1 / 3;
     }
 }
 
 .skill-container {
     margin-left: 50px;
     margin-right: 50px;
+    grid-row: 1;
 
     > p {
         margin-bottom: 20px;

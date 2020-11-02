@@ -1,6 +1,10 @@
-<agg-panel class="skill-options-container">
-    <agg-panel-header>Build Options</agg-panel-header>
+<agg-panel class="gear-builder-container">
+    <agg-panel-header>Gear</agg-panel-header>
+    <agg-loadout-builder></agg-loadout-builder>
+</agg-panel>
 
+<agg-panel class="skill-options-container">
+    <agg-panel-header>Skill Points</agg-panel-header>
     <div>
         <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
             <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">

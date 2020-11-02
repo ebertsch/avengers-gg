@@ -10,7 +10,7 @@ import { SharedUiModule } from '@avengers-game-guide/shared/ui'
     SharedUiModule,
     RouterModule.forChild([
       { path: '', component: IndexPageComponent, loadChildren: () =>
-        import('@avengers-game-guide/gear/gear-editor').then((module) => module.GearEditorModule),
+        import('@avengers-game-guide/gear/gear-builder').then((module) => module.GearBuilderModule),
       },
 
     ]),

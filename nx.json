@@ -88,7 +88,10 @@
     "gear-gear-index": {
       "tags": []
     },
-    "gear-gear-editor": {
+    "gear-gear-builder": {
+      "tags": []
+    },
+    "shared-gear-loadout-editor": {
       "tags": []
     }
   }

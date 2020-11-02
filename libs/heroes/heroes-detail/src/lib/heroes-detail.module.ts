@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {CdkTableModule} from '@angular/cdk/table';
 import {YouTubePlayerModule} from '@angular/youtube-player';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
 import { DetailPageComponent } from './detail-page/detail-page.component';
@@ -14,20 +15,22 @@ import { NotesViewComponent } from './notes-view/notes-view.component';
 import { HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
+import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
-import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 
 @NgModule({
   imports: [
     CommonModule,
     CdkTableModule,
     YouTubePlayerModule,
+    SwiperModule,
     SharedUiModule,
     GearModule,
+    SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,
     NotesDataAccessModule,
     SkillsDataAccessModule,
-    SwiperModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },

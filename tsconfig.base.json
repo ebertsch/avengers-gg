@@ -62,8 +62,11 @@
       "@avengers-game-guide/gear/gear-index": [
         "libs/gear/gear-index/src/index.ts"
       ],
-      "@avengers-game-guide/gear/gear-editor": [
-        "libs/gear/gear-editor/src/index.ts"
+      "@avengers-game-guide/gear/gear-builder": [
+        "libs/gear/gear-builder/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/gear/loadout-editor": [
+        "libs/shared/gear/loadout-editor/src/index.ts"
       ]
     }
   },
