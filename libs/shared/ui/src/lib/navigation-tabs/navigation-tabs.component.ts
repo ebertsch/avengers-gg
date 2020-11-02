@@ -1,12 +1,14 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Dictionary } from 'ramda';
 
 @Component({
   selector: 'agg-navigation-tab',
-  template: `<agg-fancy-text><a [routerLink]="link" routerLinkActive="active"><ng-content></ng-content></a></agg-fancy-text>`
+  template: `<agg-fancy-text><a [routerLink]="link" [queryParams]="params" routerLinkActive="active"><ng-content></ng-content></a></agg-fancy-text>`
 })
 export class NavigationTabComponent implements OnInit {
 
   @Input() link: string | any[];
+  @Input() params: Dictionary<any>;
 
   constructor() { }
 

@@ -1,0 +1,97 @@
+<agg-navigation-tabs>
+    <agg-navigation-tab [link]="['.']" [params]="{gview:'explorer'}">Explorer</agg-navigation-tab>
+    <agg-navigation-tab [link]="['.']" [params]="{gview:'editor'}">Editor</agg-navigation-tab>
+</agg-navigation-tabs>
+
+<div class="editor">
+    <!-- <form> -->
+        <div>
+            <label>Gear</label>
+            <agg-dropdown [options]="[{label: 'mine'}]" [optionTpl]="optionTpl"></agg-dropdown>
+            <!-- <select>
+                <option>Gear 1</option>
+                <option>Gear 2</option>
+                <option>Custom</option>
+            </select> -->
+        </div>
+        <div>
+            <label>Rarity</label>
+            <select>
+                <option>common</option>
+                <option>uncommon</option>
+                <option>rare</option>
+                <option>epic</option>
+                <option>legendary</option>
+            </select>
+        </div>
+        <div>
+            <label>Power Level</label>
+            <select>
+                <option>130</option>
+                <option>140</option>
+            </select>
+        </div>
+        <div class="stats-container">
+            <label>Maker</label>
+            <select>
+                <option>Stark Industries</option>
+                <option>Pym</option>
+                <option>AIM</option>
+                <option>Shield</option>
+            </select>
+        </div>
+        <div>
+            <div>
+                <label>Might</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Precision</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Resolve</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Resilience</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Proficiency</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Valor</label>
+                <input type="number" />
+            </div>
+        </div>
+        <div class="perks-container">
+            <div>
+                <label>Perk 1</label>
+                <select>
+                    <option>Perk 1</option>
+                    <option>Perk 2</option>
+                </select>
+            </div>
+            <div>
+                <label>Perk 2</label>
+                <select>
+                    <option>Perk 1</option>
+                    <option>Perk 2</option>
+                </select>
+            </div>
+            <div>
+                <label>Perk 3</label>
+                <select>
+                    <option>Perk 1</option>
+                    <option>Perk 2</option>
+                </select>
+            </div>
+        </div>
+    <!-- </form> -->
+</div>
+
+<ng-template #optionTpl let-option>
+    1-- {{ option.label }} -- mine
+</ng-template>

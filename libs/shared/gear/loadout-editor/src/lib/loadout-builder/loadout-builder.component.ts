@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+
+import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 
 @Component({
   selector: 'agg-loadout-builder',
@@ -8,9 +10,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LoadoutBuilderComponent implements OnInit {
 
+  @Input() hero: Hero
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log('hero', this.hero)
   }
 
 }

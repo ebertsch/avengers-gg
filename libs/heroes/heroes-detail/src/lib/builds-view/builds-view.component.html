@@ -1,6 +1,6 @@
 <agg-panel class="gear-builder-container">
     <agg-panel-header>Gear</agg-panel-header>
-    <agg-loadout-builder></agg-loadout-builder>
+    <agg-loadout-builder [hero]="hero$ | async"></agg-loadout-builder>
 </agg-panel>
 
 <agg-panel class="skill-options-container">

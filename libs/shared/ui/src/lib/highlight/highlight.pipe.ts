@@ -20,7 +20,7 @@ export class HighlightPipe implements PipeTransform {
 
     const replacedValue = reduce(
       (acc, current) => {
-        return acc.replace(current, "<span class='attribute'>" + current + "</span>")
+        return acc.replace(current, "<span class='highlight'>" + current + "</span>")
       },
       value, matches
     )
