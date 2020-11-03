@@ -1,0 +1,35 @@
+@import '~libs/shared/styles/styles.scss';
+
+.gear-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "gear-name gear-name"
+      "gear-power-level gear-stats"
+      "gear-perks gear-perks";
+  }
+  .gear-name {
+      .fancy-text {
+          font-size: 34px;
+      }
+
+      grid-area: gear-name;
+
+      ::ng-deep .mat-select-value {
+          display: none;
+      }
+    }
+  .gear-power-level { grid-area: gear-power-level; }
+  .gear-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-area: gear-stats;
+  }
+  .gear-perks { grid-area: gear-perks; }
+  
+  .stat-name {  }
+  .stat-value {  }

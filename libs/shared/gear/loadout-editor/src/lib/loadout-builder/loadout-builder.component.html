@@ -1,10 +1,16 @@
 <div class="editor">
-    <agg-gear-editor></agg-gear-editor>
+    <agg-navigation-tabs>
+        <agg-navigation-tab [link]="['.']" [params]="{gview:'explorer'}">Explorer</agg-navigation-tab>
+        <agg-navigation-tab [link]="['.']" [params]="{gview:'editor'}">Editor</agg-navigation-tab>
+    </agg-navigation-tabs>
+
+    <agg-gear-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-editor>
 </div>
-<div class="melee">Melee</div>
-<div class="ranged">Ranged</div>
+<div class="melee" (click)="setCurrentGearTo(meleeGear, ge?.activeGear || null)">Melee</div>
+<div class="ranged" (click)="setCurrentGearTo(rangedGear, ge?.activeGear || null)">Ranged</div>
 <div class="defense">Defense</div>
 <div class="heroic">Heroic</div>
 <div class="major-artifact">M. Artifact</div>
 <div class="minor-artifact-1">m. Artifact 1</div>
 <div class="minor-artifact-2">m. Artifact 2</div>
+

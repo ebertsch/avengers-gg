@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http"
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
@@ -24,6 +25,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserAnimationsModule,
     environment.production ? NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsCode) : [],
     environment.production ? NgxGoogleAnalyticsRouterModule : [],
     HttpClientModule,

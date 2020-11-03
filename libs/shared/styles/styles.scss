@@ -7,6 +7,9 @@
 @import './tables.scss';
 @import './youtube-player.scss';
 @import './swiper.scss';
+@import '~@angular/material/theming';
+
+@include mat-core();
 
 body  {
     background-color: $bg-background-color;
