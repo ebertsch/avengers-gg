@@ -23,7 +23,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     environment.production ? NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsCode) : [],
     environment.production ? NgxGoogleAnalyticsRouterModule : [],
     HttpClientModule,

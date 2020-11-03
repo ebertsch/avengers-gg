@@ -15,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/heroes",
+            "outputPath": "dist/heroes/browser",
             "index": "apps/heroes/src/index.html",
             "main": "apps/heroes/src/main.ts",
             "polyfills": "apps/heroes/src/polyfills.ts",
@@ -98,7 +98,8 @@
           "options": {
             "tsConfig": [
               "apps/heroes/tsconfig.app.json",
-              "apps/heroes/tsconfig.spec.json"
+              "apps/heroes/tsconfig.spec.json",
+              "apps/heroes/tsconfig.server.json"
             ],
             "exclude": ["**/node_modules/**", "!apps/heroes/**/*"]
           }
@@ -108,6 +109,54 @@
           "options": {
             "jestConfig": "apps/heroes/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/heroes/server",
+            "main": "apps/heroes/server.ts",
+            "tsConfig": "apps/heroes/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "heroes:build",
+            "serverTarget": "heroes:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "heroes:build:production",
+              "serverTarget": "heroes:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "heroes:build:production",
+            "serverTarget": "heroes:server:production",
+            "routes": [
+              "/",
+              "/heroes"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
