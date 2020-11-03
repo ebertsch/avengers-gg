@@ -1,5 +1,5 @@
 <h2 class="fancy-text">Select A Hero</h2>
 <ol class="hero-menu">
-    <li *ngFor="let hero of heroes"><a [routerLink]="['/heroes', hero.id]"><img src="/assets/images/{{hero.id}}-logo.png"></a></li>
+    <li *ngFor="let hero of heroes"><a [routerLink]="['/heroes', hero.id]"><img src="/assets/images/{{hero.id}}-logo.png" [alt]="hero.name"></a></li>
 </ol>
 
