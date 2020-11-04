@@ -4,7 +4,7 @@
         <agg-navigation-tab [link]="['.']" [params]="{gview:'editor'}">Editor</agg-navigation-tab>
     </agg-navigation-tabs>
 
-    <agg-gear-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-editor>
+    <agg-gear-instance-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-instance-editor>
 </div>
 <div class="melee" (click)="setCurrentGearTo(meleeGear, ge?.activeGear || null)">Melee</div>
 <div class="ranged" (click)="setCurrentGearTo(rangedGear, ge?.activeGear || null)">Ranged</div>

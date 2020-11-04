@@ -1,28 +1,28 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GearTemplate } from '../types';
+import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
 import { times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 
 @Component({
-  selector: 'agg-gear-editor',
-  templateUrl: './gear-editor.component.html',
-  styleUrls: ['./gear-editor.component.scss'],
+  selector: 'agg-gear-instance-editor',
+  templateUrl: './gear-instance-editor.component.html',
+  styleUrls: ['./gear-instance-editor.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'gearEditor'
 })
-export class GearEditorComponent implements OnInit, OnChanges {
+export class GearInstanceEditorComponent implements OnInit, OnChanges {
   gearInstanceForm: FormGroup;
-  _activeGear: GearTemplate;
+  _activeGear: GearInstance;
   
   @Input() hero: Hero;
-  @Input() set activeGear(value: GearTemplate) {
+  @Input() set activeGear(value: GearInstance) {
     this._activeGear = { ...value };
   }
   get activeGear() { return this._activeGear }
-  @Output() saved = new EventEmitter<GearTemplate>();
-  @Output() removed = new EventEmitter<GearTemplate>();
+  @Output() saved = new EventEmitter<GearInstance>();
+  @Output() removed = new EventEmitter<GearInstance>();
 
   @Input() availableGear = [
     {id: 1, title: 'Gear 1' },

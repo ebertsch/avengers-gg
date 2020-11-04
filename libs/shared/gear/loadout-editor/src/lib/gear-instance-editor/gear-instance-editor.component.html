@@ -10,10 +10,6 @@
         </div>
 
         <div>
-            {{ activeGear.name }}
-        </div>
-
-        <div>
             <label>Rarity</label>
             <select formControlName="rarity">
                 <option *ngFor="let rarity of gearEditor.getRarityValues() | async; trackBy: byId" [value]="rarity.id">{{rarity.label}}</option>
@@ -34,7 +30,7 @@
         <div>Stats</div>
         <div formGroupName="stat1">
             <select formControlName="stat">
-                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id">{{statName.label}}</option>
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id">{{statName.title}}</option>
                 <option [value]="null">Not set</option>
             </select>
             <select formControlName="value">
