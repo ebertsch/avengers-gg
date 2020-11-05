@@ -1,8 +1,7 @@
 import { GearRarity, StatInstance } from './gear-definition';
 
 export interface GearInstance {
-    id?: string
-    slot: string
+    id: string
     rarity: GearRarity
     powerLevel: number
     stat1: StatInstance
@@ -20,7 +19,6 @@ export interface SerializedGearInstance {
     p3: string
     pl: number
     r: string
-    s: string
     s1n: string
     s1v: number
     s2n: string

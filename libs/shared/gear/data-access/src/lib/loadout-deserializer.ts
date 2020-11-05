@@ -16,7 +16,6 @@ export class LoadoutDeserializer {
             perk3: minimalGear.p3,
             powerLevel: minimalGear.pl,
             rarity: minimalGear.r,
-            slot: minimalGear.s,
             stat1: { stat: minimalGear.s1n, value: minimalGear.s1v },
             stat2: { stat: minimalGear.s2n, value: minimalGear.s2v },
             stat3: { stat: minimalGear.s3n, value: minimalGear.s3v }

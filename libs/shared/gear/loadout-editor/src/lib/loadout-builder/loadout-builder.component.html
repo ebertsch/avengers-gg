@@ -13,8 +13,9 @@
     </ng-container>    
 </div>
 
-<div class="melee" (click)="setCurrentGearTo(meleeGear)">Melee</div>
-<div class="ranged" (click)="setCurrentGearTo(rangedGear)">Ranged</div>
+<a [routerLink]="[]" [queryParams]="{g:'m'}" queryParamsHandling="merge" routerLinkActive="active">Melee</a>
+<!-- <div class="melee" (click)="setActiveGearSlot('m')">Melee</div> -->
+<div class="ranged" (click)="setActiveGearSlot('r')">Ranged</div>
 <div class="defense" (click)="setActiveGearSlot('d')">Defense</div>
 <div class="heroic" (click)="setActiveGearSlot('h')">Heroic</div>
 <div class="major-artifact" (click)="setActiveGearSlot('a')">M. Artifact</div>

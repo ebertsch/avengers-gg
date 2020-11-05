@@ -7,9 +7,10 @@ import { GearInstanceEditorComponent } from './gear-instance-editor/gear-instanc
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
 import { GearInstanceViewerComponent } from './gear-instance-viewer/gear-instance-viewer.component';
 import { LoadoutSummaryComponent } from './loadout-summary/loadout-summary.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule],
   declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
   exports: [LoadoutBuilderComponent],
 })

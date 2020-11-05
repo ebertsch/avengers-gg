@@ -5,7 +5,7 @@
         <agg-navigation-tab [link]="['.']" [params]="{v:'viewer'}">Explorer</agg-navigation-tab>
         <agg-navigation-tab [link]="['.']" [params]="{v:'editor'}">Editor</agg-navigation-tab>
     </agg-navigation-tabs>
-    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$" [loadout]="loadout$ | async"></agg-loadout-builder>
+    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
 </agg-panel>
 
 <agg-panel class="skill-options-container">

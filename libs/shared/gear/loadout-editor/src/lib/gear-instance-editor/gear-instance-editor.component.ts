@@ -18,7 +18,21 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   
   @Input() hero: Hero;
   @Input() set activeGear(value: GearInstance) {
-    this._activeGear = { ...value };
+    if(value === null) {
+      this._activeGear = {
+        id: null,
+        rarity: null,
+        powerLevel: null,
+        stat1: { stat: null, value: null },
+        stat2: { stat: null, value: null },
+        stat3: { stat: null, value: null },
+        perk1: null,
+        perk2: null,
+        perk3: null
+      }
+    } else {
+      this._activeGear = { ...value };
+    }
   }
   get activeGear() { return this._activeGear }
   @Output() saved = new EventEmitter<GearInstance>();
@@ -57,7 +71,6 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
       id: new FormControl(this.activeGear.id),
       rarity: new FormControl(this.activeGear.rarity),
       powerLevel: new FormControl(this.activeGear.powerLevel),
-      slot: new FormControl(this.activeGear.slot),
       stat1: new FormGroup({
         stat: new FormControl(this.activeGear.stat1.stat),
         value: new FormControl(this.activeGear.stat1.value),

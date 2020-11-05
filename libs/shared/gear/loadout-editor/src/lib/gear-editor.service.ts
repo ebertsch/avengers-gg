@@ -3,9 +3,8 @@ import { Router } from '@angular/router';
 import { decompressFromEncodedURIComponent, compressToEncodedURIComponent } from '@avengers-game-guide/shared/data';
 import { RouteSelectors } from '@avengers-game-guide/shared/router';
 import { createSelector, select, Store } from '@ngrx/store';
-import { times, add, fromPairs, toPairs } from 'ramda';
+import { times, add, fromPairs, toPairs, assoc } from 'ramda';
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearSlot, GearRarity, Stat } from '@avengers-game-guide/shared/gear/data-access';
 
 const gearFromQueryParam = (source: string) => {
@@ -17,33 +16,39 @@ const gearForQueryParam = (source: GearInstance) => {
   const minimalGear = toSerializedGear(source)
   return compressToEncodedURIComponent(JSON.stringify(toPairs(minimalGear as any)));
 }
-const toGearInstance = (source: SerializedGearInstance): GearInstance => ({
+const toGearInstance = (source: SerializedGearInstance): GearInstance => {
+  if (!source) return null;
+
+  return {
     id: source.i,
     perk1: source.p1,
     perk2: source.p2,
     perk3: source.p3,
     powerLevel: source.pl,
     rarity: source.r as GearRarity,
-    slot: source.s,
-    stat1: {stat: source.s1n as Stat, value: source.s1v},
-    stat2: {stat: source.s2n as Stat, value: source.s2v},
-    stat3: {stat: source.s3n as Stat, value: source.s3v}
-})
-const toSerializedGear = (source: GearInstance): SerializedGearInstance => ({
+    stat1: { stat: source.s1n as Stat, value: source.s1v },
+    stat2: { stat: source.s2n as Stat, value: source.s2v },
+    stat3: { stat: source.s3n as Stat, value: source.s3v }
+  }
+}
+const toSerializedGear = (source: GearInstance): SerializedGearInstance => {
+  if (!source) return null;
+
+  return {
     i: source.id,
     p1: source.perk1,
     p2: source.perk2,
     p3: source.perk3,
     pl: source.powerLevel,
     r: source.rarity,
-    s: source.slot,
     s1n: source.stat1.stat,
     s1v: source.stat1.value,
     s2n: source.stat2.stat,
     s2v: source.stat2.value,
     s3n: source.stat3.stat,
-    s3v: source.stat3.value,
-})
+    s3v: source.stat3.value
+  }
+}
 
 const loadoutForQueryParam = (source: Loadout) => {
   const minimalLoadout: SerializedLoadout = {
@@ -59,7 +64,7 @@ const loadoutForQueryParam = (source: Loadout) => {
 }
 const loadoutFromQueryParam = (source: string): Loadout => {
   const decompressed = decompressFromEncodedURIComponent(source)
-  if(decompressed === '') {
+  if (decompressed === '') {
     return {
       melee: null,
       defense: null,
@@ -82,7 +87,7 @@ const loadoutFromQueryParam = (source: string): Loadout => {
   }
 }
 const getActiveGearProperty = (slot: string): GearSlot => {
-  switch(slot) {
+  switch (slot) {
     case "m": return "melee"
     case "r": return "ranged"
     case "d": return "defense"
@@ -127,10 +132,10 @@ export class GearEditorService {
   getStatValues(gear: GearInstance) {
     const statIncrease = 11;
     let statFloor;
-    switch(gear.rarity) {
+    switch (gear.rarity) {
       case "exotic": statFloor = 45; break;
       case "legendary": statFloor = 35; break;
-      default : statFloor = 30; break;
+      default: statFloor = 30; break;
     }
 
     return of(times(add(statFloor), statIncrease))
@@ -138,36 +143,33 @@ export class GearEditorService {
 
   getRarityValues() {
     return of([
-      'common',
-      'uncommon',
-      'rare',
-      'epic',
-      'legendary',
-      'exotic'
+      { id: 'common', label: 'Common' },
+      { id: 'uncommon', label: 'Uncommon' },
+      { id: 'rare', label: 'Rare' },
+      { id: 'epic', label: 'Epic' },
+      { id: 'legendary', label: 'Legendary' },
+      { id: 'exotic', label: 'Exotic' }
     ]);
   }
 
   getStatKeys() {
     return of([
-      {id: 'might', title: 'Might'},
-      {id: 'precision', title: 'Precision'},
-      {id: 'resolve', title: 'Resolve'},
-      {id: 'resilience', title: 'Resilience'},
-      {id: 'proficiency', title: 'Proficiency'},
-      {id: 'valor', title: 'Valor'}
+      { id: 'might', title: 'Might' },
+      { id: 'precision', title: 'Precision' },
+      { id: 'resolve', title: 'Resolve' },
+      { id: 'resilience', title: 'Resilience' },
+      { id: 'proficiency', title: 'Proficiency' },
+      { id: 'valor', title: 'Valor' }
     ])
   }
 
-  // getGearFromUrl = (slot: string) => this.store.pipe(
-  //   select(this.activeGearSelector, { slot }),
-  //   map(s => gearFromQueryParam(s))
-  // )
 
-  save(gearInstance: GearInstance) {
-    const minimalGear = gearForQueryParam(gearInstance);
+  save(gearSlot: GearSlot, gearInstance: GearInstance, loadout: Loadout) {
+    const modifiedLoadout = assoc(gearSlot, gearInstance, loadout)
+    const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
     this.router.navigate([], {
-        queryParams: { [gearInstance.slot]: minimalGear },
-        queryParamsHandling: 'merge'
+      queryParams: { loadout: minimalLoadout },
+      queryParamsHandling: 'merge'
     });
   }
 

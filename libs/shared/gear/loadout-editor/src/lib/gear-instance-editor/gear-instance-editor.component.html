@@ -40,7 +40,7 @@
         </div>
         <div formGroupName="stat2">
             <select formControlName="stat">
-                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"  [value]="statName.id">{{statName.label}}</option>
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"  [value]="statName.id">{{statName.title}}</option>
                 <option [value]="null">Not set</option>
             </select>
             <select formControlName="value">
@@ -50,7 +50,7 @@
         </div>
         <div formGroupName="stat3">
             <select formControlName="stat">
-                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id" >{{statName.label}}</option>
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id" >{{statName.title}}</option>
                 <option [value]="null">Not set</option>
             </select>
             <select formControlName="value">
