@@ -1,11 +1,10 @@
 <div class="editor">
-
     <ng-container [ngSwitch]="activeView$ | async">
         <ng-template [ngSwitchCase]="'summary'">
             <agg-loadout-summary></agg-loadout-summary>
         </ng-template>
         <ng-template [ngSwitchCase]="'viewer'">
-            Viewer View
+            <agg-gear-instance-viewer [activeGear]="activeGear$ | async"></agg-gear-instance-viewer>
         </ng-template>
         <ng-template [ngSwitchCase]="'editor'">
             <agg-gear-instance-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-instance-editor>
@@ -13,12 +12,25 @@
     </ng-container>    
 </div>
 
-<a [routerLink]="[]" [queryParams]="{g:'m'}" queryParamsHandling="merge" routerLinkActive="active">Melee</a>
-<!-- <div class="melee" (click)="setActiveGearSlot('m')">Melee</div> -->
-<div class="ranged" (click)="setActiveGearSlot('r')">Ranged</div>
-<div class="defense" (click)="setActiveGearSlot('d')">Defense</div>
-<div class="heroic" (click)="setActiveGearSlot('h')">Heroic</div>
-<div class="major-artifact" (click)="setActiveGearSlot('a')">M. Artifact</div>
-<div class="minor-artifact-1" (click)="setActiveGearSlot('ma1')">m. Artifact 1</div>
-<div class="minor-artifact-2" (click)="setActiveGearSlot('ma2')">m. Artifact 2</div>
+<a class="melee" [routerLink]="[]" [queryParams]="{g:'m', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/melee-icon.png" />
+</a>
+<a class="range" [routerLink]="[]" [queryParams]="{g:'r', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/range-icon.png" />
+</a>
+<a class="defense" [routerLink]="[]" [queryParams]="{g:'d', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/defense-icon.png" />
+</a>
+<a class="heroic" [routerLink]="[]" [queryParams]="{g:'h', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/heroic-icon.png" />
+</a>
+<a class="major-artifact" [routerLink]="[]" [queryParams]="{g:'a', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/major-artifact-icon.png" />
+</a>
+<a class="minor-artifact-1" [routerLink]="[]" [queryParams]="{g:'ma1', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/minor-artifact-icon.png" />
+</a>
+<a class="minor-artifact-2" [routerLink]="[]" [queryParams]="{g:'ma2', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/minor-artifact-icon.png" />
+</a>
 

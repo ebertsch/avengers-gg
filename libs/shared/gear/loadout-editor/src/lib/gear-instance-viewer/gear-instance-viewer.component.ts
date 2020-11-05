@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
 
 @Component({
   selector: 'agg-gear-instance-viewer',
@@ -7,6 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearInstanceViewerComponent implements OnInit {
+
+  @Input() activeGear: GearInstance
 
   constructor() { }
 

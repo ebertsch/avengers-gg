@@ -1,10 +1,8 @@
 <agg-panel class="gear-builder-container">
     <agg-panel-header>Gear</agg-panel-header>
-    <agg-navigation-tabs>
-        <agg-navigation-tab [link]="['.']" [params]="{v:'summary'}">Summary</agg-navigation-tab>
-        <agg-navigation-tab [link]="['.']" [params]="{v:'viewer'}">Explorer</agg-navigation-tab>
-        <agg-navigation-tab [link]="['.']" [params]="{v:'editor'}">Editor</agg-navigation-tab>
-    </agg-navigation-tabs>
+    <a class="fancy-text" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
+        Summary
+    </a>
     <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
 </agg-panel>
 

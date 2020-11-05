@@ -72,16 +72,16 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
       rarity: new FormControl(this.activeGear.rarity),
       powerLevel: new FormControl(this.activeGear.powerLevel),
       stat1: new FormGroup({
-        stat: new FormControl(this.activeGear.stat1.stat),
-        value: new FormControl(this.activeGear.stat1.value),
+        stat: new FormControl(this.activeGear.stat1?.stat),
+        value: new FormControl(this.activeGear.stat1?.value),
       }),
       stat2: new FormGroup({
-        stat: new FormControl(this.activeGear.stat2.stat),
-        value: new FormControl(this.activeGear.stat2.value),
+        stat: new FormControl(this.activeGear.stat2?.stat),
+        value: new FormControl(this.activeGear.stat2?.value),
       }),
       stat3: new FormGroup({
-        stat: new FormControl(this.activeGear.stat3.stat),
-        value: new FormControl(this.activeGear.stat3.value),
+        stat: new FormControl(this.activeGear.stat3?.stat),
+        value: new FormControl(this.activeGear.stat3?.value),
       }),
       perk1: new FormControl(this.activeGear.perk1),
       perk2: new FormControl(this.activeGear.perk2),
