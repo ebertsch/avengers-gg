@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter
 import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
 import { times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
-import { GearEditorService } from '../../gear-editor.service';
+import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 
 @Component({

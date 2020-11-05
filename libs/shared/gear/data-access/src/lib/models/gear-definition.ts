@@ -1,3 +1,5 @@
+import { Loadout } from './loadout'
+
 export interface GearDefinition {
     id: string;
     name: string;
@@ -22,3 +24,4 @@ export interface StatInstance {
 
 export type GearRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary' | 'exotic'
 export type Stat = 'might' | 'precision' | 'resolve' | 'resilience' | 'proficiency' | 'valor'
+export type GearSlot = keyof Loadout;

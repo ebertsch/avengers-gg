@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, Loadout } from '@avengers-game-guide/shared/gear/data-access';
 
-import { GearEditorService } from '../../gear-editor.service';
+import { GearEditorService } from '../gear-editor.service';
 
 
 
@@ -17,9 +17,13 @@ import { GearEditorService } from '../../gear-editor.service';
 })
 export class LoadoutBuilderComponent implements OnInit {
 
-  @Input() hero: Hero
-  activeGear$: BehaviorSubject<GearInstance>
+  activeView$: Observable<string>
 
+  @Input() hero: Hero
+  @Input() loadout: Loadout
+  @Input() gearSlot: string
+
+  activeGear$: BehaviorSubject<GearInstance>
   meleeGear$: Observable<GearInstance>
 
   meleeGear: GearInstance = {
@@ -48,22 +52,30 @@ export class LoadoutBuilderComponent implements OnInit {
     perk3: 'p15'
   }
 
-  constructor(private gearEditor: GearEditorService) {
-    this.meleeGear$ = gearEditor.getGearFromUrl('melee')
+  constructor(private router: Router, private gearEditor: GearEditorService) {
+    // this.meleeGear$ = gearEditor.getGearFromUrl('melee')
+    this.activeView$ = gearEditor.loadoutViewerView$;
   }
   
   ngOnInit(): void {
     this.activeGear$ = new BehaviorSubject(this.meleeGear);
   }
 
-  setCurrentGearTo(gear: GearInstance, activeGear: GearInstance) {
-    if(gear.id === activeGear?.id) return this.activeGear$.next(null)
+  setCurrentGearTo(gear: GearInstance) {
 
     this.activeGear$.next(gear)
   }
 
   saveGearInstance(gearInstance: GearInstance) {
     this.gearEditor.save(gearInstance);
+  }
+  setActiveGearSlot(g: string) {
+    this.router.navigate(
+      [],
+      {
+        queryParams: { g },
+        queryParamsHandling: 'merge'
+      });
   }
 
 }

@@ -1,16 +1,23 @@
 <div class="editor">
-    <agg-navigation-tabs>
-        <agg-navigation-tab [link]="['.']" [params]="{gview:'explorer'}">Explorer</agg-navigation-tab>
-        <agg-navigation-tab [link]="['.']" [params]="{gview:'editor'}">Editor</agg-navigation-tab>
-    </agg-navigation-tabs>
 
-    <agg-gear-instance-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-instance-editor>
+    <ng-container [ngSwitch]="activeView$ | async">
+        <ng-template [ngSwitchCase]="'summary'">
+            <agg-loadout-summary></agg-loadout-summary>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'viewer'">
+            Viewer View
+        </ng-template>
+        <ng-template [ngSwitchCase]="'editor'">
+            <agg-gear-instance-editor #ge="gearEditor" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-instance-editor>
+        </ng-template>
+    </ng-container>    
 </div>
-<div class="melee" (click)="setCurrentGearTo(meleeGear, ge?.activeGear || null)">Melee</div>
-<div class="ranged" (click)="setCurrentGearTo(rangedGear, ge?.activeGear || null)">Ranged</div>
-<div class="defense">Defense</div>
-<div class="heroic">Heroic</div>
-<div class="major-artifact">M. Artifact</div>
-<div class="minor-artifact-1">m. Artifact 1</div>
-<div class="minor-artifact-2">m. Artifact 2</div>
+
+<div class="melee" (click)="setCurrentGearTo(meleeGear)">Melee</div>
+<div class="ranged" (click)="setCurrentGearTo(rangedGear)">Ranged</div>
+<div class="defense" (click)="setActiveGearSlot('d')">Defense</div>
+<div class="heroic" (click)="setActiveGearSlot('h')">Heroic</div>
+<div class="major-artifact" (click)="setActiveGearSlot('a')">M. Artifact</div>
+<div class="minor-artifact-1" (click)="setActiveGearSlot('ma1')">m. Artifact 1</div>
+<div class="minor-artifact-2" (click)="setActiveGearSlot('ma2')">m. Artifact 2</div>
 

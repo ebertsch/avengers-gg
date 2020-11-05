@@ -10,6 +10,8 @@ import { Observable, combineLatest } from 'rxjs';
 import { tap, map, take } from 'rxjs/operators';
 import { assoc, map as rMap, includes, keys, reduce, concat, find, propEq, dissoc, append } from 'ramda';
 import { Dictionary } from '@ngrx/entity';
+import { GearEditorService } from '@avengers-game-guide/shared/gear/loadout-editor';
+import { Loadout } from '@avengers-game-guide/shared/gear/data-access';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -21,8 +23,10 @@ type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[
 export class BuildsViewComponent implements OnInit {
 
   hero$: Observable<any>
+  loadout$: Observable<Loadout>
   skills$: Observable<SelectableSkill[]>;
   selectedSkills$: Observable<Skill[]>;
+  activeGearSlot$: Observable<string>;
 
   selectedSkills: Dictionary<string> = {}
 
@@ -30,12 +34,15 @@ export class BuildsViewComponent implements OnInit {
     private builds: BuildService,
     private heroes: HeroService,
     private skillService: SkillService,
+    private gearEditorService: GearEditorService,
     private router: Router,
     private titleService: Title) {
   }
 
   ngOnInit(): void {
     this.setupSkills();
+    this.loadout$ = this.gearEditorService.activeLoadout$;
+    this.activeGearSlot$ = this.gearEditorService.activeGearSlot$;
   }
 
   setupSkills() {
