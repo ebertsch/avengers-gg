@@ -4,7 +4,7 @@
             <agg-loadout-summary></agg-loadout-summary>
         </ng-template>
         <ng-template [ngSwitchCase]="'viewer'">
-            <agg-gear-instance-viewer [activeGear]="activeGear$ | async"></agg-gear-instance-viewer>
+            <agg-gear-instance-viewer [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot"></agg-gear-instance-viewer>
         </ng-template>
         <ng-template [ngSwitchCase]="'editor'">
             <agg-gear-instance-editor (removed)="removeGearInstance()" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot" ></agg-gear-instance-editor>

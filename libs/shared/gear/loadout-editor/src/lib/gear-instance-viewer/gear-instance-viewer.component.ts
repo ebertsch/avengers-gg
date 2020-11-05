@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
+import { Hero } from 'libs/shared/heroes/data-access/src/lib/hero';
 
 @Component({
   selector: 'agg-gear-instance-viewer',
@@ -11,14 +12,17 @@ import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 export class GearInstanceViewerComponent implements OnInit {
 
   @Input() activeGear: GearInstance
+  @Input() hero: Hero
+  @Input() gearSlot: GearSlot;
 
-  get gearName() {
-    return 'Generate Gear Name Here or make a component'
-  }
 
-  constructor(private perkService: PerkService) { }
+  constructor(private perkService: PerkService, private gearService: GearService) { }
 
   ngOnInit(): void {
+  }
+
+  getGearDefinition(id: string) {
+    return this.gearService.getGearDefinition(id)
   }
 
   getPerk$(id: string) {

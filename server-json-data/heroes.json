@@ -1,10 +1,64 @@
 {
     "heroes": [
-        {"id": "blackwidow", "name": "Black Widow" },
-        {"id": "captain", "name": "Captain America"},
-        {"id": "thor", "name": "Thor"},
-        {"id": "hulk", "name": "Hulk"},
-        {"id": "ironman", "name": "Ironman"},
-        {"id": "kamala", "name": "Ms. Marvel"}
+        {
+            "id": "blackwidow",
+            "name": "Black Widow",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        },
+        {
+            "id": "captain",
+            "name": "Captain America",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        },
+        {
+            "id": "thor",
+            "name": "Thor",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        },
+        {
+            "id": "hulk",
+            "name": "The Hulk",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        },
+        {
+            "id": "ironman",
+            "name": "Iron Man",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        },
+        {
+            "id": "kamala",
+            "name": "Ms. Marvel",
+            "gearNames": {
+                "melee": "GEAR SLOT NAME",
+                "ranged": "GEAR SLOT NAME",
+                "defense": "GEAR SLOT NAME",
+                "heroic": "GEAR SLOT NAME"
+            }
+        }
     ]
 }
