@@ -94,7 +94,7 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   }
 
   remove() {
-    this.removed.emit(this.gearInstanceForm.value)
+    this.removed.emit()
   }
 
 }

@@ -2,8 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild } from '@a
 import { Router } from '@angular/router';
 
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { GearInstance, GearSlot, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { Observable } from 'rxjs';
+import { GearInstance, GearService, GearSlot, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 import { GearEditorService } from '../gear-editor.service';
 
@@ -25,18 +26,23 @@ export class LoadoutBuilderComponent implements OnInit {
 
   activeGear$: Observable<GearInstance>
 
-  constructor(private router: Router, private gearEditor: GearEditorService) {
+  constructor(private router: Router, private gearEditor: GearEditorService, private perkService: PerkService,
+    private gearService: GearService) {
     this.activeView$ = gearEditor.loadoutViewerView$;
     this.activeGear$ = gearEditor.activeGearInstance$;
   }
   
   ngOnInit(): void {
-  }
+    this.perkService.getAll();
+    this.gearService.getWithQuery(`heroId_like=${this.hero.id}&heroId_like=\\*`)  }
 
 
   saveGearInstance(gearInstance: GearInstance) {
-    console.log('save called', this.loadout, this.gearSlot, gearInstance);
     this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
+  }
+
+  removeGearInstance() {
+    this.gearEditor.remove(this.gearSlot, this.loadout);
   }
 
   setActiveGearSlot(g: string) {

@@ -196,5 +196,14 @@ export class GearEditorService {
     });
   }
 
+  remove(gearSlot: GearSlot, loadout: Loadout) {
+    const modifiedLoadout = assoc(gearSlot, <GearInstance>null, loadout)
+    const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
+    this.router.navigate([], {
+      queryParams: { loadout: minimalLoadout },
+      queryParamsHandling: 'merge'
+    });
+  }
+
 }
 
