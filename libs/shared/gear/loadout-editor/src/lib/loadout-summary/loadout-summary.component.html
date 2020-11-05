@@ -1,4 +1,6 @@
-<p>loadout-summary works!</p>
-<pre [innerHTML]="gearEditorService.loadoutViewerView$ | async | json"></pre>
-<pre [innerHTML]="gearEditorService.activeGearInstance$ | async | json"></pre>
-<pre [innerHTML]="gearEditorService.activeLoadout$ | async | json"></pre>
+<ng-container *ngFor="let stat of (gearEditorService.activeLoadoutSummary$ | async) | keyvalue">
+    <div>
+        <div>{{stat.key}}</div>
+        <div>{{stat.value}}</div>
+    </div>
+</ng-container>
