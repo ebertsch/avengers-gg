@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { decompressFromEncodedURIComponent, compressToEncodedURIComponent } from '@avengers-game-guide/shared/data';
 import { RouteSelectors } from '@avengers-game-guide/shared/router';
 import { createSelector, select, Store } from '@ngrx/store';
-import { times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten } from 'ramda';
+import { times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten, complement, isNil } from 'ramda';
 import { of } from 'rxjs';
 import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearSlot, GearRarity, Stat } from '@avengers-game-guide/shared/gear/data-access';
 import { map } from 'rxjs/operators';
@@ -99,6 +99,19 @@ const getActiveGearProperty = (slot: string): GearSlot => {
   }
 }
 
+const isNotNull = complement(isNil)
+
+const getAllGearPerks = (loadout: Loadout): string[] =>
+  filter(isNotNull,
+    flatten(
+      rmap(values,
+        rmap(
+          pick(['perk1', 'perk2', 'perk3']),
+          filter(isNotNull, values(loadout))
+        )
+      )
+    )
+  )
 const summarizeLoadout = (loadout) =>
   fromPairs(
     filter(v => v[1] !== 0,
@@ -108,7 +121,7 @@ const summarizeLoadout = (loadout) =>
           groupBy(prop('stat'),
             flatten(rmap(
               values,
-              values(rmap(pick(['stat1', 'stat2', 'stat3']), filter(v=> !!v, values(loadout))))
+              values(rmap(pick(['stat1', 'stat2', 'stat3']), filter(v => !!v, values(loadout))))
             ))
           )
         )
@@ -127,23 +140,26 @@ export class GearEditorService {
   activeLoadout$ = this.store.pipe(select(this.loadoutSelector))
   activeLoadoutSummary$ = this.store.pipe(
     select(this.loadoutSelector),
-    map(loadout => { console.log(loadout); return summarizeLoadout(loadout)}
-    )
+    map(summarizeLoadout)
+  )
+  activeLoadoutGearPerks$ = this.store.pipe(
+    select(this.loadoutSelector),
+    map(getAllGearPerks)
   )
 
   activeGearSlotSelector = createSelector(
-      RouteSelectors.getMergedRoute,
-      route => getActiveGearProperty(route.queryParams.g)
-    )
+    RouteSelectors.getMergedRoute,
+    route => getActiveGearProperty(route.queryParams.g)
+  )
   activeGearSelector = createSelector(
-      this.loadoutSelector,
-      this.activeGearSlotSelector,
-      (loadout, gearSlot) => loadout[gearSlot]
-    )
+    this.loadoutSelector,
+    this.activeGearSlotSelector,
+    (loadout, gearSlot) => loadout[gearSlot]
+  )
   getLoadoutViewerView = createSelector(
-      RouteSelectors.getMergedRoute,
-      mergedRoute => <string>mergedRoute.queryParams.v || 'summary'
-    );
+    RouteSelectors.getMergedRoute,
+    mergedRoute => <string>mergedRoute.queryParams.v || 'summary'
+  );
   loadoutViewerView$ = this.store.pipe(select(this.getLoadoutViewerView));
   activeGearInstance$ = this.store.pipe(select(this.activeGearSelector));
   activeGearSlot$ = this.store.pipe(select(this.activeGearSlotSelector));

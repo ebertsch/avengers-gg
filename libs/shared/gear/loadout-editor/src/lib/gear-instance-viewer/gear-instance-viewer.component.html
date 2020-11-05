@@ -2,7 +2,7 @@
     <div class="gear-container">
         <div class="gear-name">
             <ng-container *ngIf="activeGear.id != 'CUSTOM'; else fromPerk">
-                {{ (getGearDefinition(activeGear.id) | async).name }}
+                {{ (getGearDefinition(activeGear.id) | async)?.name }}
             </ng-container>
             <ng-template #fromPerk>
                 {{ (getPerk$(activeGear.perk1) | async)?.title }}&nbsp;{{ hero.gearNames[gearSlot] }}

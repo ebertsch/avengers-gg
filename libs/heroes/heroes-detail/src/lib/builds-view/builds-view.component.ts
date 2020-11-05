@@ -12,6 +12,7 @@ import { assoc, map as rMap, includes, keys, reduce, concat, find, propEq, disso
 import { Dictionary } from '@ngrx/entity';
 import { GearEditorService } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -27,6 +28,7 @@ export class BuildsViewComponent implements OnInit {
   skills$: Observable<SelectableSkill[]>;
   selectedSkills$: Observable<Skill[]>;
   activeGearSlot$: Observable<string>;
+  activeLoadoutPerks$: Observable<string[]>;
 
   selectedSkills: Dictionary<string> = {}
 
@@ -35,6 +37,7 @@ export class BuildsViewComponent implements OnInit {
     private heroes: HeroService,
     private skillService: SkillService,
     private gearEditorService: GearEditorService,
+    public perkService: PerkService,
     private router: Router,
     private titleService: Title) {
   }
@@ -43,12 +46,14 @@ export class BuildsViewComponent implements OnInit {
     this.setupSkills();
     this.loadout$ = this.gearEditorService.activeLoadout$;
     this.activeGearSlot$ = this.gearEditorService.activeGearSlot$;
+    this.activeLoadoutPerks$ = this.gearEditorService.activeLoadoutGearPerks$;
   }
 
   setupSkills() {
     this.hero$ = this.heroes.selected$.pipe(
       tap((hero) => this.titleService.setTitle(`Avengers GG | Builder | ${hero.name}`)),
       tap(hero => {this.skillService.clearCache(); this.skillService.getWithQuery({ heroId: hero.id })}),
+      tap(hero => {this.perkService.clearCache(); this.perkService.getAll()}),
       take(1),
     )
 
@@ -77,7 +82,7 @@ export class BuildsViewComponent implements OnInit {
     )
   }
 
-  bySkillId(index: number, skill: Skill) {
+  byId(index: number, skill: Skill) {
     return skill.id
   }
 

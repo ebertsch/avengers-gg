@@ -10,10 +10,10 @@
     <agg-panel-header>Skill Points</agg-panel-header>
     <div>
         <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
-            <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
+            <div *ngFor="let skill of skills$ | async; trackBy: byId">
                 <div class="skill-container">
                     <agg-name-description [namedItem]="skill"></agg-name-description>
-                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: bySkillId">
+                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: byId">
                         <agg-name-description [namedItem]="option"></agg-name-description>
                     </div>
                 </div>
@@ -24,7 +24,12 @@
 
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
-    <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: bySkillId">
+    <h3>Perks</h3>
+    <ng-container *ngFor="let perk of this.activeLoadoutPerks$ | async">
+        <agg-name-description [namedItem]="perkService.getPerk(perk) | async"></agg-name-description>
+    </ng-container>
+    <h3>Skills</h3>
+    <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: byId">
         <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>
 </agg-panel>
