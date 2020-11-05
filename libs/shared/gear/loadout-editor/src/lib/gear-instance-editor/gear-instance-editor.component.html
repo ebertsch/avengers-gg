@@ -4,8 +4,8 @@
         <div>
             <label>Template</label>
             <select formControlName="id">
-                <option *ngFor="let item of availableGear; trackBy: byId" [value]="item.id">{{ item.title }}</option>
                 <option value="CUSTOM">Custom</option>
+                <option *ngFor="let item of (this.gear$ | async); trackBy: byId" [value]="item.id">{{ item.name }}</option>
             </select>
         </div>
 
@@ -63,17 +63,17 @@
     <div class="gear-perks">
         <div>Perks</div>
         <select formControlName="perk1" style="display: block; width: 100%;">
-            <option [value]="perk.id" *ngFor="let perk of getAvailablePerksArray(1); trackBy: byId">{{perk.name}}</option>
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
             <option [value]="null">Not set</option>
         </select>
 
         <select formControlName="perk2" style="display: block; width: 100%">
-            <option [value]="perk.id" *ngFor="let perk of getAvailablePerksArray(2); trackBy: byId">{{perk.name}}</option>
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
             <option [value]="null">Not set</option>
         </select>
  
         <select formControlName="perk3" style="display: block; width: 100%">
-            <option [value]="perk.id" *ngFor="let perk of getAvailablePerksArray(3); trackBy: byId">{{perk.name}}</option>
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
             <option [value]="null">Not set</option>
         </select>
   </div>

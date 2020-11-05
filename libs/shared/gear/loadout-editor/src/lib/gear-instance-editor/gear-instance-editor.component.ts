@@ -1,9 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GearInstance } from '@avengers-game-guide/shared/gear/data-access';
+import { GearDefinition, GearInstance, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
 import { times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
+import { Observable } from 'rxjs';
+import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 @Component({
   selector: 'agg-gear-instance-editor',
@@ -17,6 +19,7 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   _activeGear: GearInstance;
   
   @Input() hero: Hero;
+  @Input() gearSlot: GearSlot;
   @Input() set activeGear(value: GearInstance) {
     if(value === null) {
       this._activeGear = {
@@ -38,6 +41,8 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   @Output() saved = new EventEmitter<GearInstance>();
   @Output() removed = new EventEmitter<GearInstance>();
 
+
+
   @Input() availableGear = [
     {id: 1, title: 'Gear 1' },
     {id: 2, title: 'Gear 2' },
@@ -46,8 +51,10 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
     {id: 5, title: 'Gear 5' }
   ]
 
+  perks$: Observable<Perk[]>
+  gear$: Observable<GearDefinition[]>
 
-  constructor(public gearEditor: GearEditorService) {
+  constructor(public gearEditor: GearEditorService, private perkService: PerkService, private gearService: GearService) {
   }
 
   getAvailablePerksArray(perkSlot: number) {
@@ -60,6 +67,8 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.setFormValues()
+    this.perks$ = this.perkService.getGearPerks(this.gearSlot, this.hero.id)
+    this.gear$ = this.gearService.getGearForHero(this.hero.id)
   }
 
   ngOnChanges(): void {

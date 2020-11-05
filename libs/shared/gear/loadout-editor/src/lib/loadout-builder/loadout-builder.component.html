@@ -7,7 +7,7 @@
             <agg-gear-instance-viewer [activeGear]="activeGear$ | async"></agg-gear-instance-viewer>
         </ng-template>
         <ng-template [ngSwitchCase]="'editor'">
-            <agg-gear-instance-editor #ge="gearEditor" (removed)="removeGearInstance()" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" ></agg-gear-instance-editor>
+            <agg-gear-instance-editor (removed)="removeGearInstance()" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot" ></agg-gear-instance-editor>
         </ng-template>
     </ng-container>    
 </div>
