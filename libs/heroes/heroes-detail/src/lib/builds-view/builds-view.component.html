@@ -1,13 +1,21 @@
 <agg-panel class="gear-builder-container">
     <agg-panel-header>Gear</agg-panel-header>
+    <p class="panel-note">
+        while editing selecting a template only sets the item name for the time being. In a future update it will also
+        set and limit the available perks you can configure for the selected piece of gear.<br><br>
+        Item using the custom template will generate item names based on the first selected perk.<br><br>
+        Validation is not yet implemented<br><br>
+        The url for this build is unique and changes when you make changes to your skills or gear<br><br>
+    </p>
     <a class="fancy-text" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
-        Summary
+        View Summary
     </a>
     <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
 </agg-panel>
 
 <agg-panel class="skill-options-container">
     <agg-panel-header>Skill Points</agg-panel-header>
+    <p class="panel-note">Select any number of skills.<br>You can also remove a skill by clicking on it again.</p>
     <div>
         <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
             <div *ngFor="let skill of skills$ | async; trackBy: byId">
