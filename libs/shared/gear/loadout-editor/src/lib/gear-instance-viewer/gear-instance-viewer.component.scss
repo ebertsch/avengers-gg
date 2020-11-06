@@ -52,6 +52,9 @@
     &.uncommon {
         @include rarity-theme(#5aa647);
     }
+    &.uncommon {
+        @include rarity-theme(#666e6d);
+    }
   }
   .gear-name {
     grid-area: gear-name;
