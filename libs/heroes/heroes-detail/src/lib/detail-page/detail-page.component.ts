@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Hero, HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
@@ -8,15 +9,19 @@ import { Hero, HeroService } from '@avengers-game-guide/shared/heroes/data-acces
   styleUrls: ['./detail-page.component.scss']
 })
 export class DetailPageComponent implements OnInit {
-  
   apiLoaded = false;
   hero$: Observable<Hero>;
+  get isBrowser() { return isPlatformBrowser(this.platformId) };
 
-  constructor(private heroesService: HeroService) { }
+
+  constructor(private heroesService: HeroService, @Inject(PLATFORM_ID) private platformId: any) { }
 
   ngOnInit(): void {
     this.hero$ = this.heroesService.selected$;
-    this.loadYoutubeApi();
+
+    if(this.isBrowser) {
+      this.loadYoutubeApi();
+    }
   }
 
   loadYoutubeApi() {
