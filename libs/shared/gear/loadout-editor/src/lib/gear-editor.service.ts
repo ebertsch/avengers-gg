@@ -169,15 +169,6 @@ export class GearEditorService {
   getPowerLevels() { return of(times(add(130), 11)) }
 
   getStatValues(gear: GearInstance) {
-    // const statIncrease = 11;
-    // let statFloor;
-    // switch (gear.rarity) {
-    //   case "exotic": statFloor = 45; break;
-    //   case "legendary": statFloor = 35; break;
-    //   default: statFloor = 30; break;
-    // }
-
-    // return of(times(add(statFloor), statIncrease))
     return of(times(add(1), 70))
   }
 
@@ -199,10 +190,10 @@ export class GearEditorService {
       { id: 'resolve', title: 'Resolve' },
       { id: 'resilience', title: 'Resilience' },
       { id: 'proficiency', title: 'Proficiency' },
-      { id: 'valor', title: 'Valor' }
+      { id: 'valor', title: 'Valor' },
+      { id: 'intensity', title: 'Intensity' },
     ])
   }
-
 
   save(gearSlot: GearSlot, gearInstance: GearInstance, loadout: Loadout) {
     const modifiedLoadout = assoc(gearSlot, gearInstance, loadout)
