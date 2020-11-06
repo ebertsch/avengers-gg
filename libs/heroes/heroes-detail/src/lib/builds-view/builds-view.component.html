@@ -7,8 +7,8 @@
         Validation is not yet implemented<br><br>
         The url for this build is unique and changes when you make changes to your skills or gear<br><br>
     </p>
-    <a class="fancy-text" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
-        View Summary
+    <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
+        View Gear Summary
     </a>
     <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
 </agg-panel>
@@ -32,11 +32,11 @@
 
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
-    <h3>Perks</h3>
+    <h3>Gear Perks</h3>
     <ng-container *ngFor="let perk of this.activeLoadoutPerks$ | async">
         <agg-name-description [namedItem]="perkService.getPerk(perk) | async"></agg-name-description>
     </ng-container>
-    <h3>Skills</h3>
+    <h3>Skill Points</h3>
     <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: byId">
         <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>

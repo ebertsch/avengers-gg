@@ -8,6 +8,12 @@
 .highlight{
     color: #CDC884;
 }
+.panel-note {
+  border: solid 1px #899ab6;
+  background-color: #435169;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
 @mixin fancy-text {
   font-family: CrystalWide;

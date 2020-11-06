@@ -1,0 +1,28 @@
+a.button {
+    display: flex;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), #259;
+    border: 0;
+    height: 46px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    font-family: "CrystalText", sans-serif;
+    font-weight: bold;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 4px;
+    min-width: 180px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+
+
+    
+    &:hover {
+        text-decoration: none;
+    }
+}

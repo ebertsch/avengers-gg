@@ -33,13 +33,13 @@
         </div>
     </div>
 
-    <a class="melee" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
+    <a class="melee button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
         routerLinkActive="active">
         edit
     </a>
 </ng-container>
 <ng-template #addGear>
-    <a class="melee" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge" routerLinkActive="active">
+    <a class="melee button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge" routerLinkActive="active">
         Add {{ gearSlot }} gear
     </a>
 </ng-template>
