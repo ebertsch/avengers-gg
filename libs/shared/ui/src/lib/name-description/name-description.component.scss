@@ -1,12 +1,21 @@
+@import "~libs/shared/styles/text.scss";
+
 :host {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.25px;
 }
 
 strong {
   display: block;
-  font-family: CrystalWide;
   text-transform: uppercase;
+  @include fancy-text();
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.25px;
 
   &.underline {
     border-bottom: solid 1px #899ab6;
