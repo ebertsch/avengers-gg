@@ -85,12 +85,6 @@
     "shared-data": {
       "tags": []
     },
-    "gear-gear-index": {
-      "tags": ["gear"]
-    },
-    "gear-gear-builder": {
-      "tags": ["gear", "perks"]
-    },
     "shared-gear-loadout-editor": {
       "tags": ["loadout", "gear"]
     }

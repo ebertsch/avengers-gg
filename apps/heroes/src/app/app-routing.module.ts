@@ -15,13 +15,6 @@ const routes: Routes = [
         (module) => module.HeroesIndexModule
       ),
   },
-  {
-    path: 'gear',
-    loadChildren: () =>
-      import('@avengers-game-guide/gear/gear-index').then(
-        (module) => module.GearIndexModule
-      ),
-  },
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '/404' },
 ];

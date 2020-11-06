@@ -1,4 +1,4 @@
-@import "~libs/shared/styles/text.scss";
+@import "~libs/shared/styles/_fancy-text.scss";
 
 @mixin rarity-theme($color) {
   background-image: linear-gradient(180deg, $color 0%, rgba(0, 0, 0, 0) 12%);
@@ -66,8 +66,6 @@
   .gear-rarity {
     grid-area: gear-rarity;
     font-family: CrystalText;
-    font-style: normal;
-    font-weight: normal;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: -0.5px;
@@ -83,7 +81,6 @@
 
     .power-level {
       @include fancy-text();
-      font-style: normal;
       font-size: 45px;
       line-height: 61px;
     }
@@ -92,8 +89,6 @@
       position: absolute;
       bottom: 17px;
       font-family: CrystalText;
-      font-style: normal;
-      font-weight: normal;
       font-size: 12px;
       line-height: 14px;
       letter-spacing: -0.5px;
@@ -120,15 +115,12 @@
       text-transform: capitalize;
 
       font-family: CrystalText;
-      font-style: normal;
-      font-weight: normal;
       font-size: 14px;
       line-height: 14px;
       letter-spacing: 0.25px;
     }
     .stat-value {
       @include fancy-text();
-      font-style: normal;
       font-size: 18px;
       line-height: 20px;
       letter-spacing: -0.5px;
@@ -152,7 +144,6 @@
       "gear-perk-2"
       "gear-perk-3";
     grid-area: gear-perks;
-    // margin: 0 8px;
     border-top: solid 1px;
     padding: 8px;
   }
