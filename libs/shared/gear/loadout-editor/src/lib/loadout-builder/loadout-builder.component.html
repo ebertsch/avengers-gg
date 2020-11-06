@@ -1,0 +1,36 @@
+<div class="editor">
+    <ng-container [ngSwitch]="activeView$ | async">
+        <ng-template [ngSwitchCase]="'summary'">
+            <agg-loadout-summary></agg-loadout-summary>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'viewer'">
+            <agg-gear-instance-viewer [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot"></agg-gear-instance-viewer>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'editor'">
+            <agg-gear-instance-editor (removed)="removeGearInstance()" (saved)="saveGearInstance($event)" [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot" ></agg-gear-instance-editor>
+        </ng-template>
+    </ng-container>    
+</div>
+
+<a class="slot-container melee" [ngClass]='{empty: !loadout.melee}' [routerLink]="[]" [queryParams]="{g:'m', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/melee-icon.png" />
+</a>
+<a class="slot-container ranged" [ngClass]='{empty: !loadout.ranged}' [routerLink]="[]" [queryParams]="{g:'r', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/range-icon.png" />
+</a>
+<a class="slot-container defense" [ngClass]='{empty: !loadout.defense}' [routerLink]="[]" [queryParams]="{g:'d', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/defense-icon.png" />
+</a>
+<a class="slot-container heroic" [ngClass]='{empty: !loadout.heroic}' [routerLink]="[]" [queryParams]="{g:'h', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/heroic-icon.png" />
+</a>
+<a class="slot-container major-artifact" [ngClass]='{empty: !loadout.majorArtifact}' [routerLink]="[]" [queryParams]="{g:'a', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/major-artifact-icon.png" />
+</a>
+<a class="slot-container minor-artifact-1" [ngClass]='{empty: !loadout.minorArtifact1}' [routerLink]="[]" [queryParams]="{g:'ma1', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/minor-artifact-icon.png" />
+</a>
+<a class="slot-container minor-artifact-2" [ngClass]='{empty: !loadout.minorArtifact2}' [routerLink]="[]" [queryParams]="{g:'ma2', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
+    <img src="/assets/images/minor-artifact-icon.png" />
+</a>
+

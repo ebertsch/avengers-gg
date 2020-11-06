@@ -1,0 +1,89 @@
+<div class="gear-editor-block">
+    <form [formGroup]="gearInstanceForm">
+    <div class="gear-name">
+        <div>
+            <label>Template</label>
+            <select formControlName="id">
+                <option value="CUSTOM">Custom</option>
+                <option *ngFor="let item of (this.gear$ | async); trackBy: byId" [value]="item.id">{{ item.name }}</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Rarity</label>
+            <select formControlName="rarity">
+                <option *ngFor="let rarity of gearEditor.getRarityValues() | async; trackBy: byId" [value]="rarity.id">{{rarity.label}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="gear-power-level">
+        <div>
+            <label>Power Level</label>
+            <select formControlName="powerLevel">
+                <option *ngFor="let powerLevel of gearEditor.getPowerLevels() | async" [value]="powerLevel">{{powerLevel}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="gear-power-level">
+        <div>Stats</div>
+        <div formGroupName="stat1">
+            <select formControlName="stat">
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id">{{statName.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+            <select formControlName="value">
+                <option *ngFor="let statValue of gearEditor.getStatValues(activeGear) | async" [value]="statValue">{{statValue}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
+        <div formGroupName="stat2">
+            <select formControlName="stat">
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"  [value]="statName.id">{{statName.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+            <select formControlName="value">
+                <option *ngFor="let statValue of gearEditor.getStatValues(activeGear) | async" [value]="statValue">{{statValue}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
+        <div formGroupName="stat3">
+            <select formControlName="stat">
+                <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id" >{{statName.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+            <select formControlName="value">
+                <option *ngFor="let statValue of gearEditor.getStatValues(activeGear) | async" [value]="statValue">{{statValue}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="gear-perks">
+        <div>Perks</div>
+        <select formControlName="perk1" style="display: block; width: 100%;">
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+            <option [value]="null">Not set</option>
+        </select>
+
+        <select formControlName="perk2" style="display: block; width: 100%">
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+            <option [value]="null">Not set</option>
+        </select>
+ 
+        <select formControlName="perk3" style="display: block; width: 100%">
+            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+            <option [value]="null">Not set</option>
+        </select>
+  </div>
+  <div>
+      <button type="button" (click)="remove()">Remove</button>
+      <button type="button" (click)="save()">Save</button>
+  </div>
+  </form>
+</div>
+
+<div class="editor">
+   
+</div>

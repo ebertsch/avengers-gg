@@ -1,60 +1,57 @@
-.fancy-text {
-    font-family: CrystalWide;
-    position: relative;
-    z-index: 1;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8d8d8), color-stop(40%, #ffffff), to(#4a566a));
-    background-image: linear-gradient(180deg, #d8d8d8 0%, #ffffff 40%, #4a566a 100%);
-    font-weight: bold;
-    white-space: nowrap;
 
-    &:before {
-        content: attr(data-text);
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
-        text-align: center;
-        text-transform: uppercase;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#d8d8d8), color-stop(40%, #ffffff), to(#4a566a));
-        background-image: linear-gradient(180deg, #d8d8d8 0%, #ffffff 40%, #4a566a 100%);
-        z-index: 2;
-        width: 100%;
-    }
-
-    &::after{
-        background: none;
-        content: attr(data-text);
-        text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-        top: 0;
-        z-index: -1;
-        text-align: center;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
-        z-index: 1;
-        width: 100%;
-    }
-}
-
-.flare {
-    background: url(/assets/images/flare.png);
-    height: 90px;
-    width: 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
-    position: absolute;
-    transform: scaleY(-1);
-    bottom: 0;
-}
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-variant-ligatures: common-ligatures !important;
 }
 
-p .attribute {
+.highlight{
     color: #CDC884;
+}
+.panel-note {
+  border: solid 1px #899ab6;
+  background-color: #435169;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+@mixin fancy-text {
+  font-family: CrystalWide;
+  position: relative;
+  z-index: 1;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d8d8d8), color-stop(40%, #ffffff), to(#4a566a));
+  background-image: linear-gradient(180deg, #d8d8d8 0%, #ffffff 40%, #4a566a 100%);
+  font-weight: bold;
+  white-space: nowrap;
+
+  &:before {
+      content: attr(data-text);
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-align: center;
+      text-transform: uppercase;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#d8d8d8), color-stop(40%, #ffffff), to(#4a566a));
+      background-image: linear-gradient(180deg, #d8d8d8 0%, #ffffff 40%, #4a566a 100%);
+      z-index: 2;
+      width: 100%;
+  }
+
+  &::after{
+      background: none;
+      content: attr(data-text);
+      text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+      top: 0;
+      z-index: -1;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+      width: 100%;
+  }
 }

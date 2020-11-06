@@ -771,6 +771,99 @@
           "style": "scss"
         }
       }
+    },
+    "gear-gear-index": {
+      "projectType": "library",
+      "root": "libs/gear/gear-index",
+      "sourceRoot": "libs/gear/gear-index/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gear/gear-index/tsconfig.lib.json",
+              "libs/gear/gear-index/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gear/gear-index/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gear/gear-index/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "gear-gear-builder": {
+      "projectType": "library",
+      "root": "libs/gear/gear-builder",
+      "sourceRoot": "libs/gear/gear-builder/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gear/gear-builder/tsconfig.lib.json",
+              "libs/gear/gear-builder/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gear/gear-builder/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gear/gear-builder/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-gear-loadout-editor": {
+      "projectType": "library",
+      "root": "libs/shared/gear/loadout-editor",
+      "sourceRoot": "libs/shared/gear/loadout-editor/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/gear/loadout-editor/tsconfig.lib.json",
+              "libs/shared/gear/loadout-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/gear/loadout-editor/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/gear/loadout-editor/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

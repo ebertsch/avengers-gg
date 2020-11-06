@@ -1,0 +1,34 @@
+.gear-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "gear-name gear-name"
+      "gear-power-level gear-stats"
+      "gear-perk1 gear-perk1"
+      "gear-perk2 gear-perk2"
+      "gear-perk3 gear-perk3";
+  }
+  .gear-name { grid-area: gear-name; }
+  .gear-power-level { grid-area: gear-power-level; }
+  .gear-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "gear-stat1-key gear-sta1-value"
+      "gear-stat2-key gear-stat2-value"
+      "gear-stat3-key gear-stat3-value";
+    grid-area: gear-stats;
+  }
+  .gear-stat1-key { grid-area: gear-stat1-key; }
+  .gear-sta1-value { grid-area: gear-sta1-value; }
+  .gear-stat2-key { grid-area: gear-stat2-key; }
+  .gear-stat2-value { grid-area: gear-stat2-value; }
+  .gear-stat3-value { grid-area: gear-stat3-value; }
+  .gear-stat3-key { grid-area: gear-stat3-key; }
+  .gear-perk1 { grid-area: gear-perk1; }
+  .gear-perk2 { grid-area: gear-perk2; }
+  .gear-perk3 { grid-area: gear-perk3; }

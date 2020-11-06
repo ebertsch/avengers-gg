@@ -1,12 +1,27 @@
-<agg-panel class="skill-options-container">
-    <agg-panel-header>Build Options</agg-panel-header>
+<agg-panel class="gear-builder-container">
+    <agg-panel-header>Gear</agg-panel-header>
+    <p class="panel-note">
+        while editing selecting a template only sets the item name for the time being. In a future update it will also
+        set and limit the available perks you can configure for the selected piece of gear.<br><br>
+        Item using the custom template will generate item names based on the first selected perk.<br><br>
+        Validation is not yet implemented<br><br>
+        The url for this build is unique and changes when you make changes to your skills or gear<br><br>
+    </p>
+    <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
+        View Gear Summary
+    </a>
+    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
+</agg-panel>
 
+<agg-panel class="skill-options-container">
+    <agg-panel-header>Skill Points</agg-panel-header>
+    <p class="panel-note">Select any number of skills.<br>You can also remove a skill by clicking on it again.</p>
     <div>
         <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
-            <div *ngFor="let skill of skills$ | async; trackBy: bySkillId">
+            <div *ngFor="let skill of skills$ | async; trackBy: byId">
                 <div class="skill-container">
                     <agg-name-description [namedItem]="skill"></agg-name-description>
-                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: bySkillId">
+                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: byId">
                         <agg-name-description [namedItem]="option"></agg-name-description>
                     </div>
                 </div>
@@ -17,7 +32,12 @@
 
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
-    <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: bySkillId">
+    <h3>Gear Perks</h3>
+    <ng-container *ngFor="let perk of this.activeLoadoutPerks$ | async">
+        <agg-name-description [namedItem]="perkService.getPerk(perk) | async"></agg-name-description>
+    </ng-container>
+    <h3>Skill Points</h3>
+    <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: byId">
         <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>
 </agg-panel>

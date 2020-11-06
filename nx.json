@@ -41,10 +41,10 @@
       "tags": []
     },
     "shared-heroes-data-access": {
-      "tags": []
+      "tags": ["heroes"]
     },
     "heroes-heroes-detail": {
-      "tags": []
+      "tags": ["gear", "heros", "notes", "skills", "perks"]
     },
     "shared-router": {
       "tags": []
@@ -56,34 +56,43 @@
       "tags": []
     },
     "shared-notes-data-access": {
-      "tags": []
+      "tags": ["notes"]
     },
     "shared-guides-data-access": {
-      "tags": []
+      "tags": ["guides"]
     },
     "shared-builds-data-access": {
-      "tags": []
+      "tags": ["builds"]
     },
     "shared-perks-data-access": {
-      "tags": []
+      "tags": ["perks"]
     },
     "shared-gear-data-access": {
-      "tags": []
+      "tags": ["gear"]
     },
     "shared-root-state": {
       "tags": []
     },
     "shared-gear-gear": {
-      "tags": []
+      "tags": ["gear"]
     },
     "shared-perks-perk": {
-      "tags": []
+      "tags": ["perks"]
     },
     "shared-skills-data-access": {
-      "tags": []
+      "tags": ["skills"]
     },
     "shared-data": {
       "tags": []
+    },
+    "gear-gear-index": {
+      "tags": ["gear"]
+    },
+    "gear-gear-builder": {
+      "tags": ["gear", "perks"]
+    },
+    "shared-gear-loadout-editor": {
+      "tags": ["loadout", "gear"]
     }
   }
 }

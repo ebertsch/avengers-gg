@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    font-size: 34px;
+
+    br {
+        display: block;
+        margin: 10px 0;
+     }
+
+     .flare {
+        background: url(/assets/images/flare.png);
+        height: 90px;
+        width: 100%;
+        background-position: top center;
+        background-repeat: no-repeat;
+        position: absolute;
+        transform: scaleY(-1);
+        bottom: 0;
+    }
+}

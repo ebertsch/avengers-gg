@@ -1,0 +1,45 @@
+<ng-container *ngIf="!!activeGear; else addGear">
+    <div class="gear-container">
+        <div class="gear-name">
+            <ng-container *ngIf="activeGear.id != 'CUSTOM'; else fromPerk">
+                {{ (getGearDefinition(activeGear.id) | async)?.name }}
+            </ng-container>
+            <ng-template #fromPerk>
+                {{ (getPerk$(activeGear.perk1) | async)?.title }}&nbsp;{{ hero.gearNames[gearSlot] }}
+            </ng-template>
+
+            <div>{{ activeGear.rarity }}</div>
+        </div>
+        <div class="gear-power-level">
+            <div>{{ activeGear.powerLevel }}</div>
+            Power
+        </div>
+        <div class="gear-stats">
+            <div class="gear-stat1-key">{{ activeGear.stat1.stat }}</div>
+            <div class="gear-sta1-value">{{ activeGear.stat1.value }}</div>
+            <div class="gear-stat2-key">{{ activeGear.stat2.stat }}</div>
+            <div class="gear-stat2-value">{{ activeGear.stat2.value }}</div>
+            <div class="gear-stat3-key">{{ activeGear.stat3.stat }}</div>
+            <div class="gear-stat3-value">{{ activeGear.stat3.value }}</div>
+        </div>
+        <div class="gear-perk1">
+            <agg-name-description [namedItem]="getPerk$(activeGear.perk1) | async"></agg-name-description>
+        </div>
+        <div class="gear-perk2">
+            <agg-name-description [namedItem]="getPerk$(activeGear.perk2) | async"></agg-name-description>
+        </div>
+        <div class="gear-perk3">
+            <agg-name-description [namedItem]="getPerk$(activeGear.perk3) | async"></agg-name-description>
+        </div>
+    </div>
+
+    <a class="melee button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
+        routerLinkActive="active">
+        edit
+    </a>
+</ng-container>
+<ng-template #addGear>
+    <a class="melee button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge" routerLinkActive="active">
+        Add {{ gearSlot }} gear
+    </a>
+</ng-template>

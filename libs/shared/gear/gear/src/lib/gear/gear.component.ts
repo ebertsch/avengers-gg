@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, HostBinding } from '@angular/core';
-import { Gear } from '@avengers-game-guide/shared/gear/data-access';
+import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 @Component({
@@ -10,13 +10,13 @@ import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 })
 export class GearComponent implements OnInit {
 
-  @Input() gear: Gear;
+  @Input() gear: GearDefinition;
 
-  @HostBinding('class.legendary')
-  get isLegendary() { return this.gear.rarity === 'legendary' };
-  
-  @HostBinding('class.exotic')
-  get isExotic() { return this.gear.rarity === 'exotic' };
+  @HostBinding('class.legendary') get isLegendary() { return this.gear.rarity === 'legendary' };
+  @HostBinding('class.exotic') get isExotic() { return this.gear.rarity === 'exotic' };
+  @HostBinding('class.epic') get isEpic() { return this.gear.rarity === 'epic' };
+  @HostBinding('class.rare') get isRare() { return this.gear.rarity === 'rare' };
+  @HostBinding('class.uncommon') get isUncommon() { return this.gear.rarity === 'uncommon' };
 
 
   constructor(private perkService: PerkService) { }

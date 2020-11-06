@@ -23,18 +23,18 @@
   width: 350px;
   position: relative;
   
-  &.legendary {
+&.legendary {
     @include rarity-theme(#7B7C39);
 }
 &.exotic {
     @include rarity-theme(#7D4F35);
-  }
-  &.epic {
-      @include rarity-theme(#61398E);
-  }
-  &.rare {
-      @include rarity-theme(#304F8E);
-  }
+}
+&.epic {
+    @include rarity-theme(#61398E);
+}
+&.rare {
+    @include rarity-theme(#304F8E);
+}
 
   h3 {
       font-size: 24px;

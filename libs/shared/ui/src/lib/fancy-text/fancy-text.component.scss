@@ -1,0 +1,5 @@
+@import "~libs/shared/styles/text.scss";
+
+:host {
+    @include fancy-text()
+}

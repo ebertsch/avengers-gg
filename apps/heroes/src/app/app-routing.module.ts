@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { NotFoundPageComponent } from '@avengers-game-guide/shared/shell';
 
 const routes: Routes = [
@@ -15,14 +15,22 @@ const routes: Routes = [
         (module) => module.HeroesIndexModule
       ),
   },
+  {
+    path: 'gear',
+    loadChildren: () =>
+      import('@avengers-game-guide/gear/gear-index').then(
+        (module) => module.GearIndexModule
+      ),
+  },
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+    initialNavigation: 'enabled',
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

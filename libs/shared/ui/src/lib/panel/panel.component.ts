@@ -1,8 +1,8 @@
 import { Component, Directive, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-@Directive({
+@Component({
   selector: 'agg-panel-header',
-  host: {'class': 'fancy-text'}
+  template: `<agg-fancy-text><ng-content></ng-content></agg-fancy-text>`,
 })
 export class PanelHeaderComponent {}
 

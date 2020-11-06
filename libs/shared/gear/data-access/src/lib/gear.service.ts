@@ -1,34 +1,48 @@
 import { Injectable } from '@angular/core';
 import {
-    EntityCollectionServiceBase,
-    EntityCollectionServiceElementsFactory
+  EntityCollectionServiceBase,
+  EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
 import { select, createSelector } from '@ngrx/store';
 import { RouteSelectors } from '@avengers-game-guide/shared/router'
 
-import { Gear } from './gear';
+import { GearDefinition, GearSlot } from './models/gear-definition';
+import { filter } from 'ramda';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GearService extends EntityCollectionServiceBase<Gear> {
+export class GearService extends EntityCollectionServiceBase<GearDefinition> {
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('Gear', serviceElementsFactory);
   }
 
-  private getSelectedId = createSelector(
+  private getSelectedDefinitionId = createSelector(
     RouteSelectors.getMergedRoute,
     (mergedRoute) => <string>mergedRoute.params.gearSlug
-);
+  );
+  selectedId$ = this.store.pipe(select(this.getSelectedDefinitionId))
 
-selectedId$ = this.store.pipe(select(this.getSelectedId))
-
-private getSelected = createSelector(
+  private getSelectedDefinition = createSelector(
     this.selectors.selectEntityMap,
-    this.getSelectedId,
-    (entities, selectedId) => <Gear>(selectedId && entities[selectedId])
-);
+    this.getSelectedDefinitionId,
+    (entities, selectedId) => <GearDefinition>(selectedId && entities[selectedId])
+  );
+  selected$ = this.store.pipe(select(this.getSelectedDefinition))
 
-selected$ = this.store.pipe(select(this.getSelected))
+  private getGearDefinitionSelector = (id: string) => createSelector(
+    this.selectors.selectEntityMap,
+    gear => gear[id]
+  );
+  getGearDefinition = (id: string) =>  {
+    return this.store.pipe(select(this.getGearDefinitionSelector(id)))
+  }
 
+  private getGearForHeroSelector = (gearSlot: GearSlot, hero: string) => createSelector(
+    this.selectors.selectEntities,
+    gear => filter(g=> g.heroId === hero && g.gearType === gearSlot, gear).sort()
+  );
+  getGearForHero = (gearSlot: GearSlot, hero: string) => {
+    return this.store.pipe(select(this.getGearForHeroSelector(gearSlot, hero)))
+  }
 }

@@ -6,11 +6,8 @@ import { Observable } from 'rxjs';
 import { switchMap, tap, map } from 'rxjs/operators';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { Gear, GearService } from '@avengers-game-guide/shared/gear/data-access'
-
-export interface GroupedGear {
-  [id: string]: Gear[];
-}
+import { GearDefinition, GearService } from '@avengers-game-guide/shared/gear/data-access'
+import { Dictionary } from '@ngrx/entity';
 
 @Component({
   templateUrl: './gear-view.component.html',
@@ -18,14 +15,14 @@ export interface GroupedGear {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearViewComponent implements OnInit {
-  gear$: Observable<GroupedGear>;
+  gear$: Observable<Dictionary<GearDefinition[]>>;
   selectedGear: string;
 
-  constructor(private gearService: GearService, private perks: PerkService, private heroes: HeroService, private titleService: Title) {
-    this.gear$ = this.heroes.selected$.pipe(
+  constructor(private gearService: GearService, private perkService: PerkService, private heroService: HeroService, private titleService: Title) {
+    this.gear$ = this.heroService.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
       tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
-      tap(hero => {this.perks.clearCache(); this.perks.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
+      tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
       switchMap(() => this.gearService.entities$),
       map(data => groupBy(prop('set'), data) )
     )

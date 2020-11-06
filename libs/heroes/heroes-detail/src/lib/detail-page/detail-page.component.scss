@@ -8,10 +8,6 @@
     position: relative;
 }
 
-.hero-name {
-    font-size: 34px;
-}
-
 .hero-icon {
     display: inline;
     width: 60px;
@@ -29,29 +25,4 @@
     margin: 40px auto 0 auto;
     display: flex;
     justify-content: center;
-}
-
-.tabs {
-    display: FLEX;
-}
-.tab {
-    padding: 0 10px;
-    font-size: 20px;
-
-    @include bp(laptop) {
-        padding: 0 20px;
-        font-size: 20px;
-    }
-
-    .active {
-
-        &::before {
-            content: "";
-            position: absolute;
-            border-bottom: 1px #8999b7 solid;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-    }
 }

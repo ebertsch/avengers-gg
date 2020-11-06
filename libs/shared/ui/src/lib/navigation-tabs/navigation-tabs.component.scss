@@ -1,0 +1,27 @@
+@import "../../../../../shared/styles/responsive.scss";
+
+:host {
+    display: FLEX;
+
+    ::ng-deep agg-navigation-tab {
+        padding: 0 10px;
+        font-size: 20px;
+    
+        @include bp(laptop) {
+            padding: 0 20px;
+            font-size: 20px;
+        }
+    
+        .active {
+    
+            &::before {
+                content: "";
+                position: absolute;
+                border-bottom: 1px #8999b7 solid;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
