@@ -1,7 +1,7 @@
 <div class="gear-editor-block">
     <form [formGroup]="gearInstanceForm">
     <div class="gear-name">
-        <div>
+        <div class="form-field">
             <label>Template</label>
             <select formControlName="id">
                 <option value="CUSTOM">Custom</option>
@@ -9,7 +9,7 @@
             </select>
         </div>
 
-        <div>
+        <div class="form-field">
             <label>Rarity</label>
             <select formControlName="rarity">
                 <option *ngFor="let rarity of gearEditor.getRarityValues() | async; trackBy: byId" [value]="rarity.id">{{rarity.label}}</option>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="gear-power-level">
-        <div>
+        <div class="form-field">
             <label>Power Level</label>
             <select formControlName="powerLevel">
                 <option *ngFor="let powerLevel of gearEditor.getPowerLevels() | async" [value]="powerLevel">{{powerLevel}}</option>
@@ -28,7 +28,7 @@
 
     <div class="gear-power-level">
         <div>Stats</div>
-        <div formGroupName="stat1">
+        <div class="form-field" formGroupName="stat1">
             <select formControlName="stat">
                 <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id">{{statName.title}}</option>
                 <option [value]="null">Not set</option>
@@ -38,7 +38,7 @@
                 <option [value]="null">Not set</option>
             </select>
         </div>
-        <div formGroupName="stat2">
+        <div class="form-field" formGroupName="stat2">
             <select formControlName="stat">
                 <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"  [value]="statName.id">{{statName.title}}</option>
                 <option [value]="null">Not set</option>
@@ -48,7 +48,7 @@
                 <option [value]="null">Not set</option>
             </select>
         </div>
-        <div formGroupName="stat3">
+        <div class="form-field" formGroupName="stat3">
             <select formControlName="stat">
                 <option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId" [value]="statName.id" >{{statName.title}}</option>
                 <option [value]="null">Not set</option>
@@ -62,20 +62,26 @@
 
     <div class="gear-perks">
         <div>Perks</div>
-        <select formControlName="perk1" style="display: block; width: 100%;">
-            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
-            <option [value]="null">Not set</option>
-        </select>
+        <div class="form-field">
+            <select formControlName="perk1" style="display: block; width: 100%;">
+                <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
 
-        <select formControlName="perk2" style="display: block; width: 100%">
-            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
-            <option [value]="null">Not set</option>
-        </select>
+        <div class="form-field">
+            <select formControlName="perk2" style="display: block; width: 100%">
+                <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
  
-        <select formControlName="perk3" style="display: block; width: 100%">
-            <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
-            <option [value]="null">Not set</option>
-        </select>
+        <div class="form-field">
+            <select formControlName="perk3" style="display: block; width: 100%">
+                <option [value]="perk.id" *ngFor="let perk of perks$ | async; trackBy: byId">{{perk.title}}</option>
+                <option [value]="null">Not set</option>
+            </select>
+        </div>
   </div>
   <div>
       <button type="button" (click)="remove()">Remove</button>

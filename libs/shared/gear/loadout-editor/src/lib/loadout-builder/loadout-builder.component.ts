@@ -17,7 +17,6 @@ import { GearEditorService } from '../gear-editor.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoadoutBuilderComponent implements OnInit {
-
   activeView$: Observable<string>
 
   @Input() hero: Hero
@@ -25,6 +24,7 @@ export class LoadoutBuilderComponent implements OnInit {
   @Input() gearSlot: GearSlot
 
   activeGear$: Observable<GearInstance>
+  gearMenuOpen = false
 
   constructor(private router: Router, private gearEditor: GearEditorService, private perkService: PerkService,
     private gearService: GearService) {
