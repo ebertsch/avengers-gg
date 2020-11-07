@@ -2,9 +2,15 @@
 
 :host {
     display: grid;
-    gap: 0px 0px;
+    gap: 20px 0px;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "."
+    "editor";
 
       @include bp(laptop) {
+        gap: 0px 0px;
         grid-template-columns: 120px 1fr 120px;
         grid-template-rows: 80px 80px 80px 1fr;
         grid-template-areas:
@@ -25,8 +31,46 @@
 .minor-artifact-2 { grid-area: minor-artifact-2; justify-self: center; }
 
 .slot-container {
+  display: none;
+
+  @include bp(laptop) {
+    display: block;
+  }
+
   img { opacity: .6; }
   &.empty img { opacity: .2; }
   &.active img { opacity: 1; }
+}
 
+.mobile-gear-selector {
+  
+  .trigger {
+    display: flex;
+    border: solid 1px #899ab6;
+    background-color: #435169;
+    padding: 10px;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: CrystalWide;
+    font-weight: bold;
+  }
+
+  .options {
+    display: none;
+    border: solid 1px #899ab6;
+    background-color: #435169;
+    padding: 10px;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-direction: column;
+    border-top: none;
+
+    &.open {
+      display: flex;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  }
 }
