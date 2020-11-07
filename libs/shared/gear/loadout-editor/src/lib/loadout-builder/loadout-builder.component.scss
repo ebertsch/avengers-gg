@@ -24,8 +24,9 @@
 .editor {
   grid-area: editor;
   justify-self: center;
-  display: block;
+  display: flex;
   width: 100%;
+  justify-content: center;
 
   @include bp(laptop) {
     
