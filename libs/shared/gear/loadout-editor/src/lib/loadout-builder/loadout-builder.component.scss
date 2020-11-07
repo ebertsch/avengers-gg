@@ -21,7 +21,16 @@
     }
 
 }
-.editor { grid-area: editor; justify-self: center; }
+.editor {
+  grid-area: editor;
+  justify-self: center;
+  display: block;
+  width: 100%;
+
+  @include bp(laptop) {
+    
+  }
+}
 .melee { grid-area: melee; justify-self: center; }
 .ranged { grid-area: ranged; justify-self: center; }
 .defense { grid-area: defense; justify-self: center; }
@@ -43,7 +52,12 @@
 }
 
 .mobile-gear-selector {
-  
+  display: block;
+  @include bp(laptop) {
+    display: none;
+    padding: 10px;
+  }
+
   .trigger {
     display: flex;
     border: solid 1px #899ab6;
