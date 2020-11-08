@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {CdkTableModule} from '@angular/cdk/table';
+import { ClipboardModule } from '@angular/cdk/clipboard'
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 
@@ -23,6 +24,7 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
   imports: [
     CommonModule,
     CdkTableModule,
+    ClipboardModule,
     YouTubePlayerModule,
     SwiperModule,
     SharedUiModule,
@@ -31,6 +33,7 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     HeroesDataAccessModule,
     NotesDataAccessModule,
     SkillsDataAccessModule,
+    
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },

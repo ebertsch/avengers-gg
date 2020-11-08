@@ -1,5 +1,26 @@
+<agg-panel class="save-actions-container">
+    <agg-panel-header>Backup &amp; Restore</agg-panel-header>
+    <div style="display: flex; justify-content: space-evenly;">
+        <div>
+            <a class="button" download="loadout.json" [href]="gearEditorService.loadoutDownload$ | async">Download Loadout</a>
+        </div>
+        <div>
+            <label class="button" for="restore">Restore Loadout</label>
+            <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)" >
+        </div>
+    </div>
+</agg-panel>
+
+<agg-panel class="share-actions-container">
+    <agg-panel-header>Share Loadout</agg-panel-header>
+    <div class="actions-container">
+        <input type="text" disabled value="{{gearEditorService.activeLoadoutQueryString$ | async}}"/>
+        <button class="copy button" cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
+    </div>
+</agg-panel>
+
 <agg-panel class="gear-builder-container">
-    <agg-panel-header>Gear</agg-panel-header>
+    <agg-panel-header>Loadout</agg-panel-header>
     <p class="panel-note">
         while editing selecting a template only sets the item name for the time being. In a future update it will also
         set and limit the available perks you can configure for the selected piece of gear.<br><br>

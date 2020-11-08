@@ -1,19 +1,19 @@
-a.button {
-    display: flex;
+.button {
+    display: inline-flex;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), #259;
     border: 0;
-    height: 46px;
+    height: 30px;
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "CrystalText", sans-serif;
     font-weight: bold;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0 4px;
-    min-width: 180px;
+    padding: 10px 16px;
+    min-width: 120px;
     justify-content: center;
     align-items: center;
     cursor: pointer;

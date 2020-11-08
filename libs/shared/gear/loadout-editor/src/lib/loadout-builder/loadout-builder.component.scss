@@ -12,7 +12,7 @@
       @include bp(laptop) {
         gap: 0px 0px;
         grid-template-columns: 120px 1fr 120px;
-        grid-template-rows: 80px 80px 80px 1fr;
+        grid-template-rows: 110px 110px 110px 1fr;
         grid-template-areas:
           "melee editor major-artifact"
           "ranged editor ."
@@ -24,8 +24,9 @@
 .editor {
   grid-area: editor;
   justify-self: center;
-  display: block;
+  display: flex;
   width: 100%;
+  justify-content: center;
 
   @include bp(laptop) {
     
@@ -39,6 +40,7 @@
 .minor-artifact-1 { grid-area: minor-artifact-1; justify-self: center; }
 .minor-artifact-2 { grid-area: minor-artifact-2; justify-self: center; }
 
+
 .slot-container {
   display: none;
 
@@ -46,7 +48,15 @@
     display: block;
   }
 
-  img { opacity: .6; }
+  .slot {
+    background: #232f42;
+    clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+    padding: 16px 10px;
+  }
+
+  img {
+    opacity: .6; 
+  }
   &.empty img { opacity: .2; }
   &.active img { opacity: 1; }
 }
