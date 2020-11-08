@@ -145,8 +145,8 @@ export class GearEditorService {
   private activeLoadoutDownloadSelector = createSelector(
     RouteSelectors.getMergedRoute,
     mergedRoute => {
-      const json = JSON.stringify({ hero: mergedRoute.params.heroSug, loadout: mergedRoute.queryParams.loadout })
-      return this.sanitizer.bypassSecurityTrustHtml(`data:text/json;base64,${btoa(json)}`);
+      const json = JSON.stringify({ hero: mergedRoute.params.heroSlug, loadout: mergedRoute.queryParams.loadout })
+      return this.sanitizer.bypassSecurityTrustResourceUrl(`data:text/json;base64,${btoa(json)}`);
     }
   );
   loadoutDownload$ = this.store.pipe(select(this.activeLoadoutDownloadSelector))
