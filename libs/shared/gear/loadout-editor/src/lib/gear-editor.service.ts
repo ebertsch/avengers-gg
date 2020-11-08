@@ -9,6 +9,7 @@ import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearS
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const gearFromQueryParam = (source: string) => {
   const decompressed = decompressFromEncodedURIComponent(source)
@@ -145,13 +146,7 @@ export class GearEditorService {
     RouteSelectors.getMergedRoute,
     mergedRoute => {
       const json = JSON.stringify({ hero: mergedRoute.params.heroSug, loadout: mergedRoute.queryParams.loadout })
-      const e = new TextEncoder().encode(json);
-      const b = new Blob([e], {type: "text/json;charset=utf-8"});
-      const c = window.URL.createObjectURL(b)
-      console.log(c);
-      const d = `data:text/json;base64,${btoa(json)}`;
-      console.log(d)
-      return d;
+      return this.sanitizer.bypassSecurityTrustHtml(`data:text/json;base64,${btoa(json)}`);
     }
   );
   loadoutDownload$ = this.store.pipe(select(this.activeLoadoutDownloadSelector))
@@ -187,7 +182,7 @@ export class GearEditorService {
   activeGearInstance$ = this.store.pipe(select(this.activeGearSelector));
   activeGearSlot$ = this.store.pipe(select(this.activeGearSlotSelector));
 
-  constructor(private router: Router, private store: Store) { }
+  constructor(private router: Router, private store: Store,private sanitizer: DomSanitizer) { }
 
   getPowerLevels() { return of(times(add(130), 11)) }
 
