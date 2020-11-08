@@ -7,6 +7,8 @@ import { times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduc
 import { of } from 'rxjs';
 import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearSlot, GearRarity, Stat } from '@avengers-game-guide/shared/gear/data-access';
 import { map } from 'rxjs/operators';
+import { environment } from '@avengers-game-guide/shared/environments';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 const gearFromQueryParam = (source: string) => {
   const decompressed = decompressFromEncodedURIComponent(source)
@@ -133,6 +135,27 @@ const summarizeLoadout = (loadout) =>
   providedIn: 'root'
 })
 export class GearEditorService {
+  private activeLoadoutQueryStringSelector = createSelector(
+    RouteSelectors.getMergedRoute,
+    mergedRoute => `${environment.protocol}://${environment.host}${mergedRoute.url}?loadout=${<string>mergedRoute.queryParams.loadout}`
+  );
+  activeLoadoutQueryString$ = this.store.pipe(select(this.activeLoadoutQueryStringSelector))
+
+  private activeLoadoutDownloadSelector = createSelector(
+    RouteSelectors.getMergedRoute,
+    mergedRoute => {
+      const json = JSON.stringify({ hero: mergedRoute.params.heroSug, loadout: mergedRoute.queryParams.loadout })
+      const e = new TextEncoder().encode(json);
+      const b = new Blob([e], {type: "text/json;charset=utf-8"});
+      const c = window.URL.createObjectURL(b)
+      console.log(c);
+      const d = `data:text/json;base64,${btoa(json)}`;
+      console.log(d)
+      return d;
+    }
+  );
+  loadoutDownload$ = this.store.pipe(select(this.activeLoadoutDownloadSelector))
+
   private loadoutSelector = createSelector(
     RouteSelectors.getMergedRoute,
     mergedRoute => loadoutFromQueryParam(<string>mergedRoute.queryParams.loadout)
