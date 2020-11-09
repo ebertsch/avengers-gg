@@ -1,1 +1,57 @@
-<p>gear-page works!</p>
+<h1>Gear</h1>
+
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Hero Filter</mat-label>
+        <mat-select (selectionChange)="setFilters()" [(value)]="heroFilter" multiple>
+            <mat-option [value]="'*'">*</mat-option>
+            <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">{{hero.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input id="search" matInput [(ngModel)]="searchFilter" (ngModelChange)="setFilters()" />
+    </mat-form-field>
+</div>
+
+<mat-accordion multi="false">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                New Gear Piece
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="{}"></aggd-gear-edit-form>
+
+        <mat-action-row>
+            <button mat-button color="primary"
+                (click)="create(gearEditorForm.formValue.value, gearEditorForm)">Create</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel *ngFor="let gear of gearService.filteredEntities$ | async" (opened)="selectedItem = gear.id">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ gear.name }}
+            </mat-panel-title>
+            <mat-panel-description class="shot-description">
+                {{ (heroService.entityMap$ | async)[gear.heroId].name }}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ gear.gearType }}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <ng-container *ngIf="selectedItem == gear.id">
+            <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="gear">
+            </aggd-gear-edit-form>
+
+            <mat-action-row>
+                <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.value)">Delete</button>
+                <button mat-button color="primary" (click)="save(gearEditorForm.formValue.value)">Save</button>
+            </mat-action-row>
+        </ng-container>
+    </mat-expansion-panel>
+</mat-accordion>

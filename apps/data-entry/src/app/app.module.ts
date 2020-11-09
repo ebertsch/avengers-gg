@@ -17,9 +17,11 @@ import { GearPageComponent } from './pages/gear-page/gear-page.component';
 import { NamedSetsPageComponent } from './pages/named-sets-page/named-sets-page.component';
 import { NamedSetEditFormComponent } from './named-set-edit-form/named-set-edit-form.component';
 import { PerksEditFormComponent } from './perks-edit-form/perks-edit-form.component';
+import { GearEditFormComponent } from './gear-edit-form/gear-edit-form.component';
 
 @NgModule({
-  declarations: [AppComponent, PerksPageComponent, GearPageComponent, NamedSetsPageComponent, NamedSetEditFormComponent, PerksEditFormComponent],
+  declarations: [
+    AppComponent, PerksPageComponent, GearPageComponent, NamedSetsPageComponent, NamedSetEditFormComponent, PerksEditFormComponent, GearEditFormComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

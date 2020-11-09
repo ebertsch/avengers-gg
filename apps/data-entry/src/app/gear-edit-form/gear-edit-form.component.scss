@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+mat-checkbox,
+mat-form-field {
+  width: 100%;
+}
+mat-checkbox {
+  display: flex;
+  width: 100%;
+}

@@ -5,7 +5,6 @@ import {
 } from '@ngrx/data';
 import { select, createSelector } from '@ngrx/store';
 import { contains, filter } from 'ramda';
-
 import { Perk } from './perk';
 
 @Injectable({
