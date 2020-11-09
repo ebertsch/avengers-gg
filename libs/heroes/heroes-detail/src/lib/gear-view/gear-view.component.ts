@@ -22,7 +22,7 @@ export class GearViewComponent implements OnInit {
     this.gear$ = this.heroService.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
       tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
-      tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
+      tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery(`heroes_like=${hero.id}&heroes_like=\\*`)}),
       switchMap(() => this.gearService.entities$),
       map(data => groupBy(prop('set'), data) )
     )

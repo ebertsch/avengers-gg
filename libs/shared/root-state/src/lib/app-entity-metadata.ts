@@ -5,13 +5,29 @@ const includesHeroIdsFilter = (entities: {heroId}[], heroIds: string[])=> {
   return entities.filter(e => heroIds.includes(e.heroId) )
 }
 
+const includesHeroIdsAndSearchFilter = (entities: {heroId: string, title:string}[], filter: {heroIds: string[]; search: string})=> {
+  let filtered = entities;
+  if(!filter) { return filtered }
+
+  console.log('onFilter', filter)
+  
+  //filter on heroId's
+  if(!!filter.heroIds && filter.heroIds.length > 0)
+    filtered = filtered.filter(e => filter.heroIds.length && filter.heroIds.includes(e.heroId) )
+
+  if(filter.search !== '')
+    filtered = filtered.filter(e => e.title.toLowerCase().indexOf(filter.search.toLowerCase()) > -1)
+
+  return filtered;
+}
+
 const entityMetadata: EntityMetadataMap = {
   Hero: {},
   Gear: {
     filterFn: includesHeroIdsFilter
   },
   Perk: {
-    filterFn: includesHeroIdsFilter
+    filterFn: includesHeroIdsAndSearchFilter
   },
   Build: {
     filterFn: includesHeroIdsFilter

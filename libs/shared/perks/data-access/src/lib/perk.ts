@@ -3,7 +3,7 @@ export interface Perk {
     title: string;
     description: string;
     gear: string[];
-    heroId: string;
+    heroes: string[];
     gearSpecific: boolean;
     slot1Enabled: boolean;
     slot2Enabled: boolean;

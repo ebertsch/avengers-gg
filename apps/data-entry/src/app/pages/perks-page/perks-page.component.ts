@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class PerksPageComponent implements OnInit {
 
-  heroFilter: any;
+  heroFilter: string[];
+  searchFilter = '';
   filtered$: Observable<Perk[]>
   selectedPerk: string;
 
@@ -21,8 +22,9 @@ export class PerksPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setHeroFilter(e, h) {
-    this.perkService.setFilter(h)
+  setFilters() {
+    console.log('filter', this.heroFilter, this.searchFilter)
+    this.perkService.setFilter({heroIds: this.heroFilter, search: this.searchFilter})
   }
 
   create(perk: Perk, form: any) {

@@ -32,7 +32,7 @@ export class PerksEditFormComponent implements OnInit, OnChanges {
     this.formValue = new FormGroup({
       id: new FormControl(this.value.id),
       title: new FormControl(this.value.title),
-      heroId: new FormControl(this.value.heroId),
+      heroes: new FormControl(this.value.heroes),
       description: new FormControl(this.value.description),
       gear: new FormControl(this.value.gear),
       slot1Enabled: new FormControl(this.value.slot1Enabled),

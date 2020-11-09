@@ -3,10 +3,15 @@
 <div>
     <mat-form-field appearance="fill">
         <mat-label>Hero Filter</mat-label>
-        <mat-select (selectionChange)="setHeroFilter($event, heroFilter)" [(value)]="heroFilter" multiple>
+        <mat-select (selectionChange)="setFilters()" [(value)]="heroFilter" multiple>
             <mat-option [value]="'*'">*</mat-option>
             <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">{{hero.name}}</mat-option>
         </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input id="search" matInput  [(ngModel)]="searchFilter" (ngModelChange)="setFilters()" />
     </mat-form-field>
 </div>
 
@@ -31,11 +36,14 @@
             <mat-panel-title>
                 {{ perk.title }}
             </mat-panel-title>
-            <mat-panel-description>
-                {{ (heroService.entityMap$ | async)[perk.heroId]?.name || "*" }}
+            <mat-panel-description class="description">
+                {{ perk.description }}
             </mat-panel-description>
-            <mat-panel-description>
-                {{ perk.gear }}
+            <mat-panel-description class="shot-description">
+                {{ (perk.heroes || []).join(', ') }}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ (perk.gear || []).join(', ') }}
             </mat-panel-description>
         </mat-expansion-panel-header>
 

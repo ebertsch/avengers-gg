@@ -1,3 +1,11 @@
 :host {
   display: block;
 }
+
+.description {
+  flex: 5
+}
+.shot-description {
+  flex: 1;
+  text-transform: capitalize;
+}

@@ -7,7 +7,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p1",
@@ -16,7 +16,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p2",
@@ -25,7 +25,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p3",
@@ -34,7 +34,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p4",
@@ -43,7 +43,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p266",
@@ -52,7 +52,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p399",
@@ -61,7 +61,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p5",
@@ -70,7 +70,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p6",
@@ -79,7 +79,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p366",
@@ -88,7 +88,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p417",
@@ -97,7 +97,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p371",
@@ -106,7 +106,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p7",
@@ -116,7 +116,7 @@
                 "melee",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p8",
@@ -126,7 +126,7 @@
                 "melee",
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p9",
@@ -135,7 +135,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p10",
@@ -144,7 +144,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p11",
@@ -153,35 +153,35 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p12",
             "title": "Aesir's Boon",
             "description": "[%] Increased critical hit chance from Unarmed attacks.",
             "gear": [],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p13",
             "title": "Aesir's Breaker",
             "description": "[%] Increased damage from Unarmed attacks.",
             "gear": [],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p14",
             "title": "Aesir's Impulse",
             "description": "[%] Increased [STUN] damage from Unarmed attacks.",
             "gear": [],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p268",
             "title": "Agent's Instinct",
             "description": "Increases aim assistance for all Ranged weapons.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p316",
@@ -190,7 +190,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p315",
@@ -199,7 +199,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p408",
@@ -208,7 +208,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p375",
@@ -217,7 +217,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p15",
@@ -226,14 +226,14 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p16",
             "title": "Apex Blessing",
             "description": "[%] Increased critical hit chance for Signature Attacks.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p252",
@@ -242,14 +242,14 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p17",
             "title": "Apex Boon",
             "description": "[%] Increased critical hit chance for Signature Attacks.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p18",
@@ -258,14 +258,14 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p19",
             "title": "Apex Impulse",
             "description": "[%] Increased [STUN] damage from Signature Attacks.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p20",
@@ -274,7 +274,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p21",
@@ -283,7 +283,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p435",
@@ -292,7 +292,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p436",
@@ -301,7 +301,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p437",
@@ -310,7 +310,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p407",
@@ -320,7 +320,7 @@
                 "melee",
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p230",
@@ -329,7 +329,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p229",
@@ -338,14 +338,14 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p265",
             "title": "Arsenal Quake",
             "description": "[%] Increased [STUN] damage from all Weapons.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p22",
@@ -355,7 +355,7 @@
                 "heroic",
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p303",
@@ -364,7 +364,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p23",
@@ -374,7 +374,7 @@
                 "defense",
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p24",
@@ -385,7 +385,7 @@
                 "melee",
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p25",
@@ -394,7 +394,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p26",
@@ -403,7 +403,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p27",
@@ -412,7 +412,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p28",
@@ -421,7 +421,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p29",
@@ -430,7 +430,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p30",
@@ -439,7 +439,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p31",
@@ -448,7 +448,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p32",
@@ -457,7 +457,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p33",
@@ -466,7 +466,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p34",
@@ -475,7 +475,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p272",
@@ -484,7 +484,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p328",
@@ -493,7 +493,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p276",
@@ -502,7 +502,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p277",
@@ -511,7 +511,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p273",
@@ -520,7 +520,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p35",
@@ -529,7 +529,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p36",
@@ -538,7 +538,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p384",
@@ -548,7 +548,7 @@
                 "melee",
                 "defense"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p37",
@@ -557,7 +557,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p38",
@@ -566,7 +566,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p39",
@@ -575,7 +575,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p321",
@@ -584,7 +584,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p248",
@@ -593,7 +593,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p385",
@@ -602,7 +602,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p431",
@@ -611,7 +611,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p438",
@@ -620,7 +620,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p274",
@@ -629,7 +629,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p275",
@@ -639,7 +639,7 @@
                 "heroic",
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p249",
@@ -648,7 +648,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p386",
@@ -657,7 +657,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p387",
@@ -666,7 +666,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p40",
@@ -675,7 +675,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p327",
@@ -684,7 +684,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p456",
@@ -693,7 +693,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p425",
@@ -702,7 +702,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p447",
@@ -711,7 +711,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p356",
@@ -720,7 +720,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p320",
@@ -729,7 +729,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p397",
@@ -738,7 +738,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p426",
@@ -747,7 +747,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p448",
@@ -756,7 +756,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p322",
@@ -766,7 +766,7 @@
                 "defense",
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p319",
@@ -775,14 +775,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p264",
             "title": "Counter Extension",
             "description": "Increase the duration of the debuff applied to enemies after a successful PARRY by 3 seconds.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p41",
@@ -791,7 +791,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p42",
@@ -800,7 +800,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p43",
@@ -809,7 +809,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p44",
@@ -818,7 +818,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p45",
@@ -827,7 +827,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p374",
@@ -836,7 +836,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p46",
@@ -845,7 +845,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p47",
@@ -854,7 +854,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p48",
@@ -863,7 +863,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p49",
@@ -872,7 +872,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p231",
@@ -881,7 +881,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p50",
@@ -890,7 +890,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p457",
@@ -899,7 +899,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p237",
@@ -908,7 +908,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p393",
@@ -917,7 +917,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p383",
@@ -926,7 +926,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p51",
@@ -935,7 +935,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p340",
@@ -944,7 +944,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p52",
@@ -953,7 +953,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p53",
@@ -962,7 +962,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p434",
@@ -971,7 +971,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p54",
@@ -980,7 +980,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p261",
@@ -989,7 +989,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p253",
@@ -999,7 +999,7 @@
                 "heroic",
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p224",
@@ -1008,7 +1008,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p55",
@@ -1018,7 +1018,7 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p353",
@@ -1027,7 +1027,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p344",
@@ -1036,7 +1036,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p56",
@@ -1045,7 +1045,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p225",
@@ -1054,7 +1054,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p57",
@@ -1063,7 +1063,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p58",
@@ -1072,7 +1072,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p59",
@@ -1081,7 +1081,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p60",
@@ -1090,7 +1090,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p61",
@@ -1099,7 +1099,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p62",
@@ -1108,7 +1108,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p63",
@@ -1117,7 +1117,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p377",
@@ -1126,7 +1126,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p378",
@@ -1135,7 +1135,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p416",
@@ -1144,7 +1144,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p314",
@@ -1153,7 +1153,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p65",
@@ -1162,14 +1162,14 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p64",
             "title": "Eagle-Eyed",
             "description": "[%] Chance enemies will drop additional resources when defeated.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p66",
@@ -1178,14 +1178,14 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p269",
             "title": "Electric AE Bullets",
             "description": "Ranged attacks with High-Caliber Shot deal SHOCK damage.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p67",
@@ -1194,7 +1194,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p458",
@@ -1203,7 +1203,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p68",
@@ -1212,7 +1212,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p69",
@@ -1221,7 +1221,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p459",
@@ -1230,7 +1230,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p357",
@@ -1239,7 +1239,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p135",
@@ -1248,7 +1248,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p70",
@@ -1257,7 +1257,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p460",
@@ -1266,7 +1266,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p351",
@@ -1275,7 +1275,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p71",
@@ -1284,7 +1284,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p358",
@@ -1293,7 +1293,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p301",
@@ -1302,7 +1302,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p441",
@@ -1311,7 +1311,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p464",
@@ -1320,7 +1320,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p326",
@@ -1329,7 +1329,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p72",
@@ -1338,7 +1338,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p345",
@@ -1347,7 +1347,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p73",
@@ -1356,7 +1356,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p372",
@@ -1365,7 +1365,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p74",
@@ -1374,7 +1374,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p75",
@@ -1383,7 +1383,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p76",
@@ -1392,7 +1392,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p463",
@@ -1401,7 +1401,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p77",
@@ -1410,7 +1410,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p78",
@@ -1419,7 +1419,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p79",
@@ -1428,7 +1428,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p80",
@@ -1437,7 +1437,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p81",
@@ -1446,7 +1446,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p82",
@@ -1455,7 +1455,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p83",
@@ -1464,7 +1464,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p84",
@@ -1473,7 +1473,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p85",
@@ -1482,7 +1482,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p86",
@@ -1491,7 +1491,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p87",
@@ -1501,14 +1501,14 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p88",
             "title": "Fortunate Invulnerability",
             "description": "[%] Chance reviving a teammate grants an Invulnerability Buff.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p89",
@@ -1517,7 +1517,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p138",
@@ -1526,7 +1526,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p90",
@@ -1535,7 +1535,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p444",
@@ -1544,7 +1544,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p461",
@@ -1553,7 +1553,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p91",
@@ -1562,7 +1562,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p382",
@@ -1571,7 +1571,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p92",
@@ -1580,7 +1580,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p362",
@@ -1589,7 +1589,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p298",
@@ -1598,7 +1598,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p449",
@@ -1607,7 +1607,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p93",
@@ -1616,7 +1616,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p313",
@@ -1625,7 +1625,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p94",
@@ -1634,7 +1634,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p95",
@@ -1643,7 +1643,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p381",
@@ -1652,7 +1652,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p291",
@@ -1661,7 +1661,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p245",
@@ -1670,7 +1670,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p259",
@@ -1680,7 +1680,7 @@
                 "melee",
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p361",
@@ -1689,7 +1689,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p96",
@@ -1699,7 +1699,7 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p312",
@@ -1708,7 +1708,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p292",
@@ -1717,7 +1717,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p299",
@@ -1726,7 +1726,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p380",
@@ -1735,7 +1735,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p97",
@@ -1744,7 +1744,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p98",
@@ -1754,7 +1754,7 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p330",
@@ -1763,7 +1763,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p278",
@@ -1772,7 +1772,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p352",
@@ -1781,7 +1781,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p223",
@@ -1790,7 +1790,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p99",
@@ -1799,7 +1799,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p404",
@@ -1808,7 +1808,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p363",
@@ -1817,7 +1817,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p100",
@@ -1827,7 +1827,7 @@
                 "heroic",
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p101",
@@ -1836,7 +1836,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p102",
@@ -1845,7 +1845,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p103",
@@ -1855,7 +1855,7 @@
                 "artifact",
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p104",
@@ -1864,7 +1864,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p105",
@@ -1873,7 +1873,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p106",
@@ -1883,7 +1883,7 @@
                 "artifact",
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p107",
@@ -1892,7 +1892,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p108",
@@ -1901,7 +1901,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p109",
@@ -1910,7 +1910,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p110",
@@ -1919,7 +1919,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p111",
@@ -1928,7 +1928,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p112",
@@ -1938,7 +1938,7 @@
                 "heroic",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p113",
@@ -1948,7 +1948,7 @@
                 "heroic",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p406",
@@ -1957,7 +1957,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p442",
@@ -1966,7 +1966,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p114",
@@ -1975,7 +1975,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p227",
@@ -1984,14 +1984,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p233",
             "title": "Infiltrator's Stamina",
             "description": "[%] Reduction in the rate at which intrinsic energy is depleted while Overcharged.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p115",
@@ -2000,14 +2000,14 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p116",
             "title": "Karmic Justice",
             "description": "[%] Chance large robotic enemies will drop gear when defeated.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p117",
@@ -2016,7 +2016,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p238",
@@ -2025,7 +2025,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p134",
@@ -2034,7 +2034,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p118",
@@ -2043,14 +2043,14 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p119",
             "title": "Lethal Jarvis Barrier",
             "description": "[%] Chance when defeating enemies to activate a [JARVIS BARRIER]. The barrier protects against damage for 20% of maximum Willpower.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p120",
@@ -2059,7 +2059,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p258",
@@ -2068,7 +2068,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p121",
@@ -2077,7 +2077,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p122",
@@ -2086,7 +2086,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p123",
@@ -2095,7 +2095,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p124",
@@ -2104,7 +2104,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p125",
@@ -2114,7 +2114,7 @@
                 "melee",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p126",
@@ -2123,7 +2123,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p445",
@@ -2132,7 +2132,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p409",
@@ -2141,7 +2141,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p127",
@@ -2151,7 +2151,7 @@
                 "melee",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p128",
@@ -2160,7 +2160,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p129",
@@ -2169,7 +2169,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p130",
@@ -2178,7 +2178,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p131",
@@ -2187,7 +2187,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p446",
@@ -2196,7 +2196,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p132",
@@ -2205,7 +2205,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p133",
@@ -2214,14 +2214,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p141",
             "title": "Locked",
             "description": "Grants 10 points of intrinsic energy when performing Takedowns.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p243",
@@ -2231,7 +2231,7 @@
                 "melee",
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p244",
@@ -2241,7 +2241,7 @@
                 "ranged",
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p251",
@@ -2250,14 +2250,14 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p254",
             "title": "Locked",
             "description": "[%] Increased charge speed for all heroics during Cloning Lab missions.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p331",
@@ -2266,7 +2266,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p333",
@@ -2275,7 +2275,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p334",
@@ -2284,7 +2284,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p341",
@@ -2293,7 +2293,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p342",
@@ -2302,7 +2302,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p343",
@@ -2311,7 +2311,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p349",
@@ -2320,7 +2320,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p350",
@@ -2329,7 +2329,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p354",
@@ -2338,7 +2338,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p359",
@@ -2347,7 +2347,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p360",
@@ -2356,7 +2356,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p364",
@@ -2365,7 +2365,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p365",
@@ -2374,7 +2374,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p389",
@@ -2383,7 +2383,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p392",
@@ -2392,7 +2392,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p394",
@@ -2401,7 +2401,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p395",
@@ -2410,7 +2410,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p396",
@@ -2419,7 +2419,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p398",
@@ -2428,7 +2428,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p400",
@@ -2437,7 +2437,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p432",
@@ -2446,7 +2446,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p433",
@@ -2455,7 +2455,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p465",
@@ -2464,7 +2464,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p304",
@@ -2473,7 +2473,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p279",
@@ -2482,7 +2482,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p280",
@@ -2491,7 +2491,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p281",
@@ -2500,7 +2500,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p293",
@@ -2509,7 +2509,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p263",
@@ -2518,7 +2518,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p369",
@@ -2527,7 +2527,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p142",
@@ -2537,7 +2537,7 @@
                 "ranged",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p143",
@@ -2546,7 +2546,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p144",
@@ -2555,7 +2555,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p145",
@@ -2564,7 +2564,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p146",
@@ -2573,7 +2573,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p294",
@@ -2582,7 +2582,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p370",
@@ -2591,7 +2591,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p255",
@@ -2600,7 +2600,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p373",
@@ -2609,7 +2609,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p147",
@@ -2618,7 +2618,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p148",
@@ -2627,7 +2627,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p368",
@@ -2636,7 +2636,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p454",
@@ -2646,7 +2646,7 @@
                 "defense",
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p453",
@@ -2655,7 +2655,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p455",
@@ -2664,7 +2664,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p410",
@@ -2673,7 +2673,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p149",
@@ -2682,7 +2682,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p150",
@@ -2691,7 +2691,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p151",
@@ -2700,7 +2700,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p468",
@@ -2709,7 +2709,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p152",
@@ -2718,14 +2718,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p153",
             "title": "Odinforce Impulse",
             "description": "[%] Increased [STUN] damage from ODINFORCE Attacks.",
             "gear": [],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p154",
@@ -2734,7 +2734,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p250",
@@ -2743,7 +2743,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p155",
@@ -2752,7 +2752,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p376",
@@ -2761,14 +2761,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p156",
             "title": "Odinforce Surplus",
             "description": "[%] Increased ODINFORCE energy.",
             "gear": [],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p439",
@@ -2777,7 +2777,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p462",
@@ -2786,7 +2786,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p136",
@@ -2796,7 +2796,7 @@
                 "defense",
                 "heroic"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p443",
@@ -2805,7 +2805,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p413",
@@ -2815,7 +2815,7 @@
                 "defense",
                 "heroic"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p260",
@@ -2824,7 +2824,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p241",
@@ -2833,7 +2833,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p157",
@@ -2842,7 +2842,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p450",
@@ -2851,7 +2851,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p300",
@@ -2860,7 +2860,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p308",
@@ -2869,7 +2869,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p309",
@@ -2878,7 +2878,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p158",
@@ -2887,7 +2887,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p310",
@@ -2896,7 +2896,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p240",
@@ -2905,14 +2905,14 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p262",
             "title": "Plasma Potentiator",
             "description": "Increase the amount of PLASMA damage dealt with any attack by [%].",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p307",
@@ -2921,7 +2921,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p295",
@@ -2930,7 +2930,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p451",
@@ -2939,7 +2939,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p336",
@@ -2948,7 +2948,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p452",
@@ -2957,7 +2957,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p338",
@@ -2967,7 +2967,7 @@
                 "melee",
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p347",
@@ -2977,7 +2977,7 @@
                 "defense",
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p332",
@@ -2986,7 +2986,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p226",
@@ -2995,7 +2995,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p346",
@@ -3004,7 +3004,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p348",
@@ -3013,7 +3013,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p402",
@@ -3022,7 +3022,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p403",
@@ -3031,14 +3031,14 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p159",
             "title": "Power-Precision Taunt",
             "description": "[%] Chance to TAUNT an enemy after a successful Ranged Power Attack.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p467",
@@ -3047,7 +3047,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p160",
@@ -3056,7 +3056,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p379",
@@ -3065,7 +3065,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p318",
@@ -3074,7 +3074,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p161",
@@ -3083,7 +3083,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p162",
@@ -3092,7 +3092,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p163",
@@ -3101,7 +3101,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p164",
@@ -3110,7 +3110,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p271",
@@ -3119,7 +3119,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p428",
@@ -3128,7 +3128,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p140",
@@ -3137,7 +3137,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p165",
@@ -3146,7 +3146,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p166",
@@ -3155,7 +3155,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain/thor"
+            "heroes": ["captain/thor"]
         },
         {
             "id": "p235",
@@ -3164,7 +3164,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p388",
@@ -3173,7 +3173,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p325",
@@ -3182,7 +3182,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p236",
@@ -3191,7 +3191,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p390",
@@ -3200,7 +3200,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p296",
@@ -3209,7 +3209,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p270",
@@ -3218,7 +3218,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p355",
@@ -3227,7 +3227,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p411",
@@ -3236,7 +3236,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p335",
@@ -3245,7 +3245,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p297",
@@ -3254,7 +3254,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p256",
@@ -3263,7 +3263,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p324",
@@ -3272,7 +3272,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p168",
@@ -3281,7 +3281,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p169",
@@ -3290,7 +3290,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p170",
@@ -3299,7 +3299,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p167",
@@ -3308,7 +3308,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p171",
@@ -3317,7 +3317,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p282",
@@ -3326,7 +3326,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p283",
@@ -3335,7 +3335,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p284",
@@ -3344,7 +3344,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p285",
@@ -3353,7 +3353,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p286",
@@ -3362,7 +3362,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p287",
@@ -3371,7 +3371,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p288",
@@ -3380,7 +3380,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p289",
@@ -3390,7 +3390,7 @@
                 "melee",
                 "ranged"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p306",
@@ -3399,7 +3399,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p305",
@@ -3409,7 +3409,7 @@
                 "defense",
                 "heroic"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p302",
@@ -3418,7 +3418,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p414",
@@ -3427,7 +3427,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p391",
@@ -3436,7 +3436,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "captain"
+            "heroes": ["captain"]
         },
         {
             "id": "p172",
@@ -3445,7 +3445,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p173",
@@ -3454,7 +3454,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p174",
@@ -3463,7 +3463,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p175",
@@ -3472,7 +3472,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p176",
@@ -3481,7 +3481,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p177",
@@ -3490,7 +3490,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p178",
@@ -3499,7 +3499,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p179",
@@ -3508,7 +3508,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p180",
@@ -3517,7 +3517,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p181",
@@ -3526,7 +3526,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p182",
@@ -3535,7 +3535,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p183",
@@ -3544,7 +3544,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p184",
@@ -3553,7 +3553,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p185",
@@ -3562,7 +3562,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p311",
@@ -3571,7 +3571,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p186",
@@ -3580,7 +3580,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p187",
@@ -3589,7 +3589,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p188",
@@ -3598,7 +3598,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p189",
@@ -3607,7 +3607,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p440",
@@ -3616,7 +3616,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p190",
@@ -3625,7 +3625,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p191",
@@ -3634,7 +3634,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p242",
@@ -3643,7 +3643,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p418",
@@ -3652,7 +3652,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p139",
@@ -3661,7 +3661,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p466",
@@ -3670,7 +3670,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p419",
@@ -3679,7 +3679,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p192",
@@ -3688,7 +3688,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p267",
@@ -3697,7 +3697,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p429",
@@ -3706,7 +3706,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p427",
@@ -3715,7 +3715,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p247",
@@ -3724,7 +3724,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p193",
@@ -3733,7 +3733,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p430",
@@ -3742,7 +3742,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p337",
@@ -3751,7 +3751,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p194",
@@ -3761,7 +3761,7 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p195",
@@ -3770,14 +3770,14 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p412",
             "title": "Skyguard Dominion",
             "description": "25 [%] Increased Ranged Attack damage while Overcharged.",
             "gear": [],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p196",
@@ -3786,7 +3786,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p197",
@@ -3796,7 +3796,7 @@
                 "melee",
                 "heroic"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p198",
@@ -3805,7 +3805,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p137",
@@ -3815,7 +3815,7 @@
                 "heroic",
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p199",
@@ -3825,7 +3825,7 @@
                 "defense",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p200",
@@ -3835,7 +3835,7 @@
                 "heroic",
                 "defense"
             ],
-            "heroId": "ironman"
+            "heroes": ["ironman"]
         },
         {
             "id": "p201",
@@ -3844,7 +3844,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p420",
@@ -3853,7 +3853,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p421",
@@ -3862,14 +3862,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p234",
             "title": "Stealth Endowment",
             "description": "[%] Increased Heroic Charge Rate when Invisibility is active.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p422",
@@ -3878,7 +3878,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p423",
@@ -3887,7 +3887,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p202",
@@ -3896,7 +3896,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p424",
@@ -3905,7 +3905,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p203",
@@ -3914,7 +3914,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p204",
@@ -3923,7 +3923,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p205",
@@ -3932,7 +3932,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p206",
@@ -3941,7 +3941,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p207",
@@ -3950,7 +3950,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p208",
@@ -3959,7 +3959,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p209",
@@ -3968,7 +3968,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p246",
@@ -3977,7 +3977,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p317",
@@ -3986,7 +3986,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p257",
@@ -3995,7 +3995,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p239",
@@ -4004,7 +4004,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p228",
@@ -4013,14 +4013,14 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p232",
             "title": "Tactical Vigor",
             "description": "[%] Increase in the amount Overcharge gained from each attack.",
             "gear": [],
-            "heroId": "blackwidow"
+            "heroes": ["blackwidow"]
         },
         {
             "id": "p210",
@@ -4029,7 +4029,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p405",
@@ -4038,7 +4038,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p470",
@@ -4047,7 +4047,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p469",
@@ -4056,14 +4056,14 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p211",
             "title": "Taunting Finisher",
             "description": "[%] when an enemy is hit by a Light Combo Finisher to become [TAUNTED].",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p212",
@@ -4072,7 +4072,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p213",
@@ -4081,7 +4081,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p214",
@@ -4091,7 +4091,7 @@
                 "heroic",
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p329",
@@ -4100,7 +4100,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "hulk"
+            "heroes": ["hulk"]
         },
         {
             "id": "p215",
@@ -4109,14 +4109,14 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p216",
             "title": "Untouchable Pym Payload",
             "description": "[%] Chance when Perfectly Evading an incoming attack to active a [PYM PAYLOAD] on the enemy target.",
             "gear": [],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p323",
@@ -4125,7 +4125,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p217",
@@ -4134,7 +4134,7 @@
             "gear": [
                 "artifact"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p218",
@@ -4143,7 +4143,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p367",
@@ -4152,7 +4152,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p219",
@@ -4161,7 +4161,7 @@
             "gear": [
                 "defense"
             ],
-            "heroId": "*"
+            "heroes": ["*"]
         },
         {
             "id": "p220",
@@ -4170,7 +4170,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p221",
@@ -4179,7 +4179,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p290",
@@ -4188,7 +4188,7 @@
             "gear": [
                 "melee"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p222",
@@ -4197,7 +4197,7 @@
             "gear": [
                 "heroic"
             ],
-            "heroId": "thor"
+            "heroes": ["thor"]
         },
         {
             "id": "p339",
@@ -4206,7 +4206,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         },
         {
             "id": "p401",
@@ -4215,7 +4215,7 @@
             "gear": [
                 "ranged"
             ],
-            "heroId": "kamala"
+            "heroes": ["kamala"]
         }
     ]
 }
