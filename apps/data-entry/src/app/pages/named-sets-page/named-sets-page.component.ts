@@ -21,7 +21,6 @@ export class NamedSetsPageComponent implements OnInit {
   }
 
   setHeroFilter(e, h) {
-    console.log('setting filter', h)
     this.namedSetService.setFilter(h)
   }
 

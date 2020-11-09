@@ -1,9 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { GearDefinition, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
+import { GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { NamedSet, NamedSetService } from '@avengers-game-guide/shared/named-sets/data-access';
-import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -20,9 +20,6 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
 
   formValue: FormGroup
   value$: BehaviorSubject<NamedSet>;
-  availableMeleeGear$: Observable<GearDefinition[]>
-  availableRangedGear$: Observable<GearDefinition[]>
-  availableDefGear$: Observable<GearDefinition[]>
 
   constructor(public namedSetService: NamedSetService, public heroService: HeroService, public gearService: GearService) { }
 
@@ -48,7 +45,6 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
     })
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))
-    this.availableMeleeGear$ = this.setupGear$('melee');
   }
 
   updateForm(value: NamedSet) {

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
@@ -11,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 @NgModule({
   imports: [
     MatButtonModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
@@ -20,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   ],
   exports: [
     MatButtonModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
