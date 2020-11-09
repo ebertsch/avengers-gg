@@ -347,29 +347,6 @@
       "heroId" : "hulk"
     },
     {
-      "id" : "g116",
-      "name" : "Dauntless Blessing Protector",
-      "gearType" : "heroic",
-      "perks" : [
-        [
-          "p57"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "rare",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
       "id" : "g25",
       "name" : "Edgewalker's Cord",
       "gearType" : "heroic",
@@ -380,11 +357,11 @@
       ],
       "rarity" : "epic",
       "stats" : [],
-      "set" : "*TBD*",
+      "set" : "Named Set 3",
       "sources" : [
         {
-          "type" : "Global Drop",
-          "from" : "Any"
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
         }
       ],
       "heroId" : "blackwidow"
@@ -491,58 +468,6 @@
       "heroId" : "hulk"
     },
     {
-      "id" : "g125",
-      "name" : "Faultless Invulnerability Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          null
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "legendary",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Villain Sector"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g57",
-      "name" : "Faultless Invulnerability Nanites",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p84"
-        ],
-        [
-          "p325"
-        ],
-        [
-          "p276"
-        ]
-      ],
-      "rarity" : "legendary",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Global Drop",
-          "from" : "Any"
-        }
-      ],
-      "heroId" : "hulk"
-    },
-    {
       "id" : "g17",
       "name" : "Gloves of the Storm",
       "gearType" : "melee",
@@ -585,7 +510,7 @@
       ],
       "rarity" : "epic",
       "stats" : [],
-      "set" : "*TBD*",
+      "set" : "Named Set 2",
       "sources" : [
         {
           "type" : "Mission Reward",
@@ -636,159 +561,6 @@
         {
           "type" : "Mission Reward",
           "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g139",
-      "name" : "Heavyweight Buff Gauntlets",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p105"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "legendary",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "ironman"
-    },
-    {
-      "id" : "g119",
-      "name" : "Heavyweight Buff Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p105"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g122",
-      "name" : "Heavyweight Buff Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p105"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "rare",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Vault"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g138",
-      "name" : "Heavyweight Spark Gauntlets",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p111"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "legendary",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "ironman"
-    },
-    {
-      "id" : "g140",
-      "name" : "Heavyweight Spark Gauntlets",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p111"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "ironman"
-    },
-    {
-      "id" : "g130",
-      "name" : "Heavyweight Spark Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p111"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Revisit Mission"
         }
       ],
       "heroId" : "captain"
@@ -1439,107 +1211,6 @@
         }
       ],
       "heroId" : "hulk"
-    },
-    {
-      "id" : "g113",
-      "name" : "Lightweight Buff Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p126"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Vault"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g120",
-      "name" : "Lightweight Pulse Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p131"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "captain"
-    },
-    {
-      "id" : "g134",
-      "name" : "Lightweight Quake Reactor",
-      "gearType" : "heroic",
-      "perks" : [
-        [
-          "p132"
-        ],
-        [
-          "p465"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "epic",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Hive"
-        }
-      ],
-      "heroId" : "ironman"
-    },
-    {
-      "id" : "g114",
-      "name" : "Lightweight Spark Inserts",
-      "gearType" : "melee",
-      "perks" : [
-        [
-          "p133"
-        ],
-        [
-          "p465"
-        ]
-      ],
-      "rarity" : "rare",
-      "stats" : [],
-      "set" : "*TBD*",
-      "sources" : [
-        {
-          "type" : "Mission Reward",
-          "from" : "Elite Vault"
-        }
-      ],
-      "heroId" : "captain"
     },
     {
       "id" : "g153",
@@ -2745,7 +2416,7 @@
       ],
       "rarity" : "epic",
       "stats" : [],
-      "set" : "*TBD*",
+      "set" : "Named Set 1",
       "sources" : [
         {
           "type" : "Mission Reward",
@@ -3561,7 +3232,179 @@
       ],
       "rarity" : "epic",
       "stats" : [],
-      "set" : "*TBD*",
+      "set" : "Named Set 1",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },
+    {
+      "id" : "g300",
+      "name" : "Rounds of the Storm",
+      "gearType" : "ranged",
+      "perks" : [
+        [
+          "p270"
+        ],
+        [
+          "p429"
+        ],
+        [
+          "p396"
+        ]
+      ],
+      "rarity" : "exotic",
+      "stats" : [],
+      "set" : "Storm",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Tachyon Rift"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },
+    {
+      "id" : "g301",
+      "name" : "Hivemind Belt",
+      "gearType" : "Heroic",
+      "perks" : [
+        [
+          "p114"
+        ],
+        [
+          "p327"
+        ],
+        [
+          "p327"
+        ]
+      ],
+      "rarity" : "exotic",
+      "stats" : [],
+      "set" : "Hivemind",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Tachyon Rift"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },
+    {
+      "id" : "g302",
+      "name" : "Tactician's Vest",
+      "gearType" : "defense",
+      "perks" : [
+        [
+          "p227"
+        ],
+        [
+        ],
+        [
+        ]
+      ],
+      "rarity" : "epic",
+      "stats" : [],
+      "set" : "Named Set 1",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },
+    {
+      "id" : "g303",
+      "name" : "Shadow's Bindings",
+      "gearType" : "heroic",
+      "perks" : [
+        [
+          "p242"
+        ],
+        [
+        ],
+        [
+        ]
+      ],
+      "rarity" : "epic",
+      "stats" : [],
+      "set" : "Named Set 1",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },
+    {
+      "id" : "g304",
+      "name" : "Vanguard's Sleeve",
+      "gearType" : "defense",
+      "perks" : [
+        [
+          "p202"
+        ],
+        [
+        ],
+        [
+        ]
+      ],
+      "rarity" : "epic",
+      "stats" : [],
+      "set" : "Named Set 2",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },{
+      "id" : "g305",
+      "name" : "Specter's Band",
+      "gearType" : "heroic",
+      "perks" : [
+        [
+          "p20"
+        ],
+        [
+          "p201"
+        ],
+        [
+          "p172"
+        ]
+      ],
+      "rarity" : "epic",
+      "stats" : [],
+      "set" : "Named Set 2",
+      "sources" : [
+        {
+          "type" : "Mission Reward",
+          "from" : "Daily Faction Mission"
+        }
+      ],
+      "heroId" : "blackwidow"
+    },{
+      "id" : "g306",
+      "name" : "Dual Helix Magazines",
+      "gearType" : "ranged",
+      "perks" : [
+        [
+          "p229"
+        ],
+        [
+        ],
+        [
+        ]
+      ],
+      "rarity" : "epic",
+      "stats" : [],
+      "set" : "Named Set 3",
       "sources" : [
         {
           "type" : "Mission Reward",

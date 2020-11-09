@@ -2414,7 +2414,7 @@
         },
         {
             "id": "p396",
-            "title": "Locked",
+            "title": "Targeted Tachyon Surge",
             "description": "[%] Chance when hitting an enemy with a Ranged Critical Attack to activate a [TACHYON SURGE]. Surges increase all Status damage by 50% while active.",
             "gear": [
                 "ranged"
