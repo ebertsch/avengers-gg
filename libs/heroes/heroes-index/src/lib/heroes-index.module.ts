@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { HeroNavigationComponent } from './hero-navigation/hero-navigation.component';
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
-import { HeroesDataAccessModule, EnsureHeroesGuard } from '@avengers-game-guide/shared/heroes/data-access';
+import { DataAccessModule as HeroesDataAccessModule, EnsureHeroesGuard } from '@avengers-game-guide/shared/heroes/data-access';
 
 @NgModule({
   imports: [

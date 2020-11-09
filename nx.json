@@ -87,6 +87,12 @@
     },
     "shared-gear-loadout-editor": {
       "tags": ["loadout", "gear"]
+    },
+    "data-entry": {
+      "tags": ["data-entry"]
+    },
+    "shared-named-sets-data-access": {
+      "tags": []
     }
   }
 }

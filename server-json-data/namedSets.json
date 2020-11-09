@@ -1,0 +1,6 @@
+{
+    "namedSets": [
+        { "id": "1", "title": "Storm", "heroId": "hulk" },
+        { "id": "2", "title": "Hivemind", "heroId": "hulk" }
+    ]
+}

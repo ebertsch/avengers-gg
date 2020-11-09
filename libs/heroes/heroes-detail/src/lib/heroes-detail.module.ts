@@ -12,7 +12,7 @@ import { PerksViewComponent } from './perks-view/perks-view.component';
 import { BuildsViewComponent } from './builds-view/builds-view.component';
 import { GuidesViewComponent } from './guides-view/guides-view.component';
 import { NotesViewComponent } from './notes-view/notes-view.component';
-import { HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
+import { DataAccessModule as HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';

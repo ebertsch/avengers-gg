@@ -1,0 +1,45 @@
+<h1>Named Sets</h1>
+
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Hero Filter</mat-label>
+    <mat-select (selectionChange)="setHeroFilter($event, heroFilter)" [(value)]="heroFilter" multiple>
+      <mat-option [value]="'*'">*</mat-option>
+      <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">{{hero.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<mat-accordion multi="false">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            New Named Set
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <aggd-named-set-edit-form #namedSetEditorForm="namedSetEditorForm" [value]="{}"></aggd-named-set-edit-form>
+
+        <mat-action-row>
+          <button mat-button color="primary" (click)="create(namedSetEditorForm.formValue.value, namedSetEditorForm)">Create</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel *ngFor="let namedSet of namedSetService.filteredEntities$ | async">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ namedSet.title }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ (heroService.entityMap$ | async)[namedSet.heroId].name }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <aggd-named-set-edit-form #namedSetEditorForm="namedSetEditorForm" [value]="namedSet"></aggd-named-set-edit-form>
+
+      <mat-action-row>
+        <button mat-button color="secondary" (click)="delete(namedSetEditorForm.formValue.value)">Delete</button>
+        <button mat-button color="primary" (click)="save(namedSetEditorForm.formValue.value)">Save</button>
+      </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -150,10 +150,7 @@
           "options": {
             "browserTarget": "heroes:build:production",
             "serverTarget": "heroes:server:production",
-            "routes": [
-              "/",
-              "/heroes"
-            ]
+            "routes": ["/", "/heroes"]
           },
           "configurations": {
             "production": {}
@@ -795,6 +792,164 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/gear/loadout-editor/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "data-entry": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/data-entry",
+      "sourceRoot": "apps/data-entry/src",
+      "prefix": "aggd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/data-entry",
+            "index": "apps/data-entry/src/index.html",
+            "main": "apps/data-entry/src/main.ts",
+            "polyfills": "apps/data-entry/src/polyfills.ts",
+            "tsConfig": "apps/data-entry/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              },
+              {
+                "input": "libs/shared/assets",
+                "glob": "favicon.png",
+                "output": "."
+              }
+            ],
+            "styles": ["apps/data-entry/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "data-entry:build",
+            "proxyConfig": "apps/data-entry/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "data-entry:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "data-entry:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/data-entry/tsconfig.app.json",
+              "apps/data-entry/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/data-entry/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/data-entry/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-named-sets-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/named-sets/data-access",
+      "sourceRoot": "libs/shared/named-sets/data-access/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/named-sets/data-access/tsconfig.lib.json",
+              "libs/shared/named-sets/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/named-sets/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/named-sets/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

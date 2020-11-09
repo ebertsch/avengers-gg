@@ -6,7 +6,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
 
 import { environment } from '@avengers-game-guide/shared/environments'
 import { ShellModule } from '@avengers-game-guide/shared/shell';
-import { HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-access';
+import { DataAccessModule as HeroesDataAccessModule } from '@avengers-game-guide/shared/heroes/data-access';
 import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';

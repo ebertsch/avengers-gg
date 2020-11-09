@@ -1,0 +1,87 @@
+
+<form [formGroup]="formValue">
+    <mat-form-field appearance="fill">
+      <mat-label>Set Title</mat-label>
+      <input formControlName="title" matInput [value]="value.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hero</mat-label>
+      <mat-select formControlName="heroId">
+        <mat-option [value]="null">Not set</mat-option>
+        <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+          {{hero.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Melee</mat-label>
+      <mat-select formControlName="melee">
+        <mat-option [value]="null">Not set</mat-option>
+        <mat-option *ngFor="let gear of setupGear$('melee') | async" [value]="gear.id">
+          {{gear.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Ranged</mat-label>
+      <mat-select formControlName="ranged">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('ranged') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Defense</mat-label>
+      <mat-select formControlName="defense">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('defense') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Heroic</mat-label>
+      <mat-select formControlName="heroic">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('heroic') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Major Artifact</mat-label>
+      <mat-select formControlName="majorArtifact">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('majorArtifact') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Minor Artifact 1</mat-label>
+      <mat-select formControlName="minorArtifact1">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('minorArtifact1') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Minor Artifact 2</mat-label>
+      <mat-select formControlName="minorArtifact2">
+            <mat-option [value]="null">Not set</mat-option>
+            <mat-option *ngFor="let gear of setupGear$('minorArtifact2') | async" [value]="gear.id">
+              {{gear.name}}
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+</form>
