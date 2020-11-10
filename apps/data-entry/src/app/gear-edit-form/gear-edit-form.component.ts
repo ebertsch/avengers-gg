@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { BehaviorSubject} from 'rxjs';
@@ -12,12 +13,12 @@ import { BehaviorSubject} from 'rxjs';
   exportAs: 'gearEditorForm'
 })
 export class GearEditFormComponent implements OnInit, OnChanges {
-  private _value: Perk;
-  @Input() set value(value: Perk) { this._value = {...value} }
+  private _value: GearDefinition;
+  @Input() set value(value: GearDefinition) { this._value = {...value} }
   get value() { return this._value }
 
   formValue: FormGroup
-  value$: BehaviorSubject<Perk>;
+  value$: BehaviorSubject<GearDefinition>;
 
   constructor(public perkService: PerkService, public heroService: HeroService) { }
 
@@ -31,20 +32,45 @@ export class GearEditFormComponent implements OnInit, OnChanges {
   setupForm() {
     this.formValue = new FormGroup({
       id: new FormControl(this.value.id),
-      title: new FormControl(this.value.title),
-      heroes: new FormControl(this.value.heroes),
-      description: new FormControl(this.value.description),
-      gear: new FormControl(this.value.gear),
-      slot1Enabled: new FormControl(this.value.slot1Enabled),
-      slot2Enabled: new FormControl(this.value.slot2Enabled),
-      slot3Enabled: new FormControl(this.value.slot3Enabled),
-      gearSpecific: new FormControl(this.value.gearSpecific),
+      name: new FormControl(this.value.name),
+      set: new FormControl(this.value.set),
+      heroId: new FormControl(this.value.heroId),
+      gearType: new FormControl(this.value.gearType),
+      perks1: new FormControl(this.value.perks1),
+      perks2: new FormControl(this.value.perks2),
+      perks3: new FormControl(this.value.perks3),
+      rarity: new FormControl(this.value.rarity),
+      stats: new FormArray([]),
+      sources: new FormArray([
+        new FormGroup({
+          type: new FormControl((this.value.sources || [])[0]?.type),
+          from: new FormControl((this.value.sources || [])[0]?.from),
+        })
+      ])
     })
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))
   }
 
-  updateForm(value: Perk) {
+  get sources() {
+    return this.formValue.get('sources') as FormArray
+  }
+
+  addSource() {
+    (this.formValue.get('sources') as FormArray).push(
+      new FormGroup({
+        type: new FormControl(),
+        from: new FormControl()
+      })
+    )
+  }
+
+  removeSource(idx) {
+    (this.formValue.get('sources') as FormArray).removeAt(idx)
+
+  }
+
+  updateForm(value: GearDefinition) {
     if(this.formValue === undefined) { return }
     this.formValue.setValue(value)
     this._value = { ...this.value }

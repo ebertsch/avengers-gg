@@ -1,7 +1,7 @@
 <form [formGroup]="formValue">
   <mat-form-field appearance="fill">
     <mat-label>Hero</mat-label>
-    <mat-select formControlName="heroes" multiple>
+    <mat-select formControlName="heroId">
       <mat-option [value]="null">Not set</mat-option>
       <mat-option [value]="'*'">*</mat-option>
       <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
@@ -11,18 +11,18 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Set Title</mat-label>
-    <input formControlName="title" matInput [value]="value.title">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput [value]="value.name">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Description</mat-label>
-    <input formControlName="description" matInput [value]="value.description">
+    <mat-label>Set</mat-label>
+    <input formControlName="set" matInput [value]="value.set">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Gear Slots</mat-label>
-    <mat-select formControlName="gear" multiple>
+    <mat-label>Gear Slot</mat-label>
+    <mat-select formControlName="gearType">
       <mat-option [value]="null">Not set</mat-option>
       <mat-option [value]="'melee'">Melee</mat-option>
       <mat-option [value]="'ranged'">Ranged</mat-option>
@@ -33,12 +33,82 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-checkbox formControlName="gearSpecific">Gear Specific</mat-checkbox>
-  <mat-checkbox formControlName="slot1Enabled">Enabled for first slot</mat-checkbox>
-  <mat-checkbox formControlName="slot2Enabled">Enabled for second slot</mat-checkbox>
-  <mat-checkbox formControlName="slot3Enabled">Enabled for third slot</mat-checkbox>
+  <mat-form-field appearance="fill">
+    <mat-label>Rarity</mat-label>
+    <mat-select formControlName="rarity">
+      <mat-option [value]="'epic'">Epic</mat-option>
+      <mat-option [value]="'legendary'">Legendary</mat-option>
+      <mat-option [value]="'exotic'">Exotic</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h3>Perks</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Perks 1</mat-label>
+    <mat-select formControlName="perks1" multiple>
+      <mat-option [value]="null">not set</mat-option>
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+        {{ perk.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Perks 2</mat-label>
+    <mat-select formControlName="perks2" multiple>
+      <mat-option [value]="null">not set</mat-option>
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+        {{ perk.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Perks 3</mat-label>
+    <mat-select formControlName="perks3" multiple>
+      <mat-option [value]="null">not set</mat-option>
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+        {{ perk.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
+  <div>
+    <h3>Sources</h3>
+    <ng-container formArrayName="sources">
+      <div style="display: flex; flex-direction: row;" *ngFor="let _ of sources.controls; index as idx">
+        <ng-container [formGroupName]="idx">
+
+          <mat-form-field appearance="fill">
+            <mat-label>type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Mission Reward'">Mission Reward</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>from</mat-label>
+            <mat-select formControlName="from">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Elite Hive'">Elite Hive</mat-option>
+              <mat-option [value]="'Elite Vault'">Elite Vault</mat-option>
+              <mat-option [value]="'Elite Villain Sector'">Elite Villain Sector</mat-option>
+              <mat-option [value]="'Tachyon Rifts'">Tachyon Rifts</mat-option>
+              <mat-option [value]="'Daily Faction Mission'">Daily Faction Mission</mat-option>
+              <mat-option [value]="'Elite Heroic Hive'">Elite Heroic Hive</mat-option>
+              <mat-option [value]="'Mega Hive'">Mega Hive</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-icon-button (click)="removeSource(idx)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+    </ng-container>
+    <button mat-icon-button (click)="addSource()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 
 </form>
