@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { environment } from '@avengers-game-guide/shared/environments';
 
 @Component({
   selector: 'aggd-root',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
             <a mat-button [routerLink]="['gear']">Gear</a>
             <a mat-button [routerLink]="['perks']">Perks</a>
             <a mat-button [routerLink]="['named-sets']">Sets</a>
+            <span class="spacer"></span>
+            <button mat-button (click)="saveDB()">Save</button>
           </mat-toolbar>
           <main>
             <router-outlet></router-outlet>
@@ -19,4 +23,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'data-entry';
+
+  constructor(private http: HttpClient) {}
+
+  saveDB() {
+    this.http.post(`${environment.dataEntryClientApiUrl}/save`, null).subscribe();
+  }
 }

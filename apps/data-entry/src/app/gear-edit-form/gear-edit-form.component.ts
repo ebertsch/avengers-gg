@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
@@ -41,13 +42,13 @@ export class GearEditFormComponent implements OnInit, OnChanges {
       perks3: new FormControl(this.value.perks3),
       rarity: new FormControl(this.value.rarity),
       stats: new FormArray([]),
-      sources: new FormArray([
-        new FormGroup({
-          type: new FormControl((this.value.sources || [])[0]?.type),
-          from: new FormControl((this.value.sources || [])[0]?.from),
-        })
-      ])
+      sources: new FormArray([])
     })
+
+    for(let x =0; x < (this.value.sources||[]).length; x++){
+      this.addSource(this.value.sources[x])
+    }
+    
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))
   }
@@ -56,18 +57,17 @@ export class GearEditFormComponent implements OnInit, OnChanges {
     return this.formValue.get('sources') as FormArray
   }
 
-  addSource() {
+  addSource(value: ItemSource = { type: '', from: '' }) {
     (this.formValue.get('sources') as FormArray).push(
       new FormGroup({
-        type: new FormControl(),
-        from: new FormControl()
+        type: new FormControl(value.type),
+        from: new FormControl(value.from)
       })
     )
   }
 
   removeSource(idx) {
     (this.formValue.get('sources') as FormArray).removeAt(idx)
-
   }
 
   updateForm(value: GearDefinition) {

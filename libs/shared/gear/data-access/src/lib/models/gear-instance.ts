@@ -1,4 +1,4 @@
-import { GearRarity, StatInstance } from './gear-definition';
+import { GearRarity, StatInstance } from '@avengers-game-guide/shared/data'
 
 export interface GearInstance {
     id: string

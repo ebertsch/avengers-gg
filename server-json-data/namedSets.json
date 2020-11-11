@@ -1,6 +1,1 @@
-{
-    "namedSets": [
-        { "id": "1", "title": "Storm", "heroId": "hulk" },
-        { "id": "2", "title": "Hivemind", "heroId": "hulk" }
-    ]
-}
+{"namedSets":[{"id":"1","title":"Infiltrator's","heroId":"blackwidow","melee":"g1","ranged":"g2","defense":"g3","heroic":"g4","majorArtifact":null,"minorArtifact1":null,"minorArtifact2":null},{"id":"2","title":"Red Room","heroId":"blackwidow","melee":"g5","ranged":"g6","defense":"g7","heroic":"g8","majorArtifact":null,"minorArtifact1":null,"minorArtifact2":null}]}

@@ -1,4 +1,4 @@
-import { Loadout } from './loadout'
+import { ItemSource } from '@avengers-game-guide/shared/data';
 
 export interface GearDefinition {
     id: string;
@@ -13,17 +13,3 @@ export interface GearDefinition {
     sources: ItemSource[];
     heroId: string;
 }
-
-export interface ItemSource {
-    type: string;
-    from: string;
-}
-
-export interface StatInstance {
-    stat: Stat
-    value: number
-}
-
-export type GearRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary' | 'exotic'
-export type Stat = 'might' | 'precision' | 'resolve' | 'resilience' | 'proficiency' | 'valor'
-export type GearSlot = keyof Loadout;

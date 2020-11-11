@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { GearSlot, ItemSource } from '@avengers-game-guide/shared/data';
+import { GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { NamedSet, NamedSetService } from '@avengers-game-guide/shared/named-sets/data-access';
 import { BehaviorSubject, combineLatest } from 'rxjs';
@@ -31,6 +32,7 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
   }
 
   setupForm() {
+    console.log(this.value)
     this.formValue = new FormGroup({
       id: new FormControl(this.value.id),
       title: new FormControl(this.value.title),
@@ -41,8 +43,12 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
       heroic: new FormControl(this.value.heroic),
       majorArtifact: new FormControl(this.value.majorArtifact),
       minorArtifact1: new FormControl(this.value.minorArtifact1),
-      minorArtifact2: new FormControl(this.value.minorArtifact2)
+      minorArtifact2: new FormControl(this.value.minorArtifact2),
+      sources: new FormArray([])
     })
+    for(let x =0; x < (this.value.sources||[]).length; x++){
+      this.addSource(this.value.sources[x])
+    }
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))
   }
@@ -63,6 +69,23 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
         gear.filter(g => g.gearType === gearSlot && g.heroId === namedSet.heroId)
       )
     )
+  }
+
+  get sources() {
+    return this.formValue.get('sources') as FormArray
+  }
+
+  addSource(value: ItemSource = { type: '', from: '' }) {
+    console.log('v:', value);
+    (this.formValue.get('sources') as FormArray).push(
+      new FormGroup({
+        type: new FormControl(value.type),
+        from: new FormControl(value.from)
+      })
+    )
+  }
+  removeSource(idx) {
+    (this.formValue.get('sources') as FormArray).removeAt(idx)
   }
 
 
