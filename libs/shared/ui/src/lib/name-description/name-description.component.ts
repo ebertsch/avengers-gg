@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, HostBinding } from '@angular/core';
-import { NamedItem} from '@avengers-game-guide/shared/data';
+import { NamedItem } from '@avengers-game-guide/shared/data';
 
 @Component({
   selector: 'agg-name-description',

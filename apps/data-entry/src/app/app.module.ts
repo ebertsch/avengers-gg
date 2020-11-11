@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http"
 import { DefaultDataServiceConfig } from '@ngrx/data';
-
-
 import { environment } from '@avengers-game-guide/shared/environments';
+
+import { SharedUiModule } from '@avengers-game-guide/shared/ui'
 import { MaterialModule } from './material.module';
 import { DataAccessModule } from './data-access.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { GearEditFormComponent } from './gear-edit-form/gear-edit-form.component
     MaterialModule,
     RootStateModule,
     DataAccessModule,
+    SharedUiModule,
     RouterModule.forRoot([
       { path: 'gear', component: GearPageComponent },
       { path: 'perks', component: PerksPageComponent },

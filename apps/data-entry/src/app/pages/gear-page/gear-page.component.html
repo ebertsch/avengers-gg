@@ -31,7 +31,7 @@
         </mat-action-row>
     </mat-expansion-panel>
 
-    <mat-expansion-panel *ngFor="let gear of gearService.filteredEntities$ | async" (opened)="selectedItem = gear.id">
+    <mat-expansion-panel id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async)" (opened)="selectedItem = gear.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ gear.name }}
