@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GearDefinition, GearInstance, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
+import { GearDefinition, GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
+import { GearSlot } from '@avengers-game-guide/shared/data';
 import { times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';

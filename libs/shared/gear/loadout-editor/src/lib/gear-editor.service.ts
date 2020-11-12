@@ -5,7 +5,9 @@ import { RouteSelectors } from '@avengers-game-guide/shared/router';
 import { createSelector, select, Store } from '@ngrx/store';
 import { times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten, complement, isNil } from 'ramda';
 import { of } from 'rxjs';
-import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearSlot, GearRarity, Stat } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearSlot, GearRarity, StatField } from '@avengers-game-guide/shared/data';
+
 import { map } from 'rxjs/operators';
 
 const gearFromQueryParam = (source: string) => {
@@ -27,9 +29,9 @@ const toGearInstance = (source: SerializedGearInstance): GearInstance => {
     perk3: source.p3,
     powerLevel: source.pl,
     rarity: source.r as GearRarity,
-    stat1: { stat: source.s1n as Stat, value: source.s1v },
-    stat2: { stat: source.s2n as Stat, value: source.s2v },
-    stat3: { stat: source.s3n as Stat, value: source.s3v }
+    stat1: { stat: source.s1n as StatField, value: source.s1v },
+    stat2: { stat: source.s2n as StatField, value: source.s2v },
+    stat3: { stat: source.s3n as StatField, value: source.s3v }
   }
 }
 const toSerializedGear = (source: GearInstance): SerializedGearInstance => {

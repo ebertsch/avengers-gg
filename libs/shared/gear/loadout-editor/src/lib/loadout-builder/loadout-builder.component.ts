@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { Observable } from 'rxjs';
-import { GearInstance, GearService, GearSlot, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, GearService, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearSlot } from '@avengers-game-guide/shared/data';
+
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 import { GearEditorService } from '../gear-editor.service';
