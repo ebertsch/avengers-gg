@@ -8,6 +8,7 @@ import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { GearDefinition, GearService } from '@avengers-game-guide/shared/gear/data-access'
 import { Dictionary } from '@ngrx/entity';
+import { NamedSet, NamedSetService } from '@avengers-game-guide/shared/named-sets/data-access';
 
 @Component({
   templateUrl: './gear-view.component.html',
@@ -15,20 +16,29 @@ import { Dictionary } from '@ngrx/entity';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearViewComponent implements OnInit {
-  gear$: Observable<Dictionary<GearDefinition[]>>;
+  namedSets$: Observable<NamedSet[]>;
   selectedGear: string;
 
-  constructor(private gearService: GearService, private perkService: PerkService, private heroService: HeroService, private titleService: Title) {
-    this.gear$ = this.heroService.selected$.pipe(
+  constructor(
+    private gearService: GearService,
+    private perkService: PerkService,
+    private heroService: HeroService,
+    private namedSetsService: NamedSetService,
+    private titleService: Title) {
+    this.namedSets$ = this.heroService.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
       tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
       tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery(`heroes_like=${hero.id}&heroes_like=\\*`)}),
-      switchMap(() => this.gearService.entities$),
-      map(data => groupBy(prop('set'), data) )
+      tap(hero => {this.namedSetsService.clearCache(); this.namedSetsService.getWithQuery(`heroId_like=${hero.id}`)}),
+      switchMap(() => this.namedSetsService.entities$)
     )
   }
 
   ngOnInit(): void {
+  }
+
+  getGearPiece(id: string) {
+    return this.gearService.getGearDefinition(id)
   }
 
   showGearRow(id: string) {

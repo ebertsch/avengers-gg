@@ -1,8 +1,8 @@
-<ng-container *ngFor="let gearSet of gear$ | async | keyvalue">
+<ng-container *ngFor="let namedSet of namedSets$ | async">
     <agg-panel>
         <agg-panel-header style="text-transform: capitalize;">
-            {{gearSet.key}}
-            <span class="location">{{gearSet.value[0].sources[0].type}}: {{gearSet.value[0].sources[0].from}}</span>
+            {{namedSet.title}}
+            <span class="location" *ngFor="let source of namedSet.sources">{{source.from}}</span>
         </agg-panel-header>
         <table>
             <thead>
@@ -12,17 +12,57 @@
                 </tr>
             </thead>
             <tbody>
-                <ng-container *ngFor="let gear of gearSet.value">
-                <tr class="row" [ngClass]="{'selected': selectedGear == gear.id}" (click)="showGearRow(gear.id)">
-                    <td class="column col-name">{{gear.name}}</td>
-                    <td class="column col-slot">{{gear.gearType}}</td>
-                </tr>
-                <tr class="detail-row" *ngIf="selectedGear == gear.id">
-                    <td colspan="3">
-                        <agg-gear [gear]="gear"></agg-gear>
-                    </td>
-                </tr>
-            </ng-container>
+                <ng-container *ngIf="namedSet.melee">
+                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.melee}"
+                        (click)="showGearRow(namedSet.melee)">
+                        <td class="column col-name">{{ (getGearPiece(namedSet.melee) | async).name}}</td>
+                        <td class="column col-slot">Melee</td>
+                    </tr>
+                    <tr class="detail-row" *ngIf="selectedGear == namedSet.melee">
+                        <td colspan="3">
+                            <agg-gear [gear]="getGearPiece(namedSet.melee) | async"></agg-gear>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                <ng-container *ngIf="namedSet.ranged">
+                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.ranged}"
+                        (click)="showGearRow(namedSet.ranged)">
+                        <td class="column col-name">{{ (getGearPiece(namedSet.ranged) | async).name}}</td>
+                        <td class="column col-slot">Ranged</td>
+                    </tr>
+                    <tr class="detail-row" *ngIf="selectedGear == namedSet.ranged">
+                        <td colspan="3">
+                            <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"></agg-gear>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                <ng-container *ngIf="namedSet.defense">
+                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.defense}"
+                        (click)="showGearRow(namedSet.defense)">
+                        <td class="column col-name">{{ (getGearPiece(namedSet.defense) | async).name}}</td>
+                        <td class="column col-slot">Defense</td>
+                    </tr>
+                    <tr class="detail-row" *ngIf="selectedGear == namedSet.defense">
+                        <td colspan="3">
+                            <agg-gear [gear]="getGearPiece(namedSet.defense) | async"></agg-gear>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                <ng-container *ngIf="namedSet.heroic">
+                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.heroic}"
+                        (click)="showGearRow(namedSet.heroic)">
+                        <td class="column col-name">{{ (getGearPiece(namedSet.heroic) | async).name}}</td>
+                        <td class="column col-slot">Heroic</td>
+                    </tr>
+                    <tr class="detail-row" *ngIf="selectedGear == namedSet.heroic">
+                        <td colspan="3">
+                            <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"></agg-gear>
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </agg-panel>

@@ -14,6 +14,7 @@ import { GuidesViewComponent } from './guides-view/guides-view.component';
 import { NotesViewComponent } from './notes-view/notes-view.component';
 import { DataAccessModule as HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
+import { DataAccessModule as NamedSetsDataAccessModule } from '@avengers-game-guide/shared/named-sets/data-access';
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
@@ -31,6 +32,7 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     HeroesDataAccessModule,
     NotesDataAccessModule,
     SkillsDataAccessModule,
+    NamedSetsDataAccessModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },
