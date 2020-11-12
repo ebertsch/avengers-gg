@@ -33,17 +33,20 @@
 
     <mat-expansion-panel [ngClass]="{selected: selectedItem == gear.id}" id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
         <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="description">
                 {{ gear.name }}
             </mat-panel-title>
             <mat-panel-description class="shot-description">
                 {{ (heroService.entityMap$ | async)[gear.heroId]?.name || gear.heroId  }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ gear.gearType }}
+                {{ gear.gearType | uncamelcase }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ (gear.perks1||[]).length ? "Populated" : ""}}
+                {{ (gear.perks1||[]).length ? "Has Perks" : ""}}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ getSourceLocations(gear.sources)}}
             </mat-panel-description>
         </mat-expansion-panel-header>
 

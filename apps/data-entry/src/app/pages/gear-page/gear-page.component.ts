@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
@@ -20,6 +21,10 @@ export class GearPageComponent implements OnInit {
   constructor(public perkService: PerkService, public heroService: HeroService, public gearService: GearService) { }
 
   ngOnInit(): void {
+  }
+
+  getSourceLocations(sources: ItemSource[]) {
+    return (sources || []).map(s => s.from).join(', ')
   }
 
   setFilters() {

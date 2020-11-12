@@ -2,7 +2,11 @@
   display: block;
 }
 
-.selected {
-  border: solid 1px black;
-  background-color: #f5f5f5 !important;
+.description {
+  flex: 4;
+  align-self: center;
+}
+.shot-description {
+  flex: 1;
+  text-transform: capitalize;
 }

@@ -6,6 +6,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { PanelComponent, PanelHeaderComponent } from './panel/panel.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
+import { UncamelCasePipe } from './pipes/uncamecase.pipe'
 import { NameDescriptionComponent } from './name-description/name-description.component';
 import { FlaredTitleComponent } from './flared-title/flared-title.component';
 import { NavigationTabsComponent, NavigationTabComponent } from './navigation-tabs/navigation-tabs.component';
@@ -13,7 +14,7 @@ import { FancyTextComponent } from './fancy-text/fancy-text.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ScrollingModule],
-  declarations: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
-  exports: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
+  declarations: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, UncamelCasePipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
+  exports: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, UncamelCasePipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
 })
 export class SharedUiModule {}

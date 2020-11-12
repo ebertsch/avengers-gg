@@ -43,7 +43,7 @@
                 {{ (perk.heroes || []).join(', ') }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ (perk.gear || []).join(', ') }}
+                {{ (perk.gear || []).join(', ') | uncamelcase }}
             </mat-panel-description>
         </mat-expansion-panel-header>
 
