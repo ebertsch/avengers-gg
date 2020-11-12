@@ -15,22 +15,22 @@
     </mat-form-field>
 </div>
 
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Perk
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <aggd-perks-edit-form #perkEditorForm="perkEditorForm" [value]="{}"></aggd-perks-edit-form>
+
+    <mat-action-row>
+        <button mat-button color="primary"
+            (click)="create(perkEditorForm.formValue.value, perkEditorForm)">Create</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
 <mat-accordion multi="false">
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                New Perk
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-
-        <aggd-perks-edit-form #perkEditorForm="perkEditorForm" [value]="{}"></aggd-perks-edit-form>
-
-        <mat-action-row>
-            <button mat-button color="primary"
-                (click)="create(perkEditorForm.formValue.value, perkEditorForm)">Create</button>
-        </mat-action-row>
-    </mat-expansion-panel>
-
     <mat-expansion-panel *ngFor="let perk of perkService.filteredEntities$ | async" (opened)="selectedPerk = perk.id">
         <mat-expansion-panel-header>
             <mat-panel-title>

@@ -20,6 +20,10 @@ export class NamedSetsPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getSourceLocations(sources: ItemSource[]) {
+    return (sources || []).map(s => s.from).join(', ')
+  }
+
   setHeroFilter(e, h) {
     this.namedSetService.setFilter(h)
   }

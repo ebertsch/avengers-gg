@@ -15,23 +15,26 @@
     </mat-form-field>
 </div>
 
+
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Gear Piece
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="{}"></aggd-gear-edit-form>
+
+    <mat-action-row>
+        <button mat-button color="primary"
+            (click)="create(gearEditorForm.formValue.value, gearEditorForm)">Create</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
+
 <mat-accordion multi="false">
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                New Gear Piece
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-
-        <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="{}"></aggd-gear-edit-form>
-
-        <mat-action-row>
-            <button mat-button color="primary"
-                (click)="create(gearEditorForm.formValue.value, gearEditorForm)">Create</button>
-        </mat-action-row>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [ngClass]="{selected: selectedItem == gear.id}" id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
+    <mat-expansion-panel [ngClass]="{selected: selectedItem == gear.id}" id="gear.id"
+        *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
         <mat-expansion-panel-header>
             <mat-panel-title class="description">
                 {{ gear.name }}
@@ -51,7 +54,7 @@
         </mat-expansion-panel-header>
 
         <ng-container *ngIf="selectedItem == gear.id">
-            <aggd-gear-edit-form #gearEditorForm="gearEditorForm"[value]="gear"></aggd-gear-edit-form>
+            <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="gear"></aggd-gear-edit-form>
 
             <mat-action-row>
                 <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.value)">Delete</button>
