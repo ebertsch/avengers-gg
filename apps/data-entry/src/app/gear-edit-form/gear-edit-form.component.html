@@ -47,7 +47,7 @@
     <mat-label>Perks 1</mat-label>
     <mat-select formControlName="perks1" multiple>
       <mat-option [value]="null">not set</mat-option>
-      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'" [value]="perk.id">
         {{ perk.title }}
       </mat-option>
     </mat-select>
@@ -57,7 +57,7 @@
     <mat-label>Perks 2</mat-label>
     <mat-select formControlName="perks2" multiple>
       <mat-option [value]="null">not set</mat-option>
-      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'" [value]="perk.id">
         {{ perk.title }}
       </mat-option>
     </mat-select>
@@ -67,7 +67,7 @@
     <mat-label>Perks 3</mat-label>
     <mat-select formControlName="perks3" multiple>
       <mat-option [value]="null">not set</mat-option>
-      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async" [value]="perk.id">
+      <mat-option [value]="null" *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'" [value]="perk.id">
         {{ perk.title }}
       </mat-option>
     </mat-select>

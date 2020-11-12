@@ -31,13 +31,13 @@
         </mat-action-row>
     </mat-expansion-panel>
 
-    <mat-expansion-panel id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async)" (opened)="selectedItem = gear.id">
+    <mat-expansion-panel id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ gear.name }}
             </mat-panel-title>
             <mat-panel-description class="shot-description">
-                {{ (heroService.entityMap$ | async)[gear.heroId].name }}
+                {{ (heroService.entityMap$ | async)[gear.heroId]?.name || gear.heroId  }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
                 {{ gear.gearType }}

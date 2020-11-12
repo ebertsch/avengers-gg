@@ -26,7 +26,7 @@ export class NamedSetsPageComponent implements OnInit {
 
   create(namedForm: NamedSet, form: any) {
     this.namedSetService.add(namedForm)
-    form.reset();
+    // form.reset();
   }
 
   save(namedForm: NamedSet) {

@@ -29,7 +29,7 @@ export class GearPageComponent implements OnInit {
 
   create(gear: GearDefinition, form: any) {
     this.gearService.add(gear)
-    form.reset();
+    // form.reset();
   }
 
   save(gear: GearDefinition) {
