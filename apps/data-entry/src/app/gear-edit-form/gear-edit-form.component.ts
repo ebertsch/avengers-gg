@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
@@ -20,6 +20,7 @@ export class GearEditFormComponent implements OnInit, OnChanges {
 
   formValue: FormGroup
   value$: BehaviorSubject<GearDefinition>;
+
 
   constructor(public perkService: PerkService, public heroService: HeroService) { }
 

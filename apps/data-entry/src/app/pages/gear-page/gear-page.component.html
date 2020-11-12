@@ -31,7 +31,7 @@
         </mat-action-row>
     </mat-expansion-panel>
 
-    <mat-expansion-panel id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
+    <mat-expansion-panel [ngClass]="{selected: selectedItem == gear.id}" id="gear.id" *ngFor="let gear of (gearService.filteredEntities$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ gear.name }}
@@ -42,15 +42,17 @@
             <mat-panel-description class="shot-description">
                 {{ gear.gearType }}
             </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ (gear.perks1||[]).length ? "Populated" : ""}}
+            </mat-panel-description>
         </mat-expansion-panel-header>
 
         <ng-container *ngIf="selectedItem == gear.id">
-            <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="gear">
-            </aggd-gear-edit-form>
+            <aggd-gear-edit-form #gearEditorForm="gearEditorForm"[value]="gear"></aggd-gear-edit-form>
 
             <mat-action-row>
                 <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.value)">Delete</button>
-                <button mat-button color="primary" (click)="save(gearEditorForm.formValue.value)">Save</button>
+                <button mat-flat-button color="primary" (click)="save(gearEditorForm.formValue.value)">Save</button>
             </mat-action-row>
         </ng-container>
     </mat-expansion-panel>

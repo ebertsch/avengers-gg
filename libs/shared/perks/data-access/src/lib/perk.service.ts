@@ -28,14 +28,12 @@ export class PerkService extends EntityCollectionServiceBase<Perk> {
       contains(slot, perk.gear) && (contains(hero, perk.heroes) || contains('*', perk.heroes))
       , perks).sort()
   );
-
   getGearPerks = (slot: string, hero: string) =>
     this.store.pipe(select(this.getGearPerksSelector(slot, hero)))
-
+    
   private getGearPerksForHeroSelector = (hero: string) => createSelector(
     this.selectors.selectEntities,
     perks => filter(perk => contains(hero, perk.heroes), perks).sort()
-
   );
   getGearPerksForHero = (hero: string) =>
     this.store.pipe(select(this.getGearPerksForHeroSelector(hero)))
