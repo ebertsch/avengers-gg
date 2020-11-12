@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ItemSource } from '@avengers-game-guide/shared/data';
+import { DataFilter, ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
@@ -27,9 +27,8 @@ export class GearPageComponent implements OnInit {
     return (sources || []).map(s => s.from).join(', ')
   }
 
-  setFilters() {
-    console.log('filter', this.heroFilter, this.searchFilter)
-    this.gearService.setFilter({heroIds: this.heroFilter, search: this.searchFilter})
+  applyFilters(filter: DataFilter) {
+    this.gearService.setFilter(filter);
   }
 
   create(gear: GearDefinition, form: any) {

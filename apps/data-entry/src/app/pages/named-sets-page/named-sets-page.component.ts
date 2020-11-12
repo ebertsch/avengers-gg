@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DataFilter, ItemSource } from '@avengers-game-guide/shared/data';
 import { GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { NamedSet, NamedSetService } from '@avengers-game-guide/shared/named-sets/data-access'
@@ -24,13 +25,12 @@ export class NamedSetsPageComponent implements OnInit {
     return (sources || []).map(s => s.from).join(', ')
   }
 
-  setHeroFilter(e, h) {
-    this.namedSetService.setFilter(h)
+  applyFilters(filter: DataFilter) {
+    this.namedSetService.setFilter(filter);
   }
 
   create(namedForm: NamedSet, form: any) {
     this.namedSetService.add(namedForm)
-    // form.reset();
   }
 
   save(namedForm: NamedSet) {

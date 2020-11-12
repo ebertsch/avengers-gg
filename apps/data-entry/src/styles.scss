@@ -8,11 +8,16 @@ body {
   background-color: #fafafa;
 }
 
+.highlight{
+  color: #CDC884;
+}
+
 .spacer { flex: 1 }
 
 mat-expansion-panel.create-form {
   margin-bottom: 20px;
 }
+
 
 mat-panel-title.description,
 mat-panel-description.description {

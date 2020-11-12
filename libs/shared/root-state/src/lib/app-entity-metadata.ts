@@ -1,69 +1,96 @@
 import { EntityMetadataMap } from '@ngrx/data';
-import { intersection } from 'ramda';
+import { intersection, has, includes, propEq, contains, join, compose, props } from 'ramda';
+import { DataFilter } from '@avengers-game-guide/shared/data';
 
-const includesHeroIdsFilter = (entities: {heroId}[], heroIds: string[])=> {
-  if(!heroIds || heroIds === []) { return entities }
-  return entities.filter(e => heroIds.includes(e.heroId) )
-}
-
-const includesHeroAndSearchFilter = (entities: {heroId: string, name:string}[], filter: {heroIds: string[]; search: string})=> {
+const filterData = (entities: any[], filter: DataFilter) => {
   let filtered = entities;
-  if(!filter) { return filtered }
 
-  //filter on heroId's
-  if(!!filter.heroIds && filter.heroIds.length > 0)
-    filtered = filtered.filter(e => filter.heroIds.length && filter.heroIds.includes(e.heroId) )
+  // filter on Search Text
+  if (has('searchFilter', filter) && (filter.searchFilter !== '' && !!filter.searchFilter)) {
+    filtered = filtered.filter(e => {
 
-  if(filter.search !== '')
-    filtered = filtered.filter(e => e.name.toLowerCase().indexOf(filter.search.toLowerCase()) > -1)
+      const getSearchText = compose(join(' '), props(['title', 'name', 'description']));
+      const text = getSearchText(e).toLowerCase()
+      return contains(filter.searchFilter.toLowerCase(), text)
+    })
+  }
 
-  return filtered;
+  // filter on HeroIds
+  if (filter.heroFilter && filter.heroFilter.length > 0) {
+    filtered = filtered.filter(e => {
+      if (has('heroId', e)) return filter.heroFilter.includes(e.heroId)
+      if (has('heroes', e)) return intersection(filter.heroFilter, e.heroes || []).length > 0
+      return false
+    })
+  }
+
+  // filter on gearSlot
+  if (filter.gearSlotFilter && filter.gearSlotFilter.length > 0) {
+    filtered = filtered.filter(e => {
+      if (has('gearType', e)) return filter.gearSlotFilter.includes(e.gearType)
+      if (has('gear', e)) return intersection(filter.gearSlotFilter, e.gear || []).length > 0
+      return false
+    })
+  }
+
+  // filter on isReady
+  if (has('isReadyFilter', filter) && filter.isReadyFilter !== null) {
+    filtered = filtered.filter(propEq('isReady', filter.isReadyFilter))
+  }
+
+  // filter on rarity
+  if (has('rarityFilter', filter) && filter.rarityFilter !== null) {
+    filtered = filtered.filter(e => {
+      if (has('rarity', e)) return filter.rarityFilter.includes(e.rarity)
+      return false;
+    })
+  }
+
+  // filter on itemSource
+  if (has('itemSourceFilter', filter) && (filter.itemSourceFilter.from !== null  && filter.itemSourceFilter.type !== null)) {
+    filtered = filtered.filter(e => {
+      if (has('sources', e)) {
+        const hasItem = includes(filter.itemSourceFilter, e.sources)
+        return hasItem;
+      }
+      return false;
+    })
+  }
+
+  return filtered
 }
 
-const includesHeroIdsAndSearchFilter = (entities: {heroes: string[], title:string}[], filter: {heroIds: string[]; search: string})=> {
-  let filtered = entities;
-  if(!filter) { return filtered }
-
-  //filter on heroId's
-  if(!!filter.heroIds && filter.heroIds.length > 0)
-    filtered = filtered.filter(e => intersection(filter.heroIds, e.heroes || [] ).length > 0)
-
-  if(filter.search !== '')
-    filtered = filtered.filter(e => e.title.toLowerCase().indexOf(filter.search.toLowerCase()) > -1)
-
-  return filtered;
-}
 
 const entityMetadata: EntityMetadataMap = {
   Hero: {},
   Gear: {
-    filterFn: includesHeroAndSearchFilter
+    filterFn: filterData
   },
   Perk: {
-    filterFn: includesHeroIdsAndSearchFilter
+    filterFn: filterData
   },
   Build: {
-    filterFn: includesHeroIdsFilter
+    filterFn: filterData
   },
   Guide: {
-    filterFn: includesHeroIdsFilter
+    filterFn: filterData
   },
   Note: {
-    filterFn: includesHeroIdsFilter
+    filterFn: filterData
   },
   Skill: {
-    filterFn: includesHeroIdsFilter
+    filterFn: filterData
   },
   NamedSet: {
-    filterFn: includesHeroIdsFilter
+    filterFn: filterData
   }
 };
- 
+
 const pluralNames = {
-    Hero: 'Heroes',
-    Gear: 'Gear'
+  Hero: 'Heroes',
+  Gear: 'Gear'
 };
- 
+
 export const entityConfig = {
   entityMetadata,
   pluralNames

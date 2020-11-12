@@ -32,7 +32,6 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
   }
 
   setupForm() {
-    console.log(this.value)
     this.formValue = new FormGroup({
       id: new FormControl(this.value.id),
       title: new FormControl(this.value.title),
@@ -76,7 +75,6 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
   }
 
   addSource(value: ItemSource = { type: '', from: '' }) {
-    console.log('v:', value);
     (this.formValue.get('sources') as FormArray).push(
       new FormGroup({
         type: new FormControl(value.type),

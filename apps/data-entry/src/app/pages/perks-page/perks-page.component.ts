@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DataFilter } from '@avengers-game-guide/shared/data';
 import { GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
@@ -22,9 +23,8 @@ export class PerksPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setFilters() {
-    console.log('filter', this.heroFilter, this.searchFilter)
-    this.perkService.setFilter({heroIds: this.heroFilter, search: this.searchFilter})
+  applyFilters(filter: DataFilter) {
+    this.perkService.setFilter(filter);
   }
 
   create(perk: Perk, form: any) {
