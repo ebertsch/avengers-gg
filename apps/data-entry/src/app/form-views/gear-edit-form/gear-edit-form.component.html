@@ -1,4 +1,6 @@
 <form [formGroup]="formValue">
+  
+  <div style="display: none;">
   <mat-form-field appearance="fill">
     <mat-label>Hero</mat-label>
     <mat-select formControlName="heroId">
@@ -41,7 +43,7 @@
       <mat-option [value]="'exotic'">Exotic</mat-option>
     </mat-select>
   </mat-form-field>
-
+</div>
 
   <h3>Perks</h3>
   <mat-form-field appearance="fill">
@@ -49,9 +51,9 @@
     <mat-select formControlName="perks1" multiple>
       <mat-option [value]="null">not set</mat-option>
       <mat-option [value]="null"
-        *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'"
-        [value]="perk.id">
-        {{ perk.title }}
+        *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'"
+        [value]="perk.id" title="perk.description">
+        <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -61,9 +63,9 @@
     <mat-select formControlName="perks2" multiple>
       <mat-option [value]="null">not set</mat-option>
       <mat-option [value]="null"
-        *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'"
+        *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'"
         [value]="perk.id">
-        {{ perk.title }}
+        <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -73,9 +75,9 @@
     <mat-select formControlName="perks3" multiple>
       <mat-option [value]="null">not set</mat-option>
       <mat-option [value]="null"
-        *ngFor="let perk of perkService.getGearPerks(formValue.get('gearType').value, formValue.get('heroId').value) | async | sortBy:'title'"
+        *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'"
         [value]="perk.id">
-        {{ perk.title }}
+        <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
       </mat-option>
     </mat-select>
   </mat-form-field>
