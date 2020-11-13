@@ -17,7 +17,8 @@
 </mat-expansion-panel>
 
 <mat-accordion multi="false">
-    <mat-expansion-panel *ngFor="let namedSet of namedSetService.filteredEntities$ | async">
+      <mat-expansion-panel [ngClass]="{selected: selectedItem == namedSet.id}" id="namedSet.id"
+        *ngFor="let namedSet of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = namedSet.id">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{ namedSet.title }}
@@ -30,11 +31,13 @@
       </mat-panel-description>
       </mat-expansion-panel-header>
   
+      <ng-container *ngIf="selectedItem == namedSet.id">
       <aggd-named-set-edit-form #namedSetEditorForm="namedSetEditorForm" [value]="namedSet"></aggd-named-set-edit-form>
 
       <mat-action-row>
         <button mat-button color="secondary" (click)="delete(namedSetEditorForm.formValue.value)">Delete</button>
         <button mat-button color="primary" (click)="save(namedSetEditorForm.formValue.value)">Save</button>
       </mat-action-row>
+    </ng-container>
   </mat-expansion-panel>
 </mat-accordion>

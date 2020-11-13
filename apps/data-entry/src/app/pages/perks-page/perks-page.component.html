@@ -1,6 +1,7 @@
 <h1>Perks</h1>
 
-<aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)" [config]="{ heroFilter:true, searchFilter: true, gearSlotFilter: true }"></aggd-data-filters>
+<aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)"
+    [config]="{ heroFilter:true, searchFilter: true, gearSlotFilter: true }"></aggd-data-filters>
 
 <mat-expansion-panel class="create-form">
     <mat-expansion-panel-header>
@@ -18,7 +19,8 @@
 </mat-expansion-panel>
 
 <mat-accordion multi="false">
-    <mat-expansion-panel *ngFor="let perk of perkService.filteredEntities$ | async" (opened)="selectedPerk = perk.id">
+    <mat-expansion-panel [ngClass]="{selected: selectedItem == perk.id}" id="gear.id"
+        *ngFor="let perk of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = perk.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ perk.title }}
@@ -27,14 +29,14 @@
                 <span [innerHTML]="perk.description | highlight"></span>
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ (perk.heroes || []).join(', ') }}
+                {{ toHumanReadableArray(perk.heroes) }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ (perk.gear || []).join(', ') | uncamelcase }}
+                {{ toHumanReadableArray(perk.gear) | uncamelcase }}
             </mat-panel-description>
         </mat-expansion-panel-header>
 
-        <ng-container *ngIf="selectedPerk == perk.id">
+        <ng-container *ngIf="selectedItem == perk.id">
             <aggd-perks-edit-form #perksEditorForm="perkEditorForm" [value]="perk">
             </aggd-perks-edit-form>
 
