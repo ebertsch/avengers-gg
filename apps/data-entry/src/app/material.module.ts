@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -12,6 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 
 @NgModule({
   imports: [
+    MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
     MatExpansionModule,
@@ -23,6 +25,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatTooltipModule,
   ],
   exports: [
+    MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
     MatExpansionModule,
