@@ -3,5 +3,5 @@ export interface Guide {
     title: string;
     urlLink: string;
     youtubeId: string;
-    heroes: string[];
+    heroId: string;
 }

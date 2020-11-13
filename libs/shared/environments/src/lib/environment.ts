@@ -10,6 +10,10 @@ export const environment = {
     '/namedset': '/namedsets',
     '/namedset/:id': '/namedsets/:id',
     '/perk': '/perks',
-    '/perk/:id': '/perks/:id'
+    '/perk/:id': '/perks/:id',
+    '/guide': '/guides',
+    '/guide/:id': '/guides/:id',
+    '/note': '/notes',
+    '/note/:id': '/notes/:id'
   }
 };

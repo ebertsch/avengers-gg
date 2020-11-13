@@ -1,0 +1,29 @@
+
+<form [formGroup]="formValue">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput [value]="value.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hero</mat-label>
+      <mat-select formControlName="heroId">
+        <mat-option [value]="null">Not set</mat-option>
+        <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+          {{hero.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>URL Link</mat-label>
+      <input formControlName="urlLink" matInput [value]="value.urlLink">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>YouTube ID</mat-label>
+      <input formControlName="youtubeId" matInput [value]="value.youtubeId">
+    </mat-form-field>
+
+
+</form>

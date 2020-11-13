@@ -10,6 +10,7 @@ import { environment } from '@avengers-game-guide/shared/environments';
             <a mat-button [routerLink]="['gear']">Gear</a>
             <a mat-button [routerLink]="['perks']">Perks</a>
             <a mat-button [routerLink]="['named-sets']">Sets</a>
+            <a mat-button [routerLink]="['guides']">Guides</a>
             <span class="spacer"></span>
             <button mat-button (click)="saveDB()">Save</button>
           </mat-toolbar>
