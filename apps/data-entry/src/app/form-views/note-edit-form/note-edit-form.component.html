@@ -1,0 +1,21 @@
+
+<form [formGroup]="formValue">
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <input formControlName="category" matInput [value]="value.category">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hero</mat-label>
+      <mat-select formControlName="heroId">
+        <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+          {{hero.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput [value]="value.description">
+    </mat-form-field>
+</form>

@@ -1,4 +1,4 @@
-<h1>Guides</h1>
+<h1>Notes</h1>
 
 <aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)"
     [config]="{ heroFilter:true, searchFilter: true }"></aggd-data-filters>
@@ -6,11 +6,11 @@
 <mat-expansion-panel class="create-form">
     <mat-expansion-panel-header>
         <mat-panel-title>
-            New Guide
+            New Note
         </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <aggd-guide-edit-form #editForm="editForm" [value]="{}"></aggd-guide-edit-form>
+    <aggd-note-edit-form #editForm="editForm" [value]="{}"></aggd-note-edit-form>
 
     <mat-action-row>
         <button mat-button color="primary"
@@ -23,10 +23,10 @@
         *ngFor="let dataItem of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = dataItem.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                {{ dataItem.title }}
+                {{ dataItem.category }}
             </mat-panel-title>
             <mat-panel-description class="description">
-                <span [innerHTML]="dataItem.description | highlight"></span>
+                <span [innerHTML]="dataItem.description.substring(0, 50) | highlight"></span>
             </mat-panel-description>
             <mat-panel-description class="shot-description">
                 {{ dataItem.heroId }}
@@ -34,8 +34,8 @@
         </mat-expansion-panel-header>
 
         <ng-container *ngIf="selectedItem == dataItem.id">
-            <aggd-guide-edit-form #editForm="editForm" [value]="dataItem">
-            </aggd-guide-edit-form>
+            <aggd-note-edit-form #editForm="editForm" [value]="dataItem">
+            </aggd-note-edit-form>
 
             <mat-action-row>
                 <button mat-button color="secondary" (click)="delete(editForm.formValue.value)">Delete</button>

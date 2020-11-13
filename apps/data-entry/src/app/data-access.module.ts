@@ -4,28 +4,38 @@ import { DataAccessModule as PerksDataAccessModule, PerkService } from '@avenger
 import { DataAccessModule as GearDataAccessModule, GearService } from '@avengers-game-guide/shared/gear/data-access'
 import { DataAccessModule as NamedSetDataAccessModule, NamedSetService } from '@avengers-game-guide/shared/named-sets/data-access'
 import { DataAccessModule as GuidesDataAccessModule, GuideService } from '@avengers-game-guide/shared/guides/data-access'
+import { NotesDataAccessModule, NoteService } from '@avengers-game-guide/shared/notes/data-access'
 @NgModule({
     imports: [
         HeroesDataAccessModule,
         PerksDataAccessModule,
         GearDataAccessModule,
         NamedSetDataAccessModule,
-        GuidesDataAccessModule
+        GuidesDataAccessModule,
+        NotesDataAccessModule,
     ],
     exports: [
         HeroesDataAccessModule,
         PerksDataAccessModule,
         GearDataAccessModule,
         NamedSetDataAccessModule,
-        GuidesDataAccessModule
+        GuidesDataAccessModule,
+        NotesDataAccessModule,
     ]
 })
 export class DataAccessModule {
-    constructor(heroService: HeroService, perkService: PerkService, gearService: GearService, namedSetService: NamedSetService, guideService: GuideService) {
+    constructor(
+        heroService: HeroService,
+        perkService: PerkService,
+        gearService: GearService,
+        namedSetService: NamedSetService,
+        guideService: GuideService,
+        noteService: NoteService) {
         heroService.getAll()
         perkService.getAll()
         gearService.getAll()
         namedSetService.getAll()
         guideService.getAll()
+        noteService.getAll()
     }
 }
