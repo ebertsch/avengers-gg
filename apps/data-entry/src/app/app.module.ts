@@ -5,13 +5,14 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http"
 import { DefaultDataServiceConfig } from '@ngrx/data';
-import { environment } from '@avengers-game-guide/shared/environments';
-
 import { SharedUiModule } from '@avengers-game-guide/shared/ui'
+import { StorageModule } from '@ngx-pwa/local-storage';
+
+import { environment } from '@avengers-game-guide/shared/environments';
+import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { MaterialModule } from './material.module';
 import { DataAccessModule } from './data-access.module';
 import { AppComponent } from './app.component';
-import { RootStateModule } from '@avengers-game-guide/shared/root-state';
 import { PerksPageComponent } from './pages/perks-page/perks-page.component';
 import { GearPageComponent } from './pages/gear-page/gear-page.component';
 import { NamedSetsPageComponent } from './pages/named-sets-page/named-sets-page.component';
@@ -30,6 +31,7 @@ import { DataFiltersComponent } from './data-filters/data-filters.component';
     HttpClientModule,
     ReactiveFormsModule,
     MaterialModule,
+    StorageModule,
     RootStateModule,
     DataAccessModule,
     SharedUiModule,

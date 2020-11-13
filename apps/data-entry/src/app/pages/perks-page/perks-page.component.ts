@@ -1,9 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { DataFilter } from '@avengers-game-guide/shared/data';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { DataFilter, ItemSource } from '@avengers-game-guide/shared/data';
 import { GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { Observable } from 'rxjs';
+
+const PERKS_FILTER = 'filters:perks';
 
 @Component({
   selector: 'aggd-perks-page',
@@ -12,19 +15,20 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PerksPageComponent implements OnInit {
-
-  heroFilter: string[];
-  searchFilter = '';
   filtered$: Observable<Perk[]>
   selectedPerk: string;
+  filterObject$: Observable<DataFilter>;
 
-  constructor(public perkService: PerkService, public heroService: HeroService, public gearService: GearService) { }
+  constructor(public perkService: PerkService, public heroService: HeroService, public gearService: GearService, private storage: StorageMap) {
+    this.filterObject$ = this.storage.get(PERKS_FILTER) as Observable<DataFilter>
+  }
 
   ngOnInit(): void {
   }
 
   applyFilters(filter: DataFilter) {
     this.perkService.setFilter(filter);
+    this.storage.set(PERKS_FILTER, filter).subscribe(()=>{})
   }
 
   create(perk: Perk, form: any) {

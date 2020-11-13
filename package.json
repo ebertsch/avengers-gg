@@ -53,6 +53,7 @@
     "@ngrx/router-store": "10.0.0",
     "@ngrx/store": "10.0.0",
     "@nguniversal/express-engine": "^10.1.0",
+    "@ngx-pwa/local-storage": "^11.0.1",
     "@nrwl/angular": "10.2.1",
     "@popperjs/core": "^2.5.4",
     "@types/json-server": "^0.14.2",
