@@ -1,4 +1,5 @@
 <form [formGroup]="formValue">
+  {{ formValue.value.id }}
   <mat-form-field appearance="fill">
     <mat-label>Hero</mat-label>
     <mat-select formControlName="heroes" multiple>

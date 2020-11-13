@@ -20,7 +20,7 @@
 
 <mat-accordion multi="false">
     <mat-expansion-panel [ngClass]="{selected: selectedItem == perk.id}" id="gear.id"
-        *ngFor="let perk of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = perk.id">
+        *ngFor="let perk of (filteredItems$ | async) | sortBy:'title'" (opened)="selectedItem = perk.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ perk.title }}
