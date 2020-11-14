@@ -1,127 +1,131 @@
-
 <form [formGroup]="formValue">
-    <mat-form-field appearance="fill">
-      <mat-label>Set Title</mat-label>
-      <input formControlName="title" matInput [value]="value.title">
-    </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="!!formValue.getRawValue().id">
+    <mat-label>ID</mat-label>
+    <input formControlName="id" matInput [value]="value.id">
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Hero</mat-label>
-      <mat-select formControlName="heroId">
-        <mat-option [value]="null">Not set</mat-option>
-        <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
-          {{hero.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    
-    <mat-form-field appearance="fill">
-      <mat-label>Melee</mat-label>
-      <mat-select formControlName="melee">
-        <mat-option [value]="null">Not set</mat-option>
-        <mat-option *ngFor="let gear of setupGear$('melee') | async | sortBy:'name'" [value]="gear.id">
-          {{gear.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Set Title</mat-label>
+    <input formControlName="title" matInput [value]="value.title">
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Ranged</mat-label>
-      <mat-select formControlName="ranged">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('ranged') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Hero</mat-label>
+    <mat-select formControlName="heroId">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+        {{hero.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Defense</mat-label>
-      <mat-select formControlName="defense">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('defense') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Melee</mat-label>
+    <mat-select formControlName="melee">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('melee') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Heroic</mat-label>
-      <mat-select formControlName="heroic">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('heroic') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Ranged</mat-label>
+    <mat-select formControlName="ranged">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('ranged') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Major Artifact</mat-label>
-      <mat-select formControlName="majorArtifact">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('majorArtifact') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Defense</mat-label>
+    <mat-select formControlName="defense">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('defense') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Minor Artifact 1</mat-label>
-      <mat-select formControlName="minorArtifact1">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('minorArtifact1') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Heroic</mat-label>
+    <mat-select formControlName="heroic">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('heroic') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Minor Artifact 2</mat-label>
-      <mat-select formControlName="minorArtifact2">
-            <mat-option [value]="null">Not set</mat-option>
-            <mat-option *ngFor="let gear of setupGear$('minorArtifact2') | async | sortBy:'name'" [value]="gear.id">
-              {{gear.name}}
-            </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Major Artifact</mat-label>
+    <mat-select formControlName="majorArtifact">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('majorArtifact') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <div>
-      <h3>Sources</h3>
-      <ng-container formArrayName="sources">
-        <div style="display: flex; flex-direction: row;" *ngFor="let _ of sources.controls; index as idx">
-          <ng-container [formGroupName]="idx">
-  
-            <mat-form-field appearance="fill">
-              <mat-label>type</mat-label>
-              <mat-select formControlName="type">
-                <mat-option [value]="null">not set</mat-option>
-                <mat-option [value]="'Mission Reward'">Mission Reward</mat-option>
-              </mat-select>
-            </mat-form-field>
-  
-            <mat-form-field appearance="fill">
-              <mat-label>from</mat-label>
-              <mat-select formControlName="from">
-                <mat-option [value]="null">not set</mat-option>
-                <mat-option [value]="'Daily Faction Mission'">Daily Faction Mission</mat-option>
-                <mat-option [value]="'Elite Heroic Hive'">Elite Heroic Hive</mat-option>
-                <mat-option [value]="'Elite Hive'">Elite Hive</mat-option>
-                <mat-option [value]="'Elite Vault'">Elite Vault</mat-option>
-                <mat-option [value]="'Elite Villain Sector'">Elite Villain Sector</mat-option>
-                <mat-option [value]="'Mega Hive'">Mega Hive</mat-option>
-                <mat-option [value]="'Priority Mission'">Priority Mission</mat-option>
-                <mat-option [value]="'Tachyon Rifts'">Tachyon Rifts</mat-option>
-              </mat-select>
-            </mat-form-field>
-  
-            <button mat-icon-button (click)="removeSource(idx)">
-              <mat-icon>close</mat-icon>
-            </button>
-          </ng-container>
-        </div>
-      </ng-container>
-      <button mat-icon-button (click)="addSource()">
-        <mat-icon>add</mat-icon>
-      </button>
-    </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Minor Artifact 1</mat-label>
+    <mat-select formControlName="minorArtifact1">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('minorArtifact1') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Minor Artifact 2</mat-label>
+    <mat-select formControlName="minorArtifact2">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option *ngFor="let gear of setupGear$('minorArtifact2') | async | sortBy:'name'" [value]="gear.id">
+        {{gear.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <h3>Sources</h3>
+    <ng-container formArrayName="sources">
+      <div style="display: flex; flex-direction: row;" *ngFor="let _ of sources.controls; index as idx">
+        <ng-container [formGroupName]="idx">
+
+          <mat-form-field appearance="fill">
+            <mat-label>type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Mission Reward'">Mission Reward</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>from</mat-label>
+            <mat-select formControlName="from">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Daily Faction Mission'">Daily Faction Mission</mat-option>
+              <mat-option [value]="'Elite Heroic Hive'">Elite Heroic Hive</mat-option>
+              <mat-option [value]="'Elite Hive'">Elite Hive</mat-option>
+              <mat-option [value]="'Elite Vault'">Elite Vault</mat-option>
+              <mat-option [value]="'Elite Villain Sector'">Elite Villain Sector</mat-option>
+              <mat-option [value]="'Mega Hive'">Mega Hive</mat-option>
+              <mat-option [value]="'Priority Mission'">Priority Mission</mat-option>
+              <mat-option [value]="'Tachyon Rifts'">Tachyon Rifts</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-icon-button (click)="removeSource(idx)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+    </ng-container>
+    <button mat-icon-button (click)="addSource()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 </form>

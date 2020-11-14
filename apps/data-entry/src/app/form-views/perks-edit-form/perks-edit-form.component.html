@@ -1,5 +1,9 @@
 <form [formGroup]="formValue">
-  {{ formValue.value.id }}
+  <mat-form-field appearance="fill" *ngIf="!!formValue.getRawValue().id">
+    <mat-label>ID</mat-label>
+    <input formControlName="id" matInput [value]="value.id">
+  </mat-form-field>
+  
   <mat-form-field appearance="fill">
     <mat-label>Hero</mat-label>
     <mat-select formControlName="heroes" multiple>

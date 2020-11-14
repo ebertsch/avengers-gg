@@ -30,7 +30,7 @@ export class GuideEditFormComponent implements OnInit, OnChanges {
 
   setupForm() {
     this.formValue = new FormGroup({
-      id: new FormControl(this.value.id),
+      id: new FormControl({value: this.value.id, disabled: true}),
       title: new FormControl(this.value.title),
       urlLink: new FormControl(this.value.urlLink),
       youtubeId: new FormControl(this.value.youtubeId),

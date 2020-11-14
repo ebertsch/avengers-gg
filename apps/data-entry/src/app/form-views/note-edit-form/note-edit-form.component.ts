@@ -30,7 +30,7 @@ export class NoteEditFormComponent implements OnInit, OnChanges {
 
   setupForm() {
     this.formValue = new FormGroup({
-      id: new FormControl(this.value.id),
+      id: new FormControl({ value: this.value.id, disabled: true }),
       description: new FormControl(this.value.description),
       category: new FormControl(this.value.category),
       heroId: new FormControl(this.value.heroId),

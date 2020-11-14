@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
@@ -45,9 +45,8 @@ export class GearEditFormComponent implements OnInit, OnChanges {
 
   setupForm() {
     this.formValue = new FormGroup({
-      id: new FormControl(this.value.id),
+      id: new FormControl({value: this.value.id, disabled: true}),
       name: new FormControl(this.value.name),
-      set: new FormControl(this.value.set),
       heroId: new FormControl(this.value.heroId),
       gearType: new FormControl(this.value.gearType),
       perks1: new FormControl(this.value.perks1),
@@ -57,6 +56,10 @@ export class GearEditFormComponent implements OnInit, OnChanges {
       stats: new FormArray([]),
       sources: new FormArray([])
     })
+
+    // if(!this.formValue.value.id) {
+      // this.formValue.controls['id'].disable()
+    // }
 
     this.perk1Options = this.perk1Auto.valueChanges.pipe(
       startWith(''),
@@ -102,7 +105,7 @@ export class GearEditFormComponent implements OnInit, OnChanges {
     return this.formValue.get('sources') as FormArray
   }
 
-  addSource(value: ItemSource = { type: '', from: '' }) {
+  addSource(value: ItemSource = { type: 'Mission Reward', from: '' }) {
     (this.formValue.get('sources') as FormArray).push(
       new FormGroup({
         type: new FormControl(value.type),

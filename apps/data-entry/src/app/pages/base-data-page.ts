@@ -18,7 +18,9 @@ export abstract class BaseDataPage<T> implements OnInit {
         this.filteredItems$ = this.primaryDataService.filteredEntities$
     }
 
-    toHumanReadableArray<T>(items: T[], sel: (T)=>string = (item)=>item) {
+    public byId(idx:number, item: T & {id: string}) { return item.id }
+
+    toHumanReadableArray(items: T[], sel: (T)=>string = (item)=>item) {
         return (items || []).map(sel).join(', ')
     }
 

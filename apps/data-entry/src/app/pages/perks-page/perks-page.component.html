@@ -18,13 +18,16 @@
     </mat-action-row>
 </mat-expansion-panel>
 
-<mat-accordion multi="false">
+<mat-accordion multi="false" *ngIf="(gear||[]).length>0">
     <mat-expansion-panel [ngClass]="{selected: selectedItem == perk.id}" id="gear.id"
-        *ngFor="let perk of (filteredItems$ | async) | sortBy:'title'" (opened)="selectedItem = perk.id">
+        *ngFor="let perk of (filteredItems$ | async) | sortBy:'title'; trackBy: byId" (opened)="selectedItem = perk.id">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ perk.title }}
             </mat-panel-title>
+            <!-- <mat-panel-description class="short-description">
+                <span>{{appearsOnGear(perk)}}</span>
+            </mat-panel-description> -->
             <mat-panel-description class="description">
                 <span [innerHTML]="perk.description | highlight"></span>
             </mat-panel-description>

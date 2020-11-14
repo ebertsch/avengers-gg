@@ -33,7 +33,7 @@ export class NamedSetEditFormComponent implements OnInit, OnChanges {
 
   setupForm() {
     this.formValue = new FormGroup({
-      id: new FormControl(this.value.id),
+      id: new FormControl({ value: this.value.id, disabled: true }),
       title: new FormControl(this.value.title),
       heroId: new FormControl(this.value.heroId),
       melee: new FormControl(this.value.melee),
