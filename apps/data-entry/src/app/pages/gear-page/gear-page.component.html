@@ -43,8 +43,8 @@
             <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="gear"></aggd-gear-edit-form>
 
             <mat-action-row>
-                <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.value)">Delete</button>
-                <button mat-flat-button color="primary" (click)="save(gearEditorForm.formValue.value)">Save</button>
+                <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.getRawValue())">Delete</button>
+                <button mat-flat-button color="primary" (click)="save(gearEditorForm.formValue.getRawValue())">Save</button>
             </mat-action-row>
         </ng-container>
     </mat-expansion-panel>

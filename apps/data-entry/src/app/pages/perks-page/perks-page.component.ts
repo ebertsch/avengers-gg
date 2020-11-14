@@ -24,7 +24,6 @@ export class PerksPageComponent extends BaseDataPage<Perk> implements OnInit {
 
     this.gearService.entities$.pipe(
       takeWhile(() => this.gear !== null),
-      tap(() => console.log('getting gear')),
       map(items => 
         rmap(i => flatten(values(pick(['perks1', 'perks2', 'perks3'], i))) as string[], items)
       )
@@ -32,7 +31,6 @@ export class PerksPageComponent extends BaseDataPage<Perk> implements OnInit {
   }
 
   appearsOnGear(perk: Perk) {
-    console.log('appears on gear')
     if((this.gear||[]).length < 1) return 0;
 
     return reduce((acc, cur)=>{

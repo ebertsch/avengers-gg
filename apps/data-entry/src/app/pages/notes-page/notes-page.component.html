@@ -38,8 +38,8 @@
             </aggd-note-edit-form>
 
             <mat-action-row>
-                <button mat-button color="secondary" (click)="delete(editForm.formValue.value)">Delete</button>
-                <button mat-button color="primary" (click)="save(editForm.formValue.value)">Save</button>
+                <button mat-button color="secondary" (click)="delete(editForm.formValue.getRawValue())">Delete</button>
+                <button mat-button color="primary" (click)="save(editForm.formValue.getRawValue())">Save</button>
             </mat-action-row>
         </ng-container>
     </mat-expansion-panel>
