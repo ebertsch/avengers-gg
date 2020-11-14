@@ -18,6 +18,7 @@ import { NamedSet, NamedSetService } from '@avengers-game-guide/shared/named-set
 export class GearViewComponent implements OnInit {
   namedSets$: Observable<NamedSet[]>;
   selectedGear: string;
+  view = 'list'
 
   constructor(
     private gearService: GearService,

@@ -2,13 +2,13 @@
 <div class="rarity">{{ gear.rarity }}</div>
 <div class="perk-container">
     <h4>Available Gear Perks</h4>
-    <swiper [config]="{navigation: true}">
+    <swiper class="gear-swiper" [config]="{navigation: true}">
         <agg-name-description [namedItem]="getPerk$(perkId) | async" *ngFor="let perkId of gear.perks1"></agg-name-description>
     </swiper>
-    <swiper [config]="{navigation: true}">
+    <swiper class="gear-swiper" [config]="{navigation: true}">
         <agg-name-description [namedItem]="getPerk$(perkId) | async" *ngFor="let perkId of gear.perks2"></agg-name-description>
     </swiper>
-    <swiper [config]="{navigation: true}">
+    <swiper class="gear-swiper" [config]="{navigation: true}">
         <agg-name-description [namedItem]="getPerk$(perkId) | async" *ngFor="let perkId of gear.perks3"></agg-name-description>
     </swiper>
 </div>

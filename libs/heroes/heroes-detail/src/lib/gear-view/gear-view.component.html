@@ -1,69 +1,81 @@
+<button (click)="view=='card'? view='list': view='card'">Switch View</button>
+
 <ng-container *ngFor="let namedSet of namedSets$ | async">
     <agg-panel>
         <agg-panel-header style="text-transform: capitalize;">
             {{namedSet.title}}
             <span class="location" *ngFor="let source of namedSet.sources">{{source.from}}</span>
         </agg-panel-header>
-        <table>
-            <thead>
-                <tr class="header-row">
-                    <th class="fancy-text col-name">Name</th>
-                    <th class="fancy-text col-slot">Slot</th>
-                </tr>
-            </thead>
-            <tbody>
-                <ng-container *ngIf="namedSet.melee">
-                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.melee}"
-                        (click)="showGearRow(namedSet.melee)">
-                        <td class="column col-name">{{ (getGearPiece(namedSet.melee) | async).name}}</td>
-                        <td class="column col-slot">Melee</td>
+        <ng-container *ngIf="view=='list';else cardView">
+            <table>
+                <thead>
+                    <tr class="header-row">
+                        <th class="fancy-text col-name">Name</th>
+                        <th class="fancy-text col-slot">Slot</th>
                     </tr>
-                    <tr class="detail-row" *ngIf="selectedGear == namedSet.melee">
-                        <td colspan="3">
-                            <agg-gear [gear]="getGearPiece(namedSet.melee) | async"></agg-gear>
-                        </td>
-                    </tr>
-                </ng-container>
+                </thead>
+                <tbody>
+                    <ng-container *ngIf="namedSet.melee">
+                        <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.melee}"
+                            (click)="showGearRow(namedSet.melee)">
+                            <td class="column col-name">{{ (getGearPiece(namedSet.melee) | async)?.name}}</td>
+                            <td class="column col-slot">Melee</td>
+                        </tr>
+                        <tr class="detail-row" *ngIf="selectedGear == namedSet.melee">
+                            <td colspan="3">
+                                <agg-gear [gear]="getGearPiece(namedSet.melee) | async"></agg-gear>
+                            </td>
+                        </tr>
+                    </ng-container>
 
-                <ng-container *ngIf="namedSet.ranged">
-                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.ranged}"
-                        (click)="showGearRow(namedSet.ranged)">
-                        <td class="column col-name">{{ (getGearPiece(namedSet.ranged) | async).name}}</td>
-                        <td class="column col-slot">Ranged</td>
-                    </tr>
-                    <tr class="detail-row" *ngIf="selectedGear == namedSet.ranged">
-                        <td colspan="3">
-                            <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"></agg-gear>
-                        </td>
-                    </tr>
-                </ng-container>
+                    <ng-container *ngIf="namedSet.ranged">
+                        <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.ranged}"
+                            (click)="showGearRow(namedSet.ranged)">
+                            <td class="column col-name">{{ (getGearPiece(namedSet.ranged) | async)?.name}}</td>
+                            <td class="column col-slot">Ranged</td>
+                        </tr>
+                        <tr class="detail-row" *ngIf="selectedGear == namedSet.ranged">
+                            <td colspan="3">
+                                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"></agg-gear>
+                            </td>
+                        </tr>
+                    </ng-container>
 
-                <ng-container *ngIf="namedSet.defense">
-                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.defense}"
-                        (click)="showGearRow(namedSet.defense)">
-                        <td class="column col-name">{{ (getGearPiece(namedSet.defense) | async).name}}</td>
-                        <td class="column col-slot">Defense</td>
-                    </tr>
-                    <tr class="detail-row" *ngIf="selectedGear == namedSet.defense">
-                        <td colspan="3">
-                            <agg-gear [gear]="getGearPiece(namedSet.defense) | async"></agg-gear>
-                        </td>
-                    </tr>
-                </ng-container>
+                    <ng-container *ngIf="namedSet.defense">
+                        <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.defense}"
+                            (click)="showGearRow(namedSet.defense)">
+                            <td class="column col-name">{{ (getGearPiece(namedSet.defense) | async)?.name}}</td>
+                            <td class="column col-slot">Defense</td>
+                        </tr>
+                        <tr class="detail-row" *ngIf="selectedGear == namedSet.defense">
+                            <td colspan="3">
+                                <agg-gear [gear]="getGearPiece(namedSet.defense) | async"></agg-gear>
+                            </td>
+                        </tr>
+                    </ng-container>
 
-                <ng-container *ngIf="namedSet.heroic">
-                    <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.heroic}"
-                        (click)="showGearRow(namedSet.heroic)">
-                        <td class="column col-name">{{ (getGearPiece(namedSet.heroic) | async).name}}</td>
-                        <td class="column col-slot">Heroic</td>
-                    </tr>
-                    <tr class="detail-row" *ngIf="selectedGear == namedSet.heroic">
-                        <td colspan="3">
-                            <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"></agg-gear>
-                        </td>
-                    </tr>
-                </ng-container>
-            </tbody>
-        </table>
+                    <ng-container *ngIf="namedSet.heroic">
+                        <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.heroic}"
+                            (click)="showGearRow(namedSet.heroic)">
+                            <td class="column col-name">{{ (getGearPiece(namedSet.heroic) | async)?.name}}</td>
+                            <td class="column col-slot">Heroic</td>
+                        </tr>
+                        <tr class="detail-row" *ngIf="selectedGear == namedSet.heroic">
+                            <td colspan="3">
+                                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"></agg-gear>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #cardView>
+            <div class="gear-card-container">
+                <agg-gear [gear]="getGearPiece(namedSet.melee) | async" *ngIf="!!(getGearPiece(namedSet.melee) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async" *ngIf="!!(getGearPiece(namedSet.ranged) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.defense) | async" *ngIf="!!(getGearPiece(namedSet.defense) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async" *ngIf="!!(getGearPiece(namedSet.heroic) | async)"></agg-gear>
+            </div>
+        </ng-template>
     </agg-panel>
 </ng-container>

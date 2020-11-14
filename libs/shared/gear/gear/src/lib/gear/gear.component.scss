@@ -143,3 +143,10 @@
     display: none;
   }
 }
+
+::ng-deep .swiper-container {
+    max-height: 60px;
+}
+::ng-deep swiper>.swiper.s-wrapper {
+    height: inherit !important;
+}
