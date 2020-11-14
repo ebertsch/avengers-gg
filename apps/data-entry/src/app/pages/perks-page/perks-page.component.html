@@ -1,7 +1,7 @@
-<h1>Perks</h1>
+<h1><span [matBadge]="(filteredItems$ | async).length" matBadgePosition="after">Perks</span></h1>
 
 <aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)"
-    [config]="{ heroFilter:true, searchFilter: true, gearSlotFilter: true }"></aggd-data-filters>
+    [config]="{ heroFilter:true, searchFilter: true, gearSlotFilter: true, isReadyFilter: true }"></aggd-data-filters>
 
 <mat-expansion-panel class="create-form">
     <mat-expansion-panel-header>
@@ -25,9 +25,6 @@
             <mat-panel-title>
                 {{ perk.title }}
             </mat-panel-title>
-            <!-- <mat-panel-description class="short-description">
-                <span>{{appearsOnGear(perk)}}</span>
-            </mat-panel-description> -->
             <mat-panel-description class="description">
                 <span [innerHTML]="perk.description | highlight"></span>
             </mat-panel-description>
@@ -46,6 +43,7 @@
             <mat-action-row>
                 <button mat-button color="secondary" (click)="delete(perksEditorForm.formValue.getRawValue())">Delete</button>
                 <button mat-button color="primary" (click)="save(perksEditorForm.formValue.getRawValue())">Save</button>
+                <button mat-flat-button color="primary" (click)="publish(perksEditorForm.formValue.getRawValue())">Publish</button>
             </mat-action-row>
         </ng-container>
     </mat-expansion-panel>

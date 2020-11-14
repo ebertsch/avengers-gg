@@ -35,7 +35,7 @@ const filterData = (entities: any[], filter: DataFilter) => {
 
   // filter on isReady
   if (has('isReadyFilter', filter) && filter.isReadyFilter !== null) {
-    filtered = filtered.filter(propEq('isReady', filter.isReadyFilter))
+    filtered = filtered.filter( i => !!i.isReady === filter.isReadyFilter )
   }
 
   // filter on rarity

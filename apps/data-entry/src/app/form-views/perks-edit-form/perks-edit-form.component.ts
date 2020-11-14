@@ -49,6 +49,7 @@ export class PerksEditFormComponent implements OnInit, OnChanges {
       slot2Enabled: new FormControl(this.value.slot2Enabled),
       slot3Enabled: new FormControl(this.value.slot3Enabled),
       gearSpecific: new FormControl(this.value.gearSpecific),
+      isReady: new FormControl(this.value.isReady),
     })
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))

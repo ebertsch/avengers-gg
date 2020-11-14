@@ -33,16 +33,20 @@ export abstract class BaseDataPage<T> implements OnInit {
         this.storage.set(this.FILTER_KEY, filter).subscribe(() => { })
     }
 
-    create(gear: T, form: any) {
-        this.primaryDataService.add(gear)
+    create(dataItem: T, form: any) {
+        this.primaryDataService.add(dataItem)
     }
 
-    save(gear: T) {
-        this.primaryDataService.update(gear)
+    save(dataItem: T) {
+        this.primaryDataService.update(dataItem)
     }
 
-    delete(gear: T) {
-        this.primaryDataService.delete(gear)
+    publish(dataItem: T) {
+        this.save({...dataItem, isReady: true})
+    }
+
+    delete(dataItem: T) {
+        this.primaryDataService.delete(dataItem)
     }
 
 }

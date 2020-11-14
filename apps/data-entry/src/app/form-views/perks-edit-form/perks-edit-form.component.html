@@ -1,32 +1,30 @@
-<mat-expansion-panel class="information-panel" *ngIf="!!formValue.getRawValue().id" [expanded]="true">
-  <mat-expansion-panel-header>Information</mat-expansion-panel-header>
-  <div>Is on {{ onGearCount(formValue.getRawValue(), gear) }} pieces of Gear</div>
-  <div>
-    Appears on gear for {{ appearsForHero(formValue.getRawValue(), gear).join(', ') }}
-    <button mat-button color="primary" (click)="setPerkForAll()">Set to *</button>
-    <button mat-button color="primary" (click)="setPerkForSelect(appearsForHero(formValue.getRawValue(), gear))">Limit to these heroes</button>
-  </div>
-  <div>Used in Slot 1: {{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} <button mat-button (click)="limitToSlot(3)">Limit to Slot</button></div>
-  <div>Used in Slot 2: {{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} <button mat-button (click)="limitToSlot(3)">Limit to Slot</button></div>
-  <div>Used in Slot 3: {{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} <button mat-button (click)="limitToSlot(3)">Limit to Slot</button></div>
-</mat-expansion-panel>
-
 <form [formGroup]="formValue">
   <mat-form-field appearance="fill" *ngIf="!!formValue.getRawValue().id">
     <mat-label>ID</mat-label>
     <input formControlName="id" matInput [value]="value.id">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Hero</mat-label>
-    <mat-select formControlName="heroes" multiple>
-      <mat-option [value]="null">Not set</mat-option>
-      <mat-option [value]="'*'">*</mat-option>
-      <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
-        {{hero.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="hero-container">
+    <mat-form-field appearance="fill" class="hero-selector">
+      <mat-label>Hero</mat-label>
+      <mat-select formControlName="heroes" multiple>
+        <mat-option [value]="null">Not set</mat-option>
+        <mat-option [value]="'*'">*</mat-option>
+        <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+          {{hero.name}}
+        </mat-option>
+      </mat-select>
+      <mat-hint class="titlecase" *ngIf="appearsForHero(formValue.getRawValue(), gear).length > 0">
+        Appears on gear for {{ appearsForHero(formValue.getRawValue(), gear).join(', ') }}
+      </mat-hint>
+    </mat-form-field>
+    <div class="hero-buttons">
+      <div class="title">Limit to</div>
+      <button mat-button color="primary" (click)="setPerkForAll()">All</button>
+      <button mat-button color="primary" (click)="setPerkForSelect(appearsForHero(formValue.getRawValue(), gear))">Occurrences</button>
+    </div>
+  </div>
+
 
   <mat-form-field appearance="fill">
     <mat-label>Set Title</mat-label>
@@ -52,7 +50,9 @@
   </mat-form-field>
 
   <mat-checkbox formControlName="gearSpecific">Gear Specific</mat-checkbox>
-  <mat-checkbox formControlName="slot1Enabled">Enabled for first slot</mat-checkbox>
-  <mat-checkbox formControlName="slot2Enabled">Enabled for second slot</mat-checkbox>
-  <mat-checkbox formControlName="slot3Enabled">Enabled for third slot</mat-checkbox>
+  <mat-checkbox formControlName="slot1Enabled">Limit to Slot 1 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox formControlName="slot2Enabled">Limit to Slot 2 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox formControlName="slot3Enabled">Limit to Slot 3 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox formControlName="isReady">Is Ready?</mat-checkbox>
+
 </form>

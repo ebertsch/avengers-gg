@@ -8,4 +8,5 @@ export interface Perk {
     slot1Enabled: boolean;
     slot2Enabled: boolean;
     slot3Enabled: boolean;
+    isReady: boolean;
 }
