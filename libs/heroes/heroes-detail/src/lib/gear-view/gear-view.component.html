@@ -1,4 +1,15 @@
-<button (click)="view=='card'? view='list': view='card'">Switch View</button>
+<div class="view-selector">
+    VIEW
+    <mat-button-toggle-group #viewGroup="matButtonToggleGroup" value="card" name="fontStyle"
+        aria-label="View style of items">
+        <mat-button-toggle value="card" aria-label="Display items in a tiled card view">
+            <mat-icon>view_module</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="list" aria-label="Display items in a list view">
+            <mat-icon>list</mat-icon>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
 
 <ng-container *ngFor="let namedSet of namedSets$ | async">
     <agg-panel>
@@ -6,7 +17,7 @@
             {{namedSet.title}}
             <span class="location" *ngFor="let source of namedSet.sources">{{source.from}}</span>
         </agg-panel-header>
-        <ng-container *ngIf="view=='list';else cardView">
+        <ng-container *ngIf="viewGroup.value=='list';else cardView">
             <table>
                 <thead>
                     <tr class="header-row">
@@ -71,10 +82,14 @@
         </ng-container>
         <ng-template #cardView>
             <div class="gear-card-container">
-                <agg-gear [gear]="getGearPiece(namedSet.melee) | async" *ngIf="!!(getGearPiece(namedSet.melee) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async" *ngIf="!!(getGearPiece(namedSet.ranged) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.defense) | async" *ngIf="!!(getGearPiece(namedSet.defense) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async" *ngIf="!!(getGearPiece(namedSet.heroic) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.melee) | async"
+                    *ngIf="!!(getGearPiece(namedSet.melee) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"
+                    *ngIf="!!(getGearPiece(namedSet.ranged) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.defense) | async"
+                    *ngIf="!!(getGearPiece(namedSet.defense) | async)"></agg-gear>
+                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"
+                    *ngIf="!!(getGearPiece(namedSet.heroic) | async)"></agg-gear>
             </div>
         </ng-template>
     </agg-panel>

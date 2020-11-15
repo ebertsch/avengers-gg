@@ -6,6 +6,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { GearViewComponent } from './gear-view/gear-view.component';
 import { PerksViewComponent } from './perks-view/perks-view.component';
@@ -27,6 +29,8 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     YouTubePlayerModule,
     SwiperModule,
     SharedUiModule,
+    MatButtonToggleModule,
+    MatIconModule,
     GearModule,
     SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,

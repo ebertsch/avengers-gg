@@ -8,9 +8,10 @@ import { SharedUiModule } from '@avengers-game-guide/shared/ui';
 import { GearInstanceViewerComponent } from './gear-instance-viewer/gear-instance-viewer.component';
 import { LoadoutSummaryComponent } from './loadout-summary/loadout-summary.component';
 import { RouterModule } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
-  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule],
   declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
   exports: [LoadoutBuilderComponent],
 })

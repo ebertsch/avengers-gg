@@ -15,10 +15,6 @@
       }
 
       grid-area: gear-name;
-
-      ::ng-deep .mat-select-value {
-          display: none;
-      }
     }
   .gear-power-level { grid-area: gear-power-level; }
   .gear-stats {
