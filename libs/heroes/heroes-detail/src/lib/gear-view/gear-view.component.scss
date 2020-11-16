@@ -43,6 +43,15 @@
 .gear-card-container {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+
+    @include bp(laptop) {
+        flex-direction: row;
+    }
+
+    > * {
+        margin-bottom: 20px;
+    }
 }
 
 .view-selector {
