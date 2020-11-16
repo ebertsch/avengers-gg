@@ -1,48 +1,16 @@
 <ng-container *ngIf="!!activeGear; else addGear">
-    <div class="gear-container" [ngClass]="activeGear.rarity">
-        <div class="gear-name">
-                <ng-container *ngIf="activeGear.id != 'CUSTOM'; else fromPerk">
-                    {{ (getGearDefinition(activeGear.id) | async)?.name }}
-                </ng-container>
-                <ng-template #fromPerk>
-                    {{ (getPerk$(activeGear.perk1) | async)?.title }}&nbsp;{{ hero.gearNames[gearSlot] }}
-                </ng-template>
-        </div>
-        <div class="gear-rarity">{{ activeGear.rarity }}</div>
-        <div class="gear-power-level">
-            <div class="power-level">{{ activeGear.powerLevel }}</div>
-            <div class="label">Power</div>
-        </div>
-        <div class="gear-stats">
-            <div class="gear-stat1-key stat-key">{{ activeGear.stat1.stat }}</div>
-            <div class="gear-sta1-value stat-value">{{ activeGear.stat1.value }}</div>
-            <div class="gear-stat2-key stat-key">{{ activeGear.stat2.stat }}</div>
-            <div class="gear-stat2-value stat-value">{{ activeGear.stat2.value }}</div>
-            <div class="gear-stat3-key stat-key">{{ activeGear.stat3.stat }}</div>
-            <div class="gear-stat3-value stat-value">{{ activeGear.stat3.value }}</div>
-        </div>
-        <div class="gear-perks">
-            <div class="gear-perk-title">Gear Perks</div>
-            <div class="gear-perk-1">
-                <agg-name-description [namedItem]="getPerk$(activeGear.perk1) | async"></agg-name-description>
-            </div>
-            <div class="gear-perk-2">
-                <agg-name-description [namedItem]="getPerk$(activeGear.perk2) | async"></agg-name-description>
-            </div>
-            <div class="gear-perk-3">
-                <agg-name-description [namedItem]="getPerk$(activeGear.perk3) | async"></agg-name-description>
-            </div>
-        </div>
-        <div class="gear-actions">
+    <agg-gear-viewer [value]="activeGear" [hero]="hero" [gearType]="gearSlot" [gearDefinitions]="gearService.entityMap$ | async" [perks]="perkService.entityMap$ | async">
+        <agg-gear-viewer-action>
             <a class="action" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
-            routerLinkActive="active">
-            <i class="agg-icon-edit"></i> edit
-        </a>
-        </div>
-    </div>
+                routerLinkActive="active">
+                <i class="agg-icon-edit"></i> Edit
+            </a>
+        </agg-gear-viewer-action>
+    </agg-gear-viewer>
 </ng-container>
 <ng-template #addGear>
-    <a class="button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge" routerLinkActive="active">
+    <a class="button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
+        routerLinkActive="active">
         Add gear to slot
     </a>
 </ng-template>

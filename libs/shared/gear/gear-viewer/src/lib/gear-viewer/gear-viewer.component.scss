@@ -1,0 +1,206 @@
+@import "~libs/shared/styles/_fancy-text.scss";
+
+@mixin rarity-theme($color) {
+  background-image: linear-gradient(180deg, $color 0%, rgba(0, 0, 0, 0) 12%);
+
+  .gear-actions {
+    background-image: linear-gradient(180deg, $color 0%, rgba(0, 0, 0, 0) 42%);
+    border-image-slice: 1;
+  }
+
+  .gear-perks,
+  .gear-rarity {
+    border-image-source: linear-gradient(90deg,  rgba(0, 0, 0, 0), $color, rgba(0, 0, 0, 0));
+    border-image-slice: 1;
+  }
+
+  .gear-power-level {
+      border-image-source: linear-gradient(180deg,  rgba(0, 0, 0, 0), $color, rgba(0, 0, 0, 0));
+      border-image-slice: 1;
+  }
+}
+
+:host {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 80px 1fr auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "gear-name gear-name"
+      "gear-rarity gear-rarity"
+      "gear-power-level gear-stats"
+      "gear-perks gear-perks"
+      "gear-actions gear-actions";
+    width: 343px;
+
+    background-color: #080808;
+    border: solid 1px;
+    padding: 8px 0px;
+
+    &.legendary { @include rarity-theme(#7B7C39); }
+    &.exotic { @include rarity-theme(#7D4F35); }
+    &.epic { @include rarity-theme(#61398E); }
+    &.rare { @include rarity-theme(#304F8E); }
+    &.uncommon { @include rarity-theme(#5aa647); }
+    &.common { @include rarity-theme(#666e6d); }
+}
+
+.gear-name {
+    grid-area: gear-name;
+
+    @include fancy-text();
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    padding: 0 6px;
+}
+
+.gear-rarity {
+    grid-area: gear-rarity;
+    font-family: CrystalText;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+    padding: 2px 7px 17px;
+    text-transform: uppercase;
+    border-bottom: solid 1px;
+}
+
+.gear-power-level {
+    grid-area: gear-power-level;
+    position: relative;
+    margin: 0 8px 0;
+    border-right: solid 1px;
+
+    .power-level {
+        @include fancy-text();
+        font-size: 45px;
+        line-height: 61px;
+    }
+
+    .label {
+        position: absolute;
+        bottom: 17px;
+        font-family: CrystalText;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+    }
+}
+
+.gear-stats {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: auto auto auto;
+    gap: 0px 8px;
+    grid-template-areas:
+        "gear-stat1-key gear-sta1-value"
+        "gear-stat2-key gear-stat2-value"
+        "gear-stat3-key gear-stat3-value";
+    grid-area: gear-stats;
+    align-items: center;
+    align-content: flex-start;
+    margin-right: 6px;
+    margin-top: 8px;
+
+    .stat-key {
+        text-align: right;
+        text-transform: capitalize;
+
+        font-family: CrystalText;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.25px;
+    }
+
+    .stat-value {
+        @include fancy-text();
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: -0.5px;
+    }
+}
+
+.gear-stat1-key {
+    grid-area: gear-stat1-key;
+}
+
+.gear-sta1-value {
+    grid-area: gear-sta1-value;
+}
+
+.gear-stat2-key {
+    grid-area: gear-stat2-key;
+}
+
+.gear-stat2-value {
+    grid-area: gear-stat2-value;
+}
+
+.gear-stat3-value {
+    grid-area: gear-stat3-value;
+}
+
+.gear-stat3-key {
+    grid-area: gear-stat3-key;
+}
+
+.gear-perks {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0px 8px;
+    grid-template-areas:
+        "gear-perk-title"
+        "gear-perk-1"
+        "gear-perk-2"
+        "gear-perk-3";
+    grid-area: gear-perks;
+    border-top: solid 1px;
+    padding: 8px;
+}
+
+.gear-perk-title {
+    grid-area: gear-perk-title;
+    font-family: CrystalWide;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    @include fancy-text()
+}
+
+.gear-perk-1 {
+    grid-area: gear-perk-1;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.gear-perk-2 {
+    grid-area: gear-perk-2;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.gear-perk-3 {
+    grid-area: gear-perk-3;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.gear-actions {
+    grid-area: gear-actions;
+    padding: 10px 8px 0;
+
+    .action {
+        @include fancy-text();
+        text-transform: capitalize;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.25px;
+    }
+}

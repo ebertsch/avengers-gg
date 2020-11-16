@@ -1,0 +1,46 @@
+<div class="gear-name" *ngIf="!!gear.id">
+    {{ gearTitleFromId() }}
+</div>
+<div class="gear-rarity" *ngIf="!!gear.rarity">{{ gear.rarity }}</div>
+<div class="gear-power-level" *ngIf="!!gear.powerLevel">
+    <div class="power-level">{{ gear.powerLevel }}</div>
+    <div class="label">Power</div>
+</div>
+<div class="gear-stats" *ngIf="gear?.stat1?.value">
+    <div class="gear-stat1-key stat-key">{{ gear.stat1.stat }}</div>
+    <div class="gear-sta1-value stat-value">{{ gear.stat1.value }}</div>
+    <div class="gear-stat2-key stat-key">{{ gear.stat2.stat }}</div>
+    <div class="gear-stat2-value stat-value">{{ gear.stat2.value }}</div>
+    <div class="gear-stat3-key stat-key">{{ gear.stat3.stat }}</div>
+    <div class="gear-stat3-value stat-value">{{ gear.stat3.value }}</div>
+</div>
+<div class="gear-perks">
+    <div class="gear-perk-title">Gear Perks</div>
+    <div class="gear-perk-1" *ngIf="!!gear.perks1">
+        <agg-name-description [namedItem]="gearPerkForId(gear.perks1)" *ngIf="!gear.hasPerkVariants(1); else perk1Swiper"></agg-name-description>
+        <ng-template #perk1Swiper>
+            <swiper class="gear-swiper">
+                <agg-name-description [namedItem]="gearPerkForId(perkId)" *ngFor="let perkId of gear.perks1"></agg-name-description>
+            </swiper>
+        </ng-template>
+    </div>
+    <div class="gear-perk-2" *ngIf="!!gear.perks2">
+        <agg-name-description [namedItem]="gearPerkForId(gear.perks2)" *ngIf="!gear.hasPerkVariants(2); else perk2Swiper"></agg-name-description>
+        <ng-template #perk2Swiper>
+            <swiper class="gear-swiper">
+                <agg-name-description [namedItem]="gearPerkForId(perkId)" *ngFor="let perkId of gear.perks2"></agg-name-description>
+            </swiper>
+        </ng-template>
+    </div>
+    <div class="gear-perk-3" *ngIf="!!gear.perks3">
+        <agg-name-description [namedItem]="gearPerkForId(gear.perks3)" *ngIf="!gear.hasPerkVariants(3); else perk3Swiper"></agg-name-description>
+        <ng-template #perk3Swiper>
+            <swiper class="gear-swiper">
+                <agg-name-description [namedItem]="gearPerkForId(perkId)" *ngFor="let perkId of gear.perks3"></agg-name-description>
+            </swiper>
+        </ng-template>
+    </div>
+</div>
+<div class="gear-actions">
+    <ng-content></ng-content>
+</div>
