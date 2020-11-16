@@ -3,9 +3,13 @@
 :host {
     display: block;
     margin: 10px;
-    
+
     @include bp(laptop) {
         margin: 60px;
+    }
+
+    agg-panel {
+        margin-bottom: 50px;
     }
 }
 
@@ -17,7 +21,7 @@
 
 .gear-container {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     grid-column-gap: 10px;
     justify-items: center;
 }
@@ -29,8 +33,10 @@
 .col-name {
     width: 400px;
 }
+
 .col-slot {
     text-align: right;
+
     @include bp(laptop) {
         text-align: left;
     }
@@ -49,7 +55,7 @@
         flex-direction: row;
     }
 
-    > * {
+    >* {
         margin-bottom: 20px;
     }
 }

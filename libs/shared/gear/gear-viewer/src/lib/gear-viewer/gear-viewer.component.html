@@ -35,12 +35,12 @@
     <div class="gear-perk-3" *ngIf="!!gear.perks3">
         <agg-name-description [namedItem]="gearPerkForId(gear.perks3)" *ngIf="!gear.hasPerkVariants(3); else perk3Swiper"></agg-name-description>
         <ng-template #perk3Swiper>
-            <swiper class="gear-swiper">
+            <swiper class="gear-swiper" [config]="{navigation: true, pagination: false}">
                 <agg-name-description [namedItem]="gearPerkForId(perkId)" *ngFor="let perkId of gear.perks3"></agg-name-description>
             </swiper>
         </ng-template>
     </div>
 </div>
-<div class="gear-actions">
+<div class="gear-actions" *ngIf="actions?.length">
     <ng-content></ng-content>
 </div>
