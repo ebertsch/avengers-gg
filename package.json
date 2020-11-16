@@ -45,7 +45,7 @@
     "@angular/platform-server": "^11.0.0",
     "@angular/router": "^11.0.0",
     "@angular/service-worker": "^11.0.0",
-    "@angular/youtube-player": "^10.2.5",
+    "@angular/youtube-player": "^11.0.0",
     "@ngrx/data": "^10.0.1",
     "@ngrx/effects": "10.0.0",
     "@ngrx/entity": "10.0.0",
