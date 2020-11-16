@@ -72,6 +72,36 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "apps/heroes/ngsw-config.json"
+            },
+            "ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.ssr.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/heroes/ngsw-config.json"
             }
           }
         },
@@ -124,7 +154,7 @@
               "fileReplacements": [
                 {
                   "replace": "libs/shared/environments/src/lib/environment.ts",
-                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                  "with": "libs/shared/environments/src/lib/environment.ssr.ts"
                 }
               ],
               "sourceMap": false,
@@ -153,7 +183,8 @@
             "routes": ["/", "/heroes"]
           },
           "configurations": {
-            "production": {}
+            "production": {
+            }
           }
         }
       }

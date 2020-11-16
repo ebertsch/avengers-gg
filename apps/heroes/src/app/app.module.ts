@@ -16,18 +16,18 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 1,
-  // freeMode: true,
   pagination: {
     clickable: true
   }
 };
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
-    environment.production ? NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsCode) : [],
-    environment.production ? NgxGoogleAnalyticsRouterModule : [],
+    environment.production && !environment.isServer ? NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsCode) : [],
+    environment.production && !environment.isServer ? NgxGoogleAnalyticsRouterModule : [],
     HttpClientModule,
     AppRoutingModule,
     RootStateModule,
