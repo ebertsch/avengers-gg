@@ -987,6 +987,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-gear-gear-viewer": {
+      "projectType": "library",
+      "root": "libs/shared/gear/gear-viewer",
+      "sourceRoot": "libs/shared/gear/gear-viewer/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/gear/gear-viewer/tsconfig.lib.json",
+              "libs/shared/gear/gear-viewer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/gear/gear-viewer/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/gear/gear-viewer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
