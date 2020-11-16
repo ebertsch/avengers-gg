@@ -9,6 +9,9 @@ import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout } from
 import { GearSlot, GearRarityValue, GearRarity, StatField } from '@avengers-game-guide/shared/data';
 
 import { map } from 'rxjs/operators';
+import { environment } from '@avengers-game-guide/shared/environments';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const gearFromQueryParam = (source: string) => {
   const decompressed = decompressFromEncodedURIComponent(source)
@@ -136,6 +139,21 @@ const summarizeLoadout = (loadout) =>
   providedIn: 'root'
 })
 export class GearEditorService {
+  private activeLoadoutQueryStringSelector = createSelector(
+    RouteSelectors.getMergedRoute,
+    mergedRoute => `${environment.protocol}://${environment.host}${mergedRoute.url}?loadout=${<string>mergedRoute.queryParams.loadout}`
+  );
+  activeLoadoutQueryString$ = this.store.pipe(select(this.activeLoadoutQueryStringSelector))
+
+  private activeLoadoutDownloadSelector = createSelector(
+    RouteSelectors.getMergedRoute,
+    mergedRoute => {
+      const json = JSON.stringify({ hero: mergedRoute.params.heroSlug, loadout: mergedRoute.queryParams.loadout })
+      return this.sanitizer.bypassSecurityTrustResourceUrl(`data:text/json;base64,${btoa(json)}`);
+    }
+  );
+  loadoutDownload$ = this.store.pipe(select(this.activeLoadoutDownloadSelector))
+
   private loadoutSelector = createSelector(
     RouteSelectors.getMergedRoute,
     mergedRoute => loadoutFromQueryParam(<string>mergedRoute.queryParams.loadout)
@@ -167,7 +185,7 @@ export class GearEditorService {
   activeGearInstance$ = this.store.pipe(select(this.activeGearSelector));
   activeGearSlot$ = this.store.pipe(select(this.activeGearSlotSelector));
 
-  constructor(private router: Router, private store: Store) { }
+  constructor(private router: Router, private store: Store,private sanitizer: DomSanitizer) { }
 
   getGearRarity(value: GearRarityValue) {
     return find(propEq('id', value) ,GEAR_RARITIES) as GearRarity

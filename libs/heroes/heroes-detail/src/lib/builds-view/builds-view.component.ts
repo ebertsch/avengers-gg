@@ -36,7 +36,7 @@ export class BuildsViewComponent implements OnInit {
     private builds: BuildService,
     private heroes: HeroService,
     private skillService: SkillService,
-    private gearEditorService: GearEditorService,
+    public gearEditorService: GearEditorService,
     public perkService: PerkService,
     private router: Router,
     private titleService: Title) {
@@ -106,6 +106,22 @@ export class BuildsViewComponent implements OnInit {
         queryParams: { skills: skills.join(",") },
         queryParamsHandling: 'merge'
       });
+  }
+
+  restoreLoadout(file: InputEvent ) {
+    const input = file.currentTarget as HTMLInputElement;
+    const fileList: FileList | null = input.files;
+    const reader = new FileReader();
+    reader.readAsText(fileList[0], "UTF-8");
+    reader.onload = evt => {
+      const json = JSON.parse(evt.target.result as string);
+      
+      this.router.navigate(['/heroes', json.hero], {
+        queryParams: { loadout: json.loadout },
+        queryParamsHandling: 'merge'
+      })
+      input.value = ""
+    } 
   }
 
 }
