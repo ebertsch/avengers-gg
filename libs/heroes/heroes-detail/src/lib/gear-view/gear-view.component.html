@@ -27,6 +27,7 @@
                 </thead>
                 <tbody>
                     <ng-container *ngIf="namedSet.melee">
+                        
                         <tr class="row" [ngClass]="{'selected': selectedGear == namedSet.melee}"
                             (click)="showGearRow(namedSet.melee)">
                             <td class="column col-name">{{ (getGearPiece(namedSet.melee) | async)?.name}}</td>
@@ -34,7 +35,17 @@
                         </tr>
                         <tr class="detail-row" *ngIf="selectedGear == namedSet.melee">
                             <td colspan="3">
-                                <agg-gear [gear]="getGearPiece(namedSet.melee) | async"></agg-gear>
+
+
+
+                                <agg-gear-viewer
+                                [value]="getGearPiece(namedSet.melee) | async"
+                                [hero]="heroService.selected$ | async"
+                                [gearType]="'melee'"
+                                [gearDefinitions]="gearService.entityMap$ | async"
+                                [perks]="perkService.entityMap$ | async"
+                                >
+                            </agg-gear-viewer>
                             </td>
                         </tr>
                     </ng-container>
@@ -47,8 +58,14 @@
                         </tr>
                         <tr class="detail-row" *ngIf="selectedGear == namedSet.ranged">
                             <td colspan="3">
-                                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"></agg-gear>
-                            </td>
+                                <agg-gear-viewer
+                                [value]="getGearPiece(namedSet.ranged) | async"
+                                [hero]="heroService.selected$ | async"
+                                [gearType]="'ranged'"
+                                [gearDefinitions]="gearService.entityMap$ | async"
+                                [perks]="perkService.entityMap$ | async"
+                                *ngIf="getGearPiece(namedSet.ranged) | async">
+                            </agg-gear-viewer>                            </td>
                         </tr>
                     </ng-container>
 
@@ -60,8 +77,14 @@
                         </tr>
                         <tr class="detail-row" *ngIf="selectedGear == namedSet.defense">
                             <td colspan="3">
-                                <agg-gear [gear]="getGearPiece(namedSet.defense) | async"></agg-gear>
-                            </td>
+                                <agg-gear-viewer
+                                [value]="getGearPiece(namedSet.defense) | async"
+                                [hero]="heroService.selected$ | async"
+                                [gearType]="'defense'"
+                                [gearDefinitions]="gearService.entityMap$ | async"
+                                [perks]="perkService.entityMap$ | async"
+                                *ngIf="getGearPiece(namedSet.defense) | async">
+                            </agg-gear-viewer>                            </td>
                         </tr>
                     </ng-container>
 
@@ -73,8 +96,14 @@
                         </tr>
                         <tr class="detail-row" *ngIf="selectedGear == namedSet.heroic">
                             <td colspan="3">
-                                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"></agg-gear>
-                            </td>
+                                <agg-gear-viewer
+                                [value]="getGearPiece(namedSet.heroic) | async"
+                                [hero]="heroService.selected$ | async"
+                                [gearType]="'heroic'"
+                                [gearDefinitions]="gearService.entityMap$ | async"
+                                [perks]="perkService.entityMap$ | async"
+                                *ngIf="getGearPiece(namedSet.heroic) | async">
+                            </agg-gear-viewer>                            </td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -82,14 +111,41 @@
         </ng-container>
         <ng-template #cardView>
             <div class="gear-card-container">
-                <agg-gear [gear]="getGearPiece(namedSet.melee) | async"
-                    *ngIf="!!(getGearPiece(namedSet.melee) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.ranged) | async"
-                    *ngIf="!!(getGearPiece(namedSet.ranged) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.defense) | async"
-                    *ngIf="!!(getGearPiece(namedSet.defense) | async)"></agg-gear>
-                <agg-gear [gear]="getGearPiece(namedSet.heroic) | async"
-                    *ngIf="!!(getGearPiece(namedSet.heroic) | async)"></agg-gear>
+                <agg-gear-viewer
+                    [value]="getGearPiece(namedSet.melee) | async"
+                    [hero]="heroService.selected$ | async"
+                    [gearType]="'melee'"
+                    [gearDefinitions]="gearService.entityMap$ | async"
+                    [perks]="perkService.entityMap$ | async"
+                    *ngIf="getGearPiece(namedSet.melee) | async">
+                </agg-gear-viewer>
+
+                <agg-gear-viewer
+                    [value]="getGearPiece(namedSet.ranged) | async"
+                    [hero]="heroService.selected$ | async"
+                    [gearType]="'ranged'"
+                    [gearDefinitions]="gearService.entityMap$ | async"
+                    [perks]="perkService.entityMap$ | async"
+                    *ngIf="getGearPiece(namedSet.ranged) | async">
+                </agg-gear-viewer>
+
+                <agg-gear-viewer
+                    [value]="getGearPiece(namedSet.defense) | async"
+                    [hero]="heroService.selected$ | async"
+                    [gearType]="'defense'"
+                    [gearDefinitions]="gearService.entityMap$ | async"
+                    [perks]="perkService.entityMap$ | async"
+                    *ngIf="getGearPiece(namedSet.defense) | async">
+                </agg-gear-viewer>
+
+                <agg-gear-viewer
+                    [value]="getGearPiece(namedSet.heroic) | async"
+                    [hero]="heroService.selected$ | async"
+                    [gearType]="'heroic'"
+                    [gearDefinitions]="gearService.entityMap$ | async"
+                    [perks]="perkService.entityMap$ | async"
+                    *ngIf="getGearPiece(namedSet.heroic) | async">
+                </agg-gear-viewer>
             </div>
         </ng-template>
     </agg-panel>

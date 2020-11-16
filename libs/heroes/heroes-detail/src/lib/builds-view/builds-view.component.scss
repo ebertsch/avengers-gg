@@ -101,6 +101,15 @@
         width: 50vw;
         grid-row: 3;
     }
+
+    .skill-option {
+        padding: 10px;
+
+        &.selected {
+            border: solid 1px;
+        }
+    }
+
 }
 
 .current-build-container {

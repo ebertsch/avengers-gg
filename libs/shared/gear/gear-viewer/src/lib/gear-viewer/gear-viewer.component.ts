@@ -1,14 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, HostBinding } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, HostBinding, ContentChildren, QueryList, ViewChildren } from '@angular/core';
 import { GearView } from '../gear-view';
 import { Perk } from '@avengers-game-guide/shared/perks/data-access';
 import { GearDefinition, GearInstance } from '@avengers-game-guide/shared/gear/data-access';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { pathOr, propOr } from 'ramda';
 import { SwiperConfigInterface, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { GearViewerActionComponent } from '../gear-viewer-action/gear-viewer-action.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  navigation: true
+  direction: 'horizontal',
+  navigation: true,
+  slidesPerView: 1,
 };
 
 
@@ -34,12 +37,14 @@ export class GearViewerComponent implements OnInit {
   @Input() gearDefinitions:  {[key: string]:GearDefinition} = {}
   @Input() hero: Hero
   @Input() gearType: string
+  @ContentChildren(GearViewerActionComponent) actions:  QueryList<GearViewerActionComponent>;
 
   @HostBinding('class') get hostClasses() { return this.gear.rarity; }
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.actions)
   }
 
   getGearType() {
