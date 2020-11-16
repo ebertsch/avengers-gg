@@ -57,7 +57,7 @@ import { DataFiltersComponent } from './data-filters/data-filters.component';
       { path: 'named-sets', component: NamedSetsPageComponent },
       { path: 'guides', component: GuidesPageComponent },
       { path: 'notes', component: NotesPageComponent },
-    ], { initialNavigation: 'enabled' }),
+    ], { initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
 
   ],
   providers: [{ provide: DefaultDataServiceConfig, useValue: { root: environment.dataEntryClientApiUrl } }],
