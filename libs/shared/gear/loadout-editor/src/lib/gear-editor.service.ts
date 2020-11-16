@@ -7,6 +7,7 @@ import { find, times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter,
 import { of } from 'rxjs';
 import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout } from '@avengers-game-guide/shared/gear/data-access';
 import { GearSlot, GearRarityValue, GearRarity, StatField } from '@avengers-game-guide/shared/data';
+import { btoa } from "abab";
 
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
