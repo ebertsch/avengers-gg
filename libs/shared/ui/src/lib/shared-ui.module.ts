@@ -11,10 +11,25 @@ import { NameDescriptionComponent } from './name-description/name-description.co
 import { FlaredTitleComponent } from './flared-title/flared-title.component';
 import { NavigationTabsComponent, NavigationTabComponent } from './navigation-tabs/navigation-tabs.component';
 import { FancyTextComponent } from './fancy-text/fancy-text.component';
+import { DisableControlDirective } from './disableControl/disableControl.directive'
+
+const DECLARATIONS = [
+  PanelComponent,
+  PanelHeaderComponent,
+  HighlightPipe,
+  SortByPipe,
+  UncamelCasePipe,
+  NameDescriptionComponent,
+  FlaredTitleComponent,
+  NavigationTabsComponent,
+  NavigationTabComponent,
+  FancyTextComponent,
+  DisableControlDirective
+]
 
 @NgModule({
   imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ScrollingModule],
-  declarations: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, UncamelCasePipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
-  exports: [PanelComponent, PanelHeaderComponent, HighlightPipe, SortByPipe, UncamelCasePipe, NameDescriptionComponent, FlaredTitleComponent, NavigationTabsComponent, NavigationTabComponent, FancyTextComponent],
+  declarations: DECLARATIONS,
+  exports: DECLARATIONS,
 })
 export class SharedUiModule {}

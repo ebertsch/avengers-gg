@@ -57,10 +57,6 @@ export class GearEditFormComponent implements OnInit, OnChanges {
       sources: new FormArray([])
     })
 
-    // if(!this.formValue.value.id) {
-      // this.formValue.controls['id'].disable()
-    // }
-
     this.perk1Options = this.perk1Auto.valueChanges.pipe(
       startWith(''),
       withLatestFrom(this.perkService.getGearSlotPerks(this.value.gearType)),

@@ -9,9 +9,10 @@ import { GearInstanceViewerComponent } from './gear-instance-viewer/gear-instanc
 import { LoadoutSummaryComponent } from './loadout-summary/loadout-summary.component';
 import { RouterModule } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
-  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule],
+  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule, MatButtonModule],
   declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
   exports: [LoadoutBuilderComponent],
 })
