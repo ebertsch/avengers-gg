@@ -38,7 +38,7 @@
     <agg-panel-header>Skill Points</agg-panel-header>
     <p class="panel-note">Select any number of skills.<br>You can also remove a skill by clicking on it again.</p>
     <div>
-        <swiper [config]="{navigation: true, pagination: true, slidesPerView: 1}">
+        <swiper #swiper="ngxSwiper" [config]="{pagination: { clickable: true, type: 'bullets', el: '.swiper-pagination' }}">
             <div *ngFor="let skill of skills$ | async; trackBy: byId">
                 <div class="skill-container">
                     <agg-name-description [namedItem]="skill"></agg-name-description>

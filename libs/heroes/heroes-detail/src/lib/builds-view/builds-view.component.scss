@@ -18,16 +18,29 @@
     }
 }
 
-::ng-deep .content {
-    height: inherit;
-}
-::ng-deep .swiper-button-next,
-::ng-deep .swiper-button-prev {
-    top:20px !important;
-    &:focus {
-        outline: none;
+::ng-deep {
+    ::ng-deep .content {
+        height: inherit;
+    }
+
+    ::ng-deep .swiper-button-next,
+    ::ng-deep .swiper-button-prev {
+        top:20px !important;
+        &:focus {
+            outline: none;
+        }
+    }
+    ::ng-deep swiper>.swiper.s-wrapper {
+        padding-bottom: 40px;
+    }
+    ::ng-deep .swiper-container-horizontal>.swiper-pagination-bullets,
+    ::ng-deep .swiper-pagination-custom,
+    ::ng-deep .swiper-pagination-fraction {
+        bottom: -10px !important;
     }
 }
+
+
 
 .save-actions-containr {
     margin-bottom: 0;
