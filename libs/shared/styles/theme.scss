@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+@import './variables';
+@import './_palette';
+
+$typography: mat-typography-config(
+  $font-family: $font-family
+);
+
+$app-theme: mat-dark-theme((
+  color: (
+    primary: $app-palette-primary,
+    accent: $app-palette-secondary,
+    warn: $app-palette-warn
+  )
+));
+
+
+@include angular-material-typography($typography);
+@include mat-core($typography);
+@include angular-material-theme($app-theme);

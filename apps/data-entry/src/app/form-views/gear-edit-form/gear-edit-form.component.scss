@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+mat-checkbox,
+mat-form-field {
+  width: 100%;
+}
+mat-checkbox {
+  display: flex;
+  width: 100%;
+}
+
+.perk-picker-container {
+  display: flex;
+}
+
+::ng-deep .mat-perk-option mat-option .mat-option-text {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    line-height: 16px;
+  }
+  .description {
+    opacity: .67;
+  }
+}

@@ -5,7 +5,6 @@ import {
 } from '@ngrx/data';
 import { select, createSelector } from '@ngrx/store';
 import { contains, filter } from 'ramda';
-
 import { Perk } from './perk';
 
 @Injectable({
@@ -20,15 +19,29 @@ export class PerkService extends EntityCollectionServiceBase<Perk> {
     this.selectors.selectEntityMap,
     perks => perks[id]
   );
-  getPerk = (id: string) =>  {
-    return this.store.pipe(select(this.getPerkSelector(id)))
-  }
+  getPerk = (id: string) =>
+    this.store.pipe(select(this.getPerkSelector(id)))
+
+  private getGearSlotPerksSelector = (slot: string) => createSelector(
+    this.selectors.selectEntities, perks => filter(perk => contains(slot, perk.gear), perks).sort()
+  );
+  getGearSlotPerks = (slot: string) =>
+    this.store.pipe(select(this.getGearSlotPerksSelector(slot)))
 
   private getGearPerksSelector = (slot: string, hero: string) => createSelector(
     this.selectors.selectEntities,
-    perks => filter(perk=> contains(slot, perk.gear) && (perk.heroId === hero || perk.heroId === '*') ,perks).sort()
+    perks => filter(perk =>
+      contains(slot, perk.gear) && (contains(hero, perk.heroes) || contains('*', perk.heroes))
+      , perks).sort()
   );
-  getGearPerks = (slot: string, hero: string) => {
-    return this.store.pipe(select(this.getGearPerksSelector(slot, hero)))
-  }
+  getGearPerks = (slot: string, hero: string) =>
+    this.store.pipe(select(this.getGearPerksSelector(slot, hero)))
+    
+  private getGearPerksForHeroSelector = (hero: string) => createSelector(
+    this.selectors.selectEntities,
+    perks => filter(perk => contains(hero, perk.heroes), perks).sort()
+  );
+  getGearPerksForHero = (hero: string) =>
+    this.store.pipe(select(this.getGearPerksForHeroSelector(hero)))
+
 }

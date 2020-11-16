@@ -1,11 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GearDefinition, GearInstance, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
-import { times } from 'ramda';
+import { GearDefinition, GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
+import { GearSlot } from '@avengers-game-guide/shared/data';
+import { assocPath, times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
+import { switchMap, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'agg-gear-instance-editor',
@@ -17,11 +19,11 @@ import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access
 export class GearInstanceEditorComponent implements OnInit, OnChanges {
   gearInstanceForm: FormGroup;
   _activeGear: GearInstance;
-  
+
   @Input() hero: Hero;
   @Input() gearSlot: GearSlot;
   @Input() set activeGear(value: GearInstance) {
-    if(value === null) {
+    if (value === null) {
       this._activeGear = {
         id: null,
         rarity: null,
@@ -38,18 +40,11 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
     }
   }
   get activeGear() { return this._activeGear }
+  activeGear$: BehaviorSubject<GearDefinition>;
+
   @Output() saved = new EventEmitter<GearInstance>();
   @Output() removed = new EventEmitter<GearInstance>();
 
-
-
-  @Input() availableGear = [
-    {id: 1, title: 'Gear 1' },
-    {id: 2, title: 'Gear 2' },
-    {id: 3, title: 'Gear 3' },
-    {id: 4, title: 'Gear 4' },
-    {id: 5, title: 'Gear 5' }
-  ]
 
   perks$: Observable<Perk[]>
   gear$: Observable<GearDefinition[]>
@@ -57,25 +52,33 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   constructor(public gearEditor: GearEditorService, private perkService: PerkService, private gearService: GearService) {
   }
 
-  getAvailablePerksArray(perkSlot: number) {
-    return times(idx=> ({id:`p${idx + (perkSlot * 4)}`, name: `perk ${idx + (perkSlot * 4)}`}), 4)
-  }
-
-  byId(value: {id:string}) {
+  byId(idx: number, value: { id: string }) {
     return value.id;
   }
 
+  byValue(idx: number, value: string | number) {
+    return value
+  }
+
   ngOnInit(): void {
-    this.setFormValues()
+    this.setupForm()
     this.perks$ = this.perkService.getGearPerks(this.gearSlot, this.hero.id)
     this.gear$ = this.gearService.getGearForHero(this.gearSlot, this.hero.id)
   }
 
   ngOnChanges(): void {
-    this.setFormValues()
+    this.updateForm(this._activeGear);
   }
 
-  setFormValues() {
+  isEmpty(item: any) {
+    return item === null || item === undefined || item === '' || item === []
+  }
+
+  isNotEmpty(item: any) {
+    return !this.isEmpty(item)
+  }
+
+  setupForm() {
     this.gearInstanceForm = new FormGroup({
       id: new FormControl(this.activeGear.id),
       rarity: new FormControl(this.activeGear.rarity),
@@ -96,6 +99,64 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
       perk2: new FormControl(this.activeGear.perk2),
       perk3: new FormControl(this.activeGear.perk3),
     })
+
+
+    this.activeGear$ = new BehaviorSubject(this.gearInstanceForm.value)
+    this.gearInstanceForm.valueChanges.subscribe(c => {
+      this.updateStats(c)
+      this.activeGear$.next(c)
+    })
+  }
+
+  updateStats(value: GearInstance) {
+    const attributeRange = this.gearEditor.getAttributeValueRange(value)
+    let patchValue = {};
+
+    if (value.stat1 && value.stat1.stat) {
+      const v = value.stat1.value || 0;
+      if (v > attributeRange.high) {
+        patchValue = assocPath(['stat1', 'value'], attributeRange.high, patchValue)
+      }
+      if (v < attributeRange.low) {
+        patchValue = assocPath(['stat1', 'value'], attributeRange.high, patchValue)
+      }
+    }
+    if (value.stat2 && value.stat2.stat) {
+      const v = value.stat2.value || 0;
+      if (v > attributeRange.high) {
+        patchValue = assocPath(['stat2', 'value'], attributeRange.high, patchValue)
+      }
+      if (v < attributeRange.low) {
+        patchValue = assocPath(['stat2', 'value'], attributeRange.high, patchValue)
+      }
+    }
+    if (value.stat3 && value.stat3.stat) {
+      const v = value.stat3.value || 0;
+      if (v > attributeRange.high) {
+        patchValue = assocPath(['stat3', 'value'], attributeRange.high, patchValue)
+      }
+      if (v < attributeRange.low) {
+        patchValue = assocPath(['stat3', 'value'], attributeRange.high, patchValue)
+      }
+    }
+
+    if (value.stat1 && !value.stat1.stat) {
+      patchValue = assocPath(['stat1', 'value'], null, patchValue)
+    }
+    if (value.stat2 && !value.stat2.stat) {
+      patchValue = assocPath(['stat2', 'value'], null, patchValue)
+    }
+    if (value.stat3 && !value.stat3.stat) {
+      patchValue = assocPath(['stat3', 'value'], null, patchValue)
+    }
+
+    this.gearInstanceForm.patchValue(patchValue, { emitEvent: false });
+  }
+
+  updateForm(value: GearInstance) {
+    if (this.gearInstanceForm === undefined) { return }
+    this.gearInstanceForm.setValue(value)
+    this._activeGear = { ...this.activeGear }
   }
 
   save() {

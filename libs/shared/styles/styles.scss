@@ -1,4 +1,5 @@
 @import './reset';
+@import './theme.scss';
 @import '../../../node_modules/swiper/swiper';
 @import '../../../node_modules/swiper/components/navigation/navigation';
 @import './variables';
@@ -10,9 +11,8 @@
 @import './swiper.scss';
 @import './buttons.scss';
 @import './agg-icons.scss';
-@import '~@angular/material/theming';
+@import './forms.scss';
 
-@include mat-core();
 
 body  {
     background-color: $bg-background-color;

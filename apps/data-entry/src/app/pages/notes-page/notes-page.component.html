@@ -1,0 +1,46 @@
+<h1>Notes</h1>
+
+<aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)"
+    [config]="{ heroFilter:true, searchFilter: true }"></aggd-data-filters>
+
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Note
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <aggd-note-edit-form #editForm="editForm" [value]="{}"></aggd-note-edit-form>
+
+    <mat-action-row>
+        <button mat-button color="primary"
+            (click)="create(editForm.formValue.value, editForm)">Create</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
+<mat-accordion multi="false">
+    <mat-expansion-panel [ngClass]="{selected: selectedItem == dataItem.id}" id="gear.id"
+        *ngFor="let dataItem of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = dataItem.id">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ dataItem.category }}
+            </mat-panel-title>
+            <mat-panel-description class="description">
+                <span [innerHTML]="dataItem.description.substring(0, 50) | highlight"></span>
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ dataItem.heroId }}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <ng-container *ngIf="selectedItem == dataItem.id">
+            <aggd-note-edit-form #editForm="editForm" [value]="dataItem">
+            </aggd-note-edit-form>
+
+            <mat-action-row>
+                <button mat-button color="secondary" (click)="delete(editForm.formValue.getRawValue())">Delete</button>
+                <button mat-button color="primary" (click)="save(editForm.formValue.getRawValue())">Save</button>
+            </mat-action-row>
+        </ng-container>
+    </mat-expansion-panel>
+</mat-accordion>

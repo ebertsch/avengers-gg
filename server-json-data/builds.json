@@ -1,7 +1,1 @@
-{
-    "builds": [
-        { "id": "1", "title": "Hulk tank build", "UrlLink": "http://www.google.com", "isYouTube": false, "heroId": "hulk" },
-        { "id": "2", "title": "Hulk DPS build", "UrlLink": "rjeVoPhVi3g", "isYouTube": true, "heroId": "hulk" },
-        { "id": "3", "title": "Hulk DPS build 2", "UrlLink": "rjeVoPhVi3g", "isYouTube": true, "heroId": "hulk" }
-    ]
-}
+{"builds":[{"id":"1","title":"Hulk tank build","UrlLink":"http://www.google.com","isYouTube":false,"heroId":"hulk"},{"id":"2","title":"Hulk DPS build","UrlLink":"rjeVoPhVi3g","isYouTube":true,"heroId":"hulk"},{"id":"3","title":"Hulk DPS build 2","UrlLink":"rjeVoPhVi3g","isYouTube":true,"heroId":"hulk"}]}

@@ -1,0 +1,162 @@
+<form [formGroup]="formValue">
+  <mat-form-field appearance="fill" *ngIf="!!formValue.getRawValue().id">
+    <mat-label>ID</mat-label>
+    <input formControlName="id" matInput />
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Hero</mat-label>
+    <mat-select formControlName="heroId">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option [value]="'*'">*</mat-option>
+      <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+        {{hero.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput [value]="value.name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Gear Slot</mat-label>
+    <mat-select formControlName="gearType">
+      <mat-option [value]="null">Not set</mat-option>
+      <mat-option [value]="'melee'">Melee</mat-option>
+      <mat-option [value]="'ranged'">Ranged</mat-option>
+      <mat-option [value]="'defense'">Defense</mat-option>
+      <mat-option [value]="'heroic'">Heroic</mat-option>
+      <mat-option [value]="'majorArtifact'">Major Artifact</mat-option>
+      <mat-option [value]="'minorArtifact'">Minor Artifact</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rarity</mat-label>
+    <mat-select formControlName="rarity">
+      <mat-option [value]="'epic'">Epic</mat-option>
+      <mat-option [value]="'legendary'">Legendary</mat-option>
+      <mat-option [value]="'exotic'">Exotic</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <h3>Perks</h3>
+  <div class="perk-picker-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Search for a perk</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk1Auto"
+        [matAutocomplete]="auto">
+      <mat-autocomplete class="mat-perk-option" #auto="matAutocomplete" (optionSelected)="addToPerks1($event)">
+        <mat-option *ngFor="let perk of perk1Options | async | sortBy:'title'" [value]="perk">
+          <span class="title">{{perk.title}}</span>
+          <span class="description">{{perk.description}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Perks 1</mat-label>
+      <mat-select formControlName="perks1" multiple>
+        <mat-option [value]="null"
+          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id"
+          title="perk.description">
+          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div class="perk-picker-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Search for a perk</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk2Auto"
+        [matAutocomplete]="auto2">
+      <mat-autocomplete class="mat-perk-option" #auto2="matAutocomplete" (optionSelected)="addToPerks2($event)">
+        <mat-option *ngFor="let perk of perk2Options | async | sortBy:'title'" [value]="perk">
+          <span class="title">{{perk.title}}</span>
+          <span class="description">{{perk.description}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Perks 2</mat-label>
+      <mat-select formControlName="perks2" multiple>
+        <mat-option [value]="null">not set</mat-option>
+        <mat-option [value]="null"
+          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id">
+          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="perk-picker-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Search for a perk</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk3Auto"
+        [matAutocomplete]="auto3">
+      <mat-autocomplete class="mat-perk-option" #auto3="matAutocomplete" (optionSelected)="addToPerks3($event)">
+        <mat-option *ngFor="let perk of perk3Options | async | sortBy:'title'" [value]="perk">
+          <span class="title">{{perk.title}}</span>
+          <span class="description">{{perk.description}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Perks 3</mat-label>
+      <mat-select formControlName="perks3" multiple>
+        <mat-option [value]="null">not set</mat-option>
+        <mat-option [value]="null"
+          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id">
+          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <h3>Sources</h3>
+    <ng-container formArrayName="sources">
+      <div style="display: flex; flex-direction: row;" *ngFor="let _ of sources.controls; index as idx">
+        <ng-container [formGroupName]="idx">
+
+          <mat-form-field appearance="fill">
+            <mat-label>type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Mission Reward'">Mission Reward</mat-option>
+              <mat-option [value]="'Drop'">Drop</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>from</mat-label>
+            <mat-select formControlName="from">
+              <mat-option [value]="null">not set</mat-option>
+              <mat-option [value]="'Daily Faction Mission'">Daily Faction Mission</mat-option>
+              <mat-option [value]="'Elite Heroic Hive'">Elite Heroic Hive</mat-option>
+              <mat-option [value]="'Elite Hive'">Elite Hive</mat-option>
+              <mat-option [value]="'Elite Vault'">Elite Vault</mat-option>
+              <mat-option [value]="'Elite Villain Sector'">Elite Villain Sector</mat-option>
+              <mat-option [value]="'Mega Hive'">Mega Hive</mat-option>
+              <mat-option [value]="'Priority Mission'">Priority Mission</mat-option>
+              <mat-option [value]="'Tachyon Rifts'">Tachyon Rifts</mat-option>
+              <mat-option [value]="'Global'">Global</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-icon-button (click)="removeSource(idx)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+    </ng-container>
+    <button mat-icon-button (click)="addSource()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</form>

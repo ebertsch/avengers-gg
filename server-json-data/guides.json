@@ -1,6 +1,1 @@
-{
-    "guides": [
-        { "id": "1", "title": "Hulk Elite Guide", "youtubeId": "rjeVoPhVi3g", "heroId": "hulk" },
-        { "id": "2", "title": "Hulk Tank Build", "youtubeId": "z07twKdqEQ4", "heroId": "hulk" }
-    ]
-}
+{"guides":[{"id":"1","title":"Hulk Elite Guide","youtubeId":"rjeVoPhVi3g","heroId":"hulk"},{"id":"2","title":"Hulk Tank Build","youtubeId":"z07twKdqEQ4","heroId":"hulk"},{"id":"3","title":"Brutal In-depth Video","youtubeId":"rUTjWpvDD8A","heroId":"blackwidow"},{"id":"4","title":"Ranged Widow Build","youtubeId":"6r9DoCskjzk","heroId":"blackwidow"},{"id":"5","title":"CC/Crit/Heroic Damage","youtubeId":"_lp6LaY1Rpo","heroId":"blackwidow"},{"id":"6","title":"Written Guide","urlLink":"https://docs.google.com/document/d/14jeRcfVWXFAIP6POf0xEIrLhrn7iBet2FLs0CHkoZmU/preview","heroId":"blackwidow"},{"title":"Brutal In-depth Video","urlLink":null,"youtubeId":"qZ5ZcHS1EkA","heroId":"ironman","id":"mhTCdkw"},{"title":"All Weapons Build","urlLink":null,"youtubeId":"JH91_WeNqgs","heroId":"ironman","id":"R6TYF0X"}]}

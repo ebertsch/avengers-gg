@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { GearInstance, GearService, GearSlot } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { Hero } from 'libs/shared/heroes/data-access/src/lib/hero';
+import { GearSlot } from '@avengers-game-guide/shared/data';
+import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 
 @Component({
   selector: 'agg-gear-instance-viewer',

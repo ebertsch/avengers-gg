@@ -1,0 +1,77 @@
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>Filters</mat-expansion-panel-header>
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill" *ngIf="config.heroFilter">
+            <mat-label>Hero Filter</mat-label>
+            <mat-select formControlName="heroFilter" multiple>
+                <mat-option [value]="'*'">*</mat-option>
+                <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">{{hero.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" *ngIf="config.searchFilter">
+            <mat-label>Search</mat-label>
+            <input formControlName="searchFilter" matInput />
+        </mat-form-field>
+
+        <div formGroupName="itemSourceFilter" *ngIf="config.itemSourceFilter">
+            <mat-form-field appearance="fill">
+                <mat-label>type</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option [value]="null">not set</mat-option>
+                    <mat-option [value]="'Mission Reward'">Mission Reward</mat-option>
+                    <mat-option [value]="'Drop'">Drop</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>from</mat-label>
+                <mat-select formControlName="from">
+                    <mat-option [value]="null">not set</mat-option>
+                    <mat-option [value]="'Daily Faction Mission'">Daily Faction Mission</mat-option>
+                    <mat-option [value]="'Elite Heroic Hive'">Elite Heroic Hive</mat-option>
+                    <mat-option [value]="'Elite Hive'">Elite Hive</mat-option>
+                    <mat-option [value]="'Elite Vault'">Elite Vault</mat-option>
+                    <mat-option [value]="'Elite Villain Sector'">Elite Villain Sector</mat-option>
+                    <mat-option [value]="'Mega Hive'">Mega Hive</mat-option>
+                    <mat-option [value]="'Priority Mission'">Priority Mission</mat-option>
+                    <mat-option [value]="'Tachyon Rifts'">Tachyon Rifts</mat-option>
+                    <mat-option [value]="'Global'">Global</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="fill" *ngIf="config.gearSlotFilter">
+            <mat-label>Gear Slot</mat-label>
+            <mat-select formControlName="gearSlotFilter" multiple>
+                <mat-option [value]="null">Not set</mat-option>
+                <mat-option [value]="'melee'">Melee</mat-option>
+                <mat-option [value]="'ranged'">Ranged</mat-option>
+                <mat-option [value]="'defense'">Defense</mat-option>
+                <mat-option [value]="'heroic'">Heroic</mat-option>
+                <mat-option [value]="'majorArtifact'">Major Artifact</mat-option>
+                <mat-option [value]="'minorArtifact'">Minor Artifact</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" *ngIf="config.rarityFilter">
+            <mat-label>Rarity</mat-label>
+            <mat-select formControlName="rarityFilter" multiple>
+                <mat-option [value]="'epic'">Epic</mat-option>
+                <mat-option [value]="'legendary'">Legendary</mat-option>
+                <mat-option [value]="'exotic'">Exotic</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" *ngIf="config.isReadyFilter">
+            <mat-label>Is Ready</mat-label>
+            <mat-select formControlName="isReadyFilter">
+                <mat-option [value]="null">-- select one --</mat-option>
+                <mat-option [value]="true">Ready</mat-option>
+                <mat-option [value]="false">Not ready</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-button (click)="form.reset()">Clear</button>
+    </form>
+</mat-expansion-panel>

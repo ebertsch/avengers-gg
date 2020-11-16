@@ -1,8 +1,8 @@
-import { GearRarity, StatInstance } from './gear-definition';
+import { GearRarityValue, StatInstance } from '@avengers-game-guide/shared/data'
 
 export interface GearInstance {
     id: string
-    rarity: GearRarity
+    rarity: GearRarityValue
     powerLevel: number
     stat1: StatInstance
     stat2: StatInstance

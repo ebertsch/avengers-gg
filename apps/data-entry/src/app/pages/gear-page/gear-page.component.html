@@ -1,0 +1,51 @@
+<h1>Gear</h1>
+
+<aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)" [config]="{ heroFilter:true, searchFilter: true, gearSlotFilter: true, itemSourceFilter: true, isReadyFilter: true }"></aggd-data-filters>
+
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Gear Piece
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="{}"></aggd-gear-edit-form>
+
+    <mat-action-row>
+        <button mat-button color="primary"
+            (click)="create(gearEditorForm.formValue.value, gearEditorForm)">Create</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
+
+<mat-accordion multi="false">
+    <mat-expansion-panel [ngClass]="{selected: selectedItem == gear.id}" id="gear.id"
+        *ngFor="let gear of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = gear.id">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="description">
+                {{ gear.name }}
+            </mat-panel-title>
+            <mat-panel-description class="shot-description">
+                {{ (heroService.entityMap$ | async)[gear.heroId]?.name || gear.heroId  }}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ gear.gearType | uncamelcase }}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ (gear.perks1||[]).length ? "Has Perks" : ""}}
+            </mat-panel-description>
+            <mat-panel-description class="shot-description">
+                {{ getSourceLocations(gear.sources)}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <ng-container *ngIf="selectedItem == gear.id">
+            <aggd-gear-edit-form #gearEditorForm="gearEditorForm" [value]="gear"></aggd-gear-edit-form>
+
+            <mat-action-row>
+                <button mat-button color="secondary" (click)="delete(gearEditorForm.formValue.getRawValue())">Delete</button>
+                <button mat-flat-button color="primary" (click)="save(gearEditorForm.formValue.getRawValue())">Save</button>
+            </mat-action-row>
+        </ng-container>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -1,47 +1,69 @@
+.gear-editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "gear-name gear-name"
+    "gear-rarity gear-power-level"
+    "gear-stats gear-stats"
+    "gear-perks gear-perks"
+    "gear-actions gear-actions";
+}
 
-.gear-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "gear-name gear-name"
-      "gear-power-level gear-stats"
-      "gear-perks gear-perks";
-  }
-  .gear-name {
-      .fancy-text {
-          font-size: 34px;
-      }
+.gear-name { grid-area: gear-name; }
 
-      grid-area: gear-name;
+.gear-rarity { grid-area: gear-rarity; }
 
-      ::ng-deep .mat-select-value {
-          display: none;
-      }
-    }
-  .gear-power-level { grid-area: gear-power-level; }
-  .gear-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-area: gear-stats;
-  }
-  .gear-perks {
-    grid-area: gear-perks;
-  }
-  
-  label {
-    margin-right: 8px;
+.gear-power-level { grid-area: gear-power-level; }
+
+.gear-stats {
+  grid-area: gear-stats;
+
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: auto auto auto auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "gear-stats-title gear-stats-title"
+    ". ."
+    ". ."
+    ". .";
+
+  .value-field {
+    width: 80px;
   }
 
+}
+
+.gear-stats-title {
+  grid-area: gear-stats-title;
+  text-transform: uppercase;
+}
+
+.gear-perks { grid-area: gear-perks; }
+
+.gear-actions {
+  grid-area: gear-actions;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gear-perks {
+  grid-area: gear-perks;
+}
+
+
+form {
+  .full-width { width: 100%; }
   .form-field {
     display: flex;
     margin: 10px 0;
 
-    input, select {
+    input,
+    select {
       flex: 1;
       padding: 4px
     }
   }
+}

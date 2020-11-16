@@ -1,0 +1,98 @@
+$primary-palette-colors: (
+    50 : #e5ebf3,
+    100 : #bdcce0,
+    200 : #91aacc,
+    300 : #6588b8,
+    400 : #446fa8,
+    500 : #235599,
+    600 : #1f4e91,
+    700 : #1a4486,
+    800 : #153b7c,
+    900 : #0c2a6b,
+    A100 : #9db8ff,
+    A200 : #6a93ff,
+    A400 : #376eff,
+    A700 : #1e5cff,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+
+$secondary-palette-colors: (
+    50: '#e5f4f3',
+    100: '#bee4e1',
+    200: '#93d3cd',
+    300: '#67c1b8',
+    400: '#47b3a9',
+    500: '#26a69a',
+    600: '#229e92',
+    700: '#1c9588',
+    800: '#178b7e',
+    900: '#0d7b6c',
+    A100: '#adfff3',
+    A200: '#7affec',
+    A400: '#47ffe4',
+    A700: '#2dffe0',
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+
+
+$app-palette-primary: mat-palette($primary-palette-colors);
+$app-palette-secondary: mat-palette($secondary-palette-colors);
+$app-palette-warn: mat-palette($mat-red);
+
+// Dark bg
+$dark-background:     #192332;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-bg-lighter-5,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  $dark-bg-lighter-20,
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);

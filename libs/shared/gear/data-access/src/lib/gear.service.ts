@@ -4,9 +4,10 @@ import {
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
 import { select, createSelector } from '@ngrx/store';
-import { RouteSelectors } from '@avengers-game-guide/shared/router'
 
-import { GearDefinition, GearSlot } from './models/gear-definition';
+import { RouteSelectors } from '@avengers-game-guide/shared/router'
+import { GearSlot } from '@avengers-game-guide/shared/data'
+import { GearDefinition } from './models/gear-definition';
 import { filter } from 'ramda';
 
 @Injectable({

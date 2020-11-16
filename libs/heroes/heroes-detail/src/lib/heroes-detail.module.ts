@@ -7,14 +7,17 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { GearViewComponent } from './gear-view/gear-view.component';
 import { PerksViewComponent } from './perks-view/perks-view.component';
 import { BuildsViewComponent } from './builds-view/builds-view.component';
 import { GuidesViewComponent } from './guides-view/guides-view.component';
 import { NotesViewComponent } from './notes-view/notes-view.component';
-import { HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
+import { DataAccessModule as HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
+import { DataAccessModule as NamedSetsDataAccessModule } from '@avengers-game-guide/shared/named-sets/data-access';
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
@@ -28,12 +31,14 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     YouTubePlayerModule,
     SwiperModule,
     SharedUiModule,
+    MatButtonToggleModule,
+    MatIconModule,
     GearModule,
     SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,
     NotesDataAccessModule,
     SkillsDataAccessModule,
-    
+    NamedSetsDataAccessModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },

@@ -19,12 +19,8 @@
       "@avengers-game-guide/heroes/heroes-index": [
         "libs/heroes/heroes-index/src/index.ts"
       ],
-      "@avengers-game-guide/shared/shell": [
-        "libs/shared/shell/src/index.ts"
-      ],
-      "@avengers-game-guide/shared/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
+      "@avengers-game-guide/shared/shell": ["libs/shared/shell/src/index.ts"],
+      "@avengers-game-guide/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@avengers-game-guide/shared/heroes/data-access": [
         "libs/shared/heroes/data-access/src/index.ts"
       ],
@@ -62,11 +58,12 @@
       "@avengers-game-guide/shared/skills/data-access": [
         "libs/shared/skills/data-access/src/index.ts"
       ],
-      "@avengers-game-guide/shared/data": [
-        "libs/shared/data/src/index.ts"
-      ],
+      "@avengers-game-guide/shared/data": ["libs/shared/data/src/index.ts"],
       "@avengers-game-guide/shared/gear/loadout-editor": [
         "libs/shared/gear/loadout-editor/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/named-sets/data-access": [
+        "libs/shared/named-sets/data-access/src/index.ts"
       ]
     }
   },

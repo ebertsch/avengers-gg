@@ -39,3 +39,18 @@
 .row {
     cursor: pointer;
 }
+
+.gear-card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.view-selector {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    mat-button-toggle-group {
+        margin-left: 10px;
+    }
+}

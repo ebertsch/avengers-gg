@@ -1,0 +1,43 @@
+<h1>Named Sets</h1>
+
+<aggd-data-filters [filter]="filterObject$ | async" (changed)="applyFilters($event)" [config]="{ heroFilter:true, searchFilter: true, itemSourceFilter: true }"></aggd-data-filters>
+
+<mat-expansion-panel class="create-form">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      New Named Set
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <aggd-named-set-edit-form #namedSetEditorForm="namedSetEditorForm" [value]="{}"></aggd-named-set-edit-form>
+
+  <mat-action-row>
+    <button mat-button color="primary" (click)="create(namedSetEditorForm.formValue.value, namedSetEditorForm)">Create</button>
+  </mat-action-row>
+</mat-expansion-panel>
+
+<mat-accordion multi="false">
+      <mat-expansion-panel [ngClass]="{selected: selectedItem == namedSet.id}" id="namedSet.id"
+        *ngFor="let namedSet of (filteredItems$ | async) | sortBy:'name'" (opened)="selectedItem = namedSet.id">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ namedSet.title }}
+        </mat-panel-title>
+        <mat-panel-description class="shot-description">
+          {{ (heroService.entityMap$ | async)[namedSet.heroId].name }}
+        </mat-panel-description>
+        <mat-panel-description class="shot-description">
+          {{ getSourceLocations(namedSet.sources)}}
+      </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <ng-container *ngIf="selectedItem == namedSet.id">
+      <aggd-named-set-edit-form #namedSetEditorForm="namedSetEditorForm" [value]="namedSet"></aggd-named-set-edit-form>
+
+      <mat-action-row>
+        <button mat-button color="secondary" (click)="delete(namedSetEditorForm.formValue.getRawValue())">Delete</button>
+        <button mat-button color="primary" (click)="save(namedSetEditorForm.formValue.getRawValue())">Save</button>
+      </mat-action-row>
+    </ng-container>
+  </mat-expansion-panel>
+</mat-accordion>

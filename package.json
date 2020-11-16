@@ -29,7 +29,8 @@
     "dev:ssr": "ng run heroes:serve-ssr",
     "serve:ssr": "node dist/heroes/server/main.js",
     "build:ssr": "ng build --prod && ng run heroes:server:production",
-    "prerender": "ng run heroes:prerender --routesFile apps/heroes/prerender-routes.txt"
+    "prerender": "ng run heroes:prerender --routesFile apps/heroes/prerender-routes.txt",
+    "postinstall_disabled": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +40,7 @@
     "@angular/compiler": "^10.0.0",
     "@angular/core": "^10.0.0",
     "@angular/forms": "^10.0.0",
-    "@angular/material": "^10.2.6",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "^10.0.0",
     "@angular/platform-browser-dynamic": "^10.0.0",
     "@angular/platform-server": "^10.0.0",
@@ -52,10 +53,12 @@
     "@ngrx/router-store": "10.0.0",
     "@ngrx/store": "10.0.0",
     "@nguniversal/express-engine": "^10.1.0",
+    "@ngx-pwa/local-storage": "^11.0.1",
     "@nrwl/angular": "10.2.1",
     "@popperjs/core": "^2.5.4",
     "@types/json-server": "^0.14.2",
     "@types/ramda": "^0.27.29",
+"abab": "^2.0.5",
     "express": "^4.15.2",
     "json-server": "^0.16.2",
     "ngx-google-analytics": "^9.0.1",

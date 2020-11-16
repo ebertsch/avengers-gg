@@ -8,4 +8,4 @@ import { CommonModule } from '@angular/common';
   ],
   providers: [],
 })
-export class HeroesDataAccessModule {}
+export class DataAccessModule {}

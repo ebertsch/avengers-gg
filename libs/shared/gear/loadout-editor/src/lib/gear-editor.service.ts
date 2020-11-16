@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { decompressFromEncodedURIComponent, compressToEncodedURIComponent } from '@avengers-game-guide/shared/data';
+import { decompressFromEncodedURIComponent, compressToEncodedURIComponent, GEAR_RARITIES } from '@avengers-game-guide/shared/data';
 import { RouteSelectors } from '@avengers-game-guide/shared/router';
 import { createSelector, select, Store } from '@ngrx/store';
-import { times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten, complement, isNil } from 'ramda';
+import { find, times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten, complement, isNil, propEq, clamp, range } from 'ramda';
 import { of } from 'rxjs';
-import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout, GearSlot, GearRarity, Stat } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearSlot, GearRarityValue, GearRarity, StatField } from '@avengers-game-guide/shared/data';
+import { btoa } from "abab";
+
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
@@ -29,10 +32,10 @@ const toGearInstance = (source: SerializedGearInstance): GearInstance => {
     perk2: source.p2,
     perk3: source.p3,
     powerLevel: source.pl,
-    rarity: source.r as GearRarity,
-    stat1: { stat: source.s1n as Stat, value: source.s1v },
-    stat2: { stat: source.s2n as Stat, value: source.s2v },
-    stat3: { stat: source.s3n as Stat, value: source.s3v }
+    rarity: source.r as GearRarityValue,
+    stat1: { stat: source.s1n as StatField, value: source.s1v },
+    stat2: { stat: source.s2n as StatField, value: source.s2v },
+    stat3: { stat: source.s3n as StatField, value: source.s3v }
   }
 }
 const toSerializedGear = (source: GearInstance): SerializedGearInstance => {
@@ -115,6 +118,7 @@ const getAllGearPerks = (loadout: Loadout): string[] =>
       )
     )
   )
+
 const summarizeLoadout = (loadout) =>
   fromPairs(
     filter(v => v[1] !== 0,
@@ -184,21 +188,45 @@ export class GearEditorService {
 
   constructor(private router: Router, private store: Store,private sanitizer: DomSanitizer) { }
 
-  getPowerLevels() { return of(times(add(130), 11)) }
+  getGearRarity(value: GearRarityValue) {
+    return find(propEq('id', value) ,GEAR_RARITIES) as GearRarity
+  }
 
-  getStatValues(gear: GearInstance) {
-    return of(times(add(1), 70))
+  getPowerLevels(gearSlot: GearSlot) {
+    if(gearSlot === 'majorArtifact')
+      return of(times(value => ({id: value+1, label: `${value+1}`}), 10))
+
+    return of(times(value => ({id: value+1, label: `${value+1}`}), 140))
+  }
+
+  has3Stats(gear: GearInstance) {
+    if (gear.stat3.stat) {
+      return true
+    }
+    return false
+  }
+
+  getAttributeValueRange(gear: GearInstance) {
+    const gearRarity: GearRarity = this.getGearRarity(gear.rarity)
+    if(!gearRarity) return { high: 1, low: 1 }
+
+    const powerLevelModifier = this.has3Stats(gear) ? gearRarity.modifier3 : gearRarity.modifier2;
+
+    const high = clamp(1, 65, Math.floor(gear.powerLevel * powerLevelModifier))
+    const low = clamp(1, 65, high - 10)
+
+    return { high, low }
+  }
+
+  getStatValues$(gear: GearInstance) {
+    const attributeRanges = this.getAttributeValueRange(gear);
+    const rangeArray = range(attributeRanges.low, attributeRanges.high + 1);
+
+    return of(rangeArray)
   }
 
   getRarityValues() {
-    return of([
-      { id: 'common', label: 'Common' },
-      { id: 'uncommon', label: 'Uncommon' },
-      { id: 'rare', label: 'Rare' },
-      { id: 'epic', label: 'Epic' },
-      { id: 'legendary', label: 'Legendary' },
-      { id: 'exotic', label: 'Exotic' }
-    ]);
+    return of(GEAR_RARITIES);
   }
 
   getStatKeys() {

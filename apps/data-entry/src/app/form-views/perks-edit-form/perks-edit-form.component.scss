@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+mat-checkbox,
+mat-form-field {
+  width: 100%;
+}
+
+mat-checkbox {
+  display: flex;
+  width: 100%;
+}
+
+.hero-container {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.hero-buttons {
+  width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20px 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "title title"
+    ". .";
+  align-items: flex-start;
+  justify-items: center;
+
+  button {
+    line-height: 24px;
+    max-height: 24px;
+  }
+}
+
+.title {
+  grid-area: title;
+}
+
+.occurrences {
+  opacity: .87;
+  font-style: italic;
+}
