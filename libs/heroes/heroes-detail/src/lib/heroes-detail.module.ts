@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ClipboardModule } from '@angular/cdk/clipboard'
 import {YouTubePlayerModule} from '@angular/youtube-player';
-import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface, SwiperModule, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -22,6 +22,16 @@ import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  navigation: true,
+  slidesPerView: 1,
+  pagination: {
+    clickable: true,
+    type: 'bullets',
+    el: '.swiper-pagination'
+  }
+};
 
 @NgModule({
   imports: [
@@ -49,6 +59,12 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
         { path: 'notes', component: NotesViewComponent },
       ]}
     ]),
+  ],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
   ],
   declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent],
 })
