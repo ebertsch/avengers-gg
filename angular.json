@@ -838,7 +838,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/data-entry",
+            "outputPath": "dist/apps/data/public",
             "index": "apps/data-entry/src/index.html",
             "main": "apps/data-entry/src/main.ts",
             "polyfills": "apps/data-entry/src/polyfills.ts",
