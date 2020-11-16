@@ -1,11 +1,11 @@
 export const environment = {
-  production: false,
-  isServer: false,
+  production: true,
+  isServer: true,
   googleAnalyticsCode: 'G-VHNGDT7XX3',
-  clientApiUrl: "http://localhost:4200/api",
-  protocol: "http",
-  host: "localhost:4200",
-  dataEntryClientApiUrl: "http://localhost:3333/api",
+  clientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",
+  protocol: "https",
+  host: "www.avengersgg.com",
+  dataEntryClientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",
   apiPort: 3333,
   apiRewriter: {
     '/api/*': '/$1',

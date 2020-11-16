@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  isServer: false,
   googleAnalyticsCode: 'G-VHNGDT7XX3',
   clientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",
   protocol: "https",

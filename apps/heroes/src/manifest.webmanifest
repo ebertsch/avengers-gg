@@ -1,8 +1,8 @@
 {
   "name": "Avengers GG",
-  "short_name": "agg",
+  "short_name": "Avengers GG",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#171f33",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
