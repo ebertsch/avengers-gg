@@ -11,7 +11,7 @@
 
         <mat-form-field appearance="fill" class="gear-rarity">
             <mat-label>Rarity</mat-label>
-            <mat-select formControlName="rarity">
+            <mat-select formControlName="rarity" [disableControl]="isEmpty(gearInstanceForm.value.id)">
                 <mat-option *ngFor="let rarity of gearEditor.getRarityValues() | async; trackBy: byId"
                     [value]="rarity.id">
                     {{rarity.title}}
@@ -21,20 +21,19 @@
 
         <mat-form-field appearance="fill" class="gear-power-level">
             <mat-label>Power Level</mat-label>
-            <mat-select formControlName="powerLevel">
+            <mat-select formControlName="powerLevel" [disableControl]="isEmpty(gearInstanceForm.value.id)">
                 <mat-option *ngFor="let powerLevel of gearEditor.getPowerLevels(gearSlot) | async; trackBy: byId" [value]="powerLevel.id">
                     {{powerLevel.label}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
 
-
         <div class="gear-stats">
             <h3 class="gear-stats-title">Stats</h3>
             <ng-container formGroupName="stat1">
                 <mat-form-field appearance="fill">
-                    <mat-label>{{ !!gearInstanceForm.value.stat1.stat ? 'Stat' : 'Select a Stat'}}</mat-label>
-                    <mat-select formControlName="stat">
+                    <mat-label>{{ !!gearInstanceForm.getRawValue().stat1.stat ? 'Stat' : 'Select a Stat'}}</mat-label>
+                    <mat-select formControlName="stat" [disableControl]="isEmpty(gearInstanceForm.value.id)">
                         <mat-option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"
                             [value]="statName.id">{{statName.title}}</mat-option>
                         <mat-option [value]="null">Not Set</mat-option>
@@ -43,7 +42,7 @@
 
                 <mat-form-field appearance="fill" class="value-field">
                     <mat-label>Value</mat-label>
-                    <mat-select formControlName="value" [disableControl]="isEmpty(gearInstanceForm.value.stat1.stat)">
+                    <mat-select formControlName="value" [disableControl]="isEmpty(gearInstanceForm.getRawValue().stat1.stat)">
                         <mat-option *ngFor="let statValue of gearEditor.getStatValues$(gearInstanceForm.value) | async; trackBy: byValue"
                             [value]="statValue">
                             {{statValue}}</mat-option>
@@ -51,9 +50,9 @@
                     </mat-select>
                 </mat-form-field>
             </ng-container>
-            <ng-container formGroupName="stat2" *ngIf="isNotEmpty(gearInstanceForm.value.stat1.value)">
+            <ng-container formGroupName="stat2" *ngIf="isNotEmpty(gearInstanceForm.getRawValue().stat1.value)">
                 <mat-form-field appearance="fill">
-                    <mat-label>{{ !!gearInstanceForm.value.stat2.stat ? 'Stat' : 'Select a Stat'}}</mat-label>
+                    <mat-label>{{ !!gearInstanceForm.getRawValue().stat2.stat ? 'Stat' : 'Select a Stat'}}</mat-label>
                     <mat-select formControlName="stat">
                         <mat-option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"
                             [value]="statName.id">{{statName.title}}</mat-option>
@@ -74,7 +73,7 @@
             
             <ng-container formGroupName="stat3" *ngIf="isNotEmpty(gearInstanceForm.value.stat2.value)">
                 <mat-form-field appearance="fill">
-                    <mat-label>{{ !!gearInstanceForm.value.stat3.stat ? 'Stat' : 'Select a stat'}}</mat-label>
+                    <mat-label>{{ !!gearInstanceForm.getRawValue().stat3.stat ? 'Stat' : 'Select a stat'}}</mat-label>
                     <mat-select formControlName="stat">
                         <mat-option *ngFor="let statName of gearEditor.getStatKeys() | async; trackBy: byId"
                             [value]="statName.id">{{statName.title}}</mat-option>
@@ -104,30 +103,33 @@
                             {{perk.title}}</mat-option>
                         <mat-option [value]="null">Not set</mat-option>
                     </mat-select>
+                    <mat-hint>{{ (perkService.entityMap$ | async)[gearInstanceForm.getRawValue().perk1]?.description }}</mat-hint>
                 </mat-form-field>
             </div>
 
             <div class="form-field">
                 <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 2' : 'Select a perk'}}</mat-label>
+                    <mat-label>{{ !!gearInstanceForm.value.perk2 ? 'Perk 2' : 'Select a perk'}}</mat-label>
                     <mat-select formControlName="perk2" [disableControl]="isEmpty(gearInstanceForm.value.perk1)">
                         <mat-option [value]="perk.id"
                             *ngFor="let perk of (perks$ | async) | sortBy:'title'; trackBy: byId">
                             {{perk.title}}</mat-option>
                         <mat-option [value]="null">Not set</mat-option>
                     </mat-select>
+                    <mat-hint>{{ (perkService.entityMap$ | async)[gearInstanceForm.getRawValue().perk2]?.description }}</mat-hint>
                 </mat-form-field>
             </div>
 
             <div class="form-field">
                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>{{ !!gearInstanceForm.value.perk3 ? 'Perk 3' : 'Select a perk'}}</mat-label>
                     <mat-select formControlName="perk3" [disableControl]="isEmpty(gearInstanceForm.value.perk2)">
-                    <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 2' : 'Select a perk'}}</mat-label>
                         <mat-option [value]="perk.id"
                             *ngFor="let perk of (perks$ | async) | sortBy:'title'; trackBy: byId">
                             {{perk.title}}</mat-option>
                         <mat-option [value]="null">Not set</mat-option>
                     </mat-select>
+                    <mat-hint>{{ (perkService.entityMap$ | async)[gearInstanceForm.getRawValue().perk3]?.description }}</mat-hint>
                 </mat-form-field>
             </div>
         </div>
