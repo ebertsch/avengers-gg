@@ -1,6 +1,11 @@
-<ng-container *ngIf="((gearEditorService.activeLoadoutSummary$ | async) | json) == ({} | json)">
-    <p>Select add a piece of gear to begin</p>
-</ng-container>
+<div class="instructions" *ngIf="((gearEditorService.activeLoadoutSummary$ | async) | json) == ({} | json)">
+    <h2 class="fancy-text">Select add a piece of gear to begin</h2>
+    
+    <p class="panel-note">
+        To begin click on an icon to the left or right.<br>
+        Then add a piece of gear to the slot using the "Add Gear" button.
+    </p>
+</div>
 <div class="stats-container">
     <ng-container *ngFor="let stat of (gearEditorService.activeLoadoutSummary$ | async) | keyvalue">
         <div class="stat-item">
