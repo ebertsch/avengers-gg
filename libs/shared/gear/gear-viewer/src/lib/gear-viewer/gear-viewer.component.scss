@@ -230,14 +230,12 @@
 .gear-actions {
     grid-area: gear-actions;
     padding: 10px 8px 0;
+    display: flex;
 
-    .action {
-        @include fancy-text();
-        text-transform: capitalize;
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: -0.25px;
+    ::ng-deep agg-gear-viewer-action + agg-gear-viewer-action {
+        margin-left: 20px
     }
+
 }
 
 :host ::ng-deep {
