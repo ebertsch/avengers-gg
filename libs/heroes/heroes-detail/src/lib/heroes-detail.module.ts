@@ -7,6 +7,7 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
 import { SwiperConfigInterface, SwiperModule, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
+import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import { DetailPageComponent } from './detail-page/detail-page.component';
@@ -42,6 +43,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     YouTubePlayerModule,
     SwiperModule,
     SharedUiModule,
+    MatButtonModule,
     MatButtonToggleModule,
     MatIconModule,
     GearModule,

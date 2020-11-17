@@ -44,7 +44,6 @@ export class GearViewerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.actions)
   }
 
   getGearType() {

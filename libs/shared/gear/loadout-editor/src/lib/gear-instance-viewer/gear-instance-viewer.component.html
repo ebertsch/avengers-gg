@@ -3,13 +3,14 @@
         <agg-gear-viewer-action>
             <a class="action" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
                 routerLinkActive="active">
-                <i class="agg-icon-edit"></i> Edit
+                <mat-icon>edit</mat-icon> 
+                Edit
             </a>
         </agg-gear-viewer-action>
     </agg-gear-viewer>
 </ng-container>
 <ng-template #addGear>
-    <a class="button" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
+    <a mat-flat-button color="primary" [routerLink]="[]" [queryParams]="{v: 'editor'}" queryParamsHandling="merge"
         routerLinkActive="active">
         Add gear to slot
     </a>

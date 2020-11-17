@@ -2,10 +2,10 @@
     <agg-panel-header>Backup &amp; Restore</agg-panel-header>
     <div style="display: flex; justify-content: space-evenly;">
         <div>
-            <a class="button" download="loadout.json" [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
+            <a mat-flat-button color="primary" download="loadout.json" [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
         </div>
         <div>
-            <label class="button" for="restore">Restore</label>
+            <label mat-flat-button class="mat-flat-button mat-primary pseudo-button" for="restore">Restore</label>
             <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)" >
         </div>
     </div>
@@ -15,7 +15,7 @@
     <agg-panel-header>Share Loadout</agg-panel-header>
     <div class="actions-container">
         <input type="text" disabled value="{{gearEditorService.activeLoadoutQueryString$ | async}}"/>
-        <button class="copy button" cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
+        <button mat-flat-button color="primary" class="copy" cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
     </div>
 </agg-panel>
 
