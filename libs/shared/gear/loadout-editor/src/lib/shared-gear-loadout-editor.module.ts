@@ -10,10 +10,11 @@ import { LoadoutSummaryComponent } from './loadout-summary/loadout-summary.compo
 import { RouterModule } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
 
 @NgModule({
-  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule, MatButtonModule, SharedGearGearViewerModule],
+  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule, MatButtonModule, MatIconModule, SharedGearGearViewerModule],
   declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
   exports: [LoadoutBuilderComponent],
 })
