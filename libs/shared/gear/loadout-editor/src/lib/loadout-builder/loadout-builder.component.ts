@@ -42,7 +42,7 @@ export class LoadoutBuilderComponent implements OnInit {
 
   saveGearInstance(gearInstance: GearInstance) {
     this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
-    // this.router.navigate([], { queryParams: { v: 'viewer' }, queryParamsHandling: 'merge' })
+    this.router.navigate([], { queryParams: { v: 'viewer' }, queryParamsHandling: 'merge' })
   }
 
   removeGearInstance() {

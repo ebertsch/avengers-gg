@@ -8,6 +8,9 @@
 // label.
 
 .mat-flat-button {
+    border-left: solid 1px #fff !important;
+    border-right: solid 1px #fff !important;
+
     &::before {
         content: '';
         position: absolute;
