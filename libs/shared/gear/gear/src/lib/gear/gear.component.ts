@@ -1,12 +1,26 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, HostBinding } from '@angular/core';
 import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
+import { SwiperConfigInterface, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  navigation: true,
+  slidesPerView: 1,
+  pagination: false
+};
 
 @Component({
   selector: 'agg-gear',
   templateUrl: './gear.component.html',
   styleUrls: ['./gear.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ]
 })
 export class GearComponent implements OnInit {
 

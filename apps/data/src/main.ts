@@ -17,6 +17,16 @@ import saveToFiles from './save-data';
   server.use(middleware)
 
   // Add custom routes before JSON Server router
+  if (process.env.BLOCK !== "false" || true) {
+    server.all('*', function (req, res, next) {
+      if (req.method === 'GET') {
+        next() // Continue
+      } else {
+        res.sendStatus(403) // Forbidden
+      }
+    })
+  }
+
   server.post('/save', saveToFiles)
 
   server.use(router)

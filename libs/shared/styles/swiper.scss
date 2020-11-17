@@ -5,3 +5,8 @@
 .swiper-pagination-bullet-active {
     background: #007afe !important;
 }
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-variant-ligatures: common-ligatures !important;
+}

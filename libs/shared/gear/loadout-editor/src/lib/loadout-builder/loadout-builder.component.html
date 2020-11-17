@@ -23,10 +23,10 @@
 <div class="editor">
     <ng-container [ngSwitch]="activeView$ | async">
         <ng-template [ngSwitchCase]="'summary'">
-            <agg-loadout-summary></agg-loadout-summary>
+            <agg-loadout-summary [hero]="hero"></agg-loadout-summary>
         </ng-template>
         <ng-template [ngSwitchCase]="'viewer'">
-            <agg-gear-instance-viewer [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot">
+            <agg-gear-instance-viewer (removed)="removeGearInstance()" [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot">
             </agg-gear-instance-viewer>
         </ng-template>
         <ng-template [ngSwitchCase]="'editor'">
@@ -45,7 +45,7 @@
 <a class="slot-container ranged" [ngClass]='{empty: !loadout.ranged}' [routerLink]="[]"
     [queryParams]="{g:'r', v: 'viewer'}" queryParamsHandling="merge" routerLinkActive="active">
     <div class="slot">
-        <img src="/assets/images/range-icon.png" />
+        <img src="/assets/images/ranged-icon.png" />
     </div>
 </a>
 <a class="slot-container defense" [ngClass]='{empty: !loadout.defense}' [routerLink]="[]"

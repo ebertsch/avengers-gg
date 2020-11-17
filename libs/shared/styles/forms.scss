@@ -2,37 +2,4 @@
     border-radius: 0;
 }
 
-.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
-    border-radius: 0 !important;
-    min-width: 150px !important;
-    text-transform: uppercase;
-}
-
-.mat-flat-button {
-    ::before {
-        content: '';
-        position: absolute;
-        top: 1px;
-        left: 2px;
-        right: 1px;
-        height: 17px;
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0)));
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
-        opacity: 0.8;
-    }
-    ::after {
-        content: '';
-        position: absolute;
-        top: 1px;
-        left: 2px;
-        background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0)));
-        background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 100%);
-        opacity: 0.2;
-        max-width: 112px;
-        width: 100%;
-        height: calc(100% - 4px);
-        clip-path: polygon(0 0, 0 100%, 100% 0);
-        z-index: 100;
-    }
-}
 

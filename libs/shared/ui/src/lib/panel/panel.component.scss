@@ -3,7 +3,7 @@
     background: transparent;
     color: #cbd1dd;
     margin: 20px auto;
-    padding: 15px;
+    padding: 8px;
     box-sizing: border-box;
     position: relative;
     flex: 1;
@@ -17,6 +17,7 @@
     left: 0;
     bottom: 0;
     right: 0;
+    margin-bottom: 0px;
 
     &::before {
         content: '';

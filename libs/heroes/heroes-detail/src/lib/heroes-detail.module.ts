@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ClipboardModule } from '@angular/cdk/clipboard'
 import {YouTubePlayerModule} from '@angular/youtube-player';
-import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface, SwiperModule, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 
 import { SharedUiModule } from '@avengers-game-guide/shared/ui';
+import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import { DetailPageComponent } from './detail-page/detail-page.component';
@@ -21,7 +22,18 @@ import { DataAccessModule as NamedSetsDataAccessModule } from '@avengers-game-gu
 import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
+import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  navigation: true,
+  slidesPerView: 1,
+  pagination: {
+    clickable: true,
+    type: 'bullets',
+    el: '.swiper-pagination'
+  }
+};
 
 @NgModule({
   imports: [
@@ -31,6 +43,7 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     YouTubePlayerModule,
     SwiperModule,
     SharedUiModule,
+    MatButtonModule,
     MatButtonToggleModule,
     MatIconModule,
     GearModule,
@@ -39,6 +52,7 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
     NotesDataAccessModule,
     SkillsDataAccessModule,
     NamedSetsDataAccessModule,
+    SharedGearGearViewerModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },
@@ -49,6 +63,12 @@ import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide
         { path: 'notes', component: NotesViewComponent },
       ]}
     ]),
+  ],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
   ],
   declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent],
 })

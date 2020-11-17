@@ -11,18 +11,8 @@ import { btoa } from "abab";
 
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { DomSanitizer } from '@angular/platform-browser';
 
-const gearFromQueryParam = (source: string) => {
-  const decompressed = decompressFromEncodedURIComponent(source)
-  const minimalGear = fromPairs(JSON.parse(decompressed)) as unknown as SerializedGearInstance;
-  return toGearInstance(minimalGear)
-}
-const gearForQueryParam = (source: GearInstance) => {
-  const minimalGear = toSerializedGear(source)
-  return compressToEncodedURIComponent(JSON.stringify(toPairs(minimalGear as any)));
-}
 const toGearInstance = (source: SerializedGearInstance): GearInstance => {
   if (!source) return null;
 
@@ -121,7 +111,7 @@ const getAllGearPerks = (loadout: Loadout): string[] =>
 
 const summarizeLoadout = (loadout) =>
   fromPairs(
-    filter(v => v[1] !== 0,
+    filter(v => v[1] !== 0 && v[0] !== 'null',
       rmap(
         v => [v[0], reduce(add, 0, pluck('value', v[1]))],
         toPairs(
@@ -186,17 +176,17 @@ export class GearEditorService {
   activeGearInstance$ = this.store.pipe(select(this.activeGearSelector));
   activeGearSlot$ = this.store.pipe(select(this.activeGearSlotSelector));
 
-  constructor(private router: Router, private store: Store,private sanitizer: DomSanitizer) { }
+  constructor(private router: Router, private store: Store, private sanitizer: DomSanitizer) { }
 
   getGearRarity(value: GearRarityValue) {
-    return find(propEq('id', value) ,GEAR_RARITIES) as GearRarity
+    return find(propEq('id', value), GEAR_RARITIES) as GearRarity
   }
 
   getPowerLevels(gearSlot: GearSlot) {
-    if(gearSlot === 'majorArtifact')
-      return of(times(value => ({id: value+1, label: `${value+1}`}), 10))
+    if (gearSlot === 'majorArtifact')
+      return of(times(value => ({ id: value + 1, label: `${value + 1}` }), 10).reverse())
 
-    return of(times(value => ({id: value+1, label: `${value+1}`}), 140))
+    return of(times(value => ({ id: value + 1, label: `${value + 1}` }), 140).reverse())
   }
 
   has3Stats(gear: GearInstance) {
@@ -208,19 +198,19 @@ export class GearEditorService {
 
   getAttributeValueRange(gear: GearInstance) {
     const gearRarity: GearRarity = this.getGearRarity(gear.rarity)
-    if(!gearRarity) return { high: 1, low: 1 }
+    if (!gearRarity) return { high: 1, low: 1 }
 
     const powerLevelModifier = this.has3Stats(gear) ? gearRarity.modifier3 : gearRarity.modifier2;
 
-    const high = clamp(1, 65, Math.floor(gear.powerLevel * powerLevelModifier))
-    const low = clamp(1, 65, high - 10)
+    const high = 65//clamp(1, 65, Math.floor(gear.powerLevel * powerLevelModifier))
+    const low = 1//clamp(1, 65, high - 10)
 
     return { high, low }
   }
 
   getStatValues$(gear: GearInstance) {
     const attributeRanges = this.getAttributeValueRange(gear);
-    const rangeArray = range(attributeRanges.low, attributeRanges.high + 1);
+    const rangeArray = range(attributeRanges.low, attributeRanges.high + 1).reverse();
 
     return of(rangeArray)
   }
@@ -245,7 +235,10 @@ export class GearEditorService {
     const modifiedLoadout = assoc(gearSlot, gearInstance, loadout)
     const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
     this.router.navigate([], {
-      queryParams: { loadout: minimalLoadout },
+      queryParams: {
+        v: 'viewer',
+        loadout: minimalLoadout
+      },
       queryParamsHandling: 'merge'
     });
   }
@@ -254,7 +247,10 @@ export class GearEditorService {
     const modifiedLoadout = assoc(gearSlot, <GearInstance>null, loadout)
     const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
     this.router.navigate([], {
-      queryParams: { loadout: minimalLoadout },
+      queryParams: {
+        v: 'summary',
+        loadout: minimalLoadout
+      },
       queryParamsHandling: 'merge'
     });
   }

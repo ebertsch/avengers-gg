@@ -64,6 +64,9 @@
       ],
       "@avengers-game-guide/shared/named-sets/data-access": [
         "libs/shared/named-sets/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/gear/gear-viewer": [
+        "libs/shared/gear/gear-viewer/src/index.ts"
       ]
     }
   },

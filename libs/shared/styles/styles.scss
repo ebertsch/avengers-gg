@@ -1,7 +1,7 @@
 @import './reset';
 @import './theme.scss';
-@import '../../../node_modules/swiper/swiper';
-@import '../../../node_modules/swiper/components/navigation/navigation';
+@import '~swiper/swiper';
+@import '~swiper/components/navigation/navigation';
 @import './variables';
 @import './typograph.scss';
 @import './text.scss';

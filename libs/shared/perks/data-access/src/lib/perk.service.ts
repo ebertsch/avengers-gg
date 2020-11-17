@@ -23,23 +23,28 @@ export class PerkService extends EntityCollectionServiceBase<Perk> {
     this.store.pipe(select(this.getPerkSelector(id)))
 
   private getGearSlotPerksSelector = (slot: string) => createSelector(
-    this.selectors.selectEntities, perks => filter(perk => contains(slot, perk.gear), perks).sort()
+    this.selectors.selectEntities, perks => filter(perk => contains(slot, perk.gear || []), perks||[]).sort()
   );
   getGearSlotPerks = (slot: string) =>
     this.store.pipe(select(this.getGearSlotPerksSelector(slot)))
 
   private getGearPerksSelector = (slot: string, hero: string) => createSelector(
     this.selectors.selectEntities,
-    perks => filter(perk =>
-      contains(slot, perk.gear) && (contains(hero, perk.heroes) || contains('*', perk.heroes))
-      , perks).sort()
+    perks => {
+      return filter(perk => {
+        const sameSlot = contains(slot, perk.gear || [])
+        const sameHero = contains(hero, perk.heroes || [])
+        const isAnyHero = contains('*', perk.heroes || [])
+        return sameSlot && (sameHero || isAnyHero)
+      }, perks || []).sort()
+    }
   );
   getGearPerks = (slot: string, hero: string) =>
     this.store.pipe(select(this.getGearPerksSelector(slot, hero)))
-    
+
   private getGearPerksForHeroSelector = (hero: string) => createSelector(
     this.selectors.selectEntities,
-    perks => filter(perk => contains(hero, perk.heroes), perks).sort()
+    perks => filter(perk => contains(hero, perk.heroes || []), perks).sort()
   );
   getGearPerksForHero = (hero: string) =>
     this.store.pipe(select(this.getGearPerksForHeroSelector(hero)))

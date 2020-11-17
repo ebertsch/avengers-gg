@@ -49,13 +49,11 @@
   }
 
   .slot {
-    background: #232f42;
-    clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
-    padding: 16px 10px;
   }
 
   img {
     opacity: .6; 
+    width: 64px;
   }
   &.empty img { opacity: .2; }
   &.active img { opacity: 1; }
