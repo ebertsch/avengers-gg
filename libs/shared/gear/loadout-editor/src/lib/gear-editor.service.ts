@@ -121,7 +121,7 @@ const getAllGearPerks = (loadout: Loadout): string[] =>
 
 const summarizeLoadout = (loadout) =>
   fromPairs(
-    filter(v => v[1] !== 0,
+    filter(v => v[1] !== 0 && v[1] !== null && v[1] !== NaN,
       rmap(
         v => [v[0], reduce(add, 0, pluck('value', v[1]))],
         toPairs(
@@ -245,7 +245,10 @@ export class GearEditorService {
     const modifiedLoadout = assoc(gearSlot, gearInstance, loadout)
     const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
     this.router.navigate([], {
-      queryParams: { loadout: minimalLoadout },
+      queryParams: {
+        v: 'viewer',
+        loadout: minimalLoadout
+      },
       queryParamsHandling: 'merge'
     });
   }
@@ -254,7 +257,10 @@ export class GearEditorService {
     const modifiedLoadout = assoc(gearSlot, <GearInstance>null, loadout)
     const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
     this.router.navigate([], {
-      queryParams: { loadout: minimalLoadout },
+      queryParams: {
+        v: 'summary',
+        loadout: minimalLoadout
+      },
       queryParamsHandling: 'merge'
     });
   }

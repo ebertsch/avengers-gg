@@ -1,9 +1,12 @@
 :host {
     display: block;
     margin-top: 30px;
+
+    position: relative;
+    width: 100%;
 }
 
-.stat-container {
+.stat-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,4 +24,22 @@
         flex: 1;
 
     }
+}
+
+.stats-container {
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .stat-item {
+        margin-bottom: 10px;
+    }
+}
+
+.hero-image {
+    top: 0;
+    opacity: .3
 }
