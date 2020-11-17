@@ -26,7 +26,7 @@
             <agg-loadout-summary [hero]="hero"></agg-loadout-summary>
         </ng-template>
         <ng-template [ngSwitchCase]="'viewer'">
-            <agg-gear-instance-viewer [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot">
+            <agg-gear-instance-viewer (removed)="removeGearInstance()" [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot">
             </agg-gear-instance-viewer>
         </ng-template>
         <ng-template [ngSwitchCase]="'editor'">

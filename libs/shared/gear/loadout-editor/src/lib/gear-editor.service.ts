@@ -11,7 +11,6 @@ import { btoa } from "abab";
 
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { DomSanitizer } from '@angular/platform-browser';
 
 const gearFromQueryParam = (source: string) => {
@@ -121,7 +120,10 @@ const getAllGearPerks = (loadout: Loadout): string[] =>
 
 const summarizeLoadout = (loadout) =>
   fromPairs(
-    filter(v => v[1] !== 0 && v[1] !== null && v[1] !== NaN,
+    filter(v => {
+      console.log('summarizeLoadout', v)
+      return v[1] !== 0 && v[0] !== 'null'
+    },
       rmap(
         v => [v[0], reduce(add, 0, pluck('value', v[1]))],
         toPairs(
@@ -220,7 +222,7 @@ export class GearEditorService {
 
   getStatValues$(gear: GearInstance) {
     const attributeRanges = this.getAttributeValueRange(gear);
-    const rangeArray = range(attributeRanges.low, attributeRanges.high + 1);
+    const rangeArray = range(attributeRanges.low, attributeRanges.high + 1).reverse();
 
     return of(rangeArray)
   }

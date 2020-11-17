@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { GearSlot } from '@avengers-game-guide/shared/data';
@@ -16,6 +16,9 @@ export class GearInstanceViewerComponent implements OnInit {
   @Input() hero: Hero
   @Input() gearSlot: GearSlot;
 
+  @Output() removed = new EventEmitter<GearInstance>();
+
+
 
   constructor(private perkService: PerkService, private gearService: GearService) { }
 
@@ -28,6 +31,11 @@ export class GearInstanceViewerComponent implements OnInit {
 
   getPerk$(id: string) {
     return this.perkService.getPerk(id);
+  }
+
+  remove() {
+    console.log('remove')
+    this.removed.emit()
   }
 
 }
