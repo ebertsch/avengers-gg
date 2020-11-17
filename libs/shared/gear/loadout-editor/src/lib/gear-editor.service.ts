@@ -196,9 +196,9 @@ export class GearEditorService {
 
   getPowerLevels(gearSlot: GearSlot) {
     if(gearSlot === 'majorArtifact')
-      return of(times(value => ({id: value+1, label: `${value+1}`}), 10))
+      return of(times(value => ({id: value+1, label: `${value+1}`}), 10).reverse())
 
-    return of(times(value => ({id: value+1, label: `${value+1}`}), 140))
+    return of(times(value => ({id: value+1, label: `${value+1}`}), 140).reverse())
   }
 
   has3Stats(gear: GearInstance) {
