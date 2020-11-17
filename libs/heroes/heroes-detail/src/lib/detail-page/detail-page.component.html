@@ -1,4 +1,4 @@
-<div class="hero-header">
+<div class="hero-header" *ngIf="!!(hero$ | async)">
     <img class="hero-icon" src="/assets/images/{{(hero$ | async).id}}-logo.png">
     <agg-flared-title>{{ (hero$ | async).name }}</agg-flared-title>
 </div>

@@ -1,13 +1,14 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { GearDefinition, GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { GearSlot } from '@avengers-game-guide/shared/data';
-import { assocPath, times } from 'ramda';
+import { assocPath, path, pathOr, times } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { switchMap, withLatestFrom } from 'rxjs/operators';
+import { map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { Dictionary } from '@ngrx/entity';
 
 @Component({
   selector: 'agg-gear-instance-editor',
@@ -49,7 +50,7 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   perks$: Observable<Perk[]>
   gear$: Observable<GearDefinition[]>
 
-  constructor(public gearEditor: GearEditorService, private perkService: PerkService, private gearService: GearService) {
+  constructor(public gearEditor: GearEditorService, public perkService: PerkService, private gearService: GearService) {
   }
 
   byId(idx: number, value: { id: string }) {
@@ -106,6 +107,11 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
       this.updateStats(c)
       this.activeGear$.next(c)
     })
+
+    this.gearInstanceForm.get('id').valueChanges.pipe(
+      withLatestFrom(this.gearService.entityMap$),
+      map(([id, gear]) => gear[id]),
+    ).subscribe(this.templateChosen.bind(this));
   }
 
   updateStats(value: GearInstance) {
@@ -157,6 +163,16 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
     if (this.gearInstanceForm === undefined) { return }
     this.gearInstanceForm.setValue(value)
     this._activeGear = { ...this.activeGear }
+  }
+
+  templateChosen(gearDefinition: GearDefinition) {
+    const instance: Partial<GearInstance> = {
+      rarity: pathOr(null, ['rarity'], gearDefinition),
+      perk1: pathOr(null, ['perks1', 0], gearDefinition),
+      perk2: pathOr(null, ['perks2', 0], gearDefinition),
+      perk3: pathOr(null, ['perks3', 0], gearDefinition),
+    }
+    this.gearInstanceForm.patchValue(instance)
   }
 
   save() {
