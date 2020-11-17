@@ -1,9 +1,11 @@
 :host {
-    display: block;
+    display: flex;
     margin-top: 30px;
 
     position: relative;
     width: 100%;
+    min-height: 370px;
+    justify-content: center;
 }
 
 .stat-item {
@@ -56,6 +58,8 @@
 }
 
 .hero-image {
-    top: 0;
-    opacity: .3
+    position: absolute;
+    top: 0px;
+    opacity: .3;
+    width: 340px;
 }
