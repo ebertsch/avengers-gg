@@ -23,7 +23,7 @@
 <div class="editor">
     <ng-container [ngSwitch]="activeView$ | async">
         <ng-template [ngSwitchCase]="'summary'">
-            <agg-loadout-summary></agg-loadout-summary>
+            <agg-loadout-summary [hero]="hero"></agg-loadout-summary>
         </ng-template>
         <ng-template [ngSwitchCase]="'viewer'">
             <agg-gear-instance-viewer [activeGear]="activeGear$ | async" [hero]="hero" [gearSlot]="gearSlot">

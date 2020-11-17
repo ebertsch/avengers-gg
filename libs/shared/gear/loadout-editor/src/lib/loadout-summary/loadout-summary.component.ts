@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { GearEditorService } from '../gear-editor.service'
+import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 
 @Component({
   selector: 'agg-loadout-summary',
@@ -8,6 +9,8 @@ import { GearEditorService } from '../gear-editor.service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoadoutSummaryComponent implements OnInit {
+
+  @Input() hero: Hero
 
   constructor(public gearEditorService: GearEditorService) { }
 

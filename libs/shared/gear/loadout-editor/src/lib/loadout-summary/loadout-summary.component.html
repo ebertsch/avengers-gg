@@ -1,9 +1,12 @@
 <ng-container *ngIf="((gearEditorService.activeLoadoutSummary$ | async) | json) == ({} | json)">
     <p>Select add a piece of gear to begin</p>
 </ng-container>
-<ng-container *ngFor="let stat of (gearEditorService.activeLoadoutSummary$ | async) | keyvalue">
-    <div class="stat-container">
-        <div class="stat-key">{{stat.key}}</div>
-        <div class="fancy-text stat-value">{{stat.value}}</div>
-    </div>
-</ng-container>
+<div class="stats-container">
+    <ng-container *ngFor="let stat of (gearEditorService.activeLoadoutSummary$ | async) | keyvalue">
+        <div class="stat-item">
+            <div class="stat-key">{{stat.key}}</div>
+            <div class="fancy-text stat-value">{{stat.value}}</div>
+        </div>
+    </ng-container>
+</div>
+<img class="hero-image" src="/assets/images/heroes/{{hero.id}}.png" />
