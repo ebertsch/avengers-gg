@@ -26,6 +26,20 @@
     }
 }
 
+.instructions {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .panel-note {
+        position: absolute;
+        z-index: 200;
+        left: 0;
+        right: 0;
+        margin-top: 100px;
+    }
+}
+
 .stats-container {
     display: flex;
     position: absolute;
