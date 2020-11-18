@@ -1,18 +1,19 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
+import { Hero, HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
 import { BuildService } from '@avengers-game-guide/shared/builds/data-access';
 import { SkillService, Skill } from '@avengers-game-guide/shared/skills/data-access';
 
 import { Observable, combineLatest } from 'rxjs';
-import { tap, map, take } from 'rxjs/operators';
+import { tap, map, take, withLatestFrom } from 'rxjs/operators';
 import { assoc, map as rMap, includes, keys, reduce, concat, find, propEq, dissoc, append } from 'ramda';
 import { Dictionary } from '@ngrx/entity';
 import { GearEditorService } from '@avengers-game-guide/shared/gear/loadout-editor';
-import { Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, Loadout } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
+import { TeamService } from '@avengers-game-guide/shared/teams/data-access';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -23,7 +24,7 @@ type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[
 })
 export class BuildsViewComponent implements OnInit {
 
-  hero$: Observable<any>
+  hero$: Observable<Hero>
   loadout$: Observable<Loadout>
   skills$: Observable<SelectableSkill[]>;
   selectedSkills$: Observable<Skill[]>;
@@ -31,15 +32,18 @@ export class BuildsViewComponent implements OnInit {
   activeLoadoutPerks$: Observable<string[]>;
 
   selectedSkills: Dictionary<string> = {}
+  count = 0;
 
   constructor(
+    private router: Router,
+    private titleService: Title,
     private builds: BuildService,
     private heroes: HeroService,
     private skillService: SkillService,
     public gearEditorService: GearEditorService,
     public perkService: PerkService,
-    private router: Router,
-    private titleService: Title) {
+    public teamService: TeamService
+    ) {
   }
 
   ngOnInit(): void {
@@ -122,6 +126,21 @@ export class BuildsViewComponent implements OnInit {
       })
       input.value = ""
     } 
+  }
+
+  saveToTeam() {
+    this.hero$.pipe(
+      withLatestFrom(this.gearEditorService.activeLoadoutQueryParam$, this.builds.selectedSkills$),
+      take(1)
+    ).subscribe(([hero, loadout, skills]) => {
+      this.teamService.add(hero.id, {
+        id: hero.id,
+        name: hero.name,
+        loadout,
+        skills
+      })
+    })
+
   }
 
 }

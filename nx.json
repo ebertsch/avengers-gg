@@ -96,6 +96,9 @@
     },
     "shared-gear-gear-viewer": {
       "tags": []
+    },
+    "shared-teams-data-access": {
+      "tags": []
     }
   }
 }

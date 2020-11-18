@@ -181,8 +181,7 @@
             "routes": ["/", "/heroes"]
           },
           "configurations": {
-            "production": {
-            }
+            "production": {}
           }
         }
       }
@@ -1011,6 +1010,39 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/gear/gear-viewer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-teams-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/teams/data-access",
+      "sourceRoot": "libs/shared/teams/data-access/src",
+      "prefix": "avengers-game-guide",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/teams/data-access/tsconfig.lib.json",
+              "libs/shared/teams/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/teams/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/teams/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

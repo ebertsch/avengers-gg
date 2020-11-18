@@ -11,6 +11,14 @@
         </form>
     </li>
     <li class="fancy-text"><a [routerLink]="['heroes']">Heroes</a></li>
+    <li class="navigation-item fancy-text" *ngIf="((team.entities$ | async)||[])?.length">
+        <span>My Team</span>
+        <ol class="subnavigation">
+            <li class="navigation-item fancy-text" *ngFor="let hero of team.entityMap$ | async | keyvalue">
+                <a [routerLink]="['heroes', hero.key, 'builder']" [queryParams]="{v: 'summary', skills: hero.value.skills, loadout: hero.value.loadout}">{{ hero.key }}</a>
+            </li>
+        </ol>
+    </li>
     <li class="navigation-item fancy-text">
         <span>Contribute</span>
         <ol class="subnavigation">

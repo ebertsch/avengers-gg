@@ -145,9 +145,15 @@ export class GearEditorService {
   );
   loadoutDownload$ = this.store.pipe(select(this.activeLoadoutDownloadSelector))
 
-  private loadoutSelector = createSelector(
+  private loadoutQueryParamsSelector = createSelector(
     RouteSelectors.getMergedRoute,
-    mergedRoute => loadoutFromQueryParam(<string>mergedRoute.queryParams.loadout)
+    mergedRoute => <string>mergedRoute.queryParams.loadout
+  );  
+  activeLoadoutQueryParam$ = this.store.pipe(select(this.loadoutQueryParamsSelector))
+
+  private loadoutSelector = createSelector(
+    this.loadoutQueryParamsSelector,
+    loadoutQueryString => loadoutFromQueryParam(loadoutQueryString)
   );
   activeLoadout$ = this.store.pipe(select(this.loadoutSelector))
   activeLoadoutSummary$ = this.store.pipe(

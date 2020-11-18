@@ -2,6 +2,9 @@
     <agg-panel-header>Backup &amp; Restore</agg-panel-header>
     <div style="display: flex; justify-content: space-evenly;">
         <div>
+            <a mat-flat-button color="primary" (click)="saveToTeam()">Save to My Team</a>
+        </div>
+        <div>
             <a mat-flat-button color="primary" download="loadout.json" [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
         </div>
         <div>
@@ -62,3 +65,5 @@
         <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>
 </agg-panel>
+
+
