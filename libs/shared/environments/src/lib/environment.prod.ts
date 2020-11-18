@@ -3,6 +3,7 @@ export const environment = {
   isServer: false,
   googleAnalyticsCode: 'G-VHNGDT7XX3',
   clientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",
+  mutableAPI: false,
   protocol: "https",
   host: "www.avengersgg.com",
   dataEntryClientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",

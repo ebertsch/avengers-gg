@@ -16,8 +16,12 @@ import saveToFiles from './save-data';
   server.use(rewriter);
   server.use(middleware)
 
+  let blockCheck = 'false'
+  if(!!process.env.BLOCK) blockCheck = process.env.BLOCK
+  else blockCheck = !environment.mutableAPI ? 'false' : 'true'
+
   // Add custom routes before JSON Server router
-  if (process.env.BLOCK !== "false" || true) {
+  if (blockCheck !== "false") {
     server.all('*', function (req, res, next) {
       if (req.method === 'GET') {
         next() // Continue

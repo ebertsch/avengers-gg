@@ -3,6 +3,7 @@ export const environment = {
   isServer: false,
   googleAnalyticsCode: 'G-VHNGDT7XX3',
   clientApiUrl: "http://localhost:4200/api",
+  mutableAPI: true,
   protocol: "http",
   host: "localhost:4200",
   dataEntryClientApiUrl: "http://localhost:3333/api",
