@@ -1,14 +1,14 @@
 module.exports = {
-  name: 'data',
-  preset: '../../jest.config.js',
+  preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
-    }
+    },
   },
   transform: {
-    '^.+\\.[tj]s$':  'ts-jest' 
+    '^.+\\.[tj]s$': 'ts-jest',
   },
-    moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/data'
+  moduleFileExtensions: ['ts', 'js', 'html'],
+  coverageDirectory: '../../coverage/apps/data',
+  displayName: 'data',
 };
