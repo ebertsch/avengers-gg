@@ -29,7 +29,8 @@
     "dev:ssr": "ng run heroes:serve-ssr",
     "serve:ssr": "node dist/heroes/server/main.js",
     "build:ssr": "ng build --prod && ng run heroes:server:production",
-    "prerender": "ng run heroes:prerender --routesFile apps/heroes/prerender-routes.txt"
+    "prerender": "ng run heroes:prerender --routesFile apps/heroes/prerender-routes.txt",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -67,6 +68,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "swiper": "^6.3.4",
+    "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {

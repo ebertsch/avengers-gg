@@ -21,5 +21,6 @@ module.exports = {
     '<rootDir>/libs/shared/gear/loadout-editor',
     '<rootDir>/apps/data-entry',
     '<rootDir>/libs/shared/named-sets/data-access',
+    '<rootDir>/libs/shared/teams/data-access',
   ],
 };
