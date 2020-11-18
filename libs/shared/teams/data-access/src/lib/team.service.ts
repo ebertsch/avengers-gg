@@ -4,6 +4,7 @@ import { LocalStorageServiceBase } from './local-storage-service-base';
 
 interface Build {
     id: string,
+    name: string,
     loadout: string,
     skills: string
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
+import { Hero, HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 
 import { BuildService } from '@avengers-game-guide/shared/builds/data-access';
 import { SkillService, Skill } from '@avengers-game-guide/shared/skills/data-access';
@@ -24,7 +24,7 @@ type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[
 })
 export class BuildsViewComponent implements OnInit {
 
-  hero$: Observable<any>
+  hero$: Observable<Hero>
   loadout$: Observable<Loadout>
   skills$: Observable<SelectableSkill[]>;
   selectedSkills$: Observable<Skill[]>;
@@ -135,6 +135,7 @@ export class BuildsViewComponent implements OnInit {
     ).subscribe(([hero, loadout, skills]) => {
       this.teamService.add(hero.id, {
         id: hero.id,
+        name: hero.name,
         loadout,
         skills
       })

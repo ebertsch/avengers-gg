@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { TeamService } from '@avengers-game-guide/shared/teams/data-access'
 
 @Component({
 
@@ -10,7 +11,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { } 
+  constructor(public team: TeamService) {
+    console.log('team', team)
+  } 
 
   ngOnInit(): void {
   }
