@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.clear-button {
+  cursor: pointer;
+}
+.values-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.value-display {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+:host.has-value {
+  .mat-input-element {
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px;
+  }
+}
+
+:host.allow-multiple {
+  .values-container > :last-child {
+    border-bottom:  solid 1px white;
+    margin-bottom: 10px;
+  }
+}

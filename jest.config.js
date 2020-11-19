@@ -22,5 +22,6 @@ module.exports = {
     '<rootDir>/apps/data-entry',
     '<rootDir>/libs/shared/named-sets/data-access',
     '<rootDir>/libs/shared/teams/data-access',
+    '<rootDir>/libs/shared/perks/perk-select',
   ],
 };
