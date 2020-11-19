@@ -1,14 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { GearDefinition, GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
 import { GearSlot } from '@avengers-game-guide/shared/data';
-import { assocPath, path, pathOr, times } from 'ramda';
+import { assocPath, pathOr } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { map, switchMap, withLatestFrom } from 'rxjs/operators';
-import { Dictionary } from '@ngrx/entity';
+import { map, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'agg-gear-instance-editor',
@@ -42,6 +41,7 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   }
   get activeGear() { return this._activeGear }
   activeGear$: BehaviorSubject<GearDefinition>;
+  allowAnyPerk = false;
 
   @Output() saved = new EventEmitter<GearInstance>();
   @Output() removed = new EventEmitter<GearInstance>();
@@ -84,6 +84,7 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
       id: new FormControl(this.activeGear.id),
       rarity: new FormControl(this.activeGear.rarity),
       powerLevel: new FormControl(this.activeGear.powerLevel),
+      allowAnyPerk: new FormControl(false),
       stat1: new FormGroup({
         stat: new FormControl(this.activeGear.stat1?.stat),
         value: new FormControl(this.activeGear.stat1?.value),

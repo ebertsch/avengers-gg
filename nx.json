@@ -99,6 +99,9 @@
     },
     "shared-teams-data-access": {
       "tags": []
+    },
+    "shared-perks-perk-select": {
+      "tags": []
     }
   }
 }

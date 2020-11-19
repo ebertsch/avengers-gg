@@ -1,0 +1,22 @@
+<div class="values-container" *ngIf="value">
+    <ng-container *ngIf="!allowMultiple; else listMultiple">
+        <ng-container *ngIf="value">
+            <div class="value-display">
+                <div>{{ (this.perkService.entityMap$ | async)[value]?.title }}</div>
+                <mat-icon class="clear-button" (click)="clearValue(value)" *ngIf="value">clear</mat-icon>
+            </div>
+        </ng-container>
+    </ng-container>
+    <ng-template #listMultiple>
+        <div class="value-display" *ngFor="let perk of value">
+            <div>{{ (this.perkService.entityMap$ | async)[perk]?.title }}</div>
+            <mat-icon class="clear-button" (click)="clearValue(perk)" *ngIf="value">clear</mat-icon>
+        </div>
+    </ng-template>
+</div>
+<input [formControl]="searchField" (click)="onFocus()" #inputField="matInput" type="text" [ngStyle]="inputStyle" matInput [matAutocomplete]="auto">
+<mat-autocomplete class="mat-perk-options" #auto="matAutocomplete" (optionSelected)="perkSelected($event, inputField)">
+    <mat-option class="perk-option" *ngFor="let perk of perks$ | async | sortBy:'title'" [value]="perk">
+        <agg-name-description [namedItem]="perk"></agg-name-description>
+    </mat-option>
+</mat-autocomplete>

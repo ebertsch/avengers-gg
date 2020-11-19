@@ -70,6 +70,9 @@
       ],
       "@avengers-game-guide/shared/teams/data-access": [
         "libs/shared/teams/data-access/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/perks/perk-select": [
+        "libs/shared/perks/perk-select/src/index.ts"
       ]
     }
   },

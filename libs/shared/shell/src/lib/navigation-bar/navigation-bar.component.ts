@@ -12,7 +12,6 @@ import { TeamService } from '@avengers-game-guide/shared/teams/data-access'
 export class NavigationBarComponent implements OnInit {
 
   constructor(public team: TeamService) {
-    console.log('team', team)
   } 
 
   ngOnInit(): void {

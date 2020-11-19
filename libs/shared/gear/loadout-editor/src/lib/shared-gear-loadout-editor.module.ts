@@ -11,10 +11,24 @@ import { RouterModule } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
+import { SharedPerksPerkSelectModule } from '@avengers-game-guide/shared/perks/perk-select'
 
 @NgModule({
-  imports: [CommonModule, SharedUiModule, FormsModule, ReactiveFormsModule, RouterModule, MatSelectModule, MatButtonModule, MatIconModule, SharedGearGearViewerModule],
+  imports: [
+    CommonModule,
+    SharedUiModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
+    SharedGearGearViewerModule,
+    SharedPerksPerkSelectModule
+  ],
   declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
   exports: [LoadoutBuilderComponent],
 })

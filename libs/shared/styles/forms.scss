@@ -3,3 +3,20 @@
 }
 
 
+.mat-form-field.mat-form-field-appearance-fill .mat-form-field-label,
+.mat-form-field.mat-form-field-appearance-fill .mat-input-element {
+    color: white;
+    caret-color: white;
+}
+
+
+.mat-perk-options {
+    .mat-option {
+        min-height: 58px;
+        white-space: normal;
+    }
+    .perk-option .mat-option-text {
+        display: inline-flex;
+        flex-direction: column;
+    }
+}

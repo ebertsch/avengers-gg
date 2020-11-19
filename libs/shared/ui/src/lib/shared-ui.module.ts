@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PanelComponent, PanelHeaderComponent } from './panel/panel.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
@@ -32,4 +32,4 @@ const DECLARATIONS = [
   declarations: DECLARATIONS,
   exports: DECLARATIONS,
 })
-export class SharedUiModule {}
+export class SharedUiModule { }
