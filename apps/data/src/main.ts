@@ -16,12 +16,13 @@ import saveToFiles from './save-data';
   server.use(rewriter);
   server.use(middleware)
 
-  let blockCheck = 'false'
-  if(!!process.env.BLOCK) blockCheck = process.env.BLOCK
-  else blockCheck = !environment.mutableAPI ? 'false' : 'true'
+  let readOnlyMode = 'true'
+  if(!!process.env.BLOCK) readOnlyMode = process.env.BLOCK
+  else readOnlyMode = environment.readOnlyAPI !== "false" ? 'true' : 'false'
 
   // Add custom routes before JSON Server router
-  if (blockCheck !== "false") {
+  if (readOnlyMode === "true") {
+    console.log('enabling readonly mode')
     server.all('*', function (req, res, next) {
       if (req.method === 'GET') {
         next() // Continue
@@ -29,9 +30,10 @@ import saveToFiles from './save-data';
         res.sendStatus(403) // Forbidden
       }
     })
+  } else {
+    server.post('/save', saveToFiles)
   }
 
-  server.post('/save', saveToFiles)
 
   server.use(router)
   server.listen(process.env.PORT || environment.apiPort, () => console.log('JSON Server is running'))
