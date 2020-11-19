@@ -100,21 +100,8 @@
 
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 1' : 'Select a perk'}}</mat-label>
-                <agg-perk-select [hero]="hero" [gearSlot]="gearSlot" [perkSlot]="1" [allowAny]="gearInstanceForm.value.allowAnyPerk" [allowMultiple]="false"></agg-perk-select>
+                <agg-perk-select formControlName="perk1" [disableControl]="isEmpty(gearInstanceForm.value.id)" [hero]="hero" [gearSlot]="gearSlot" [perkSlot]="1" [allowAny]="gearInstanceForm.value.allowAnyPerk" [allowMultiple]="false"></agg-perk-select>
             </mat-form-field>
-
-            <div class="form-field">
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 1' : 'Select a perk'}}</mat-label>
-                    <mat-select formControlName="perk1" [disableControl]="isEmpty(gearInstanceForm.value.id)">
-                        <mat-option [value]="perk.id"
-                            *ngFor="let perk of (perks$ | async) | sortBy:'title'; trackBy: byId">
-                            {{perk.title}}</mat-option>
-                        <mat-option [value]="null">Not set</mat-option>
-                    </mat-select>
-                    <mat-hint>{{ (perkService.entityMap$ | async)[gearInstanceForm.getRawValue().perk1]?.description }}</mat-hint>
-                </mat-form-field>
-            </div>
 
             <div class="form-field">
                 <mat-form-field appearance="fill" class="full-width">
