@@ -45,7 +45,6 @@ export class LoadoutBuilderComponent implements OnInit {
   }
 
   removeGearInstance() {
-    console.log('removeGearInstance')
     this.gearEditor.remove(this.gearSlot, this.loadout);
   }
 

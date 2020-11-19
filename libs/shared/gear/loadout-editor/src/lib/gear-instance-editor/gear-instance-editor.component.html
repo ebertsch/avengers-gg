@@ -94,6 +94,15 @@
         </div>
 
         <div class="gear-perks">
+            <h3>Perks</h3>
+
+            <mat-checkbox color="warn" formControlName="allowAnyPerk">Allow any perk</mat-checkbox>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 1' : 'Select a perk'}}</mat-label>
+                <agg-perk-select [hero]="hero" [gearSlot]="gearSlot" [perkSlot]="1" [allowAny]="gearInstanceForm.value.allowAnyPerk" [allowMultiple]="false"></agg-perk-select>
+            </mat-form-field>
+
             <div class="form-field">
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>{{ !!gearInstanceForm.value.perk1 ? 'Perk 1' : 'Select a perk'}}</mat-label>

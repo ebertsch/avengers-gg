@@ -7,3 +7,4 @@ export * from './lib/models/stat'
 export * from './lib/models/loadout';
 export * from './lib/utils/compress'
 export * from './lib/models/data-filter';
+export * from './lib/models/perk-slot';
