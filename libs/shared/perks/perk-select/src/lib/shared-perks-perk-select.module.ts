@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { DataAccessModule as PerksDataAccessModule } from '@avengers-game-guide/shared/perks/data-access';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
@@ -14,6 +14,7 @@ import { SharedUiModule } from '@avengers-game-guide/shared/ui'
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedUiModule,
     MatInputModule,
     MatAutocompleteModule,

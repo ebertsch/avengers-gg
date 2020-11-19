@@ -1,7 +1,7 @@
 
 import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, Optional, Self, ElementRef, HostBinding, OnChanges, SimpleChange, SimpleChanges, ViewChildren, QueryList, ViewChild } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { NgControl } from '@angular/forms';
+import { FormControl, NgControl } from '@angular/forms';
 import { MatFormFieldControl, MatFormField, MAT_FORM_FIELD } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete'
@@ -11,7 +11,7 @@ import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { GearSlot, PerkSlot } from '@avengers-game-guide/shared/data';
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { append, contains, either, intersection, isEmpty, isNil, mergeRight, prop, without } from 'ramda';
-import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, tap, withLatestFrom } from 'rxjs/operators';
 
 interface PerkSelectFilter {
   heroId: string[]
@@ -30,6 +30,8 @@ interface PerkSelectFilter {
 })
 export class PerkSelectComponent implements OnInit, OnChanges {
   @ViewChild(MatAutocompleteTrigger) trigger: MatAutocompleteTrigger;
+
+  searchField: FormControl = new FormControl()
 
   @Input() hero: Hero;
   @Input() gearSlot: GearSlot;
@@ -149,9 +151,19 @@ export class PerkSelectComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    this.searchField.setValue('')
+
+    const filter$ = combineLatest([this.searchField.valueChanges, this.selectFilter]).pipe(
+      map(([_search, _filter]) => ({ ..._filter, search: _search } as PerkSelectFilter)),
+      debounceTime(50)
+    )
+
     // tslint:disable-next-line: deprecation
-    this.perks$ = combineLatest(this.perkService.entities$, this.selectFilter).pipe(
-      map(([perks, filter]) => perks.filter(p => intersection([filter.heroId, '*'], p.heroes).length)),
+    this.perks$ = combineLatest([this.perkService.entities$, filter$]).pipe(
+      map(([perks, filter]) => {
+        const items = perks.filter(p => intersection([filter.heroId, '*'], p.heroes).length)
+        return items.filter(p => p.title.toLowerCase().indexOf(filter.search) > -1 || p.description.toLowerCase().indexOf(filter.search) > -1 )
+      }),
       withLatestFrom(this.selectFilter),
       map(([perks, filter]) => {
         if (filter.allowAny) return perks;
@@ -168,7 +180,6 @@ export class PerkSelectComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(change: SimpleChanges) {
-    console.log('changed', change)
     this.selectFilter.next({
       heroId: ['*', this.hero.id],
       perkSlot: this.perkSlot,
@@ -195,11 +206,14 @@ export class PerkSelectComponent implements OnInit, OnChanges {
   onContainerClick(event: MouseEvent) {
     if ((event.target as Element).tagName.toLowerCase() != 'input') {
       this._elementRef.nativeElement.querySelector('input')!.focus();
+      this.onFocus()
     }
   }
 
   writeValue(newValue: string | string[] | null): void {
     this.value = newValue;
+    this.onChange(this.value)
+    this.searchField.setValue('')
   }
 
   registerOnChange(fn: any): void {
@@ -212,6 +226,8 @@ export class PerkSelectComponent implements OnInit, OnChanges {
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+    if(this.disabled) this.searchField.disable()
+    else this.searchField.enable()
   }
 
   _handleInput(): void {
@@ -221,7 +237,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
 
 
   onFocus() {
-    this.trigger.openPanel()
+    this.trigger.openPanel();
   }
 
   perkSelected(event: MatAutocompleteSelectedEvent, source: MatInput) {
@@ -239,7 +255,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
       const newValue = without([id], this.valueArray);
       this.writeValue(newValue)
     } else {
-      this.writeValue(null)
+      this.writeValue('')
     }
 
   }

@@ -14,7 +14,7 @@
         </div>
     </ng-template>
 </div>
-<input (click)="onFocus()" #inputField="matInput" type="text" [ngStyle]="inputStyle" [disabled]="disabled" matInput [matAutocomplete]="auto">
+<input [formControl]="searchField" (click)="onFocus()" #inputField="matInput" type="text" [ngStyle]="inputStyle" matInput [matAutocomplete]="auto">
 <mat-autocomplete class="mat-perk-options" #auto="matAutocomplete" (optionSelected)="perkSelected($event, inputField)">
     <mat-option class="perk-option" *ngFor="let perk of perks$ | async | sortBy:'title'" [value]="perk">
         <agg-name-description [namedItem]="perk"></agg-name-description>
