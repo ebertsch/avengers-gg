@@ -1,24 +1,20 @@
 <agg-panel class="save-actions-container">
     <agg-panel-header>Backup &amp; Restore</agg-panel-header>
-    <div style="display: flex; justify-content: space-evenly;">
-        <div>
-            <a mat-flat-button color="primary" (click)="saveToTeam()">Save to My Team</a>
-        </div>
-        <div>
-            <a mat-flat-button color="primary" download="loadout.json" [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
-        </div>
-        <div>
-            <label mat-flat-button class="mat-flat-button mat-primary pseudo-button" for="restore">Restore</label>
-            <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)" >
-        </div>
+    <div class="actions">
+        <a class="save-action" mat-flat-button color="primary" (click)="saveToTeam()">Save to My Team</a>
+        <a class="save-action" mat-flat-button color="primary" download="loadout.json"
+            [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
+        <label mat-flat-button class="save-action mat-flat-button mat-primary pseudo-button" for="restore">Restore</label>
+        <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)">
     </div>
 </agg-panel>
 
 <agg-panel class="share-actions-container">
     <agg-panel-header>Share Loadout</agg-panel-header>
     <div class="actions-container">
-        <input type="text" disabled value="{{gearEditorService.activeLoadoutQueryString$ | async}}"/>
-        <button mat-flat-button color="primary" class="copy" cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
+        <input type="text" disabled value="{{gearEditorService.activeLoadoutQueryString$ | async}}" />
+        <button mat-flat-button color="primary" class="copy"
+            cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
     </div>
 </agg-panel>
 
@@ -31,28 +27,32 @@
         Validation is not yet implemented<br><br>
         The url for this build is unique and changes when you make changes to your skills or gear<br><br>
     </p>
-    <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge" routerLinkActive="active">
+    <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge"
+        routerLinkActive="active">
         View Gear Summary
     </a>
-    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async"></agg-loadout-builder>
+    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async">
+    </agg-loadout-builder>
 </agg-panel>
 
 <agg-panel class="skill-options-container">
     <agg-panel-header>Skill Points</agg-panel-header>
     <p class="panel-note">Select any number of skills.<br>You can also remove a skill by clicking on it again.</p>
     <div>
-        <swiper #swiper="ngxSwiper" [config]="{pagination: { clickable: true, type: 'bullets', el: '.swiper-pagination' }}">
+        <swiper #swiper="ngxSwiper"
+            [config]="{pagination: { clickable: true, type: 'bullets', el: '.swiper-pagination' }}">
             <div *ngFor="let skill of skills$ | async; trackBy: byId">
                 <div class="skill-container">
-                    <agg-name-description [namedItem]="skill"></agg-name-description>
-                    <div class="skill-option" (click)="selectSkill(skill, option)" [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: byId">
+                    <agg-name-description class="parent" [namedItem]="skill"></agg-name-description>
+                    <div class="skill-option" (click)="selectSkill(skill, option)"
+                        [ngClass]="{'selected': option.selected}" *ngFor="let option of skill.children; trackBy: byId">
                         <agg-name-description [namedItem]="option"></agg-name-description>
                     </div>
                 </div>
             </div>
         </swiper>
     </div>
-</agg-panel>    
+</agg-panel>
 
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
@@ -65,5 +65,3 @@
         <agg-name-description [namedItem]="skill"></agg-name-description>
     </ng-container>
 </agg-panel>
-
-

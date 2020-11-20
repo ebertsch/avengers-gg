@@ -1,6 +1,8 @@
+@import "~libs/shared/styles/responsive.scss";
+
 .gear-editor {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 250px 100px;
   grid-template-rows: auto auto auto auto auto;
   gap: 0px 0px;
   grid-template-areas:
@@ -9,6 +11,10 @@
     "gear-stats gear-stats"
     "gear-perks gear-perks"
     "gear-actions gear-actions";
+
+    @include bp(laptop) {
+      grid-template-columns: 1fr 1fr;
+  }
 }
 
 .gear-name { grid-area: gear-name; }

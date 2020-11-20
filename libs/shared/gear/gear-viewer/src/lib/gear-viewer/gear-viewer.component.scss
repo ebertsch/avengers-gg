@@ -37,6 +37,7 @@
         "gear-perks gear-perks"
         "gear-actions gear-actions";
     width: 343px;
+    min-width: 343px;
 
     background-color: #080808;
     border: solid 1px;
@@ -207,6 +208,10 @@
     text-transform: uppercase;
     margin-bottom: 2px;
     @include fancy-text()
+}
+
+.gear-perk { 
+    margin-bottom: 10px;
 }
 
 .gear-perk-1 {

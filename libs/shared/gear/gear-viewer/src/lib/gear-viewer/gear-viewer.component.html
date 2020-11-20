@@ -16,7 +16,7 @@
 </div>
 <div class="gear-perks">
     <div class="gear-perk-title">Gear Perks</div>
-    <div class="gear-perk-1" *ngIf="!!gear.perks1">
+    <div class="gear-perk gear-perk-1" *ngIf="!!gear.perks1">
         <agg-name-description [namedItem]="gearPerkForId(gear.perks1)" *ngIf="!gear.hasPerkVariants(1); else perk1Swiper"></agg-name-description>
         <ng-template #perk1Swiper>
             <swiper class="gear-swiper">
@@ -24,7 +24,7 @@
             </swiper>
         </ng-template>
     </div>
-    <div class="gear-perk-2" *ngIf="!!gear.perks2">
+    <div class="gear-perk gear-perk-2" *ngIf="!!gear.perks2">
         <agg-name-description [namedItem]="gearPerkForId(gear.perks2)" *ngIf="!gear.hasPerkVariants(2); else perk2Swiper"></agg-name-description>
         <ng-template #perk2Swiper>
             <swiper class="gear-swiper">
@@ -32,7 +32,7 @@
             </swiper>
         </ng-template>
     </div>
-    <div class="gear-perk-3" *ngIf="!!gear.perks3">
+    <div class="gear-perk gear-perk-3" *ngIf="!!gear.perks3">
         <agg-name-description [namedItem]="gearPerkForId(gear.perks3)" *ngIf="!gear.hasPerkVariants(3); else perk3Swiper"></agg-name-description>
         <ng-template #perk3Swiper>
             <swiper class="gear-swiper" [config]="{navigation: true, pagination: false}">

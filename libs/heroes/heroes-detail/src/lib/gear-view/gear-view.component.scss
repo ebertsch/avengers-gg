@@ -50,6 +50,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    flex-wrap: wrap;
 
     @include bp(laptop) {
         flex-direction: row;
