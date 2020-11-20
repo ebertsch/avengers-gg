@@ -8,7 +8,7 @@ import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/m
 import { Subject, Observable, BehaviorSubject, combineLatest } from 'rxjs';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
-import { GearSlot, PerkSlot } from '@avengers-game-guide/shared/data';
+import { convertToGearSlotType, GearSlot, PerkSlot } from '@avengers-game-guide/shared/data';
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { append, contains, either, intersection, isEmpty, isNil, mergeRight, prop, without } from 'ramda';
 import { debounceTime, filter, map, tap, withLatestFrom } from 'rxjs/operators';
@@ -172,14 +172,14 @@ export class PerkSelectComponent implements OnInit, OnChanges {
       withLatestFrom(this.selectFilter),
       map(([perks, filter]) => {
         if (filter.allowAny) return perks;
-        return perks.filter(p => contains(this.gearSlot, p.gear))
+        return perks.filter(p => contains(filter.gearSlot, p.gear))
       }),
       withLatestFrom(this.selectFilter),
       // tap(([perks, filter]) => console.log('perk-selector 3', perks, filter)),
       map(([perks, filter]) => {
         if (filter.allowAny || filter.allowAnyPerkSlot) return perks;
 
-        const filterProperty = `slot${this.perkSlot}Enabled` as keyof Perk;
+        const filterProperty = `slot${filter.perkSlot}Enabled` as keyof Perk;
         return perks.filter(prop(filterProperty) as (any) => boolean)
       }),
       // tap((perks) => console.log('perk-selector 4', perks)),
@@ -192,7 +192,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
     this.selectFilter.next({
       heroId: heroId,
       perkSlot: this.perkSlot,
-      gearSlot: this.gearSlot,
+      gearSlot: convertToGearSlotType(this.gearSlot),
       allowAny: this.allowAny,
       allowAnyPerkSlot: this.allowAnyPerkSlot,
       search: null

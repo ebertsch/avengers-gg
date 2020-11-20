@@ -1,13 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { GearDefinition, GearInstance, GearService } from '@avengers-game-guide/shared/gear/data-access';
-import { GearSlot } from '@avengers-game-guide/shared/data';
+import { GearSlot, convertToGearSlotType } from '@avengers-game-guide/shared/data';
 import { assocPath, pathOr } from 'ramda';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GearEditorService } from '../gear-editor.service';
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { map, withLatestFrom } from 'rxjs/operators';
+import { map, tap, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'agg-gear-instance-editor',
@@ -62,9 +62,12 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    console.log('gie', this.gearSlot, this.hero.id);
     this.setupForm()
-    this.perks$ = this.perkService.getGearPerks(this.gearSlot, this.hero.id)
-    this.gear$ = this.gearService.getGearForHero(this.gearSlot, this.hero.id)
+    this.perks$ = this.perkService.getGearPerks(convertToGearSlotType(this.gearSlot), this.hero.id).pipe(
+      tap(i => console.log('get Perks', i))
+    )
+    this.gear$ = this.gearService.getGearForHero(convertToGearSlotType(this.gearSlot), this.hero.id)
   }
 
   ngOnChanges(): void {
