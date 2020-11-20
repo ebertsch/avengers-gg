@@ -7,4 +7,8 @@
     @include bp(laptop) {
         margin: 60px;
     }
+
+    agg-name-description { 
+        margin-bottom: 20px
+    }
 }

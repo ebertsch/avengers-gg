@@ -3,7 +3,7 @@
 :host {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-auto-flow: row;
     grid-template-areas: ".";
     gap: 0 20px;
@@ -28,7 +28,7 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-        top:30px !important;
+        top:35px !important;
         &:focus {
             outline: none;
         }
@@ -137,6 +137,7 @@
             border-bottom: solid 1px;
             padding: 10px 40px;
             background-color: rgba(255,255,255,0.1);
+            height: 75px;
         }
     }
 
