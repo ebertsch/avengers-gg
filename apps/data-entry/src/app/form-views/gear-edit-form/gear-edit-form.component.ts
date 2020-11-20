@@ -5,9 +5,9 @@ import { ItemSource } from '@avengers-game-guide/shared/data';
 import { GearDefinition } from '@avengers-game-guide/shared/gear/data-access';
 import { HeroService } from '@avengers-game-guide/shared/heroes/data-access';
 import { Perk, PerkService } from '@avengers-game-guide/shared/perks/data-access';
-import { append, concat } from 'ramda';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, mergeMap, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { concat } from 'ramda';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { map, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'aggd-gear-edit-form',
@@ -17,6 +17,8 @@ import { map, mergeMap, startWith, switchMap, tap, withLatestFrom } from 'rxjs/o
   exportAs: 'gearEditorForm'
 })
 export class GearEditFormComponent implements OnInit, OnChanges {
+  allowAnyPerkField = new FormControl(false)
+  allowAnyPerkSlotField = new FormControl(false)
   formValue: FormGroup
   private _value: GearDefinition;
   @Input() set value(value: GearDefinition) { this._value = { ...value } }
@@ -32,6 +34,8 @@ export class GearEditFormComponent implements OnInit, OnChanges {
   perk3Auto = new FormControl()
   perk3Options: Observable<Perk[]>;
 
+  activeGearSlot$: Observable<string>;
+  activeHeroId$: Observable<{id:string}>;
 
   constructor(public perkService: PerkService, public heroService: HeroService) { }
 
@@ -44,8 +48,9 @@ export class GearEditFormComponent implements OnInit, OnChanges {
   }
 
   setupForm() {
+    
     this.formValue = new FormGroup({
-      id: new FormControl({value: this.value.id, disabled: true}),
+      id: new FormControl({ value: this.value.id, disabled: true }),
       name: new FormControl(this.value.name),
       heroId: new FormControl(this.value.heroId),
       gearType: new FormControl(this.value.gearType),
@@ -57,20 +62,13 @@ export class GearEditFormComponent implements OnInit, OnChanges {
       sources: new FormArray([])
     })
 
-    this.perk1Options = this.perk1Auto.valueChanges.pipe(
-      startWith(''),
-      withLatestFrom(this.perkService.getGearSlotPerks(this.value.gearType)),
-      map(([val, opts]) => opts.filter(v => v.title.toLowerCase().includes(val) || v.description.toLowerCase().includes(val)))
+    this.activeGearSlot$ = this.formValue.get('gearType').valueChanges.pipe(
+      startWith(this.value.gearType)
     )
-    this.perk2Options = this.perk2Auto.valueChanges.pipe(
-      startWith(''),
-      withLatestFrom(this.perkService.getGearSlotPerks(this.value.gearType)),
-      map(([val, opts]) => opts.filter(v => v.title.toLowerCase().includes(val) || v.description.toLowerCase().includes(val)))
-    )
-    this.perk3Options = this.perk3Auto.valueChanges.pipe(
-      startWith(''),
-      withLatestFrom(this.perkService.getGearSlotPerks(this.value.gearType)),
-      map(([val, opts]) => opts.filter(v => v.title.toLowerCase().includes(val) || v.description.toLowerCase().includes(val)))
+
+    this.activeHeroId$ = this.formValue.get('heroId').valueChanges.pipe(
+      startWith(this.value.heroId),
+      map(id  => ({id}))
     )
 
     for (let x = 0; x < (this.value.sources || []).length; x++) {
@@ -79,22 +77,6 @@ export class GearEditFormComponent implements OnInit, OnChanges {
 
     this.value$ = new BehaviorSubject(this.formValue.value)
     this.formValue.valueChanges.subscribe(c => this.value$.next(c))
-  }
-
-  addToPerks1(opt: MatAutocompleteSelectedEvent) {
-    const perks1 = concat(this.formValue.value.perks1 || [], [opt.option.value.id])
-    this.formValue.patchValue({ perks1 })
-    this.perk1Auto.reset()
-  }
-  addToPerks2(opt: MatAutocompleteSelectedEvent) {
-    const perks2 = concat(this.formValue.value.perks2 || [], [opt.option.value.id])
-    this.formValue.patchValue({ perks2 })
-    this.perk2Auto.reset()
-  }
-  addToPerks3(opt: MatAutocompleteSelectedEvent) {
-    const perks3 = concat(this.formValue.value.perks3 || [], [opt.option.value.id])
-    this.formValue.patchValue({ perks3 })
-    this.perk3Auto.reset()
   }
 
   get sources() {

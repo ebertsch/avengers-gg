@@ -16,6 +16,7 @@ import { debounceTime, filter, map, tap, withLatestFrom } from 'rxjs/operators';
 interface PerkSelectFilter {
   heroId: string[]
   allowAny: boolean
+  allowAnyPerkSlot: boolean
   gearSlot: GearSlot
   perkSlot: PerkSlot
   search: string
@@ -37,6 +38,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
   @Input() gearSlot: GearSlot;
   @Input() perkSlot: PerkSlot;
   @Input() allowAny = false;
+  @Input() allowAnyPerkSlot = true;
   @HostBinding('class.allow-multiple') @Input() allowMultiple = false;
   @HostBinding('class.has-value') get hasValue() {
     const isRealValue = either(isEmpty, isNil);
@@ -126,6 +128,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
     perkSlot: null,
     gearSlot: null,
     allowAny: false,
+    allowAnyPerkSlot: true,
     search: null
   })
 
@@ -160,31 +163,38 @@ export class PerkSelectComponent implements OnInit, OnChanges {
 
     // tslint:disable-next-line: deprecation
     this.perks$ = combineLatest([this.perkService.entities$, filter$]).pipe(
+      // tap(([perks, filter]) => console.log('perk-selector 1', perks, filter)),
       map(([perks, filter]) => {
-        const items = perks.filter(p => intersection([filter.heroId, '*'], p.heroes).length)
+        const items = perks.filter(p => intersection(filter.heroId, p.heroes).length > 0)
         return items.filter(p => p.title.toLowerCase().indexOf(filter.search) > -1 || p.description.toLowerCase().indexOf(filter.search) > -1 )
       }),
+      // tap(([perks, filter]) => console.log('perk-selector 2', perks, filter)),
       withLatestFrom(this.selectFilter),
       map(([perks, filter]) => {
         if (filter.allowAny) return perks;
         return perks.filter(p => contains(this.gearSlot, p.gear))
       }),
       withLatestFrom(this.selectFilter),
+      // tap(([perks, filter]) => console.log('perk-selector 3', perks, filter)),
       map(([perks, filter]) => {
-        if (filter.allowAny) return perks;
+        if (filter.allowAny || filter.allowAnyPerkSlot) return perks;
 
         const filterProperty = `slot${this.perkSlot}Enabled` as keyof Perk;
         return perks.filter(prop(filterProperty) as (any) => boolean)
       }),
+      // tap((perks) => console.log('perk-selector 4', perks)),
     );
   }
 
   ngOnChanges(change: SimpleChanges) {
+    let heroId = ['*']
+    if(this.hero) heroId = append(this.hero.id, heroId)
     this.selectFilter.next({
-      heroId: ['*', this.hero.id],
+      heroId: heroId,
       perkSlot: this.perkSlot,
       gearSlot: this.gearSlot,
       allowAny: this.allowAny,
+      allowAnyPerkSlot: this.allowAnyPerkSlot,
       search: null
     } as PerkSelectFilter)
   }

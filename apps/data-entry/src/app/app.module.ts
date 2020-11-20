@@ -10,6 +10,7 @@ import { StorageModule } from '@ngx-pwa/local-storage';
 
 import { environment } from '@avengers-game-guide/shared/environments';
 import { RootStateModule } from '@avengers-game-guide/shared/root-state';
+import { SharedPerksPerkSelectModule } from '@avengers-game-guide/shared/perks/perk-select'
 import { MaterialModule } from './material.module';
 import { DataAccessModule } from './data-access.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { DataFiltersComponent } from './data-filters/data-filters.component';
     RootStateModule,
     DataAccessModule,
     SharedUiModule,
+    SharedPerksPerkSelectModule,
     RouterModule.forRoot([
       { path: 'gear', component: GearPageComponent },
       { path: 'perks', component: PerksPageComponent },

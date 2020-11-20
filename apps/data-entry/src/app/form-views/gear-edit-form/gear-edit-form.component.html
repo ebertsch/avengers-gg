@@ -45,76 +45,37 @@
 
 
   <h3>Perks</h3>
+
+  <mat-checkbox color="warn" [formControl]="allowAnyPerkField">Allow any perk</mat-checkbox>
+  <mat-checkbox color="warn" [formControl]="allowAnyPerkSlotField">Allow any slot</mat-checkbox>
+
+
+
   <div class="perk-picker-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Search for a perk</mat-label>
-      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk1Auto"
-        [matAutocomplete]="auto">
-      <mat-autocomplete class="mat-perk-option" #auto="matAutocomplete" (optionSelected)="addToPerks1($event)">
-        <mat-option *ngFor="let perk of perk1Options | async | sortBy:'title'" [value]="perk">
-          <span class="title">{{perk.title}}</span>
-          <span class="description">{{perk.description}}</span>
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Perks 1</mat-label>
-      <mat-select formControlName="perks1" multiple>
-        <mat-option [value]="null"
-          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id"
-          title="perk.description">
-          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
-        </mat-option>
-      </mat-select>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ !!formValue.value.perks1 ? 'Perk slot 1' : 'Select a perk'}}</mat-label>
+      <agg-perk-select formControlName="perks1" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="1"
+        [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
+      </agg-perk-select>
     </mat-form-field>
   </div>
 
 
   <div class="perk-picker-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Search for a perk</mat-label>
-      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk2Auto"
-        [matAutocomplete]="auto2">
-      <mat-autocomplete class="mat-perk-option" #auto2="matAutocomplete" (optionSelected)="addToPerks2($event)">
-        <mat-option *ngFor="let perk of perk2Options | async | sortBy:'title'" [value]="perk">
-          <span class="title">{{perk.title}}</span>
-          <span class="description">{{perk.description}}</span>
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Perks 2</mat-label>
-      <mat-select formControlName="perks2" multiple>
-        <mat-option [value]="null">not set</mat-option>
-        <mat-option [value]="null"
-          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id">
-          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
-        </mat-option>
-      </mat-select>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ !!formValue.value.perks2 ? 'Perk slot 2' : 'Select a perk'}}</mat-label>
+      <agg-perk-select formControlName="perks2" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="2"
+        [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
+      </agg-perk-select>
     </mat-form-field>
   </div>
 
   <div class="perk-picker-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Search for a perk</mat-label>
-      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="perk3Auto"
-        [matAutocomplete]="auto3">
-      <mat-autocomplete class="mat-perk-option" #auto3="matAutocomplete" (optionSelected)="addToPerks3($event)">
-        <mat-option *ngFor="let perk of perk3Options | async | sortBy:'title'" [value]="perk">
-          <span class="title">{{perk.title}}</span>
-          <span class="description">{{perk.description}}</span>
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Perks 3</mat-label>
-      <mat-select formControlName="perks3" multiple>
-        <mat-option [value]="null">not set</mat-option>
-        <mat-option [value]="null"
-          *ngFor="let perk of perkService.getGearSlotPerks(value.gearType) | async | sortBy:'title'" [value]="perk.id">
-          <span [matTooltip]="perk.description" matTooltipPosition="right">{{ perk.title }}</span>
-        </mat-option>
-      </mat-select>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>{{ !!formValue.value.perks3 ? 'Perk slot 3' : 'Select a perk'}}</mat-label>
+      <agg-perk-select formControlName="perks3" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="3"
+        [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
+      </agg-perk-select>
     </mat-form-field>
   </div>
 
