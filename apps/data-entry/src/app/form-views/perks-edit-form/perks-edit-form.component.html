@@ -49,10 +49,10 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-checkbox formControlName="gearSpecific">Gear Specific</mat-checkbox>
-  <mat-checkbox formControlName="slot1Enabled">Limit to Slot 1 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} pieces)</span></mat-checkbox>
-  <mat-checkbox formControlName="slot2Enabled">Limit to Slot 2 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} pieces)</span></mat-checkbox>
-  <mat-checkbox formControlName="slot3Enabled">Limit to Slot 3 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} pieces)</span></mat-checkbox>
-  <mat-checkbox formControlName="isReady">Is Ready?</mat-checkbox>
+  <mat-checkbox color="warn" formControlName="gearSpecific">Gear Specific</mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot1Enabled">Limit to Slot 1 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot2Enabled">Limit to Slot 2 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot3Enabled">Limit to Slot 3 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="isReady">Is Ready?</mat-checkbox>
 
 </form>

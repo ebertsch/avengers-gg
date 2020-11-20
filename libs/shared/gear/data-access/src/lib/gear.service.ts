@@ -41,7 +41,7 @@ export class GearService extends EntityCollectionServiceBase<GearDefinition> {
 
   private getGearForHeroSelector = (gearSlot: GearSlot, hero: string) => createSelector(
     this.selectors.selectEntities,
-    gear => filter(g=> g.heroId === hero && g.gearType === gearSlot, gear).sort()
+    gear => filter(g=> (g.heroId === hero || g.heroId === '*')&& g.gearType === gearSlot, gear).sort()
   );
   getGearForHero = (gearSlot: GearSlot, hero: string) => {
     return this.store.pipe(select(this.getGearForHeroSelector(gearSlot, hero)))
