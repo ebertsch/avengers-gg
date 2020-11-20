@@ -6,18 +6,8 @@ import {
 import { select, createSelector } from '@ngrx/store';
 import { contains, filter } from 'ramda';
 import { Perk } from './perk';
-import { GearSlot } from '@avengers-game-guide/shared/data';
+import { GearSlot, convertToGearSlotType } from '@avengers-game-guide/shared/data';
 
-const convertToGearSlotType = (gearSlot: GearSlot | string): string => {
-  switch (gearSlot) {
-    case 'minorArtifact1':
-    case 'minorArtifact2':
-      return 'minorArtifact';
-    default:
-      return gearSlot;
-      break
-  }
-}
 
 @Injectable({
   providedIn: 'root'
