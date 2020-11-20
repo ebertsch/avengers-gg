@@ -34,7 +34,8 @@ export class GearEditFormComponent implements OnInit, OnChanges {
   perk3Auto = new FormControl()
   perk3Options: Observable<Perk[]>;
 
-  activeGearSlot: Observable<string>;
+  activeGearSlot$: Observable<string>;
+  activeHeroId$: Observable<{id:string}>;
 
   constructor(public perkService: PerkService, public heroService: HeroService) { }
 
@@ -61,8 +62,13 @@ export class GearEditFormComponent implements OnInit, OnChanges {
       sources: new FormArray([])
     })
 
-    this.activeGearSlot = this.formValue.get('gearType').valueChanges.pipe(
+    this.activeGearSlot$ = this.formValue.get('gearType').valueChanges.pipe(
       startWith(this.value.gearType)
+    )
+
+    this.activeHeroId$ = this.formValue.get('heroId').valueChanges.pipe(
+      startWith(this.value.heroId),
+      map(id  => ({id}))
     )
 
     for (let x = 0; x < (this.value.sources || []).length; x++) {

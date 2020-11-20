@@ -54,7 +54,7 @@
   <div class="perk-picker-container">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>{{ !!formValue.value.perks1 ? 'Perk slot 1' : 'Select a perk'}}</mat-label>
-      <agg-perk-select formControlName="perks1" [gearSlot]="activeGearSlot | async" [perkSlot]="1"
+      <agg-perk-select formControlName="perks1" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="1"
         [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
       </agg-perk-select>
     </mat-form-field>
@@ -64,7 +64,7 @@
   <div class="perk-picker-container">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>{{ !!formValue.value.perks2 ? 'Perk slot 2' : 'Select a perk'}}</mat-label>
-      <agg-perk-select formControlName="perks2" [gearSlot]="activeGearSlot | async" [perkSlot]="2"
+      <agg-perk-select formControlName="perks2" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="2"
         [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
       </agg-perk-select>
     </mat-form-field>
@@ -73,7 +73,7 @@
   <div class="perk-picker-container">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>{{ !!formValue.value.perks3 ? 'Perk slot 3' : 'Select a perk'}}</mat-label>
-      <agg-perk-select formControlName="perks3" [gearSlot]="activeGearSlot | async" [perkSlot]="3"
+      <agg-perk-select formControlName="perks3" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="3"
         [allowAny]="allowAnyPerkField.value" [allowAnyPerkSlot]="allowAnyPerkSlotField.value" [allowMultiple]="true">
       </agg-perk-select>
     </mat-form-field>
