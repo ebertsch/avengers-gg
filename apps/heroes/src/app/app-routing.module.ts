@@ -9,6 +9,13 @@ const routes: Routes = [
     redirectTo: 'heroes',
   },
   {
+    path: 'b',
+    loadChildren: () =>
+    import('@avengers-game-guide/builds/redirector').then(
+      (module) => module.RedirectorModule
+    ),
+  },
+  {
     path: 'heroes',
     loadChildren: () =>
       import('@avengers-game-guide/heroes/heroes-index').then(

@@ -29,15 +29,6 @@ export class EnsureHeroesGuard implements CanActivate {
 export class EnsureSelectedHeroGuard implements CanActivate {
 constructor(private router: Router, private heros: HeroService) {}
 
-  waitForCollectionToLoad(): Observable<boolean> {
-    return this.heros.loaded$.pipe(
-      filter((loaded) => {
-        return loaded
-      }),
-      take(1)
-    );
-  }
-
   hasHeroInState(id: string): Observable<boolean> {
     return this.heros.keys$.pipe(
       map((entities) => !!entities[id]),

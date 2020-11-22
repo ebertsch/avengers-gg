@@ -41,8 +41,8 @@ export class LoadoutBuilderComponent implements OnInit {
   }
 
 
-  saveGearInstance(gearInstance: GearInstance) {
-    this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
+  async saveGearInstance(gearInstance: GearInstance) {
+    await this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
     this.loadoutUpdated.emit({ heroId: this.hero.id, loadout: this.loadout })
   }
 

@@ -47,7 +47,7 @@ const toSerializedGear = (source: GearInstance): SerializedGearInstance => {
   }
 }
 
-const loadoutForQueryParam = (source: Loadout) => {
+export const loadoutForQueryParam = (source: Loadout) => {
   const minimalLoadout: SerializedLoadout = {
     m: toSerializedGear(source.melee),
     d: toSerializedGear(source.defense),
@@ -240,7 +240,7 @@ export class GearEditorService {
   save(gearSlot: GearSlot, gearInstance: GearInstance, loadout: Loadout) {
     const modifiedLoadout = assoc(gearSlot, gearInstance, loadout)
     const minimalLoadout = loadoutForQueryParam(modifiedLoadout);
-    this.router.navigate([], {
+    return this.router.navigate([], {
       queryParams: {
         v: 'viewer',
         loadout: minimalLoadout

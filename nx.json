@@ -105,6 +105,9 @@
     },
     "shared-urls-shortener": {
       "tags": []
+    },
+    "builds-redirector": {
+      "tags": []
     }
   }
 }

@@ -10,5 +10,5 @@ export const URL_REWRITES = {
     '/note': '/notes',
     '/note/:id': '/notes/:id',
     '/shorturl': '/shorturls',
-    '/shorturl/': '/shorturls/'
+    '/shorturl/:id': '/shorturls/:id',
   }

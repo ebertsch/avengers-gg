@@ -152,8 +152,8 @@ export class BuildsViewComponent implements OnInit {
   }
 
   getShareableLink() {
-    this.hero$.pipe(take(1)).subscribe(hero => {
-      this.shareableLink$ = this.urlShortener.shorten(hero.id, 'summary', 'mine')
+    this.gearEditorService.activeLoadoutQueryString$.pipe(take(1)).subscribe(url => {
+      this.shareableLink$ = this.urlShortener.shorten(url)
     })
   }
 }

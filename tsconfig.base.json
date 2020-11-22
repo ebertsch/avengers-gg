@@ -79,6 +79,9 @@
       ],
       "@avengers-game-guide/shared/urls/shortener": [
         "libs/shared/urls/shortener/src/index.ts"
+      ],
+      "@avengers-game-guide/builds/redirector": [
+        "libs/builds/redirector/src/index.ts"
       ]
     }
   },
