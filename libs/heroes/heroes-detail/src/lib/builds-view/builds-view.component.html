@@ -12,9 +12,14 @@
 <agg-panel class="share-actions-container">
     <agg-panel-header>Share Loadout</agg-panel-header>
     <div class="actions-container">
-        <input type="text" disabled value="{{gearEditorService.activeLoadoutQueryString$ | async}}" />
-        <button mat-flat-button color="primary" class="copy"
-            cdkCopyToClipboard="{{gearEditorService.activeLoadoutQueryString$ | async}}">Copy</button>
+        <ng-container *ngIf="!(shareableLink$ | async); else shareableLinkDisplay">
+            <button mat-flat-button color="primary" (click)="getShareableLink()">Get Shareable Link</button>
+        </ng-container>
+        <ng-template #shareableLinkDisplay>
+            <input type="text" disabled value="{{(shareableLink$ | async).url}}" />
+            <button mat-flat-button color="primary" class="copy"
+                cdkCopyToClipboard="{{(shareableLink$ | async).url}}">Copy</button>
+        </ng-template>
     </div>
 </agg-panel>
 
@@ -31,7 +36,7 @@
         routerLinkActive="active">
         View Gear Summary
     </a>
-    <agg-loadout-builder [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async">
+    <agg-loadout-builder (loadoutUpdated)="onLoadoutUpdated($event)" [hero]="hero$ | async" [gearSlot]="activeGearSlot$ | async" [loadout]="loadout$ | async">
     </agg-loadout-builder>
 </agg-panel>
 

@@ -14,6 +14,8 @@ import { GearEditorService } from '@avengers-game-guide/shared/gear/loadout-edit
 import { GearInstance, Loadout } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { TeamService } from '@avengers-game-guide/shared/teams/data-access';
+import { UrlShortenerService, ShortUrl }from '@avengers-game-guide/shared/urls/shortener'
+import { environment } from '@avengers-game-guide/shared/environments';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -30,6 +32,7 @@ export class BuildsViewComponent implements OnInit {
   selectedSkills$: Observable<Skill[]>;
   activeGearSlot$: Observable<string>;
   activeLoadoutPerks$: Observable<string[]>;
+  shareableLink$: Observable<ShortUrl>;
 
   selectedSkills: Dictionary<string> = {}
   count = 0;
@@ -42,7 +45,8 @@ export class BuildsViewComponent implements OnInit {
     private skillService: SkillService,
     public gearEditorService: GearEditorService,
     public perkService: PerkService,
-    public teamService: TeamService
+    public teamService: TeamService,
+    private urlShortener: UrlShortenerService
     ) {
   }
 
@@ -143,4 +147,13 @@ export class BuildsViewComponent implements OnInit {
 
   }
 
+  onLoadoutUpdated(value: { heroId: string, loadout: Loadout }) {
+    this.getShareableLink();
+  }
+
+  getShareableLink() {
+    this.hero$.pipe(take(1)).subscribe(hero => {
+      this.shareableLink$ = this.urlShortener.shorten(hero.id, 'summary', 'mine')
+    })
+  }
 }

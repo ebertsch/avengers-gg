@@ -4,6 +4,7 @@ import { environment } from '@avengers-game-guide/shared/environments'
 import * as path from 'path'
 import {mergeJsonFiles} from './merge-extension';
 import saveToFiles from './save-data';
+import { contains } from 'ramda';
 
 (async () => {
   await mergeJsonFiles({source: './data', destination: './db.json'});
@@ -24,12 +25,14 @@ import saveToFiles from './save-data';
   // Add custom routes before JSON Server router
   if (isReadOnly) {
     server.all('*', function (req, res, next) {
-      if (req.method === 'GET'
-      || req.path.toLowerCase() === '/perkusage'
-      || req.path.toLowerCase() === '/shorturls' ) {
+      const containsEndpoint = contains<string>(req.path.toLowerCase())
+      const isEndpointWhiteListed = containsEndpoint(environment.endPointsWhiteList);
+      if (
+        req.method === 'GET' || isEndpointWhiteListed
+      ) {
         next() // Continue
       } else {
-        res.status(403).send(req.path) // Forbidden
+        res.status(403).send({path: req.path, isEndpointWhiteListed}) // Forbidden
       }
     })
   } else {

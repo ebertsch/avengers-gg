@@ -83,12 +83,14 @@ const entityMetadata: EntityMetadataMap = {
   },
   NamedSet: {
     filterFn: filterData
-  }
+  },
+  ShortUrl: {}
 };
 
 const pluralNames = {
   Hero: 'Heroes',
-  Gear: 'Gear'
+  Gear: 'Gear',
+  ShortUrl: 'ShortUrls'
 };
 
 export const entityConfig = {

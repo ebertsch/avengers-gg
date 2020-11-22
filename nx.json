@@ -102,6 +102,9 @@
     },
     "shared-perks-perk-select": {
       "tags": []
+    },
+    "shared-urls-shortener": {
+      "tags": []
     }
   }
 }

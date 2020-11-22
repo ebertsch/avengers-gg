@@ -1085,6 +1085,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-urls-shortener": {
+      "projectType": "library",
+      "root": "libs/shared/urls/shortener",
+      "sourceRoot": "libs/shared/urls/shortener/src",
+      "prefix": "agg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/urls/shortener/tsconfig.lib.json",
+              "libs/shared/urls/shortener/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/urls/shortener/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/urls/shortener/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
