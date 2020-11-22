@@ -7,9 +7,11 @@ const saveToFiles = async (req: Request, res: Response, next: NextFunction) => {
     const file = path.join(__dirname, 'db.json')
     const dest = path.join(__dirname, '../../../server-json-data')
 
-    const contents = (await fs.readFile(file)).toString();
-    const jsonContents = JSON.parse(contents);
-    const jsonPairs = toPairs(jsonContents) as  [string, any][];
+    try {
+      const contents = (await fs.readFile(file)).toString();
+      const jsonContents = JSON.parse(contents);
+      const jsonPairs = toPairs(jsonContents) as  [string, any][];
+
 
     const writeStrings = map( ([key, data]) => {
         const outJson = { [key]: data }
@@ -23,8 +25,11 @@ const saveToFiles = async (req: Request, res: Response, next: NextFunction) => {
 
     await Promise.all(writeOps);
 
-
-    res.status(200)
+  } catch (error) {
+    console.error('error', error)
+    return res.status(500).send((error as Error).message);
+  }
+    return res.status(200).send()
   }
 
 export default saveToFiles

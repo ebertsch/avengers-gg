@@ -20,14 +20,16 @@ import saveToFiles from './save-data';
   if(!!process.env.BLOCK) readOnlyMode = process.env.BLOCK
   else readOnlyMode = environment.readOnlyAPI !== "false" ? 'true' : 'false'
 
+  const isReadOnly = readOnlyMode === "true"
   // Add custom routes before JSON Server router
-  if (readOnlyMode === "true") {
-    console.log('enabling readonly mode')
+  if (isReadOnly) {
     server.all('*', function (req, res, next) {
-      if (req.method === 'GET') {
+      if (req.method === 'GET'
+      || req.path.toLowerCase() === '/perkusage'
+      || req.path.toLowerCase() === '/shorturls' ) {
         next() // Continue
       } else {
-        res.sendStatus(403) // Forbidden
+        res.status(403).send(req.path) // Forbidden
       }
     })
   } else {
@@ -36,5 +38,5 @@ import saveToFiles from './save-data';
 
 
   server.use(router)
-  server.listen(process.env.PORT || environment.apiPort, () => console.log('JSON Server is running'))
+  server.listen(process.env.PORT || environment.apiPort, () => console.log(`JSON Server is running${isReadOnly ? ' in READ_ONLY mode' : ' and is WRITE enabled'}`))
 })();
