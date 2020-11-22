@@ -24,6 +24,7 @@ import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
 import { DataAccessModule as TeamDataAccessModule } from '@avengers-game-guide/shared/teams/data-access';
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
+import { UrlShortenerModule }from '@avengers-game-guide/shared/urls/shortener'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -55,6 +56,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NamedSetsDataAccessModule,
     SharedGearGearViewerModule,
     TeamDataAccessModule,
+    UrlShortenerModule,
     RouterModule.forChild([
       {path: ':heroSlug', component: DetailPageComponent, canActivate:[EnsureSelectedHeroGuard], children: [
         { path: '', pathMatch:'full', redirectTo: 'builder' },

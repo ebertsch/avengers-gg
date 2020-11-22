@@ -17,8 +17,9 @@ const entityMetadata: EntityMetadataMap = {
 
 const pluralNames = {
   Hero: 'Heroes',
+  ShortUrl: 'ShortUrls',
+  PerkUsage: 'PerkUsage',
   Gear: 'Gear',
-  PerkUsage: 'PerkUsage'
 };
 
 export const entityConfig = {

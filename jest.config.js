@@ -23,5 +23,9 @@ module.exports = {
     '<rootDir>/libs/shared/named-sets/data-access',
     '<rootDir>/libs/shared/teams/data-access',
     '<rootDir>/libs/shared/perks/perk-select',
+    '<rootDir>/libs/shared/urls/core',
+    '<rootDir>/libs/shared/urls/shortener',
+    '<rootDir>/libs/shared/builds/build-redirector',
+    '<rootDir>/libs/builds/redirector',
   ],
 };

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
@@ -25,6 +25,7 @@ export class LoadoutBuilderComponent implements OnInit {
   @Input() hero: Hero
   @Input() loadout: Loadout
   @Input() gearSlot: GearSlot
+  @Output() loadoutUpdated = new EventEmitter<{ heroId: string, loadout: Loadout }>()
 
   activeGear$: Observable<GearInstance>
   gearMenuOpen = false

@@ -73,6 +73,15 @@
       ],
       "@avengers-game-guide/shared/perks/perk-select": [
         "libs/shared/perks/perk-select/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/urls": [
+        "libs/shared/urls/core/src/index.ts"
+      ],
+      "@avengers-game-guide/shared/urls/shortener": [
+        "libs/shared/urls/shortener/src/index.ts"
+      ],
+      "@avengers-game-guide/builds/redirector": [
+        "libs/builds/redirector/src/index.ts"
       ]
     }
   },
