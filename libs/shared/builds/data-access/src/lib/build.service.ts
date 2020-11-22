@@ -17,10 +17,17 @@ export class BuildService extends EntityCollectionServiceBase<Build> {
     super('Build', serviceElementsFactory);
   }
 
+  private getBuildIdQueryParam = createSelector(
+    RouteSelectors.getMergedRoute,
+    (mergedRoute) => <string>mergedRoute.params.code
+  );
+  buildIdQueryParam$ = this.store.pipe(select(this.getBuildIdQueryParam))
+
+
   private getSelectedSkills = createSelector(
     RouteSelectors.getMergedRoute,
     (mergedRoute) => <string>mergedRoute.queryParams.skills
-);
+  );
 
   selectedSkills$ = this.store.pipe(select(this.getSelectedSkills))
 }

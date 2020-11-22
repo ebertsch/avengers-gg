@@ -1,14 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Hero } from '@avengers-game-guide/shared/heroes/data-access';
 import { Observable } from 'rxjs';
-import { GearInstance, GearService, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { GearInstance, GearService, Loadout, UserGearInstanceService, UserGearInstance } from '@avengers-game-guide/shared/gear/data-access';
 import { GearSlot } from '@avengers-game-guide/shared/data';
 
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 import { GearEditorService } from '../gear-editor.service';
+import { path, pathOr, pick, prop, propOr } from 'ramda';
 
 
 
@@ -24,24 +25,26 @@ export class LoadoutBuilderComponent implements OnInit {
   @Input() hero: Hero
   @Input() loadout: Loadout
   @Input() gearSlot: GearSlot
+  @Output() loadoutUpdated = new EventEmitter<{ heroId: string, loadout: Loadout }>()
 
   activeGear$: Observable<GearInstance>
   gearMenuOpen = false
 
-  constructor(private router: Router, private gearEditor: GearEditorService, private perkService: PerkService,
+  constructor(private router: Router, private gearEditor: GearEditorService,
+    private userGearInstanceService: UserGearInstanceService, private perkService: PerkService,
     private gearService: GearService) {
     this.activeView$ = gearEditor.loadoutViewerView$;
     this.activeGear$ = gearEditor.activeGearInstance$;
   }
-  
+
   ngOnInit(): void {
     this.perkService.getAll();
     this.gearService.getWithQuery(`heroId_like=${this.hero.id}&heroId_like=\\*`)
   }
 
-
   saveGearInstance(gearInstance: GearInstance) {
     this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
+    this.userGearInstanceService.add(new UserGearInstance(gearInstance))
   }
 
   removeGearInstance() {

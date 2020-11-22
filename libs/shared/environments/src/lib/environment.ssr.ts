@@ -1,3 +1,6 @@
+import { URL_REWRITES } from './url-rewrites';
+import { WHITE_LISTED_ENDPOINTS } from './white-listed-endpoints';
+
 export const environment = {
   production: true,
   isServer: true,
@@ -8,16 +11,6 @@ export const environment = {
   host: "www.avengersgg.com",
   dataEntryClientApiUrl: "https://avengers-game-guide-data.herokuapp.com/",
   apiPort: 3333,
-  apiRewriter: {
-    '/api/*': '/$1',
-    '/hero/:heroId': '/heroes/:heroId',
-    '/namedset': '/namedsets',
-    '/namedset/:id': '/namedsets/:id',
-    '/perk': '/perks',
-    '/perk/:id': '/perks/:id',
-    '/guide': '/guides',
-    '/guide/:id': '/guides/:id',
-    '/note': '/notes',
-    '/note/:id': '/notes/:id'
-  }
+  apiRewriter: URL_REWRITES,
+  endPointsWhiteList: WHITE_LISTED_ENDPOINTS
 };
