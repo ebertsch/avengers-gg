@@ -25,8 +25,8 @@ import saveToFiles from './save-data';
   if (isReadOnly) {
     server.all('*', function (req, res, next) {
       if (req.method === 'GET'
-      || req.path.toLowerCase() === '/perkusage'
-      || req.path.toLowerCase() === '/shorturls' ) {
+      || req.path.toLowerCase() === '/perkusage/'
+      || req.path.toLowerCase() === '/shorturls/' ) {
         next() // Continue
       } else {
         res.status(403).send(req.path) // Forbidden
