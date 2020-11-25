@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+    .mat-button {
+        min-width: initial !important;
+    }
+}
+
+.login-card {
+    width: 400px;
+    ::ng-deep mat-card-actions.mat-card-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    ::ng-deep input:-internal-autofill-selected {
+        background-color: #384555 !important;
+    }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50px #384555 inset;
+        /* Change the color to your own background color */
+        -webkit-text-fill-color: #cbd1dd;
+        background-color: #384555 !important;
+    }
+}

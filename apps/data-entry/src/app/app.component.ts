@@ -1,34 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { environment } from '@avengers-game-guide/shared/environments';
+
 
 @Component({
   selector: 'aggd-root',
-  template: `
-          <mat-toolbar color="primary">
-            <span>AGG Data Entry</span>
-            <a mat-button [routerLink]="['gear']">Gear</a>
-            <a mat-button [routerLink]="['perks']">Perks</a>
-            <a mat-button [routerLink]="['named-sets']">Sets</a>
-            <a mat-button [routerLink]="['guides']">Guides</a>
-            <a mat-button [routerLink]="['notes']">Notes</a>
-            <span class="spacer"></span>
-            <button mat-button (click)="saveDB()">Save</button>
-          </mat-toolbar>
-          <main>
-            <router-outlet></router-outlet>
-          </main>`,
+  templateUrl: 'app.component.html',
   styles: [
-    ':host: {display: block}',
-    'main { margin: 10px 20px; }'
+    ':host {display: block; height: 100vh}',
+    'main { margin: 10px 20px; }',
+    'a { margin-left: 20px; text-transform: capitalize; font-size: 16px }',
+    'a:first-of-type { margin-left: 30px }',
+    'a:hover { text-decoration: none; color: rgba(255,255,255, 0.87); }'
   ],
 })
-export class AppComponent {
-  title = 'data-entry';
+export class AppComponent  {
 
-  constructor(private http: HttpClient) {}
-
-  saveDB() {
-    this.http.post(`${environment.dataEntryClientApiUrl}/save`, null).subscribe();
-  }
+  constructor() { }
+ 
 }

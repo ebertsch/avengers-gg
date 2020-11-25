@@ -1,0 +1,10 @@
+import { Injectable } from '@nestjs/common';
+import { DataServiceBase } from '../../data-service-base';
+import { <%= classify(name) %> } from './<%= dasherize(name) %>.model';
+
+@Injectable()
+export class <%= classify(name) %>Service extends DataServiceBase<<%= classify(name) %>> {
+    constructor() {
+        super(<%= classify(name) %>)
+    }
+}

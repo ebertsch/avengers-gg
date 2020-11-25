@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatBadgeModule } from '@angular/material/badge'
+import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -17,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatAutocompleteModule,
     MatBadgeModule,
     MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,
@@ -30,6 +32,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatAutocompleteModule,
     MatBadgeModule,
     MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,

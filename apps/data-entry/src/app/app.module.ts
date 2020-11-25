@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
 import { DefaultDataServiceConfig } from '@ngrx/data';
 import { SharedUiModule } from '@avengers-game-guide/shared/ui'
 import { StorageModule } from '@ngx-pwa/local-storage';
@@ -25,8 +25,33 @@ import { GearEditFormComponent } from './form-views/gear-edit-form/gear-edit-for
 import { GuideEditFormComponent } from './form-views/guide-edit-form/guide-edit-form.component';
 import { NoteEditFormComponent } from './form-views/note-edit-form/note-edit-form.component';
 import { DataFiltersComponent } from './data-filters/data-filters.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component'
+
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import firebase from 'firebase/app';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthInterceptor } from './auth.interceptor'
+
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    AppRoutingModule,
+    StorageModule,
+    RootStateModule,
+    DataAccessModule,
+    SharedUiModule,
+    SharedPerksPerkSelectModule
+  ],
   declarations: [
     AppComponent,
     PerksPageComponent,
@@ -39,30 +64,18 @@ import { DataFiltersComponent } from './data-filters/data-filters.component';
     GearEditFormComponent,
     GuideEditFormComponent,
     NoteEditFormComponent,
-    DataFiltersComponent
+    DataFiltersComponent,
+    LoginPageComponent,
+    DashboardComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MaterialModule,
-    StorageModule,
-    RootStateModule,
-    DataAccessModule,
-    SharedUiModule,
-    SharedPerksPerkSelectModule,
-    RouterModule.forRoot([
-      { path: 'gear', component: GearPageComponent },
-      { path: 'perks', component: PerksPageComponent },
-      { path: 'named-sets', component: NamedSetsPageComponent },
-      { path: 'guides', component: GuidesPageComponent },
-      { path: 'notes', component: NotesPageComponent },
-    ], { initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
-
+  providers: [
+    { provide: DefaultDataServiceConfig, useValue: { root: environment.dataEntryClientApiUrl } },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
-  providers: [{ provide: DefaultDataServiceConfig, useValue: { root: environment.dataEntryClientApiUrl } }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    firebase.initializeApp(environment.firebaseConfig)
+  }
+}

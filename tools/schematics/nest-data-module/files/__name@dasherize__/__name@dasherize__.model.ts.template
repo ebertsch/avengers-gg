@@ -1,0 +1,6 @@
+import { Collection } from 'fireorm';
+
+@Collection("<%= dasherize(name) %>")
+export class <%= classify(name) %> {
+    id: string
+}

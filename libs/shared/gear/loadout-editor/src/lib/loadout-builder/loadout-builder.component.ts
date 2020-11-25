@@ -39,7 +39,7 @@ export class LoadoutBuilderComponent implements OnInit {
 
   ngOnInit(): void {
     this.perkService.getAll();
-    this.gearService.getWithQuery(`heroId_like=${this.hero.id}&heroId_like=\\*`)
+    this.gearService.getWithQuery({hero_id: this.hero.id, include_wildcard:'*'})
   }
 
   saveGearInstance(gearInstance: GearInstance) {
