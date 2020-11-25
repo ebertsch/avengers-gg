@@ -882,6 +882,11 @@
                 "input": "libs/shared/assets",
                 "glob": "favicon.png",
                 "output": "."
+              },
+              {
+                "input": "apps/data-api/src",
+                "glob": "routes.json",
+                "output": "."
               }
             ],
             "styles": ["apps/data-entry/src/styles.scss"],
@@ -1166,11 +1171,6 @@
               {
                 "input": "apps/data-api/src",
                 "glob": "package.json",
-                "output": "."
-              },
-              {
-                "input": "apps/data-api/src",
-                "glob": "routes.json",
                 "output": "."
               }
             ]
