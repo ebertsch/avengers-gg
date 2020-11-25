@@ -884,7 +884,7 @@
                 "output": "."
               },
               {
-                "input": "apps/data-api/src",
+                "input": "apps/data-entry/src",
                 "glob": "routes.json",
                 "output": "."
               }
