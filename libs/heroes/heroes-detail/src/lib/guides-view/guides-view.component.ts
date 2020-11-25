@@ -20,7 +20,7 @@ export class GuidesViewComponent implements OnInit {
   constructor(private guides: GuideService, private heroes: HeroService, private titleService: Title) {
     this.guides$ = this.heroes.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Guides | ${hero.name}`)),
-      tap(hero => { this.guides.clearCache(); this.guides.getWithQuery({heroId: hero.id})}),
+      tap(hero => { this.guides.clearCache(); this.guides.getWithQuery({hero_id: hero.id})}),
       switchMap(() => this.guides.entities$)
     )
   }

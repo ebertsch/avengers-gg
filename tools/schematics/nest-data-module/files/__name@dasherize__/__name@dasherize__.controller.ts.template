@@ -1,0 +1,14 @@
+import { Controller, Get } from '@nestjs/common';
+
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+
+
+@Controller()
+export class <%= classify(name) %>Controller {
+  constructor(private readonly entityService: <%= classify(name) %>Service) {}
+
+  @Get('<%= dasherize(name) %>')
+  async getData() {
+    return await this.entityService.getAll()
+  }
+}

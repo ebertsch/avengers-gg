@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Avengers GG Static Site
 
 on:
   push:
@@ -28,7 +28,6 @@ jobs:
           action: "upload"
           app_build_command: "yarn prerender"
           app_location: "/" # App source code path
-          # app_artifact_location: "dist/apps/heroes" # Built app content directory - optional
           app_artifact_location: "dist/heroes/browser" # Built app content directory - optional
 
   close_pull_request_job:

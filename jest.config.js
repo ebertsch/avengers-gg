@@ -27,5 +27,6 @@ module.exports = {
     '<rootDir>/libs/shared/urls/shortener',
     '<rootDir>/libs/shared/builds/build-redirector',
     '<rootDir>/libs/builds/redirector',
+    '<rootDir>/apps/data-api',
   ],
 };
