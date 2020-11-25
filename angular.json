@@ -1162,7 +1162,13 @@
             "outputPath": "dist/apps/data-api",
             "main": "apps/data-api/src/main.ts",
             "tsConfig": "apps/data-api/tsconfig.app.json",
-            "assets": []
+            "assets": [
+              {
+                "input": "apps/data-api/src",
+                "glob": "package.json",
+                "output": "."
+              }
+            ]
           },
           "configurations": {
             "production": {
