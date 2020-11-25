@@ -18,7 +18,7 @@
         Appears on gear for {{ appearsForHero(formValue.getRawValue(), gear).join(', ') }}
       </mat-hint>
     </mat-form-field>
-    <div class="hero-buttons">
+    <div class="hero-buttons" style="display: none;">
       <div class="title">Limit to</div>
       <button mat-button color="primary" (click)="setPerkForAll()">All</button>
       <button mat-button color="primary" (click)="setPerkForSelect(appearsForHero(formValue.getRawValue(), gear))">Occurrences</button>
@@ -50,9 +50,9 @@
   </mat-form-field>
 
   <mat-checkbox color="warn" formControlName="gearSpecific">Gear Specific</mat-checkbox>
-  <mat-checkbox color="warn" formControlName="slot1Enabled">Limit to Slot 1 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} pieces)</span></mat-checkbox>
-  <mat-checkbox color="warn" formControlName="slot2Enabled">Limit to Slot 2 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} pieces)</span></mat-checkbox>
-  <mat-checkbox color="warn" formControlName="slot3Enabled">Limit to Slot 3 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot1Enabled">Enable on Slot 1 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks1'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot2Enabled">Enable on Slot 2 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks2'])}} pieces)</span></mat-checkbox>
+  <mat-checkbox color="warn" formControlName="slot3Enabled">Enable on Slot 3 <span class="occurrences">({{onGearCount(formValue.getRawValue(), gear, ['perks3'])}} pieces)</span></mat-checkbox>
   <mat-checkbox color="warn" formControlName="isReady">Is Ready?</mat-checkbox>
 
 </form>
