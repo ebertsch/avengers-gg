@@ -1167,6 +1167,11 @@
                 "input": "apps/data-api/src",
                 "glob": "package.json",
                 "output": "."
+              },
+              {
+                "input": "apps/data-api/src",
+                "glob": "routes.json",
+                "output": "."
               }
             ]
           },
