@@ -28,9 +28,9 @@ export class GearViewComponent implements OnInit {
     private titleService: Title) {
     this.namedSets$ = this.heroService.selected$.pipe(
       tap(hero => this.titleService.setTitle(`Avengers GG | Gear | ${hero.name}`)),
-      tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery(`heroId_like=${hero.id}&heroId_like=\\*`)}),
-      tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery(`heroes_like=${hero.id}&heroes_like=\\*`)}),
-      tap(hero => {this.namedSetsService.clearCache(); this.namedSetsService.getWithQuery(`heroId_like=${hero.id}`)}),
+      tap(hero => {this.gearService.clearCache(); this.gearService.getWithQuery({hero_id: hero.id, include_wildcard:'*'}) }),
+      tap(hero => {this.perkService.clearCache(); this.perkService.getWithQuery({hero_id: hero.id, include_wildcard:'*'}) }),
+      tap(hero => {this.namedSetsService.clearCache(); this.namedSetsService.getWithQuery({hero_id: hero.id })}),
       switchMap(() => this.namedSetsService.entities$)
     )
   }

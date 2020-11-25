@@ -866,7 +866,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/data/public",
+            "outputPath": "dist/apps/data-entry",
             "index": "apps/data-entry/src/index.html",
             "main": "apps/data-entry/src/main.ts",
             "polyfills": "apps/data-entry/src/polyfills.ts",
@@ -1146,6 +1146,66 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "data-api": {
+      "root": "apps/data-api",
+      "sourceRoot": "apps/data-api/src",
+      "projectType": "application",
+      "prefix": "data-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/data-api",
+            "main": "apps/data-api/src/main.ts",
+            "tsConfig": "apps/data-api/tsconfig.app.json",
+            "assets": [
+              {
+                "input": "apps/data-api/src",
+                "glob": "package.json",
+                "output": "."
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "data-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/data-api/tsconfig.app.json",
+              "apps/data-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/data-api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/data-api/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

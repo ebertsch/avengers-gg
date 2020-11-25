@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Avengers GG Admin Static Site
 
 on:
   push:
@@ -23,13 +23,12 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_FOREST_026B4A70F }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_MEADOW_09996850F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_build_command: "yarn prerender"
+          app_build_command: "yarn build data-entry"
           app_location: "/" # App source code path
-          # app_artifact_location: "dist/apps/heroes" # Built app content directory - optional
-          app_artifact_location: "dist/heroes/browser" # Built app content directory - optional
+          app_artifact_location: "dist/apps/data-entry" # Built app content directory - optional
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -40,5 +39,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_FOREST_026B4A70F }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_MEADOW_09996850F }}
           action: "close"

@@ -1,0 +1,10 @@
+import { ServiceAccount } from 'firebase-admin';
+
+export const serviceAccount: ServiceAccount = {
+    // "type": "service_account",
+    "projectId": "avengers-gg",
+    // "privateKey": process.env.FB_PRIVATE_KEY,
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDW+ey1uXOdSEnf\nKKmkO7ZcC3TaXnqKmvY4fFdOsEDsbIQWGxMGmcNyn5moqPsTAiye/3J9+sIVza0i\nsW8P0a/fdwo/+2JQQqxLylNZ9aOemcHOLKTYvlB6CvOn6busOCKxdQx4PZaDT584\nKz57pmc7/LM+IJzG6/O22vlyNeEDx6QyRFe7h5ky/Yl9qQa+YjdcXXD4DVCdaZ+D\nmpnbaMcxG8ph+w9SFVdWgM0x/qU81icuiNevO+0c9Kpb8oaOwhIMIvGJC18RW5kw\n+2jAvZ8Yc0A90yqTAD8R2YSdTZxKGrJLvmc2Jcdexh2Z0EHUYir/p8+D2wAFWcLY\nlLd6zHXhAgMBAAECggEAHJFHwHptf7gsgOhBat64hBDNrXsio6qmD6mOXJmVdxWQ\nk/NzGsxyKZhF7iDOhJ8kWNivWUhqZEVZvaOAk8SUr4h9JzV7whiqFsRDQVAgNyJN\nm91Y5qibvywXZvfrhZ5MFfLs/kmI59g721X7zqi1TUZud1IUI2cVkvYUcfXw+fRe\nWXgnKM0RZuwYOACX34ak/7GJsPjuDbZy8YaTuFLMWS2Ugxcr78PswA78e+f1yfEy\nfYKnzrmcXqsBD/Q4rqq2s8j7uKvHCM2d72VpkG+Hz2NVW3dPlYt1BHmV8Oi+3ph0\n6unYMnXnvchUZPy3UpezjBOxjLhgXW+ov71Xosd45QKBgQD0dfRpcW+j2CXVmZeT\n4ctyOz57ZDDebqYqD1qv27YsB1r4MwdwqH1xF0ltgQnskOlkSWm+RaU4YIehrJUz\nFC0qQbXE4exhUHpISH50rOB5f7Pv+JeaRL9LUhg90ESaGFZnCX89kL09exQtBn5H\n/52roonaqv7n7PM5rupZb+x4SwKBgQDhH655xPylBNkUgk5q1Vez3VmXPALOOoG2\nauME3mDHyQRKmDHRi/8th66zeEUB/Dtox2YjKQ381V8FPz6AZcIppmXIC1fKcTry\n36FJYtDSvCJwyX1vpvdcOG7AvufMgmMogM5XhcbFzi0KUOn3vCnRSzVdoLA0fwv2\n+GWhjxcHAwKBgHpaAw83QDoP97e1nODeFPZCYp5dYfwiAzZv4uK7o6zbrZMl7yZa\nnhYZIp4VBIOLb9TKzYr2zp+t6JRpjW84PPa2VqSIssduARXmeqwozlzhJo0HrdD/\ncYLgPtPJRlydq7j8TtvgcmawEEQMyO1+KUr7GeYAyX4I4R9QxWgoFYGLAoGAQOKJ\nvi0JiGJqUt/vzBjrazrsHIu+X0Q7qKEMB5Y0nMCSTRGqojPQe4X002NhuF3DncKC\n7LVjg7DX70I4OHeby7da9JpYVk/mZqQP73/cojB5WLqqPakI+HqHaWRcmPQnsj/V\nuSIklVSEZMnHdZC1GM6tdevffXH0t90GJdeBEpMCgYAIAQA06DXsNmdMIzrNhlMl\nH+1S3reymPqDq9N1Yld5d3/STjuHoCTc/zO+S+naYfIm0My2RjMFQXzXooZc1yEL\ne8ooBmZ875OiL8278BgeZJDPG0xpJPYNn1hqf2rzCkcuxqI3BM2CgaPI+7axXQ8U\nH6cF9EICdoy7queMyDez4A==\n-----END PRIVATE KEY-----\n",
+    //"clientEmail": process.env.FB_CLIENT_EMAIL,
+    "clientEmail": "firebase-adminsdk-oi3j8@avengers-gg.iam.gserviceaccount.com",
+  }
