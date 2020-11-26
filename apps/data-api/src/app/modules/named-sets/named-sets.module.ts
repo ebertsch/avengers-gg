@@ -1,10 +1,12 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 
 import { NamedSetsController } from './named-sets.controller';
 import { NamedSetsService } from './named-sets.service';
 
 @Module({
-  imports: [],
+  imports: [
+    CacheModule.register(),
+  ],
   controllers: [NamedSetsController],
   providers: [NamedSetsService],
 })

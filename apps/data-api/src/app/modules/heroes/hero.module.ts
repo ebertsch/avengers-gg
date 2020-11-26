@@ -1,10 +1,12 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 
 import { HeroController } from './hero.controller';
 import { HeroService } from './heroes.service';
 
 @Module({
-  imports: [],
+  imports: [
+    CacheModule.register(),
+  ],
   controllers: [HeroController],
   providers: [HeroService],
 })

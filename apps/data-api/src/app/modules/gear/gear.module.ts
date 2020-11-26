@@ -1,11 +1,13 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 
 import { GearController } from './gear.controller';
 import { GearService } from './gear.service';
 
 @Module({
-  imports: [],
+  imports: [
+    CacheModule.register(),
+  ],
   controllers: [GearController],
   providers: [GearService],
 })
-export class GearModule {}
+export class GearModule { }

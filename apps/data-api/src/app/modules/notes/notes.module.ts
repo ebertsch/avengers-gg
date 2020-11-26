@@ -1,10 +1,12 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 
 import { NotesController } from './notes.controller';
 import { NotesService } from './notes.service';
 
 @Module({
-  imports: [],
+  imports: [
+    CacheModule.register(),
+  ],
   controllers: [NotesController],
   providers: [NotesService],
 })
