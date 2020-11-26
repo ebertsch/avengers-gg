@@ -5,6 +5,12 @@ on:
     branches:
       - master
       - develop
+    paths-ignore:
+      - 'server-json-data/**'
+      - 'apps/data-api/**'
+      - 'apps/data-entry/**'
+      - 'tools/**'
+      - 'scripts/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
