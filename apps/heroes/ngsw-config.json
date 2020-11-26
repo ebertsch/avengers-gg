@@ -26,5 +26,19 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "urls": [
+        "https://avengers-gg-data-prod.herokuapp.com/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 2,
+        "maxAge": "30d",
+        "timeout": "5s"
+    }
+    }
   ]
 }
