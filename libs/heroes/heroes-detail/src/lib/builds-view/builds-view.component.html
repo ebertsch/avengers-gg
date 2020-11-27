@@ -10,7 +10,7 @@
 </agg-panel>
 
 <agg-panel class="share-actions-container">
-    <agg-panel-header>Share Loadout</agg-panel-header>
+    <agg-panel-header>Share Save</agg-panel-header>
     <div class="actions-container">
         <ng-container *ngIf="!(shareableLink$ | async); else shareableLinkDisplay">
             <button mat-flat-button color="primary" (click)="getShareableLink()">Get Shareable Link</button>
