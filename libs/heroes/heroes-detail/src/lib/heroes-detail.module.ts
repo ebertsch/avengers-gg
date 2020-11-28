@@ -24,7 +24,8 @@ import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
 import { DataAccessModule as TeamDataAccessModule } from '@avengers-game-guide/shared/teams/data-access';
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
-import { UrlShortenerModule }from '@avengers-game-guide/shared/urls/shortener'
+import { UrlShortenerModule }from '@avengers-game-guide/shared/urls/shortener';
+import { ListOfGearPerksComponent } from './list-of-gear-perks/list-of-gear-perks.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -74,6 +75,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent],
+  declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent, ListOfGearPerksComponent],
 })
 export class HeroesDetailModule {}

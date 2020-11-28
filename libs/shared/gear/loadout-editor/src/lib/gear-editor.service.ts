@@ -4,14 +4,15 @@ import { decompressFromEncodedURIComponent, compressToEncodedURIComponent, GEAR_
 import { RouteSelectors } from '@avengers-game-guide/shared/router';
 import { createSelector, select, Store } from '@ngrx/store';
 import { find, times, add, fromPairs, toPairs, assoc, map as rmap, pick, filter, reduce, pluck, prop, values, groupBy, flatten, complement, isNil, propEq, clamp, range } from 'ramda';
-import { of } from 'rxjs';
-import { GearInstance, Loadout, SerializedGearInstance, SerializedLoadout } from '@avengers-game-guide/shared/gear/data-access';
+import { combineLatest, of } from 'rxjs';
+import { GearInstance, GearService, Loadout, SerializedGearInstance, SerializedLoadout } from '@avengers-game-guide/shared/gear/data-access';
 import { GearSlot, GearRarityValue, GearRarity, StatField } from '@avengers-game-guide/shared/data';
 import { btoa } from "abab";
 
 import { map } from 'rxjs/operators';
 import { environment } from '@avengers-game-guide/shared/environments';
 import { DomSanitizer } from '@angular/platform-browser';
+import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 const toGearInstance = (source: SerializedGearInstance): GearInstance => {
   if (!source) return null;
@@ -182,7 +183,28 @@ export class GearEditorService {
   activeGearInstance$ = this.store.pipe(select(this.activeGearSelector));
   activeGearSlot$ = this.store.pipe(select(this.activeGearSlotSelector));
 
-  constructor(private router: Router, private store: Store, private sanitizer: DomSanitizer) { }
+  loadoutComplete$: any
+
+  constructor(private router: Router, private store: Store, private sanitizer: DomSanitizer, gearService: GearService, perkService: PerkService) {
+    this.loadoutComplete$ = combineLatest([this.activeLoadout$, gearService.entityMap$, perkService.entityMap$]).pipe(
+      map(([loadout, gearMap, perkMap]) => {
+        const lens = pick(['melee', 'ranged', 'defense', 'heroic', "majorArtifact" , "minorArtifact1" , "minorArtifact2"], loadout)
+        const focused = rmap(slot => {
+          if (!slot)  return null;
+          const obj = pick(['id', 'perk1', 'perk2', 'perk3'], slot || {})
+          return {
+            gear: gearMap[obj.id],
+            perk1: perkMap[obj.perk1],
+            perk2: perkMap[obj.perk2],
+            perk3: perkMap[obj.perk3]
+          }
+        },  lens as any)
+        console.log('lens', focused)
+
+        return focused
+      })
+    )
+  }
 
   getGearRarity(value: GearRarityValue) {
     return find(propEq('id', value), GEAR_RARITIES) as GearRarity

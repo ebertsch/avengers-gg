@@ -85,13 +85,36 @@
 
     .actions-container {
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
 
-        input {
-            flex: 1
+        @include bp(laptop) {
+            flex-direction: row;
         }
 
-        button {
-            flex: inherit;
+        .save-action {
+            flex: 3;
+            width: 100%;
+            margin-bottom: 10px;
+
+            @include bp(laptop) {
+                margin-bottom: 0px;
+                margin-left: 20px;
+
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+        }
+
+        input {
+            flex: 3;
+            padding: 8px;
+            margin-top: 10px;
+
+            @include bp(laptop) {
+                margin-top: 0px;
+            }
         }
     }
 
@@ -185,10 +208,11 @@
     h3 {
         font-family: 'CrystalWide';
         border-bottom: solid 1px #899ab6;
+        border-top: solid 1px #899ab6;
         margin-bottom: 20px;
     }
 
-    agg-name-description {
+    ::ng-deep agg-name-description {
         margin-bottom: 10px;
     }
 }
