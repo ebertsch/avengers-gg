@@ -1,9 +1,3 @@
-<agg-panel class="save-actions-container">
-    <agg-panel-header>Backup &amp; Restore</agg-panel-header>
-    <div class="actions">
-    </div>
-</agg-panel>
-
 <agg-panel class="share-actions-container">
     <agg-panel-header>Share / Save</agg-panel-header>
     <div class="actions-container">
@@ -14,11 +8,12 @@
         <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)">
 
         <ng-container *ngIf="!(shareableLink$ | async); else shareableLinkDisplay">
-            <button mat-flat-button color="primary" (click)="getShareableLink()">Get Shareable Link</button>
+            <button mat-flat-button color="primary" class="save-action" (click)="getShareableLink()">Share</button>
         </ng-container>
         <ng-template #shareableLinkDisplay>
-            <button mat-flat-button color="primary" class="copy"
-            cdkCopyToClipboard="{{(shareableLink$ | async).url}}">Copy</button>
+            <button mat-flat-button color="primary" class="save-action copy"
+            (click)="notifyCopyAction()"
+            cdkCopyToClipboard="{{(shareableLink$ | async).url}}">Copy Link</button>
             <input type="text" disabled value="{{(shareableLink$ | async).url}}" />
         </ng-template>
     </div>
@@ -26,13 +21,6 @@
 
 <agg-panel class="gear-builder-container">
     <agg-panel-header>Loadout</agg-panel-header>
-    <p class="panel-note">
-        while editing selecting a template only sets the item name for the time being. In a future update it will also
-        set and limit the available perks you can configure for the selected piece of gear.<br><br>
-        Item using the custom template will generate item names based on the first selected perk.<br><br>
-        Validation is not yet implemented<br><br>
-        The url for this build is unique and changes when you make changes to your skills or gear<br><br>
-    </p>
     <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge"
         routerLinkActive="active">
         View Gear Summary

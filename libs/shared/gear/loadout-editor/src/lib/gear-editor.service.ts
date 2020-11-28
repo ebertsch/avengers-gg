@@ -191,7 +191,7 @@ export class GearEditorService {
         const lens = pick(['melee', 'ranged', 'defense', 'heroic', "majorArtifact" , "minorArtifact1" , "minorArtifact2"], loadout)
         const focused = rmap(slot => {
           if (!slot)  return null;
-          const obj = pick(['id', 'perk1', 'perk2', 'perk3'], slot || {})
+          const obj = pick(['id', 'perk1', 'perk2', 'perk3'], slot || {}) as any
           return {
             gear: gearMap[obj.id],
             perk1: perkMap[obj.perk1],
@@ -199,7 +199,6 @@ export class GearEditorService {
             perk3: perkMap[obj.perk3]
           }
         },  lens as any)
-        console.log('lens', focused)
 
         return focused
       })
