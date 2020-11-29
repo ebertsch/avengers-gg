@@ -11,12 +11,12 @@ import { tap, map, take, withLatestFrom } from 'rxjs/operators';
 import { assoc, map as rMap, includes, keys, reduce, concat, find, propEq, dissoc, append } from 'ramda';
 import { Dictionary } from '@ngrx/entity';
 import { GearEditorService } from '@avengers-game-guide/shared/gear/loadout-editor';
-import { GearInstance, Loadout } from '@avengers-game-guide/shared/gear/data-access';
+import { Loadout } from '@avengers-game-guide/shared/gear/data-access';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { TeamService } from '@avengers-game-guide/shared/teams/data-access';
 import { UrlShortenerService, ShortUrl }from '@avengers-game-guide/shared/urls/shortener'
-import { environment } from '@avengers-game-guide/shared/environments';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { GoogleAnalyticsService } from 'ngx-google-analytics'
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -48,7 +48,8 @@ export class BuildsViewComponent implements OnInit {
     public perkService: PerkService,
     public teamService: TeamService,
     private urlShortener: UrlShortenerService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private gaService: GoogleAnalyticsService
     ) {
   }
 
@@ -119,6 +120,8 @@ export class BuildsViewComponent implements OnInit {
   }
 
   restoreLoadout(file: InputEvent ) {
+    this.gaService.event('restore_loadout', 'Hero Builder', 'Restore Loadout')
+
     const input = file.currentTarget as HTMLInputElement;
     const fileList: FileList | null = input.files;
     const reader = new FileReader();
@@ -139,6 +142,7 @@ export class BuildsViewComponent implements OnInit {
       withLatestFrom(this.gearEditorService.activeLoadoutQueryParam$, this.builds.selectedSkills$),
       take(1)
     ).subscribe(([hero, loadout, skills]) => {
+      this.gaService.event('save_to_team', 'Hero Builder', 'Save hero to team')
       this.teamService.add(hero.id, {
         id: hero.id,
         name: hero.name,
@@ -150,10 +154,12 @@ export class BuildsViewComponent implements OnInit {
   }
 
   onLoadoutUpdated(value: { heroId: string, loadout: Loadout }) {
-    this.getShareableLink();
+    this.getShareableLink(true);
   }
 
-  getShareableLink() {
+  getShareableLink(triggered = false) {
+    if(!triggered) this.gaService.event('create_loadout_link', 'Hero Builder', 'Share Loadout')
+
     this.gearEditorService.activeLoadoutQueryString$.pipe(take(1)).subscribe(url => {
       this.shareableLink$ = this.urlShortener.shorten(url)
     })

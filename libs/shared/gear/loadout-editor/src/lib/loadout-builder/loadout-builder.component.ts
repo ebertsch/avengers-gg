@@ -9,7 +9,7 @@ import { GearSlot } from '@avengers-game-guide/shared/data';
 import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 
 import { GearEditorService } from '../gear-editor.service';
-import { path, pathOr, pick, prop, propOr } from 'ramda';
+import { GoogleAnalyticsService } from 'ngx-google-analytics'
 
 
 
@@ -32,7 +32,7 @@ export class LoadoutBuilderComponent implements OnInit {
 
   constructor(private router: Router, private gearEditor: GearEditorService,
     private userGearInstanceService: UserGearInstanceService, private perkService: PerkService,
-    private gearService: GearService) {
+    private gearService: GearService, private gaService: GoogleAnalyticsService) {
     this.activeView$ = gearEditor.loadoutViewerView$;
     this.activeGear$ = gearEditor.activeGearInstance$;
   }
@@ -43,11 +43,13 @@ export class LoadoutBuilderComponent implements OnInit {
   }
 
   saveGearInstance(gearInstance: GearInstance) {
+    this.gaService.event('add_gear_to_loadout', 'Hero Builder', 'Save Gear')
     this.gearEditor.save(this.gearSlot, gearInstance, this.loadout);
     this.userGearInstanceService.add(new UserGearInstance(gearInstance))
   }
 
   removeGearInstance() {
+    this.gaService.event('remove_gear_from_loadout', 'Hero Builder', 'Remove Gear')
     this.gearEditor.remove(this.gearSlot, this.loadout);
   }
 
