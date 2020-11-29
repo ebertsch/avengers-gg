@@ -16,6 +16,7 @@ import { PerkService } from '@avengers-game-guide/shared/perks/data-access';
 import { TeamService } from '@avengers-game-guide/shared/teams/data-access';
 import { UrlShortenerService, ShortUrl }from '@avengers-game-guide/shared/urls/shortener'
 import { environment } from '@avengers-game-guide/shared/environments';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 type SelectableSkill = Skill & { selected?: boolean; children?: SelectableSkill[] };
 
@@ -46,7 +47,8 @@ export class BuildsViewComponent implements OnInit {
     public gearEditorService: GearEditorService,
     public perkService: PerkService,
     public teamService: TeamService,
-    private urlShortener: UrlShortenerService
+    private urlShortener: UrlShortenerService,
+    private snackBar: MatSnackBar
     ) {
   }
 
@@ -155,5 +157,9 @@ export class BuildsViewComponent implements OnInit {
     this.gearEditorService.activeLoadoutQueryString$.pipe(take(1)).subscribe(url => {
       this.shareableLink$ = this.urlShortener.shorten(url)
     })
+  }
+
+  notifyCopyAction() {
+    this.snackBar.open('Link copied to clipboard')
   }
 }

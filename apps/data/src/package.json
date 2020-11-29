@@ -1,6 +1,6 @@
 {
   "name": "avengers-game-guide-data",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Json data server for http://avengersgg.com",
   "main": "main.js",
   "scripts": {

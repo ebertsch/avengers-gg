@@ -1,0 +1,48 @@
+<ng-container *ngIf="!!value.melee?.gear">
+    <h3 class="fancy-text">{{ value.melee.gear.name }}</h3>
+    <p [innerHTML]="value.melee.perk1.description | highlight" *ngIf="!!value.melee.perk1"></p>
+    <p [innerHTML]="value.melee.perk2.description | highlight" *ngIf="!!value.melee.perk2"></p>
+    <p [innerHTML]="value.melee.perk3.description | highlight" *ngIf="!!value.melee.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.ranged?.gear">
+    <h3 class="fancy-text">{{ value.ranged.gear.name }}</h3>
+    <p [innerHTML]="value.ranged.perk1.description | highlight" *ngIf="!!value.ranged.perk1"></p>
+    <p [innerHTML]="value.ranged.perk2.description | highlight" *ngIf="!!value.ranged.perk2"></p>
+    <p [innerHTML]="value.ranged.perk3.description | highlight" *ngIf="!!value.ranged.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.defense?.gear">
+    <h3 class="fancy-text">{{ value.defense.gear.name }}</h3>
+    <p [innerHTML]="value.defense.perk1.description | highlight" *ngIf="!!value.defense.perk1"></p>
+    <p [innerHTML]="value.defense.perk2.description | highlight" *ngIf="!!value.defense.perk2"></p>
+    <p [innerHTML]="value.defense.perk3.description | highlight" *ngIf="!!value.defense.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.heroic?.gear">
+    <h3 class="fancy-text">{{ value.heroic.gear.name }}</h3>
+    <p [innerHTML]="value.heroic.perk1.description | highlight" *ngIf="!!value.heroic.perk1"></p>
+    <p [innerHTML]="value.heroic.perk2.description | highlight" *ngIf="!!value.heroic.perk2"></p>
+    <p [innerHTML]="value.heroic.perk3.description | highlight" *ngIf="!!value.heroic.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.majorArtifact?.gear">
+    <h3 class="fancy-text">{{ value.majorArtifact.gear.name }}</h3>
+    <p [innerHTML]="value.majorArtifact.perk1.description | highlight" *ngIf="!!value.majorArtifact.perk1"></p>
+    <p [innerHTML]="value.majorArtifact.perk2.description | highlight" *ngIf="!!value.majorArtifact.perk2"></p>
+    <p [innerHTML]="value.majorArtifact.perk3.description | highlight" *ngIf="!!value.majorArtifact.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.minorArtifact1?.gear">
+    <h3 class="fancy-text">{{ value.minorArtifact1.gear.name }}</h3>
+    <p [innerHTML]="value.minorArtifact1.perk1.description | highlight" *ngIf="!!value.minorArtifact1.perk1"></p>
+    <p [innerHTML]="value.minorArtifact1.perk2.description | highlight" *ngIf="!!value.minorArtifact1.perk2"></p>
+    <p [innerHTML]="value.minorArtifact1.perk3.description | highlight" *ngIf="!!value.minorArtifact1.perk3"></p>
+</ng-container>
+
+<ng-container *ngIf="!!value.minorArtifact2?.gear">
+    <h3 class="fancy-text">{{ value.minorArtifact2.gear.name }}</h3>
+    <p [innerHTML]="value.minorArtifact2.perk1.description | highlight" *ngIf="!!value.minorArtifact2.perk1"></p>
+    <p [innerHTML]="value.minorArtifact2.perk2.description | highlight" *ngIf="!!value.minorArtifact2.perk2"></p>
+    <p [innerHTML]="value.minorArtifact2.perk3.description | highlight" *ngIf="!!value.minorArtifact2.perk3"></p>
+</ng-container>
