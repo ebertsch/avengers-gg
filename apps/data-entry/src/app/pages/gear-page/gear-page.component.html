@@ -29,7 +29,7 @@
                 {{ (heroService.entityMap$ | async)[gear.heroId]?.name || gear.heroId  }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
-                {{ gear.gearType | uncamelcase }}
+                {{ gear.gearType | decamelcase }}
             </mat-panel-description>
             <mat-panel-description class="shot-description">
                 {{ (gear.perks1||[]).length ? "Has Perks" : ""}}
