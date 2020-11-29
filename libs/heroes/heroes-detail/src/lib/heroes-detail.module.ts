@@ -10,6 +10,7 @@ import { SharedUiModule } from '@avengers-game-guide/shared/ui';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { GearViewComponent } from './gear-view/gear-view.component';
 import { PerksViewComponent } from './perks-view/perks-view.component';
@@ -24,7 +25,8 @@ import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
 import { DataAccessModule as TeamDataAccessModule } from '@avengers-game-guide/shared/teams/data-access';
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
-import { UrlShortenerModule }from '@avengers-game-guide/shared/urls/shortener'
+import { UrlShortenerModule }from '@avengers-game-guide/shared/urls/shortener';
+import { ListOfGearPerksComponent } from './list-of-gear-perks/list-of-gear-perks.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -48,6 +50,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatButtonModule,
     MatButtonToggleModule,
     MatIconModule,
+    MatSnackBarModule,
     GearModule,
     SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,
@@ -74,6 +77,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent],
+  declarations: [DetailPageComponent, GearViewComponent, PerksViewComponent, BuildsViewComponent, GuidesViewComponent, NotesViewComponent, ListOfGearPerksComponent],
 })
 export class HeroesDetailModule {}

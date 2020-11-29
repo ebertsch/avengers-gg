@@ -1,37 +1,26 @@
-<agg-panel class="save-actions-container">
-    <agg-panel-header>Backup &amp; Restore</agg-panel-header>
-    <div class="actions">
+<agg-panel class="share-actions-container">
+    <agg-panel-header>Share / Save</agg-panel-header>
+    <div class="actions-container">
         <a class="save-action" mat-flat-button color="primary" (click)="saveToTeam()">Save to My Team</a>
         <a class="save-action" mat-flat-button color="primary" download="loadout.json"
             [href]="gearEditorService.loadoutDownload$ | async">Backup</a>
         <label mat-flat-button class="save-action mat-flat-button mat-primary pseudo-button" for="restore">Restore</label>
         <input style="display: none;" id="restore" type="file" (change)="restoreLoadout($event)">
-    </div>
-</agg-panel>
 
-<agg-panel class="share-actions-container">
-    <agg-panel-header>Share Loadout</agg-panel-header>
-    <div class="actions-container">
         <ng-container *ngIf="!(shareableLink$ | async); else shareableLinkDisplay">
-            <button mat-flat-button color="primary" (click)="getShareableLink()">Get Shareable Link</button>
+            <button mat-flat-button color="primary" class="save-action" (click)="getShareableLink()">Share</button>
         </ng-container>
         <ng-template #shareableLinkDisplay>
+            <button mat-flat-button color="primary" class="save-action copy"
+            (click)="notifyCopyAction()"
+            cdkCopyToClipboard="{{(shareableLink$ | async).url}}">Copy Link</button>
             <input type="text" disabled value="{{(shareableLink$ | async).url}}" />
-            <button mat-flat-button color="primary" class="copy"
-                cdkCopyToClipboard="{{(shareableLink$ | async).url}}">Copy</button>
         </ng-template>
     </div>
 </agg-panel>
 
 <agg-panel class="gear-builder-container">
     <agg-panel-header>Loadout</agg-panel-header>
-    <p class="panel-note">
-        while editing selecting a template only sets the item name for the time being. In a future update it will also
-        set and limit the available perks you can configure for the selected piece of gear.<br><br>
-        Item using the custom template will generate item names based on the first selected perk.<br><br>
-        Validation is not yet implemented<br><br>
-        The url for this build is unique and changes when you make changes to your skills or gear<br><br>
-    </p>
     <a class="fancy-text summary-title" [routerLink]="[]" [queryParams]="{v: 'summary'}" queryParamsHandling="merge"
         routerLinkActive="active">
         View Gear Summary
@@ -62,9 +51,9 @@
 <agg-panel class="current-build-container">
     <agg-panel-header>Current Build</agg-panel-header>
     <h3>Gear Perks</h3>
-    <ng-container *ngFor="let perk of this.activeLoadoutPerks$ | async">
-        <agg-name-description [namedItem]="perkService.getPerk(perk) | async"></agg-name-description>
-    </ng-container>
+
+    <agg-list-of-gear-perks [value]="gearEditorService.loadoutComplete$ | async" ></agg-list-of-gear-perks>
+
     <h3>Skill Points</h3>
     <ng-container *ngFor="let skill of this.selectedSkills$ | async; trackBy: byId">
         <agg-name-description [namedItem]="skill"></agg-name-description>
