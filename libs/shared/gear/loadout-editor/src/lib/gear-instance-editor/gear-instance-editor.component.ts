@@ -62,11 +62,8 @@ export class GearInstanceEditorComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('gie', this.gearSlot, this.hero.id);
     this.setupForm()
-    this.perks$ = this.perkService.getGearPerks(convertToGearSlotType(this.gearSlot), this.hero.id).pipe(
-      tap(i => console.log('get Perks', i))
-    )
+    this.perks$ = this.perkService.getGearPerks(convertToGearSlotType(this.gearSlot), this.hero.id)
     this.gear$ = this.gearService.getGearForHero(convertToGearSlotType(this.gearSlot), this.hero.id)
   }
 
