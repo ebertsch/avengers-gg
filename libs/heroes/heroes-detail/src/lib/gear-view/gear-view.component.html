@@ -15,7 +15,7 @@
     <agg-panel>
         <agg-panel-header style="text-transform: capitalize;">
             {{namedSet.title}}
-            <span class="location" *ngFor="let source of namedSet.sources">{{source.from}}</span>
+            <agg-panel-header-subtitle>{{getSourcesText(namedSet)}}</agg-panel-header-subtitle>
         </agg-panel-header>
         <ng-container *ngIf="viewGroup.value=='list';else cardView">
             <table>

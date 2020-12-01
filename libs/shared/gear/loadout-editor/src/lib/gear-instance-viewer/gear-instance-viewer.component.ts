@@ -34,7 +34,6 @@ export class GearInstanceViewerComponent implements OnInit {
   }
 
   remove() {
-    console.log('remove')
     this.removed.emit()
   }
 

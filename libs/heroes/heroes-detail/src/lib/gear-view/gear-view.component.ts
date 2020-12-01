@@ -38,6 +38,10 @@ export class GearViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getSourcesText(set: NamedSet) {
+    return (set.sources||[]).map(s => s.from).join(', ')
+  }
+
   getGearPiece(id: string) {
     return this.gearService.getGearDefinition(id)
   }

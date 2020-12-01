@@ -161,9 +161,7 @@ export class PerkSelectComponent implements OnInit, OnChanges {
       debounceTime(50)
     )
 
-    // tslint:disable-next-line: deprecation
     this.perks$ = combineLatest([this.perkService.entities$, filter$]).pipe(
-      // tap(([perks, filter]) => console.log('perk-selector 1', perks, filter)),
       map(([perks, filter]) => {
         const items = perks.filter(p => intersection(filter.heroId, p.heroes  || []).length > 0)
         return items.filter(p => p.title.toLowerCase().indexOf(filter.search) > -1 || p.description.toLowerCase().indexOf(filter.search) > -1 )
@@ -176,14 +174,12 @@ export class PerkSelectComponent implements OnInit, OnChanges {
         })
       }),
       withLatestFrom(this.selectFilter),
-      // tap(([perks, filter]) => console.log('perk-selector 3', perks, filter)),
       map(([perks, filter]) => {
         if (filter.allowAny || filter.allowAnyPerkSlot) return perks;
 
         const filterProperty = `slot${filter.perkSlot}Enabled` as keyof Perk;
         return perks.filter(prop(filterProperty) as (any) => boolean)
       }),
-      // tap((perks) => console.log('perk-selector 4', perks)),
     );
   }
 

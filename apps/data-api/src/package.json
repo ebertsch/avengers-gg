@@ -1,6 +1,6 @@
 {
   "name": "avengers-gg-data",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Json data server for http://avengersgg.com",
   "main": "main.js",
   "scripts": {

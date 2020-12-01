@@ -15,7 +15,6 @@ export class BuildsController {
   @UseInterceptors(CacheInterceptor)
   @CacheTTL(60 * 5)
   async getItems(@Query('hero_id', ToLowerCasePipe) heroId: string, @Query('include_wildcard') includeWildcard: boolean) {
-    console.log('Builds GET')
     if (!heroId)
       return await this.entityService.getAll()
 

@@ -41,15 +41,12 @@ export default function (options: ModuleOptions): Rule {
     const workspace = await getWorkspace(host);
     const project = workspace.projects.get(options.project as string);
     
-    console.log(options)
 
     options.path = '/' + project.sourceRoot + '/app/' + options.path
-    console.log(options)
 
     const parsedPath = parseName(options.path as string, options.name);
     options.name = parsedPath.name;
     options.path = parsedPath.path;
-    console.log(options)
 
 
     return chain([

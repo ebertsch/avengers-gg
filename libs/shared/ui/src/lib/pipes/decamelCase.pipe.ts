@@ -3,9 +3,9 @@ import { PipeTransform, Pipe } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Pipe({
-    name: 'uncamelcase'
+    name: 'decamelcase'
 })
-export class UncamelCasePipe implements PipeTransform {
+export class DecamelCasePipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer){}
 
   transform(value: string, args: any): any {
