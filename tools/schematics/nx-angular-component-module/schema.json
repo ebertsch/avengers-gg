@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "nx-angular-component-module",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Component name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the nestjs data module?"
+    },
+    "directory": {
+      "type": "string",
+      "format": "path",
+      "description": "The path at which to create the module, relative to the current workspace.",
+      "visible": true
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to the generated component selector.",
+      "visible": true
+    },
+    "simpleModuleName": {
+      "type": "boolean",
+      "visible": false,
+      "default": true
+    }
+  },
+  "required": ["name"]
+}
