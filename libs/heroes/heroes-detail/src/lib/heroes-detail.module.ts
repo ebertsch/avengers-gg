@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatTabsModule} from '@angular/material/tabs'
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { GearViewComponent } from './gear-view/gear-view.component';
 import { PerksViewComponent } from './perks-view/perks-view.component';
@@ -51,6 +52,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatButtonToggleModule,
     MatIconModule,
     MatSnackBarModule,
+    MatTabsModule,
     GearModule,
     SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,
