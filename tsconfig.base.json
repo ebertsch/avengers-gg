@@ -50,9 +50,6 @@
       "@avengers-game-guide/shared/root-state": [
         "libs/shared/root-state/src/index.ts"
       ],
-      "@avengers-game-guide/shared/gear/gear": [
-        "libs/shared/gear/gear/src/index.ts"
-      ],
       "@avengers-game-guide/shared/perks/perk": [
         "libs/shared/perks/perk/src/index.ts"
       ],
