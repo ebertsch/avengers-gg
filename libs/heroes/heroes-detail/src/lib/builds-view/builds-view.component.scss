@@ -5,7 +5,7 @@
 
 :host {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-auto-flow: row;
     grid-template-areas: "builder" "summary";
@@ -25,13 +25,18 @@
 
 .builder {
     grid-area: builder;
-    padding: 0 0 0 20px;
+    // padding: 0 0 0 20px;
 
     ::ng-deep mat-tab-body.mat-tab-body {
         padding: 20px 0;
     }
 }
-.summary { grid-area: summary; padding: 0 20px 0 0; }
+.summary {
+    grid-area: summary;
+    @include bp(laptop) {
+        padding: 0 20px 0 0;
+    }
+}
 
 :host ::ng-deep {
     .content {

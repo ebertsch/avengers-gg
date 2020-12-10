@@ -8,25 +8,7 @@
     justify-content: center;
 }
 
-.stat-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    line-height: 24px;
-    
 
-    .stat-key {
-        margin-right: 10px;
-        text-transform: capitalize;
-        text-align: right;
-        flex: 1;
-    }
-    .stat-value {
-        flex: 1;
-
-    }
-}
 
 .instructions {
     text-align: center;
@@ -42,20 +24,7 @@
     }
 }
 
-.stats-container {
-    display: flex;
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
 
-    .stat-item {
-        margin: 0 20px 10px 20px;
-        text-align: right;
-        width: 180px;
-    }
-}
 
 .hero-image {
     position: absolute;

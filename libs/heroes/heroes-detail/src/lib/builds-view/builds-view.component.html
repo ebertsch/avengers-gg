@@ -59,8 +59,10 @@
 <div class="summary">
     <agg-panel class="current-build-container">
         <agg-panel-header>Current Build</agg-panel-header>
+        <h3>Stats</h3>
+        <agg-gear-summary></agg-gear-summary>
+        
         <h3>Gear Perks</h3>
-
         <agg-list-of-gear-perks [value]="gearEditorService.loadoutComplete$ | async"></agg-list-of-gear-perks>
 
         <h3>Skill Points</h3>
