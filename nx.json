@@ -70,9 +70,6 @@
     "shared-root-state": {
       "tags": []
     },
-    "shared-gear-gear": {
-      "tags": ["gear"]
-    },
     "shared-perks-perk": {
       "tags": ["perks"]
     },
@@ -103,7 +100,7 @@
     "shared-urls-shortener": {
       "tags": []
     },
-    "builds-redirector": {
+    "builder-redirector": {
       "tags": []
     },
     "data-api": {

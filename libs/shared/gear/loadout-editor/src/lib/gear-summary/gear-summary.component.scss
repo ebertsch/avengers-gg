@@ -1,0 +1,20 @@
+:host {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: center;    
+
+    .stat-key {
+        margin-right: 10px;
+        text-transform: capitalize;
+        text-align: left;
+        flex: 1;
+    }
+    .stat-value {
+        flex: 1;
+
+    }
+}

@@ -13,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { SharedGearGearViewerModule } from '@avengers-game-guide/shared/gear/gear-viewer'
-import { SharedPerksPerkSelectModule } from '@avengers-game-guide/shared/perks/perk-select'
+import { SharedPerksPerkSelectModule } from '@avengers-game-guide/shared/perks/perk-select';
+import { GearSummaryComponent } from './gear-summary/gear-summary.component'
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { SharedPerksPerkSelectModule } from '@avengers-game-guide/shared/perks/p
     SharedGearGearViewerModule,
     SharedPerksPerkSelectModule
   ],
-  declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent],
-  exports: [LoadoutBuilderComponent],
+  declarations: [LoadoutBuilderComponent, GearInstanceEditorComponent, GearInstanceViewerComponent, LoadoutSummaryComponent, GearSummaryComponent],
+  exports: [LoadoutBuilderComponent, GearSummaryComponent],
 })
 export class SharedGearLoadoutEditorModule {}
