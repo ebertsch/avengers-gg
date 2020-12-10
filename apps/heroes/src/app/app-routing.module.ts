@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'b',
     loadChildren: () =>
-    import('@avengers-game-guide/builds/redirector').then(
+    import('@avengers-game-guide/builder/redirector').then(
       (module) => module.RedirectorModule
     ),
   },

@@ -1029,26 +1029,26 @@
         }
       }
     },
-    "builds-redirector": {
+    "builder-redirector": {
       "projectType": "library",
-      "root": "libs/builds/redirector",
-      "sourceRoot": "libs/builds/redirector/src",
+      "root": "libs/builder/redirector",
+      "sourceRoot": "libs/builder/redirector/src",
       "prefix": "avengers-game-guide",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/builds/redirector/tsconfig.lib.json",
-              "libs/builds/redirector/tsconfig.spec.json"
+              "libs/builder/redirector/tsconfig.lib.json",
+              "libs/builder/redirector/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/builds/redirector/**/*"]
+            "exclude": ["**/node_modules/**", "!libs/builder/redirector/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/builds/redirector/jest.config.js",
+            "jestConfig": "libs/builder/redirector/jest.config.js",
             "passWithNoTests": true
           }
         }

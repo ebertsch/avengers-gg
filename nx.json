@@ -100,7 +100,7 @@
     "shared-urls-shortener": {
       "tags": []
     },
-    "builds-redirector": {
+    "builder-redirector": {
       "tags": []
     },
     "data-api": {
