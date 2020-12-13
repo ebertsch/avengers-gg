@@ -6,14 +6,20 @@ import {
 import { select, createSelector } from '@ngrx/store';
 import { contains, filter } from 'ramda';
 import { Perk } from './perk';
-import { GearSlot, convertToGearSlotType } from '@avengers-game-guide/shared/data';
+import { convertToGearSlotType } from '@avengers-game-guide/shared/data';
+import { HttpClient } from '@angular/common/http';
+import { PerkDetectionResult } from './perk-detection-result';
+import { environment } from '@avengers-game-guide/shared/environments'
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerkService extends EntityCollectionServiceBase<Perk> {
-  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+  constructor(
+    serviceElementsFactory: EntityCollectionServiceElementsFactory,
+    private http: HttpClient
+  ) {
     super('Perk', serviceElementsFactory);
   }
 
@@ -50,5 +56,14 @@ export class PerkService extends EntityCollectionServiceBase<Perk> {
   );
   getGearPerksForHero = (hero: string) =>
     this.store.pipe(select(this.getGearPerksForHeroSelector(hero)))
+
+
+  get detectPerksUploader() {
+    return (file, field = 'file') => {
+      const data = new FormData()
+      data.append(field, file);
+      return this.http.post<PerkDetectionResult>(environment.clientApiUrl + '/perks/detect', data)
+    }
+  }
 
 }

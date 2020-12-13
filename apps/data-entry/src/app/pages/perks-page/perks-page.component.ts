@@ -33,12 +33,10 @@ export class PerksPageComponent extends BaseDataPage<Perk> implements OnInit {
 
   ngOnInit() {
     super.ngOnInit()
-    // this.filteredItems$ = this.primaryDataService.filteredEntities$.pipe(
-    //   withLatestFrom(this.gearService.entities$),
-    //   map(([items, gear]) => {
-    //     return items.filter(i => !i.slot1Enabled && !i.slot2Enabled && !i.slot3Enabled)
-    //   })
-    // )
+  }
+
+  onUploaded(data) {
+    console.log(data)
   }
 
 }

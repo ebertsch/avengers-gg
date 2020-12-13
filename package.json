@@ -48,6 +48,7 @@
     "@angular/router": "^11.0.0",
     "@angular/service-worker": "^11.0.0",
     "@angular/youtube-player": "^11.0.0",
+    "@azure/ai-form-recognizer": "^3.0.0",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/passport": "^7.1.5",
