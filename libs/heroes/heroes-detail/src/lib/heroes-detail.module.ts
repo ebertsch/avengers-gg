@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatTabsModule} from '@angular/material/tabs'
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { GearViewComponent } from './gear-view/gear-view.component';
 import { PerksViewComponent } from './perks-view/perks-view.component';
@@ -20,7 +21,6 @@ import { NotesViewComponent } from './notes-view/notes-view.component';
 import { DataAccessModule as HeroesDataAccessModule, EnsureSelectedHeroGuard } from '@avengers-game-guide/shared/heroes/data-access';
 import { NotesDataAccessModule } from '@avengers-game-guide/shared/notes/data-access';
 import { DataAccessModule as NamedSetsDataAccessModule } from '@avengers-game-guide/shared/named-sets/data-access';
-import { GearModule } from '@avengers-game-guide/shared/gear/gear';
 import { SharedGearLoadoutEditorModule } from '@avengers-game-guide/shared/gear/loadout-editor';
 import { DataAccessModule as SkillsDataAccessModule } from '@avengers-game-guide/shared/skills/data-access';
 import { DataAccessModule as TeamDataAccessModule } from '@avengers-game-guide/shared/teams/data-access';
@@ -51,7 +51,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatButtonToggleModule,
     MatIconModule,
     MatSnackBarModule,
-    GearModule,
+    MatTabsModule,
     SharedGearLoadoutEditorModule,
     HeroesDataAccessModule,
     NotesDataAccessModule,

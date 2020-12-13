@@ -1,0 +1,21 @@
+.unstyled {
+    .mat-expansion-panel {
+        background-color: transparent;
+        box-shadow: none;
+
+        &.mat-expansion-panel-spacing {
+            margin: 0
+        }
+    }
+    .mat-expansion-panel-header {
+        padding: 0 10px 0 0;
+
+        &.mat-expanded {
+            height: 48px;
+        }
+
+        &:hover {
+            background: none !important;
+        }
+    }    
+}

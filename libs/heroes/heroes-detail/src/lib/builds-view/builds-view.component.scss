@@ -1,20 +1,40 @@
 @import "~libs/shared/styles/responsive.scss";
 
+@import "~libs/shared/styles/responsive.scss";
+
+
 :host {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-auto-flow: row;
-    grid-template-areas: ".";
-    gap: 0 20px;
+    grid-template-areas: "builder" "summary";
+    grid-gap: 0 20px;
+    width: 100%;
 
     position: absolute;
-    margin: 0 10px;
+    padding: 0 10px;
 
     @include bp(laptop) {
-        margin: 0 20px;
-        grid-template-areas: ". ."". .""..";
-        grid-template-rows: minmax(100px, max-content) auto auto;
+        padding: 0 20px;
+        grid-template-columns: 60% 40%;
+        grid-template-areas: "builder summary";
+        grid-gap: 20px 20px;
+    }
+}
+
+.builder {
+    grid-area: builder;
+    // padding: 0 0 0 20px;
+
+    ::ng-deep mat-tab-body.mat-tab-body {
+        padding: 20px 0;
+    }
+}
+.summary {
+    grid-area: summary;
+    @include bp(laptop) {
+        padding: 0 20px 0 0;
     }
 }
 
@@ -51,7 +71,7 @@
     }
 }
 
-.share-actions-container {
+::ng-deep .share-actions-container {
     grid-column: 1;
     margin-bottom: 0;
 
@@ -137,12 +157,15 @@
 
 .skill-options-container {
     display: block;
-    width: 100vw;
+    //width: 100vw;
     grid-row: 2;
-    max-width: calc(100vw - 20px);
+    // max-width: calc(100vw - 20px);
+    // .skill-container { 
+    //     width: 400px;
+    // }
 
     @include bp(laptop) {
-        width: 50vw;
+        // max-width: calc(60vw - 40px);
         grid-column: 1;
         grid-row: 3;
     }
@@ -174,11 +197,11 @@
 }
 
 .current-build-container {
-    grid-row: 3;
+    // grid-row: 3;
 
     @include bp(laptop) {
         grid-column: 2;
-        width: calc(50vw - 60px);
+        // width: calc(50vw - 60px);
         grid-row: 2 / 4;
     }
 
@@ -191,33 +214,5 @@
 
     ::ng-deep agg-name-description {
         margin-bottom: 10px;
-    }
-}
-
-.pseudo-button {
-    &::before {
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: 2px;
-        right: 1px;
-        height: 17px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
-        opacity: 0.8;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: 2px;
-        background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 100%);
-        opacity: 0.2;
-        max-width: 112px;
-        width: 100%;
-        height: calc(100% - 4px);
-        -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-        clip-path: polygon(0 0, 0 100%, 100% 0);
-        z-index: 100;
     }
 }

@@ -1,0 +1,6 @@
+<ng-container *ngFor="let stat of (gearEditorService.activeLoadoutSummary$ | async) | keyvalue">
+    <div class="stat-item">
+        <div class="stat-key">{{stat.key}}</div>
+        <div class="stat-value">{{stat.value}}</div>
+    </div>
+</ng-container>
