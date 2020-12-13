@@ -1,0 +1,69 @@
+<aggd-drag-and-drop-upload (uploaded)="onUploaded($event)" [uploader]="perkService.detectPerksUploader">
+</aggd-drag-and-drop-upload>
+<ng-container *ngIf="perks">
+    <ng-container [formGroup]="perksForm">
+        <mat-form-field appearance="fill" class="hero-selector">
+            <mat-label>Hero</mat-label>
+            <mat-select formControlName="heroes" multiple>
+                <mat-option [value]="null">Not set</mat-option>
+                <mat-option [value]="'*'">*</mat-option>
+                <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+                    {{hero.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Gear Slots</mat-label>
+            <mat-select formControlName="gear" multiple>
+                <mat-option [value]="null">Not set</mat-option>
+                <mat-option [value]="'melee'">Melee</mat-option>
+                <mat-option [value]="'ranged'">Ranged</mat-option>
+                <mat-option [value]="'defense'">Defense</mat-option>
+                <mat-option [value]="'heroic'">Heroic</mat-option>
+                <mat-option [value]="'majorArtifact'">Major Artifact</mat-option>
+                <mat-option [value]="'minorArtifact'">Minor Artifact</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h3>Detected Perks</h3>
+        <div class="perkForm" formGroupName="perk1">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input formControlName="title" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" matInput>
+            </mat-form-field>
+            <button mat-button color="primary" (click)="savePerk(perksForm.value, 1)">Add Perk</button>
+        </div>
+        <div class="perkForm" formGroupName="perk2">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input formControlName="title" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" matInput>
+            </mat-form-field>
+            <button mat-button color="primary" (click)="savePerk(perksForm.value, 2)">Add Perk</button>
+
+        </div>
+        <div class="perkForm" formGroupName="perk3">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input formControlName="title" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" matInput>
+            </mat-form-field>
+            <button mat-button color="primary" (click)="savePerk(perksForm.value, 3)">Add Perk</button>
+
+        </div>
+    </ng-container>
+</ng-container>

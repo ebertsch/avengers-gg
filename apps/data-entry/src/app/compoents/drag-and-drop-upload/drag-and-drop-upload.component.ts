@@ -29,16 +29,20 @@ export class DragAndDropUploadComponent<T> implements OnInit {
     evt.preventDefault();
     evt.stopPropagation();
     this.fileOver = false;
+    this.isUploading = true
     let files = evt.dataTransfer.files;
     if (files.length > 0) {
       this.uploader(files[0]).subscribe(results => {
         this.uploaded.emit(results)
+        this.isUploading = false
       })
     }
   }
 
   @Input() uploader: (file: string | Blob, field?: string)=>Observable<T>
   @Output() uploaded= new EventEmitter<T>()
+
+  isUploading = false;
 
   constructor() { }
 

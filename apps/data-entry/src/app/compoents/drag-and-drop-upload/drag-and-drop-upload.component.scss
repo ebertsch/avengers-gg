@@ -1,5 +1,6 @@
 :host {
   display: block;
+  margin-bottom: 20px;
 }
 
 .dnd-container {
@@ -7,9 +8,13 @@
   height: 200px;
   padding: 2rem;
   text-align: center;
-  border: dashed 1px #979797;
+  border: dashed 1px #fff;
   position: relative;
   margin: 0 auto;
+
+  &.disabled {
+    opacity: .4;
+  }
 
   input {
     opacity: 0;
@@ -26,13 +31,20 @@
     width: 183px;
     height: 44px;
     border-radius: 21.5px;
-    background-color: #db202f;
+    background-color: #235599;
     padding: 8px 16px;
+    margin-top: 20px;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #38424c;
+    color: #fff;
+  }
+}
+
+:host.fileover {
+  .dnd-container {
+    background-color: #0d121b;
   }
 }

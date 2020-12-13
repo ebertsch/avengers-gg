@@ -35,8 +35,4 @@ export class PerksPageComponent extends BaseDataPage<Perk> implements OnInit {
     super.ngOnInit()
   }
 
-  onUploaded(data) {
-    console.log(data)
-  }
-
 }

@@ -63,30 +63,47 @@ export class PerksController {
 
     const poller = await client.beginRecognizeCustomForms(modelId, file.buffer);
     const forms = await poller.pollUntilDone();
+    console.log(forms[0])
 
     let perk1 = null
-    if(forms[0].fields["Perk1 Title"]) {
+    if(forms[0].fields["Perk1 Title"] && forms[0].fields["Perk1 Description"]?.valueData) {
       perk1 = { 
         title: forms[0].fields["Perk1 Title"].value,
-        description: forms[0].fields["Perk1 Description"].valueData.text,
+        description: forms[0].fields["Perk1 Description"]?.valueData.text,
+      }
+    } else {
+      perk1 = {
+        title: null,
+        description: null
       }
     }
 
     let perk2 = null
-    if(forms[0].fields["Perk2 Title"]) {
+    if(forms[0].fields["Perk2 Title"] && forms[0].fields["Perk2 Description"]?.valueData) {
       perk2 = { 
         title: forms[0].fields["Perk2 Title"].value,
-        description: forms[0].fields["Perk2 Description"].valueData.text,
+        description: forms[0].fields["Perk2 Description"]?.valueData.text,
+      }
+    } else {
+      perk2 = {
+        title: null,
+        description: null
       }
     }
 
     let perk3 = null
-    if(forms[0].fields["Perk3 Title"]) {
+    if(forms[0].fields["Perk3 Title"] && forms[0].fields["Perk3 Description"]?.valueData) {
       perk3 = { 
         title: forms[0].fields["Perk3 Title"].value,
-        description: forms[0].fields["Perk3 Description"].valueData.text,
+        description: forms[0].fields["Perk3 Description"]?.valueData.text,
+      }
+    } else {
+      perk3 = {
+        title: null,
+        description: null
       }
     }
+
 
     return pipe(
       assoc('perk1', perk1),
