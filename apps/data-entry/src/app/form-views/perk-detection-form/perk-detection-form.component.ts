@@ -48,7 +48,6 @@ export class PerkDetectionFormComponent implements OnInit {
       ...perkFields,
       [`slot${slot}Enabled`]: true
     } as unknown as Perk
-    console.log(perk)
     this.perkService.add(perk)
   }
 }
