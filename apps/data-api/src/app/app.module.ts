@@ -1,4 +1,5 @@
 import { CacheModule, Module } from '@nestjs/common';
+import { MulterModule } from '@nestjs/platform-express'
 import { AuthModule } from './auth/auth.module';
 
 import { FirebaseModule } from './firebase';
@@ -27,6 +28,7 @@ import { SkillsModule } from './modules/skills';
     PerksModule,
     ShortUrlsModule,
     SkillsModule,
+    MulterModule
   ]
 })
 export class AppModule {}

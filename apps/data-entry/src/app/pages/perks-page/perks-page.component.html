@@ -6,6 +6,15 @@
 <mat-expansion-panel class="create-form">
     <mat-expansion-panel-header>
         <mat-panel-title>
+            Detect Perks
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <aggd-perk-detection-form></aggd-perk-detection-form>
+</mat-expansion-panel>
+
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
             New Perk
         </mat-panel-title>
     </mat-expansion-panel-header>
@@ -41,9 +50,11 @@
             </aggd-perks-edit-form>
 
             <mat-action-row>
-                <button mat-button color="secondary" (click)="delete(perksEditorForm.formValue.getRawValue())">Delete</button>
+                <button mat-button color="secondary"
+                    (click)="delete(perksEditorForm.formValue.getRawValue())">Delete</button>
                 <button mat-button color="primary" (click)="save(perksEditorForm.formValue.getRawValue())">Save</button>
-                <button mat-flat-button color="primary" (click)="publish(perksEditorForm.formValue.getRawValue())">Publish</button>
+                <button mat-flat-button color="primary"
+                    (click)="publish(perksEditorForm.formValue.getRawValue())">Publish</button>
             </mat-action-row>
         </ng-container>
     </mat-expansion-panel>

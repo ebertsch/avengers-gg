@@ -1,0 +1,11 @@
+<div class="dnd-container" [class.disabled]="isUploading">
+  <ng-container *ngIf="!isUploading; else uploading">
+    <input type="file" id="fileDropRef" />
+    <h3>Drag and drop file here</h3>
+    <h3 style="margin-bottom: 10px;">or</h3>
+    <label for="fileDropRef">Browse for file</label>
+  </ng-container>
+  <ng-template #uploading>
+    <h3>Processing...</h3>
+  </ng-template>
+</div>

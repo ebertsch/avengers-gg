@@ -32,7 +32,9 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import firebase from 'firebase/app';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthInterceptor } from './auth.interceptor'
+import { AuthInterceptor } from './auth.interceptor';
+import { DragAndDropUploadComponent } from './compoents/drag-and-drop-upload/drag-and-drop-upload.component';
+import { PerkDetectionFormComponent } from './form-views/perk-detection-form/perk-detection-form.component'
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { AuthInterceptor } from './auth.interceptor'
     NoteEditFormComponent,
     DataFiltersComponent,
     LoginPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    DragAndDropUploadComponent,
+    PerkDetectionFormComponent
   ],
   providers: [
     { provide: DefaultDataServiceConfig, useValue: { root: environment.dataEntryClientApiUrl } },
