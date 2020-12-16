@@ -1,5 +1,5 @@
 import { flatten } from '@nestjs/common';
-import { getRepository, BaseFirestoreRepository, IEntity, Constructor } from 'fireorm';
+import { getRepository, BaseFirestoreRepository, IEntity, Constructor, IWherePropParam } from 'fireorm';
 import { mergeDeepRight, reduce, append, assoc } from 'ramda';
 
 type withId<T> = T & { heroId: string };
@@ -36,7 +36,6 @@ export abstract class DataServiceBase<T extends IEntity> {
         const queried = await Promise.all(_results)
         return flatten(queried)
     }
-
 
     async add(item: T): Promise<T> {
         return await this.repository.create(item)

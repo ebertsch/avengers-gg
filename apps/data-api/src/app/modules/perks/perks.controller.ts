@@ -37,6 +37,13 @@ export class PerksController {
     return await this.entityService.add(item)
   }
 
+  @Get('perk/:id')
+  @UseInterceptors(CacheInterceptor)
+  @CacheTTL(60 * 5)
+  async getItemDetail(@Param('id') id: string) {
+    return this.entityService.getById(id)
+  }
+
   @Put('perk/:id')
   @UseGuards(AuthGuard('firebase'))
   async changeItem(@Param('id') id: string, @Body() item: Perk) {

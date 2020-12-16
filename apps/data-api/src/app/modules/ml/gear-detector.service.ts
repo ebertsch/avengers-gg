@@ -3,11 +3,12 @@ import { RecognizedForm } from '@azure/ai-form-recognizer'
 import { File } from '../../types/file';
 import { MLService } from './ml.service';
 import { MLModel } from './models';
-import { pathOr } from 'ramda';
+import { match, pathOr, reduce } from 'ramda';
 
 interface DetectedPerk {
     title: string
     description: string
+    values: [string, number][]
 }
 
 interface DetectedGear {
@@ -19,7 +20,8 @@ interface DetectedGear {
     perk3: DetectedPerk
 }
 
-const field = (field, value) => pathOr(null, ['fields', field, 'valueData', 'text'], value)
+const field = <T>(field, value) => pathOr<T>(null, ['fields', field, 'valueData', 'text'], value)
+const NUMBERS_REGEX = /\-?\d{1,}\.?\d*%?/gm
 
 @Injectable()
 export class GearDetectorService {
@@ -30,8 +32,8 @@ export class GearDetectorService {
     async processImage(file: File): Promise<DetectedGear> {
         const result = await this.ml.processImage(file, MLModel.GEAR_DETECTOR)
 
-        const name = field('Name', result)
-        const rarity = field('Rarity', result)
+        const name = field<string>('Name', result)
+        const rarity = field<string>('Rarity', result)
         const powerLevel = parseInt(field('Power Level', result), 10)
         const perk1 = this.extractPerk(1, result);
         const perk2 = this.extractPerk(2, result);
@@ -48,8 +50,22 @@ export class GearDetectorService {
     }
 
     private extractPerk(index: number, result: RecognizedForm): DetectedPerk {
-        const title = field(`Perk${index} Title`, result)
-        const description = field(`Perk${index} Description`, result)
-        return { title, description }
+        const title = field<string>(`Perk${index} Title`, result)
+        const rawDescription = field<string>(`Perk${index} Description`, result) as string
+
+        const matches = rawDescription.match(NUMBERS_REGEX)
+        let description = rawDescription
+        
+        if (matches) {
+            description = reduce((a, c) => {
+                const token = c.indexOf('%') > -1 ? '%': 'X'
+                return a.replace(c, `[${token}]`)
+            }, description, matches)
+        }
+
+        const _values = Array.from(matches || []);
+        const values = _values.map(x=>[x, parseInt(x)] as [string, number])
+
+        return { title, description, values }
     }
 }
