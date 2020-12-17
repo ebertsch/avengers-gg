@@ -37,6 +37,12 @@ export class PerksController {
     return await this.entityService.add(item)
   }
 
+  @Post('perks/index')
+  @UseGuards(AuthGuard('firebase'))
+  async indexData(){
+    this.entityService.index(['title', 'description'])
+  }
+
   @Get('perk/:id')
   @UseInterceptors(CacheInterceptor)
   @CacheTTL(60 * 5)

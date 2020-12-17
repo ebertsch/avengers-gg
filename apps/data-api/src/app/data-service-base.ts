@@ -1,9 +1,11 @@
 import { flatten } from '@nestjs/common';
 import { getRepository, BaseFirestoreRepository, IEntity, Constructor, IWherePropParam } from 'fireorm';
-import { mergeDeepRight, reduce, append, assoc } from 'ramda';
+import { mergeDeepRight, reduce, append, assoc, assocPath } from 'ramda';
 
 type withId<T> = T & { heroId: string };
 type withHeroes<T> = T & { heroes: string[] };
+
+const replaceAll = (value: string) => value.split(' ').join('')
 
 export abstract class DataServiceBase<T extends IEntity> {
     private repository: BaseFirestoreRepository<T>
@@ -55,5 +57,17 @@ export abstract class DataServiceBase<T extends IEntity> {
         const merged = mergeDeepRight(dbItem, item) as unknown as T
         const _item = assoc('id', id, merged);
         return await this.repository.update(_item)
+    }
+
+    async index(props: string[]) {
+        const _items = await this.getAll();
+        const items = _items.map(i => {
+            const indexes = reduce((a, c) => ({ [c]: ((replaceAll(i[c] as string||'')).toLowerCase() ), ...a }), {}, props)
+            return assoc('index', indexes, i)
+        })
+
+        items.forEach(async i => {
+            await this.update(i.id, i)
+        })
     }
 }

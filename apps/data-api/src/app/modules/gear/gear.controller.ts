@@ -31,6 +31,12 @@ export class GearController {
     return await this.entityService.add(item)
   }
 
+  @Post('gear/index')
+  @UseGuards(AuthGuard('firebase'))
+  async indexData(){
+    this.entityService.index(['name'])
+  }
+
   @Put('gear/:id')
   @UseGuards(AuthGuard('firebase'))
   async changeItem(@Param('id') id: string, @Body() item: Gear) {

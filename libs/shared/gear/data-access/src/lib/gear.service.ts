@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import {
+  DefaultDataServiceConfig,
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
@@ -9,12 +10,13 @@ import { RouteSelectors } from '@avengers-game-guide/shared/router'
 import { GearSlot, convertToGearSlotType } from '@avengers-game-guide/shared/data'
 import { GearDefinition } from './models/gear-definition';
 import { filter } from 'ramda';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GearService extends EntityCollectionServiceBase<GearDefinition> {
-  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory, private http: HttpClient, private config: DefaultDataServiceConfig) {
     super('Gear', serviceElementsFactory);
   }
 
@@ -35,15 +37,19 @@ export class GearService extends EntityCollectionServiceBase<GearDefinition> {
     this.selectors.selectEntityMap,
     gear => gear[id]
   );
-  getGearDefinition = (id: string) =>  {
+  getGearDefinition = (id: string) => {
     return this.store.pipe(select(this.getGearDefinitionSelector(id)))
   }
 
   private getGearForHeroSelector = (gearSlot: string, hero: string) => createSelector(
     this.selectors.selectEntities,
-    gear => filter(g=> (g.heroId === hero || g.heroId === '*')&& g.gearType === convertToGearSlotType(gearSlot), gear).sort()
+    gear => filter(g => (g.heroId === hero || g.heroId === '*') && g.gearType === convertToGearSlotType(gearSlot), gear).sort()
   );
   getGearForHero = (gearSlot: string, hero: string) => {
     return this.store.pipe(select(this.getGearForHeroSelector(gearSlot, hero)))
+  }
+
+  indexGear() {
+    this.http.post(`${this.config.root}/gear/index`, null).subscribe(()=>{})
   }
 }
