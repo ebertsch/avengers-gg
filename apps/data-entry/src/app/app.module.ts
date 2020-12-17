@@ -34,7 +34,8 @@ import firebase from 'firebase/app';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './auth.interceptor';
 import { DragAndDropUploadComponent } from './compoents/drag-and-drop-upload/drag-and-drop-upload.component';
-import { PerkDetectionFormComponent } from './form-views/perk-detection-form/perk-detection-form.component'
+import { PerkDetectionFormComponent } from './form-views/perk-detection-form/perk-detection-form.component';
+import { GearDetectionFormComponent } from './form-views/gear-detection-form/gear-detection-form.component'
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { PerkDetectionFormComponent } from './form-views/perk-detection-form/per
     LoginPageComponent,
     DashboardComponent,
     DragAndDropUploadComponent,
-    PerkDetectionFormComponent
+    PerkDetectionFormComponent,
+    GearDetectionFormComponent
   ],
   providers: [
     { provide: DefaultDataServiceConfig, useValue: { root: environment.dataEntryClientApiUrl } },
