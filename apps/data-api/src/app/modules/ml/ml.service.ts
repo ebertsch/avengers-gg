@@ -19,8 +19,6 @@ export class MLService {
         const poller = await this.client.beginRecognizeCustomForms(mlModel, file.buffer);
         const forms = await poller.pollUntilDone();
 
-        console.log(forms[0])
-
         return forms[0]
     }
 }

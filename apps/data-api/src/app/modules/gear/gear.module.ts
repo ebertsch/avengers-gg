@@ -9,5 +9,6 @@ import { GearService } from './gear.service';
   ],
   controllers: [GearController],
   providers: [GearService],
+  exports: [GearService]
 })
 export class GearModule { }

@@ -1,11 +1,12 @@
 import { flatten } from '@nestjs/common';
-import { getRepository, BaseFirestoreRepository, IEntity, Constructor, IWherePropParam } from 'fireorm';
-import { mergeDeepRight, reduce, append, assoc, assocPath } from 'ramda';
+import { query } from 'express';
+import { getRepository, BaseFirestoreRepository, IEntity, Constructor } from 'fireorm';
+import { mergeDeepRight, reduce, append, assoc, keys } from 'ramda';
+import { indexString } from './utils/index-string';
 
 type withId<T> = T & { heroId: string };
 type withHeroes<T> = T & { heroes: string[] };
 
-const replaceAll = (value: string) => value.split(' ').join('')
 
 export abstract class DataServiceBase<T extends IEntity> {
     private repository: BaseFirestoreRepository<T>
@@ -62,12 +63,21 @@ export abstract class DataServiceBase<T extends IEntity> {
     async index(props: string[]) {
         const _items = await this.getAll();
         const items = _items.map(i => {
-            const indexes = reduce((a, c) => ({ [c]: ((replaceAll(i[c] as string||'')).toLowerCase() ), ...a }), {}, props)
+            const indexes = reduce((a, c) => ({ [c]: (indexString(i[c] as string||'') ), ...a }), {}, props)
             return assoc('index', indexes, i)
         })
 
         items.forEach(async i => {
             await this.update(i.id, i)
         })
+    }
+
+    async findCascading(queryObject: Partial<T>): Promise<T | null> {
+        const props = keys(queryObject)
+        for(let i=0;i<props.length;i++) {
+            const indexedField = indexString(queryObject[props[i] as string])
+            const result = await this.repository.whereEqualTo(`index.${props[i]}` as any, indexedField).findOne()
+            if(result) { return result }
+        }
     }
 }

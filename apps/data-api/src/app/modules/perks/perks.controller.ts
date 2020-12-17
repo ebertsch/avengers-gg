@@ -1,21 +1,17 @@
-import { Body, CacheInterceptor, UploadedFile, CacheTTL, CACHE_MANAGER, Controller, Get, Inject, Post, Put, Delete, Param, Query, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Body, CacheInterceptor, CacheTTL, CACHE_MANAGER, Controller, Get, Inject, Post, Put, Delete, Param, Query, UseGuards, UseInterceptors } from '@nestjs/common';
 import { Cache } from 'cache-manager';
 import { AuthGuard } from '@nestjs/passport';
-import { FileInterceptor } from '@nestjs/platform-express'
 import { ToLowerCasePipe } from '../../pipes/to-lowercase.pipe';
 import { Perk } from './perk.model';
 
 import { PerkService } from './perk.service';
-import { File } from '../../types/file';
-import { GearDetectorService } from '../ml/gear-detector.service';
 
 
 @Controller()
 export class PerksController {
   constructor(
     private readonly entityService: PerkService,
-    @Inject(CACHE_MANAGER) private cacheManager: Cache,
-    private readonly gearDetector: GearDetectorService) { }
+    @Inject(CACHE_MANAGER) private cacheManager: Cache) { }
 
   @Get('perks')
   @UseInterceptors(CacheInterceptor)
@@ -62,11 +58,5 @@ export class PerksController {
   async removeItem(@Param('id') id: string) {
     await this.cacheManager.reset()
     return await this.entityService.remove(id)
-  }
-
-  @Post('perks/detect')
-  @UseInterceptors(FileInterceptor('file'))
-  async detectPerks(@UploadedFile() file: File) {
-    return this.gearDetector.processImage(file)    
   }
 }
