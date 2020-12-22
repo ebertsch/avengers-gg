@@ -17,4 +17,9 @@ export class GearPageComponent extends BaseDataPage<GearDefinition> implements O
   constructor(storage: StorageMap, public gearService: GearService, public perkService: PerkService, public heroService: HeroService) {
     super(storage, gearService)
   }
+
+  saveDetected(item) {
+    if(item.id) this.create(item, item)
+    else this.save(item)
+  }
 }

@@ -27,6 +27,8 @@ export class DragAndDropUploadComponent<T> implements OnInit {
     this.fileOver = false;
   }
 
+  previewImage: string = null
+
   // Drop listener
   @HostListener('drop', ['$event']) public ondrop(evt: DragEvent) {
     evt.preventDefault();
@@ -36,6 +38,7 @@ export class DragAndDropUploadComponent<T> implements OnInit {
     let files = evt.dataTransfer.files;
     if (files.length > 0) {
       this.uploader<T>(files[0]).subscribe(results => {
+        this.previewImage = URL.createObjectURL(files[0])
         this.uploaded.emit(results)
         this.isUploading = false
       })

@@ -7,6 +7,7 @@ interface ItemSource {
 
 @Collection("gear")
 export class Gear {
+    id: string
     name: string
     heroId: string
     gearType: string
@@ -16,5 +17,4 @@ export class Gear {
     rarity: string
     stats: string[]
     sources: ItemSource[]
-    id: string
 }

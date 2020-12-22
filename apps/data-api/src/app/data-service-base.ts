@@ -60,12 +60,14 @@ export abstract class DataServiceBase<T extends IEntity> {
         return await this.repository.update(_item)
     }
 
+    indexItem(item: T, props: string[]): T {
+        const indexes = reduce((a, c) => ({ [c]: (indexString(item[c] as string||'') ), ...a }), {}, props)
+        return assoc('index', indexes, item)
+    }
+
     async index(props: string[]) {
         const _items = await this.getAll();
-        const items = _items.map(i => {
-            const indexes = reduce((a, c) => ({ [c]: (indexString(i[c] as string||'') ), ...a }), {}, props)
-            return assoc('index', indexes, i)
-        })
+        const items = _items.map(i => this.indexItem(i, props))
 
         items.forEach(async i => {
             await this.update(i.id, i)

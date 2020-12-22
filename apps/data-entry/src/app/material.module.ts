@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatSelectModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatAutocompleteModule,
@@ -41,6 +43,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatSelectModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

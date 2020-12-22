@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { environment } from '@avengers-game-guide/shared/environments'
 import { FormRecognizerClient, AzureKeyCredential, RecognizedForm } from '@azure/ai-form-recognizer'
-import { File } from '../../types/file';
+import { File } from '../../models/file';
 import { MLModel } from './models';
 
 @Injectable()

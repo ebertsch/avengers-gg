@@ -11,6 +11,8 @@ import { GearSlot, convertToGearSlotType } from '@avengers-game-guide/shared/dat
 import { GearDefinition } from './models/gear-definition';
 import { filter } from 'ramda';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@avengers-game-guide/shared/environments'
+
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +53,13 @@ export class GearService extends EntityCollectionServiceBase<GearDefinition> {
 
   indexGear() {
     this.http.post(`${this.config.root}/gear/index`, null).subscribe(()=>{})
+  }
+
+  get processImageUploader() {
+    return (file, field = 'file') => {
+      const data = new FormData()
+      data.append(field, file);
+      return this.http.post(environment.clientApiUrl + '/gear/process-image', data)
+    }
   }
 }

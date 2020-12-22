@@ -13,8 +13,8 @@ export class PerkService extends DataServiceBase<Perk> {
     }
 
     tokenizeDescription(value: string): string {
-        const matches = value.match(NUMBERS_REGEX)
-        let description = value
+        const matches = (value||'').match(NUMBERS_REGEX)
+        let description = value||''
         
         if (matches) {
             description = reduce((a, c) => {
@@ -27,7 +27,7 @@ export class PerkService extends DataServiceBase<Perk> {
     }
 
     getDescriptionTokenValues(value: string): [string, number][] {
-        const matches = value.match(NUMBERS_REGEX)
+        const matches = (value||'').match(NUMBERS_REGEX)
         const _values = Array.from(matches || []);
         const values = _values.map(x=>[x, parseInt(x)] as [string, number]) as [string,number][]
         return values

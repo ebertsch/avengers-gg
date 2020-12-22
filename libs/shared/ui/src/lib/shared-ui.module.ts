@@ -12,6 +12,7 @@ import { FlaredTitleComponent } from './flared-title/flared-title.component';
 import { NavigationTabsComponent, NavigationTabComponent } from './navigation-tabs/navigation-tabs.component';
 import { FancyTextComponent } from './fancy-text/fancy-text.component';
 import { DisableControlDirective } from './disableControl/disableControl.directive'
+import { SanitizePipe } from './pipes/sanitize.pipe';
 
 const DECLARATIONS = [
   PanelComponent,
@@ -20,6 +21,7 @@ const DECLARATIONS = [
   HighlightPipe,
   SortByPipe,
   DecamelCasePipe,
+  SanitizePipe,
   NameDescriptionComponent,
   FlaredTitleComponent,
   NavigationTabsComponent,

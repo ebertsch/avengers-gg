@@ -1,1 +1,1 @@
-export const indexString = (value: string) => value.split(' ').join('').toLocaleLowerCase()
+export const indexString = (value: string) => value.split(' ').join('').toLowerCase()
