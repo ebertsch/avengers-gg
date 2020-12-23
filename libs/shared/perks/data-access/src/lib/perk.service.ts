@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  DefaultDataServiceConfig,
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
@@ -16,10 +17,7 @@ import { environment } from '@avengers-game-guide/shared/environments'
   providedIn: 'root'
 })
 export class PerkService extends EntityCollectionServiceBase<Perk> {
-  constructor(
-    serviceElementsFactory: EntityCollectionServiceElementsFactory,
-    private http: HttpClient
-  ) {
+  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory, private http: HttpClient, private config: DefaultDataServiceConfig) {
     super('Perk', serviceElementsFactory);
   }
 
@@ -64,6 +62,11 @@ export class PerkService extends EntityCollectionServiceBase<Perk> {
       data.append(field, file);
       return this.http.post<PerkDetectionResult>(environment.clientApiUrl + '/perks/detect', data)
     }
+  }
+
+  indexPerks() {
+    this.http.post(`${this.config.root}/perks/index`, null).subscribe(()=>{})
+
   }
 
 }

@@ -14,6 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return from(this.afAuth.currentUser).pipe(
       mergeMap(user => {
+        if(req.headers.get('skip-auth')=="true") return next.handle(req)
         if (!!user) {
           return from(user.getIdToken()).pipe(
             mergeMap(jwt => {

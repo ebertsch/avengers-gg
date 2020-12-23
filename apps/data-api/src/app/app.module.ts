@@ -1,4 +1,4 @@
-import { CacheModule, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express'
 import { AuthModule } from './auth/auth.module';
 
@@ -13,9 +13,11 @@ import { PerkUsageModule } from './modules/perk-usage';
 import { PerksModule } from './modules/perks/perks.module';
 import { ShortUrlsModule } from './modules/short-urls';
 import { SkillsModule } from './modules/skills';
+import { MLModule } from './modules/ml/ml.module';
 
 @Module({
   imports: [
+    MulterModule,
     FirebaseModule.forRoot(),
     AuthModule,
     BuildsModule,
@@ -28,7 +30,7 @@ import { SkillsModule } from './modules/skills';
     PerksModule,
     ShortUrlsModule,
     SkillsModule,
-    MulterModule
+    MLModule,
   ]
 })
 export class AppModule {}

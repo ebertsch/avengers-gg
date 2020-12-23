@@ -69,6 +69,7 @@
     "firebase": "^8.1.1",
     "firebase-admin": "^9.4.1",
     "fireorm": "^0.17.2",
+    "got": "^11.8.1",
     "json-server": "^0.16.2",
     "ngx-google-analytics": "^9.0.1",
     "ngx-swiper-wrapper": "^10.0.0",

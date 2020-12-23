@@ -5,6 +5,20 @@
 <mat-expansion-panel class="create-form">
     <mat-expansion-panel-header>
         <mat-panel-title>
+            Detect Gear
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <aggd-gear-detection-form #gearDetector="gearDetectorForm"></aggd-gear-detection-form>
+    <mat-action-row>
+        <button mat-button color="primary"
+            (click)="create(gearDetector.form.value, gearDetector)">Create</button>
+    </mat-action-row>
+</mat-expansion-panel>
+
+
+<mat-expansion-panel class="create-form">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
             New Gear Piece
         </mat-panel-title>
     </mat-expansion-panel-header>

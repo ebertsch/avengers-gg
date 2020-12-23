@@ -28,14 +28,20 @@ export class GearController {
   @UseGuards(AuthGuard('firebase'))
   async addItem(@Body() item: Gear) {
     await this.cacheManager.reset()
-    return await this.entityService.add(item)
+    return await this.entityService.add(this.entityService.indexItem(item, ['name']))
+  }
+
+  @Post('gear/index')
+  @UseGuards(AuthGuard('firebase'))
+  async indexData(){
+    this.entityService.index(['name'])
   }
 
   @Put('gear/:id')
   @UseGuards(AuthGuard('firebase'))
   async changeItem(@Param('id') id: string, @Body() item: Gear) {
     await this.cacheManager.reset()
-    return await this.entityService.update(id, item)
+    return await this.entityService.update(id, this.entityService.indexItem(item, ['name']))
   }
 
   @Delete('gear/:id')

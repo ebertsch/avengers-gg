@@ -1,0 +1,1 @@
+export const indexString = (value: string) => (value||'').split(' ').join('').toLowerCase()

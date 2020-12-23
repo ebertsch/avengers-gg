@@ -1,0 +1,73 @@
+<aggd-drag-and-drop-upload (uploaded)="onUploaded($event)" [uploader]="gearService.processImageUploader">
+</aggd-drag-and-drop-upload>
+
+<ng-container *ngIf="result">
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill" class="hero-selector">
+            <mat-label>Hero</mat-label>
+            <mat-select formControlName="heroId">
+                <mat-option [value]="null">Not set</mat-option>
+                <mat-option [value]="'*'">*</mat-option>
+                <mat-option *ngFor="let hero of heroService.entities$ | async" [value]="hero.id">
+                    {{hero.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Gear Slot</mat-label>
+            <mat-select formControlName="gearType">
+                <mat-option [value]="null">Not set</mat-option>
+                <mat-option [value]="'melee'">Melee</mat-option>
+                <mat-option [value]="'ranged'">Ranged</mat-option>
+                <mat-option [value]="'defense'">Defense</mat-option>
+                <mat-option [value]="'heroic'">Heroic</mat-option>
+                <mat-option [value]="'majorArtifact'">Major Artifact</mat-option>
+                <mat-option [value]="'minorArtifact'">Minor Artifact</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Rarity</mat-label>
+            <mat-select formControlName="rarity">
+                <mat-option [value]="'epic'">Epic</mat-option>
+                <mat-option [value]="'legendary'">Legendary</mat-option>
+                <mat-option [value]="'exotic'">Exotic</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h3>Perks</h3>
+      
+        <div class="perk-picker-container">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>{{ !!form.value.perks1 ? 'Perk slot 1' : 'Select a perk'}}</mat-label>
+            <agg-perk-select formControlName="perks1" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="1"
+              [allowAny]="true" [allowAnyPerkSlot]="true" [allowMultiple]="true">
+            </agg-perk-select>
+          </mat-form-field>
+        </div>
+      
+        <div class="perk-picker-container">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>{{ !!form.value.perks2 ? 'Perk slot 2' : 'Select a perk'}}</mat-label>
+            <agg-perk-select formControlName="perks2" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="2"
+              [allowAny]="true" [allowAnyPerkSlot]="true" [allowMultiple]="true">
+            </agg-perk-select>
+          </mat-form-field>
+        </div>
+      
+        <div class="perk-picker-container">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>{{ !!form.value.perks3 ? 'Perk slot 3' : 'Select a perk'}}</mat-label>
+            <agg-perk-select formControlName="perks3" [hero]="activeHeroId$ | async" [gearSlot]="activeGearSlot$ | async" [perkSlot]="3"
+              [allowAny]="true" [allowAnyPerkSlot]="true" [allowMultiple]="true">
+            </agg-perk-select>
+          </mat-form-field>
+        </div>
+    </form>
+</ng-container>

@@ -40,3 +40,4 @@ Thumbs.db
 
 # Private Config
 /scripts/**/*.config.ts
+.env

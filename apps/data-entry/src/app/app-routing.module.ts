@@ -9,6 +9,7 @@ import { NotesPageComponent } from './pages/notes-page/notes-page.component';
 import { NamedSetsPageComponent } from './pages/named-sets-page/named-sets-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component'
+import { ToolsPageComponent } from './pages/tools-page/tools-page.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
@@ -23,6 +24,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
             { path: 'named-sets', component: NamedSetsPageComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
             { path: 'guides', component: GuidesPageComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
             { path: 'notes', component: NotesPageComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
+            { path: 'tools', component: ToolsPageComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin } },
             { path: 'login', component: LoginPageComponent },
         ], { initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
     ],

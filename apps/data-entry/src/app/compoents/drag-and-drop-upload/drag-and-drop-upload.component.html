@@ -4,8 +4,10 @@
     <h3>Drag and drop file here</h3>
     <h3 style="margin-bottom: 10px;">or</h3>
     <label for="fileDropRef">Browse for file</label>
+    <img [src]="previewImage | sanitize:'url'" *ngIf="previewImage">
   </ng-container>
   <ng-template #uploading>
     <h3>Processing...</h3>
+    <mat-spinner></mat-spinner>
   </ng-template>
 </div>

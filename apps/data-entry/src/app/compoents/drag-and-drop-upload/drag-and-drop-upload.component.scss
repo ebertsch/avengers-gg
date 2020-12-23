@@ -5,7 +5,7 @@
 
 .dnd-container {
   width: 450px;
-  height: 200px;
+  min-height: 200px;
   padding: 2rem;
   text-align: center;
   border: dashed 1px #fff;
@@ -40,6 +40,10 @@
     font-size: 20px;
     font-weight: 600;
     color: #fff;
+  }
+
+  img {
+    margin-top: 20px;
   }
 }
 

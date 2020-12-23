@@ -35,8 +35,8 @@ export class PerkDetectionFormComponent implements OnInit {
   }
 
   onUploaded(data) {
-    this.perks = data;
-    this.perksForm.patchValue(data);
+    this.perks = data.perks;
+    this.perksForm.patchValue(data.perks);
   }
 
   savePerk(form, slot) {
@@ -48,7 +48,6 @@ export class PerkDetectionFormComponent implements OnInit {
       ...perkFields,
       [`slot${slot}Enabled`]: true
     } as unknown as Perk
-    console.log(perk)
     this.perkService.add(perk)
   }
 }
