@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, ChangeDetectionStrategy, HostListener, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener, HostBinding, Input, Output, EventEmitter, ChangeDetectorRef, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 
-export type UploaderFunction = <T>(file: string | Blob, field?: string)=>Observable<T>
+
+export type UploaderFunction = <T>(file: string | Blob, field?: string) => Observable<T>
 
 @Component({
   selector: 'aggd-drag-and-drop-upload',
@@ -44,10 +45,17 @@ export class DragAndDropUploadComponent<T> implements OnInit {
       })
     } else if (evt.dataTransfer.items.length > 0) {
       evt.dataTransfer.items[0].getAsString(itemUrl => {
-        fetch(itemUrl).then(async r => {
-          this.uploader<T>(await r.blob()).subscribe(results => {
-            this.uploaded.emit(results)
-            this.isUploading = false
+        this.http.get(`http://localhost:3333/api/image-proxy?url=${itemUrl}`, {
+          responseType: 'arraybuffer'
+        }).subscribe(s => {
+          const b = new Blob([new Uint8Array(s)])
+          this.uploader<T>(b).subscribe(results => {
+            this.zone.run(() => {
+              this.previewImage = URL.createObjectURL(b)
+              this.uploaded.emit(results)
+              this.isUploading = false
+            })
+
           })
         })
       })
@@ -55,11 +63,11 @@ export class DragAndDropUploadComponent<T> implements OnInit {
   }
 
   @Input() uploader: UploaderFunction
-  @Output() uploaded= new EventEmitter<T>()
+  @Output() uploaded = new EventEmitter<T>()
 
   isUploading = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private zone: NgZone) { }
 
   ngOnInit(): void {
   }
